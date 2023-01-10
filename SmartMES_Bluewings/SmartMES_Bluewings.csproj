@@ -1,0 +1,1269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\build\OpenCvSharp-AnyCPU.props" Condition="Exists('..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\build\OpenCvSharp-AnyCPU.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDB45A97-A2D0-4B0A-BC83-92D6E7B14CAD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SmartMES_Bluewings</RootNamespace>
+    <AssemblyName>SmartMES_Bluewings</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>ftp://upgrade.mes.innobe.co.kr/public_html/SmartMES_Bluewings/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://upgrade.mes.innobe.co.kr/innobemes/SmartMES_Bluewings/</InstallUrl>
+    <ProductName>은경케미칼 MES</ProductName>
+    <PublisherName>%28주%29이노비 MES팀</PublisherName>
+    <SuiteName>Smart MES</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>51</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Chart.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>10F8A29E91086BD708787848C9FB7057101336D4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SmartMES_Bluewings_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.17.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.17.3\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.CPlusPlus, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.CPlusPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\lib\net45\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
+    <Reference Include="SmartFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LogHelper\SmartFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bluewings_mesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bluewings_mesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="Classes\MariaCRUD.cs" />
+    <Compile Include="Classes\MyClass.cs" />
+    <Compile Include="Classes\RawPrinterHelper.cs" />
+    <Compile Include="COMMON\CustFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\CustFinder.designer.cs">
+      <DependentUpon>CustFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\DataSetCOMMON.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCOMMON.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\MachineFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\MachineFinder.designer.cs">
+      <DependentUpon>MachineFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\PostAddr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\PostAddr.designer.cs">
+      <DependentUpon>PostAddr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\ProdFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\ProdFinder.designer.cs">
+      <DependentUpon>ProdFinder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\ViewReport_H.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\ViewReport_H.designer.cs">
+      <DependentUpon>ViewReport_H.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\ViewReport_V.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\ViewReport_V.designer.cs">
+      <DependentUpon>ViewReport_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBasic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBasic.designer.cs">
+      <DependentUpon>FormBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotify.Designer.cs">
+      <DependentUpon>FormNotify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIForm.designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\DataSetP1A.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1A.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A01_CUSTOMER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A01_CUSTOMER.Designer.cs">
+      <DependentUpon>P1A01_CUSTOMER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A01_CUSTOMER_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A01_CUSTOMER_SUB.Designer.cs">
+      <DependentUpon>P1A01_CUSTOMER_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A02_PRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A02_PRODUCT.Designer.cs">
+      <DependentUpon>P1A02_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A02_PRODUCT_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A02_PRODUCT_SUB.Designer.cs">
+      <DependentUpon>P1A02_PRODUCT_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A03_COMMON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A03_COMMON.Designer.cs">
+      <DependentUpon>P1A03_COMMON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A03_COMMON_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A03_COMMON_SUB.Designer.cs">
+      <DependentUpon>P1A03_COMMON_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A05_STOCK_MOVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A05_STOCK_MOVE.Designer.cs">
+      <DependentUpon>P1A05_STOCK_MOVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A05_STOCK_MOVE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A05_STOCK_MOVE_SUB.Designer.cs">
+      <DependentUpon>P1A05_STOCK_MOVE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A06_RECIPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A06_RECIPE.designer.cs">
+      <DependentUpon>P1A06_RECIPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A06_RECIPE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A06_RECIPE_SUB.designer.cs">
+      <DependentUpon>P1A06_RECIPE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\DataSetP1B.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1B.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B03_RORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B03_RORDER.Designer.cs">
+      <DependentUpon>P1B03_RORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B03_RORDER_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B03_RORDER_DOC.designer.cs">
+      <DependentUpon>P1B03_RORDER_DOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B04_RORDER_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B04_RORDER_LIST.Designer.cs">
+      <DependentUpon>P1B04_RORDER_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY.Designer.cs">
+      <DependentUpon>P1B05_DELIVERY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY_SUB.designer.cs">
+      <DependentUpon>P1B05_DELIVERY_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY_SUB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B05_DELIVERY_SUB1.designer.cs">
+      <DependentUpon>P1B05_DELIVERY_SUB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B06_DELI_PROGRESS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B06_DELI_PROGRESS.Designer.cs">
+      <DependentUpon>P1B06_DELI_PROGRESS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B07_DELI_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B07_DELI_ORDER.designer.cs">
+      <DependentUpon>P1B07_DELI_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B07_DELI_ORDER_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B07_DELI_ORDER_SUB.designer.cs">
+      <DependentUpon>P1B07_DELI_ORDER_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B08_DELI_TERM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B08_DELI_TERM.Designer.cs">
+      <DependentUpon>P1B08_DELI_TERM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B09_DELI_NON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B09_DELI_NON.Designer.cs">
+      <DependentUpon>P1B09_DELI_NON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT.Designer.cs">
+      <DependentUpon>P1B10_PURCHASE_MAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT_IN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT_IN.Designer.cs">
+      <DependentUpon>P1B10_PURCHASE_MAT_IN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_MAT_SUB.Designer.cs">
+      <DependentUpon>P1B10_PURCHASE_MAT_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B12_BUY_ITEM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B12_BUY_ITEM.Designer.cs">
+      <DependentUpon>P1B12_BUY_ITEM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE.Designer.cs">
+      <DependentUpon>P1B13_STOCK_TABLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_DANGA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_DANGA.Designer.cs">
+      <DependentUpon>P1B13_STOCK_TABLE_DANGA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_MOVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_MOVE.Designer.cs">
+      <DependentUpon>P1B13_STOCK_TABLE_MOVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B13_STOCK_TABLE_SUB.designer.cs">
+      <DependentUpon>P1B13_STOCK_TABLE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B14_UNIT_COST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B14_UNIT_COST.designer.cs">
+      <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\DataSetP1C.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1C.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER.designer.cs">
+      <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_SUB.designer.cs">
+      <DependentUpon>P1C01_PROD_ORDER_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_SUB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_SUB1.designer.cs">
+      <DependentUpon>P1C01_PROD_ORDER_SUB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_PLAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_PLAN.designer.cs">
+      <DependentUpon>P1C01_PROD_PLAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_PLAN_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_PLAN_SUB.designer.cs">
+      <DependentUpon>P1C01_PROD_PLAN_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT.Designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_IDLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_IDLE.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_IDLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_ORDER.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE.Designer.cs">
+      <DependentUpon>P1C03_PROD_DONE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_NG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_NG.Designer.cs">
+      <DependentUpon>P1C03_PROD_DONE_NG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_SUB.Designer.cs">
+      <DependentUpon>P1C03_PROD_DONE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_SUB1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C03_PROD_DONE_SUB1.designer.cs">
+      <DependentUpon>P1C03_PROD_DONE_SUB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C04_MATERIAL_USE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C04_MATERIAL_USE.Designer.cs">
+      <DependentUpon>P1C04_MATERIAL_USE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C04_MATERIAL_USE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C04_MATERIAL_USE_SUB.designer.cs">
+      <DependentUpon>P1C04_MATERIAL_USE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C05_PROD_TERM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C05_PROD_TERM.Designer.cs">
+      <DependentUpon>P1C05_PROD_TERM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\DataSetP1D.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1D.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D01_MACHINECARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D01_MACHINECARD.Designer.cs">
+      <DependentUpon>P1D01_MACHINECARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D02_MACHINE_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D02_MACHINE_LIST.Designer.cs">
+      <DependentUpon>P1D02_MACHINE_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE.Designer.cs">
+      <DependentUpon>P1D03_MAINTENANCE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE_SUB.Designer.cs">
+      <DependentUpon>P1D03_MAINTENANCE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D04_MAINTENANCE_RATE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D04_MAINTENANCE_RATE.designer.cs">
+      <DependentUpon>P1D04_MAINTENANCE_RATE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\DataSetP1E.cs">
+      <DependentUpon>DataSetP1E.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\DataSetP1E.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1E.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED01_QC_FINAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED01_QC_FINAL.Designer.cs">
+      <DependentUpon>P1ED01_QC_FINAL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_FINAL_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_FINAL_LIST.Designer.cs">
+      <DependentUpon>P1ED02_QC_FINAL_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_FINAL_LIST1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_FINAL_LIST1.designer.cs">
+      <DependentUpon>P1ED02_QC_FINAL_LIST1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED02_QC_LIST.designer.cs">
+      <DependentUpon>P1ED02_QC_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS.designer.cs">
+      <DependentUpon>P1ED03_QC_AS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS_DELI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS_DELI.designer.cs">
+      <DependentUpon>P1ED03_QC_AS_DELI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_AS_SUB.designer.cs">
+      <DependentUpon>P1ED03_QC_AS_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED05_QC_CLASS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED05_QC_CLASS.designer.cs">
+      <DependentUpon>P1ED05_QC_CLASS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED05_QC_CLASS_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED05_QC_CLASS_SUB.designer.cs">
+      <DependentUpon>P1ED05_QC_CLASS_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1F\DataSetP1F.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1F.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1F\P1FD01_KPI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1F\P1FD01_KPI.Designer.cs">
+      <DependentUpon>P1FD01_KPI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\DataSetP1Z.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetP1Z.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z01_POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z01_POS.Designer.cs">
+      <DependentUpon>P1Z01_POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z02_USER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z02_USER.Designer.cs">
+      <DependentUpon>P1Z02_USER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z02_USER_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z02_USER_SUB.Designer.cs">
+      <DependentUpon>P1Z02_USER_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z04_AUTHORITY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z04_AUTHORITY.Designer.cs">
+      <DependentUpon>P1Z04_AUTHORITY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z05_NOTIFY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z05_NOTIFY.Designer.cs">
+      <DependentUpon>P1Z05_NOTIFY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z05_NOTIFY_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z05_NOTIFY_SUB.Designer.cs">
+      <DependentUpon>P1Z05_NOTIFY_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1Z\P1Z06_LOG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1Z\P1Z06_LOG.Designer.cs">
+      <DependentUpon>P1Z06_LOG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PwdChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PwdChange.designer.cs">
+      <DependentUpon>PwdChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControls\UserButtonA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserButtonA.Designer.cs">
+      <DependentUpon>UserButtonA.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="COMMON\CustFinder.resx">
+      <DependentUpon>CustFinder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\MachineFinder.resx">
+      <DependentUpon>MachineFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\PostAddr.resx">
+      <DependentUpon>PostAddr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\ProdFinder.resx">
+      <DependentUpon>ProdFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\ViewReport_H.resx">
+      <DependentUpon>ViewReport_H.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\ViewReport_V.resx">
+      <DependentUpon>ViewReport_V.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBasic.resx">
+      <DependentUpon>FormBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotify.resx">
+      <DependentUpon>FormNotify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A01_CUSTOMER.resx">
+      <DependentUpon>P1A01_CUSTOMER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A01_CUSTOMER_SUB.resx">
+      <DependentUpon>P1A01_CUSTOMER_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A02_PRODUCT.resx">
+      <DependentUpon>P1A02_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A02_PRODUCT_SUB.resx">
+      <DependentUpon>P1A02_PRODUCT_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A03_COMMON.resx">
+      <DependentUpon>P1A03_COMMON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A03_COMMON_SUB.resx">
+      <DependentUpon>P1A03_COMMON_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A05_STOCK_MOVE.resx">
+      <DependentUpon>P1A05_STOCK_MOVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A05_STOCK_MOVE_SUB.resx">
+      <DependentUpon>P1A05_STOCK_MOVE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A06_RECIPE.resx">
+      <DependentUpon>P1A06_RECIPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A06_RECIPE_SUB.resx">
+      <DependentUpon>P1A06_RECIPE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B03_RORDER.resx">
+      <DependentUpon>P1B03_RORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B03_RORDER_DOC.resx">
+      <DependentUpon>P1B03_RORDER_DOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B04_RORDER_LIST.resx">
+      <DependentUpon>P1B04_RORDER_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B05_DELIVERY.resx">
+      <DependentUpon>P1B05_DELIVERY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B05_DELIVERY_SUB.resx">
+      <DependentUpon>P1B05_DELIVERY_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B05_DELIVERY_SUB1.resx">
+      <DependentUpon>P1B05_DELIVERY_SUB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B06_DELI_PROGRESS.resx">
+      <DependentUpon>P1B06_DELI_PROGRESS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B07_DELI_ORDER.resx">
+      <DependentUpon>P1B07_DELI_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B07_DELI_ORDER_SUB.resx">
+      <DependentUpon>P1B07_DELI_ORDER_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B08_DELI_TERM.resx">
+      <DependentUpon>P1B08_DELI_TERM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B09_DELI_NON.resx">
+      <DependentUpon>P1B09_DELI_NON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B10_PURCHASE_MAT.resx">
+      <DependentUpon>P1B10_PURCHASE_MAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B10_PURCHASE_MAT_IN.resx">
+      <DependentUpon>P1B10_PURCHASE_MAT_IN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B10_PURCHASE_MAT_SUB.resx">
+      <DependentUpon>P1B10_PURCHASE_MAT_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B12_BUY_ITEM.resx">
+      <DependentUpon>P1B12_BUY_ITEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B13_STOCK_TABLE.resx">
+      <DependentUpon>P1B13_STOCK_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B13_STOCK_TABLE_DANGA.resx">
+      <DependentUpon>P1B13_STOCK_TABLE_DANGA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B13_STOCK_TABLE_MOVE.resx">
+      <DependentUpon>P1B13_STOCK_TABLE_MOVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B13_STOCK_TABLE_SUB.resx">
+      <DependentUpon>P1B13_STOCK_TABLE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B14_UNIT_COST.resx">
+      <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_ORDER.resx">
+      <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_SUB.resx">
+      <DependentUpon>P1C01_PROD_ORDER_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_SUB1.resx">
+      <DependentUpon>P1C01_PROD_ORDER_SUB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_PLAN.resx">
+      <DependentUpon>P1C01_PROD_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_PLAN_SUB.resx">
+      <DependentUpon>P1C01_PROD_PLAN_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT.resx">
+      <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_IDLE.resx">
+      <DependentUpon>P1C02_PROD_RESULT_IDLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_ORDER.resx">
+      <DependentUpon>P1C02_PROD_RESULT_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C03_PROD_DONE.resx">
+      <DependentUpon>P1C03_PROD_DONE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C03_PROD_DONE_NG.resx">
+      <DependentUpon>P1C03_PROD_DONE_NG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C03_PROD_DONE_SUB.resx">
+      <DependentUpon>P1C03_PROD_DONE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C03_PROD_DONE_SUB1.resx">
+      <DependentUpon>P1C03_PROD_DONE_SUB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C04_MATERIAL_USE.resx">
+      <DependentUpon>P1C04_MATERIAL_USE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C04_MATERIAL_USE_SUB.resx">
+      <DependentUpon>P1C04_MATERIAL_USE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C05_PROD_TERM.resx">
+      <DependentUpon>P1C05_PROD_TERM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D01_MACHINECARD.resx">
+      <DependentUpon>P1D01_MACHINECARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D02_MACHINE_LIST.resx">
+      <DependentUpon>P1D02_MACHINE_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D03_MAINTENANCE.resx">
+      <DependentUpon>P1D03_MAINTENANCE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D03_MAINTENANCE_SUB.resx">
+      <DependentUpon>P1D03_MAINTENANCE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D04_MAINTENANCE_RATE.resx">
+      <DependentUpon>P1D04_MAINTENANCE_RATE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED01_QC_FINAL.resx">
+      <DependentUpon>P1ED01_QC_FINAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED02_QC_FINAL_LIST.resx">
+      <DependentUpon>P1ED02_QC_FINAL_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED02_QC_FINAL_LIST1.resx">
+      <DependentUpon>P1ED02_QC_FINAL_LIST1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED02_QC_LIST.resx">
+      <DependentUpon>P1ED02_QC_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_AS.resx">
+      <DependentUpon>P1ED03_QC_AS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_AS_DELI.resx">
+      <DependentUpon>P1ED03_QC_AS_DELI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_AS_SUB.resx">
+      <DependentUpon>P1ED03_QC_AS_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED05_QC_CLASS.resx">
+      <DependentUpon>P1ED05_QC_CLASS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED05_QC_CLASS_SUB.resx">
+      <DependentUpon>P1ED05_QC_CLASS_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1F\P1FD01_KPI.resx">
+      <DependentUpon>P1FD01_KPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z01_POS.resx">
+      <DependentUpon>P1Z01_POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z02_USER.resx">
+      <DependentUpon>P1Z02_USER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z02_USER_SUB.resx">
+      <DependentUpon>P1Z02_USER_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z04_AUTHORITY.resx">
+      <DependentUpon>P1Z04_AUTHORITY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z05_NOTIFY.resx">
+      <DependentUpon>P1Z05_NOTIFY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z05_NOTIFY_SUB.resx">
+      <DependentUpon>P1Z05_NOTIFY_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1Z\P1Z06_LOG.resx">
+      <DependentUpon>P1Z06_LOG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PwdChange.resx">
+      <DependentUpon>PwdChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\P1A01_CUSTOMER.rdlc" />
+    <EmbeddedResource Include="Reports\P1B04_RORDER_LIST.rdlc" />
+    <EmbeddedResource Include="Reports\P1B05_DELIVERY.rdlc" />
+    <EmbeddedResource Include="Reports\P1B06_DELI_PROGRESS.rdlc" />
+    <EmbeddedResource Include="Reports\P1B08_DELI_TERM.rdlc" />
+    <EmbeddedResource Include="Reports\P1B09_DELI_NON.rdlc" />
+    <EmbeddedResource Include="Reports\P1B10_PURCHASE_MAT.rdlc" />
+    <EmbeddedResource Include="Reports\P1B12_BUY_ITEM.rdlc" />
+    <EmbeddedResource Include="Reports\P1B13_STOCK_TABLE.rdlc" />
+    <EmbeddedResource Include="Reports\P1B14_UNIT_COST.rdlc" />
+    <EmbeddedResource Include="Reports\P1C01_PROD_ORDER.rdlc" />
+    <EmbeddedResource Include="Reports\P1C03_PROD_DONE.rdlc" />
+    <EmbeddedResource Include="Reports\P1C04_MATERIAL_USE.rdlc" />
+    <EmbeddedResource Include="Reports\P1C05_PROD_TERM.rdlc" />
+    <EmbeddedResource Include="Reports\P1D01_MACHINECARD.rdlc" />
+    <EmbeddedResource Include="Reports\P1D02_MACHINE_LIST.rdlc" />
+    <EmbeddedResource Include="Reports\P1D03_MAINTENANCE.rdlc" />
+    <EmbeddedResource Include="Reports\P1D04_MAINTENANCE_RATE.rdlc" />
+    <EmbeddedResource Include="Reports\P1D04_MAINTENANCE_RATE1.rdlc" />
+    <EmbeddedResource Include="Reports\P1ED01_QC_FINAL.rdlc" />
+    <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST.rdlc" />
+    <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST1.rdlc" />
+    <EmbeddedResource Include="Reports\P1FD01_KPI.rdlc" />
+    <EmbeddedResource Include="UserControls\UserButtonA.resx">
+      <DependentUpon>UserButtonA.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AddOn\mes.xlsx" />
+    <None Include="bluewings_mesDataSet.xsc">
+      <DependentUpon>bluewings_mesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bluewings_mesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bluewings_mesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bluewings_mesDataSet.xss">
+      <DependentUpon>bluewings_mesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="COMMON\DataSetCOMMON.xsc">
+      <DependentUpon>DataSetCOMMON.xsd</DependentUpon>
+    </None>
+    <None Include="COMMON\DataSetCOMMON.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCOMMON.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="COMMON\DataSetCOMMON.xss">
+      <DependentUpon>DataSetCOMMON.xsd</DependentUpon>
+    </None>
+    <None Include="P1A\DataSetP1A.xsc">
+      <DependentUpon>DataSetP1A.xsd</DependentUpon>
+    </None>
+    <None Include="P1A\DataSetP1A.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1A.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1A\DataSetP1A.xss">
+      <DependentUpon>DataSetP1A.xsd</DependentUpon>
+    </None>
+    <None Include="P1B\DataSetP1B.xsc">
+      <DependentUpon>DataSetP1B.xsd</DependentUpon>
+    </None>
+    <None Include="P1B\DataSetP1B.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1B.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1B\DataSetP1B.xss">
+      <DependentUpon>DataSetP1B.xsd</DependentUpon>
+    </None>
+    <None Include="P1C\DataSetP1C.xsc">
+      <DependentUpon>DataSetP1C.xsd</DependentUpon>
+    </None>
+    <None Include="P1C\DataSetP1C.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1C.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1C\DataSetP1C.xss">
+      <DependentUpon>DataSetP1C.xsd</DependentUpon>
+    </None>
+    <None Include="P1D\DataSetP1D.xsc">
+      <DependentUpon>DataSetP1D.xsd</DependentUpon>
+    </None>
+    <None Include="P1D\DataSetP1D.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1D.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1D\DataSetP1D.xss">
+      <DependentUpon>DataSetP1D.xsd</DependentUpon>
+    </None>
+    <None Include="P1E\DataSetP1E.xsc">
+      <DependentUpon>DataSetP1E.xsd</DependentUpon>
+    </None>
+    <None Include="P1E\DataSetP1E.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1E.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1E\DataSetP1E.xss">
+      <DependentUpon>DataSetP1E.xsd</DependentUpon>
+    </None>
+    <None Include="P1F\DataSetP1F.xsc">
+      <DependentUpon>DataSetP1F.xsd</DependentUpon>
+    </None>
+    <None Include="P1F\DataSetP1F.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1F.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1F\DataSetP1F.xss">
+      <DependentUpon>DataSetP1F.xsd</DependentUpon>
+    </None>
+    <None Include="P1Z\DataSetP1Z.xsc">
+      <DependentUpon>DataSetP1Z.xsd</DependentUpon>
+    </None>
+    <None Include="P1Z\DataSetP1Z.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetP1Z.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="P1Z\DataSetP1Z.xss">
+      <DependentUpon>DataSetP1Z.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SmartMES_Bluewings_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddOn\AccessDatabaseEngine.exe" />
+    <Content Include="AddOn\AccessDatabaseEngine_X64.exe" />
+    <Content Include="Chart.ico" />
+    <Content Include="dll\x64\msvcp120.dll" />
+    <Content Include="dll\x64\msvcr120.dll" />
+    <Content Include="dll\x64\OpenCvSharpExtern.dll" />
+    <Content Include="dll\x64\opencv_calib3d2410.dll" />
+    <Content Include="dll\x64\opencv_contrib2410.dll" />
+    <Content Include="dll\x64\opencv_core2410.dll" />
+    <Content Include="dll\x64\opencv_features2d2410.dll" />
+    <Content Include="dll\x64\opencv_ffmpeg2410_64.dll" />
+    <Content Include="dll\x64\opencv_flann2410.dll" />
+    <Content Include="dll\x64\opencv_gpu2410.dll" />
+    <Content Include="dll\x64\opencv_highgui2410.dll" />
+    <Content Include="dll\x64\opencv_imgproc2410.dll" />
+    <Content Include="dll\x64\opencv_legacy2410.dll" />
+    <Content Include="dll\x64\opencv_ml2410.dll" />
+    <Content Include="dll\x64\opencv_nonfree2410.dll" />
+    <Content Include="dll\x64\opencv_objdetect2410.dll" />
+    <Content Include="dll\x64\opencv_ocl2410.dll" />
+    <Content Include="dll\x64\opencv_photo2410.dll" />
+    <Content Include="dll\x64\opencv_stitching2410.dll" />
+    <Content Include="dll\x64\opencv_superres2410.dll" />
+    <Content Include="dll\x64\opencv_video2410.dll" />
+    <Content Include="dll\x64\opencv_videostab2410.dll" />
+    <Content Include="dll\x86\msvcp120.dll" />
+    <Content Include="dll\x86\msvcr120.dll" />
+    <Content Include="dll\x86\OpenCvSharpExtern.dll" />
+    <Content Include="dll\x86\opencv_calib3d2410.dll" />
+    <Content Include="dll\x86\opencv_contrib2410.dll" />
+    <Content Include="dll\x86\opencv_core2410.dll" />
+    <Content Include="dll\x86\opencv_features2d2410.dll" />
+    <Content Include="dll\x86\opencv_ffmpeg2410.dll" />
+    <Content Include="dll\x86\opencv_flann2410.dll" />
+    <Content Include="dll\x86\opencv_gpu2410.dll" />
+    <Content Include="dll\x86\opencv_highgui2410.dll" />
+    <Content Include="dll\x86\opencv_imgproc2410.dll" />
+    <Content Include="dll\x86\opencv_legacy2410.dll" />
+    <Content Include="dll\x86\opencv_ml2410.dll" />
+    <Content Include="dll\x86\opencv_nonfree2410.dll" />
+    <Content Include="dll\x86\opencv_objdetect2410.dll" />
+    <Content Include="dll\x86\opencv_ocl2410.dll" />
+    <Content Include="dll\x86\opencv_photo2410.dll" />
+    <Content Include="dll\x86\opencv_stitching2410.dll" />
+    <Content Include="dll\x86\opencv_superres2410.dll" />
+    <Content Include="dll\x86\opencv_video2410.dll" />
+    <Content Include="dll\x86\opencv_videostab2410.dll" />
+    <Content Include="LogHelper\ApiKeyFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LogHelper\Newtonsoft.Json.dll" />
+    <Content Include="LogHelper\Newtonsoft.Json.xml" />
+    <Content Include="LogHelper\SmartFactory.dll" />
+    <Content Include="Resources\add_A.jpg" />
+    <Content Include="Resources\add_B.jpg" />
+    <Content Include="Resources\Alert.ico" />
+    <Content Include="Resources\buttonbar.jpg" />
+    <Content Include="Resources\button가동.jpg" />
+    <Content Include="Resources\button긴급.jpg" />
+    <Content Include="Resources\button대기.jpg" />
+    <Content Include="Resources\button알람.jpg" />
+    <Content Include="Resources\button전원.jpg" />
+    <Content Include="Resources\button종료.jpg" />
+    <Content Include="Resources\button중지.jpg" />
+    <Content Include="Resources\cancel.bmp" />
+    <None Include="Resources\clipA.jpg" />
+    <None Include="Resources\clipB.jpg" />
+    <Content Include="Resources\close.jpg" />
+    <Content Include="Resources\ComLogo.png" />
+    <Content Include="Resources\del_A.jpg" />
+    <Content Include="Resources\del_B.jpg" />
+    <None Include="Resources\eraser.bmp" />
+    <None Include="Resources\empty.jpg" />
+    <Content Include="Resources\exit_A.jpg" />
+    <Content Include="Resources\ico_No.ico" />
+    <Content Include="Resources\ico_Refresh.ico" />
+    <Content Include="Resources\ico_Yes.ico" />
+    <Content Include="Resources\ingam.jpg" />
+    <Content Include="Resources\left2.bmp" />
+    <Content Include="Resources\login.jpg" />
+    <Content Include="Resources\login_connect.bmp" />
+    <Content Include="Resources\main.jpg" />
+    <Content Include="Resources\minus.ico" />
+    <Content Include="Resources\notify.jpg" />
+    <Content Include="Resources\ok.jpg" />
+    <Content Include="Resources\out_A.jpg" />
+    <Content Include="Resources\out_B.jpg" />
+    <Content Include="Resources\photo_background.jpg" />
+    <Content Include="Resources\post.png" />
+    <Content Include="Resources\PowerOff1.ico" />
+    <Content Include="Resources\print.jpg" />
+    <Content Include="Resources\right2.bmp" />
+    <Content Include="Resources\saveng.ico" />
+    <Content Include="Resources\save.jpg" />
+    <Content Include="Resources\save_A.jpg" />
+    <Content Include="Resources\save_B.jpg" />
+    <Content Include="Resources\search.bmp" />
+    <Content Include="Resources\sear_A.jpg" />
+    <Content Include="Resources\subbar.jpg" />
+    <Content Include="Resources\subtitlebar.jpg" />
+    <Content Include="Resources\불량보고.jpg" />
+    <Content Include="Resources\비가동.jpg" />
+    <Content Include="Resources\작업시작.jpg" />
+    <Content Include="Resources\작업종료.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\build\OpenCvSharp-AnyCPU.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp-AnyCPU.2.4.10.20170306\build\OpenCvSharp-AnyCPU.props'))" />
+  </Target>
+</Project>
