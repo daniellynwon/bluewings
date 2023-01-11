@@ -76,7 +76,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetP1E</rd:DataSetName>
-        <rd:SchemaPath>C:\Desktop\source\repos\eungyeong\SmartMES_Bluewings\P1E\DataSetP1E.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Desktop\source\repos\bluewings\SmartMES_Bluewings\P1E\DataSetP1E.xsd</rd:SchemaPath>
         <rd:TableName>SP_QcFinalList_List</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

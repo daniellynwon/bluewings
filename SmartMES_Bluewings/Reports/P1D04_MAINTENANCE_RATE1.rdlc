@@ -52,7 +52,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetP1D</rd:DataSetName>
-        <rd:SchemaPath>C:\Desktop\source\repos\eungyeong\SmartMES_Bluewings\P1D\DataSetP1D.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Desktop\source\repos\bluewings\SmartMES_Bluewings\P1D\DataSetP1D.xsd</rd:SchemaPath>
         <rd:TableName>SP_MachineRepair_Index</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
