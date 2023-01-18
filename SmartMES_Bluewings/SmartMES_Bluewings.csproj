@@ -461,6 +461,9 @@
     <Compile Include="P1B\P1B14_UNIT_COST.designer.cs">
       <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\DataSetP1C.cs">
+      <DependentUpon>DataSetP1C.xsd</DependentUpon>
+    </Compile>
     <Compile Include="P1C\DataSetP1C.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -495,6 +498,12 @@
     </Compile>
     <Compile Include="P1C\P1C01_PROD_PLAN_SUB.designer.cs">
       <DependentUpon>P1C01_PROD_PLAN_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_WORK_PLAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_WORK_PLAN.designer.cs">
+      <DependentUpon>P1C01_WORK_PLAN.cs</DependentUpon>
     </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT.cs">
       <SubType>Form</SubType>
@@ -584,6 +593,12 @@
     </Compile>
     <Compile Include="P1D\P1D03_MAINTENANCE_SUB.Designer.cs">
       <DependentUpon>P1D03_MAINTENANCE_SUB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE_SUB_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1D\P1D03_MAINTENANCE_SUB_DOC.designer.cs">
+      <DependentUpon>P1D03_MAINTENANCE_SUB_DOC.cs</DependentUpon>
     </Compile>
     <Compile Include="P1D\P1D04_MAINTENANCE_RATE.cs">
       <SubType>Form</SubType>
@@ -871,6 +886,9 @@
     <EmbeddedResource Include="P1C\P1C01_PROD_PLAN_SUB.resx">
       <DependentUpon>P1C01_PROD_PLAN_SUB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_WORK_PLAN.resx">
+      <DependentUpon>P1C01_WORK_PLAN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT.resx">
       <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
     </EmbeddedResource>
@@ -912,6 +930,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1D\P1D03_MAINTENANCE_SUB.resx">
       <DependentUpon>P1D03_MAINTENANCE_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1D\P1D03_MAINTENANCE_SUB_DOC.resx">
+      <DependentUpon>P1D03_MAINTENANCE_SUB_DOC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1D\P1D04_MAINTENANCE_RATE.resx">
       <DependentUpon>P1D04_MAINTENANCE_RATE.cs</DependentUpon>

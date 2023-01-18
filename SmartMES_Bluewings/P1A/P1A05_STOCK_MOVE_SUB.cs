@@ -185,9 +185,12 @@ namespace SmartMES_Bluewings
         private void lblProd_Click(object sender, EventArgs e)
         {
             lblMsg.Text = "";
+            string sGubun = parentWin.cbGubun.Text;
+            sGubun = sGubun.Substring(0, 1);
 
             ProdFinder pop = new ProdFinder();
-            pop.cbGubun.Text = parentWin.cbGubun.Text;
+            //pop.cbGubun.Text = parentWin.cbGubun.Text;
+            pop.cbGubun = parentWin.cbGubun;
             pop._kind = "%";
             pop._stockFlag = "1";
             pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);

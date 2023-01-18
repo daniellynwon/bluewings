@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1B04_RORDER_LIST));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,7 +55,6 @@
             this.sP_ROrderList_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.접수일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.영업담당DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.프로젝트명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +88,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
             this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pbDel
@@ -221,7 +222,6 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.수주번호DataGridViewTextBoxColumn,
             this.접수일자DataGridViewTextBoxColumn,
-            this.거래처IDDataGridViewTextBoxColumn,
             this.거래처명DataGridViewTextBoxColumn,
             this.영업담당DataGridViewTextBoxColumn,
             this.프로젝트명DataGridViewTextBoxColumn,
@@ -296,14 +296,6 @@
             this.접수일자DataGridViewTextBoxColumn.Name = "접수일자DataGridViewTextBoxColumn";
             this.접수일자DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 거래처IDDataGridViewTextBoxColumn
-            // 
-            this.거래처IDDataGridViewTextBoxColumn.DataPropertyName = "거래처ID";
-            this.거래처IDDataGridViewTextBoxColumn.HeaderText = "거래처ID";
-            this.거래처IDDataGridViewTextBoxColumn.Name = "거래처IDDataGridViewTextBoxColumn";
-            this.거래처IDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.거래처IDDataGridViewTextBoxColumn.Visible = false;
-            // 
             // 거래처명DataGridViewTextBoxColumn
             // 
             this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
@@ -362,7 +354,7 @@
             dataGridViewCellStyle7.Format = "N0";
             this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.수량DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
+            this.수량DataGridViewTextBoxColumn.HeaderText = "수량(톤)";
             this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
             this.수량DataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -438,9 +430,9 @@
         private System.Windows.Forms.BindingSource sPROrderListQueryBindingSource;
         private P1B.DataSetP1B dataSetP1B;
         private P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter sP_ROrderList_QueryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 접수일자DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn 거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 영업담당DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 프로젝트명DataGridViewTextBoxColumn;

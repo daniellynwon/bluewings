@@ -83,7 +83,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_MachineRepair_QueryTableAdapter" GeneratorDataComponentClassName="SP_MachineRepair_QueryTableAdapter" Name="SP_MachineRepair_Query" UserDataComponentName="SP_MachineRepair_QueryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_MachineRepair_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_MachineRepair_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`bluewings_mes`.`SP_MachineRepair_Query`</CommandText>
@@ -113,6 +113,9 @@
               <Mapping SourceColumn="점검자" DataSetColumn="점검자" />
               <Mapping SourceColumn="소요비용" DataSetColumn="소요비용" />
               <Mapping SourceColumn="비고" DataSetColumn="비고" />
+              <Mapping SourceColumn="파일이름1" DataSetColumn="파일이름1" />
+              <Mapping SourceColumn="파일이름2" DataSetColumn="파일이름2" />
+              <Mapping SourceColumn="파일이름3" DataSetColumn="파일이름3" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -151,7 +154,7 @@
   <xs:element name="DataSetP1D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetP1D" msprop:Generator_UserDSName="DataSetP1D">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_MachineCard_Query" msprop:Generator_TableClassName="SP_MachineCard_QueryDataTable" msprop:Generator_TableVarName="tableSP_MachineCard_Query" msprop:Generator_TablePropName="SP_MachineCard_Query" msprop:Generator_RowDeletingName="SP_MachineCard_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MachineCard_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineCard_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineCard_QueryRowDeleted" msprop:Generator_UserTableName="SP_MachineCard_Query" msprop:Generator_RowChangedName="SP_MachineCard_QueryRowChanged" msprop:Generator_RowEvArgName="SP_MachineCard_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_MachineCard_QueryRow">
+        <xs:element name="SP_MachineCard_Query" msprop:Generator_TableClassName="SP_MachineCard_QueryDataTable" msprop:Generator_TableVarName="tableSP_MachineCard_Query" msprop:Generator_RowChangedName="SP_MachineCard_QueryRowChanged" msprop:Generator_TablePropName="SP_MachineCard_Query" msprop:Generator_RowDeletingName="SP_MachineCard_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MachineCard_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineCard_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineCard_QueryRowDeleted" msprop:Generator_RowClassName="SP_MachineCard_QueryRow" msprop:Generator_UserTableName="SP_MachineCard_Query" msprop:Generator_RowEvArgName="SP_MachineCard_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="관리번호" msprop:Generator_ColumnVarNameInTable="column관리번호" msprop:Generator_ColumnPropNameInRow="관리번호" msprop:Generator_ColumnPropNameInTable="관리번호Column" msprop:Generator_UserColumnName="관리번호" type="xs:unsignedInt" />
@@ -266,7 +269,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_MachineCard_Select" msprop:Generator_TableClassName="SP_MachineCard_SelectDataTable" msprop:Generator_TableVarName="tableSP_MachineCard_Select" msprop:Generator_TablePropName="SP_MachineCard_Select" msprop:Generator_RowDeletingName="SP_MachineCard_SelectRowDeleting" msprop:Generator_RowChangingName="SP_MachineCard_SelectRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineCard_SelectRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineCard_SelectRowDeleted" msprop:Generator_UserTableName="SP_MachineCard_Select" msprop:Generator_RowChangedName="SP_MachineCard_SelectRowChanged" msprop:Generator_RowEvArgName="SP_MachineCard_SelectRowChangeEvent" msprop:Generator_RowClassName="SP_MachineCard_SelectRow">
+        <xs:element name="SP_MachineCard_Select" msprop:Generator_TableClassName="SP_MachineCard_SelectDataTable" msprop:Generator_TableVarName="tableSP_MachineCard_Select" msprop:Generator_RowChangedName="SP_MachineCard_SelectRowChanged" msprop:Generator_TablePropName="SP_MachineCard_Select" msprop:Generator_RowDeletingName="SP_MachineCard_SelectRowDeleting" msprop:Generator_RowChangingName="SP_MachineCard_SelectRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineCard_SelectRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineCard_SelectRowDeleted" msprop:Generator_RowClassName="SP_MachineCard_SelectRow" msprop:Generator_UserTableName="SP_MachineCard_Select" msprop:Generator_RowEvArgName="SP_MachineCard_SelectRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="관리번호" msprop:Generator_ColumnVarNameInTable="column관리번호" msprop:Generator_ColumnPropNameInRow="관리번호" msprop:Generator_ColumnPropNameInTable="관리번호Column" msprop:Generator_UserColumnName="관리번호" type="xs:unsignedInt" />
@@ -388,7 +391,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_MachineRepair_Query" msprop:Generator_TableClassName="SP_MachineRepair_QueryDataTable" msprop:Generator_TableVarName="tableSP_MachineRepair_Query" msprop:Generator_RowChangedName="SP_MachineRepair_QueryRowChanged" msprop:Generator_TablePropName="SP_MachineRepair_Query" msprop:Generator_RowDeletingName="SP_MachineRepair_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MachineRepair_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineRepair_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineRepair_QueryRowDeleted" msprop:Generator_RowClassName="SP_MachineRepair_QueryRow" msprop:Generator_UserTableName="SP_MachineRepair_Query" msprop:Generator_RowEvArgName="SP_MachineRepair_QueryRowChangeEvent">
+        <xs:element name="SP_MachineRepair_Query" msprop:Generator_TableClassName="SP_MachineRepair_QueryDataTable" msprop:Generator_TableVarName="tableSP_MachineRepair_Query" msprop:Generator_TablePropName="SP_MachineRepair_Query" msprop:Generator_RowDeletingName="SP_MachineRepair_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MachineRepair_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineRepair_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineRepair_QueryRowDeleted" msprop:Generator_UserTableName="SP_MachineRepair_Query" msprop:Generator_RowChangedName="SP_MachineRepair_QueryRowChanged" msprop:Generator_RowEvArgName="SP_MachineRepair_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_MachineRepair_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="설비ID" msprop:Generator_ColumnVarNameInTable="column설비ID" msprop:Generator_ColumnPropNameInRow="설비ID" msprop:Generator_ColumnPropNameInTable="설비IDColumn" msprop:Generator_UserColumnName="설비ID" type="xs:unsignedInt" />
@@ -461,10 +464,31 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="파일이름1" msprop:Generator_ColumnVarNameInTable="column파일이름1" msprop:Generator_ColumnPropNameInRow="파일이름1" msprop:Generator_ColumnPropNameInTable="파일이름1Column" msprop:Generator_UserColumnName="파일이름1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="파일이름2" msprop:Generator_ColumnVarNameInTable="column파일이름2" msprop:Generator_ColumnPropNameInRow="파일이름2" msprop:Generator_ColumnPropNameInTable="파일이름2Column" msprop:Generator_UserColumnName="파일이름2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="파일이름3" msprop:Generator_ColumnVarNameInTable="column파일이름3" msprop:Generator_ColumnPropNameInRow="파일이름3" msprop:Generator_ColumnPropNameInTable="파일이름3Column" msprop:Generator_UserColumnName="파일이름3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_MachineRepair_Index" msprop:Generator_TableClassName="SP_MachineRepair_IndexDataTable" msprop:Generator_TableVarName="tableSP_MachineRepair_Index" msprop:Generator_TablePropName="SP_MachineRepair_Index" msprop:Generator_RowDeletingName="SP_MachineRepair_IndexRowDeleting" msprop:Generator_RowChangingName="SP_MachineRepair_IndexRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineRepair_IndexRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineRepair_IndexRowDeleted" msprop:Generator_UserTableName="SP_MachineRepair_Index" msprop:Generator_RowChangedName="SP_MachineRepair_IndexRowChanged" msprop:Generator_RowEvArgName="SP_MachineRepair_IndexRowChangeEvent" msprop:Generator_RowClassName="SP_MachineRepair_IndexRow">
+        <xs:element name="SP_MachineRepair_Index" msprop:Generator_TableClassName="SP_MachineRepair_IndexDataTable" msprop:Generator_TableVarName="tableSP_MachineRepair_Index" msprop:Generator_RowChangedName="SP_MachineRepair_IndexRowChanged" msprop:Generator_TablePropName="SP_MachineRepair_Index" msprop:Generator_RowDeletingName="SP_MachineRepair_IndexRowDeleting" msprop:Generator_RowChangingName="SP_MachineRepair_IndexRowChanging" msprop:Generator_RowEvHandlerName="SP_MachineRepair_IndexRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MachineRepair_IndexRowDeleted" msprop:Generator_RowClassName="SP_MachineRepair_IndexRow" msprop:Generator_UserTableName="SP_MachineRepair_Index" msprop:Generator_RowEvArgName="SP_MachineRepair_IndexRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="설비ID" msprop:Generator_ColumnVarNameInTable="column설비ID" msprop:Generator_ColumnPropNameInRow="설비ID" msprop:Generator_ColumnPropNameInTable="설비IDColumn" msprop:Generator_UserColumnName="설비ID" type="xs:unsignedInt" />

@@ -319,7 +319,7 @@ namespace SmartMES_Bluewings
 
                 dataGridView1.Rows[rowIndex].Cells[3].Value = sProd.Substring(0, sProd.IndexOf("#1/"));
                 dataGridView1.Rows[rowIndex].Cells[6].Value = sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
-                dataGridView1.Rows[rowIndex].Cells[8].Value = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.Length - (sProd.IndexOf("#2/") + 3));
+                dataGridView1.Rows[rowIndex].Cells[8].Value = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.IndexOf("#3/") - (sProd.IndexOf("#2/") + 3));// 3, sProd.Length - (sProd.IndexOf("#2/") + 3));
                 dataGridView1.Rows[rowIndex].Cells[12].Value = "0001";  // 창고 default값
                 dataGridView1.CurrentCell = dataGridView1[9, rowIndex];
             }

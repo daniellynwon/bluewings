@@ -56,6 +56,7 @@ namespace SmartMES_Bluewings
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
+
                 var data = dataSetP1C.SP_MaterialUse_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 

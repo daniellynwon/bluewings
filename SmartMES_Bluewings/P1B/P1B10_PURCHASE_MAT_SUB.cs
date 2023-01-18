@@ -77,8 +77,9 @@ namespace SmartMES_Bluewings
 
             if (string.IsNullOrEmpty(sCust)) return;
 
-            tbCust.Tag = sCust.Substring(0, 7);
-            tbCust.Text = sCust.Substring(8, sCust.Length - 8);
+            tbCust.Tag = sCust.Substring(0, sCust.IndexOf("#1/"));      // sCust.Substring(0, 7);
+            tbCust.Text = sCust.Substring(sCust.IndexOf("#1/") + 3, sCust.IndexOf("#2/") - (sCust.IndexOf("#1/") + 3));
+            //tbCust.Text = sCust.Substring(8, sCust.Length - 8);   // or sCust.Substring(sCust.IndexOf("#3/") + 3, sCust.Length - (sCust.IndexOf("#3/") + 3));
         }
         private void lblProd_Click(object sender, EventArgs e)
         {

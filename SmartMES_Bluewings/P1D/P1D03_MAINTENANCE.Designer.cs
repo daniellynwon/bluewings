@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1D03_MAINTENANCE));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -65,6 +66,9 @@
             this.소요비용DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.비고DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.모델번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.파일이름1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.파일이름2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.파일이름3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -89,6 +93,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
             this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pbDel
@@ -98,6 +103,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -232,7 +238,10 @@
             this.점검자DataGridViewTextBoxColumn,
             this.소요비용DataGridViewTextBoxColumn,
             this.비고DataGridViewTextBoxColumn,
-            this.모델번호DataGridViewTextBoxColumn});
+            this.모델번호DataGridViewTextBoxColumn,
+            this.파일이름1,
+            this.파일이름2,
+            this.파일이름3});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPMachineRepairQueryBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -419,6 +428,30 @@
             this.모델번호DataGridViewTextBoxColumn.ReadOnly = true;
             this.모델번호DataGridViewTextBoxColumn.Visible = false;
             // 
+            // 파일이름1
+            // 
+            this.파일이름1.DataPropertyName = "파일이름1";
+            this.파일이름1.HeaderText = "파일이름1";
+            this.파일이름1.Name = "파일이름1";
+            this.파일이름1.ReadOnly = true;
+            this.파일이름1.Visible = false;
+            // 
+            // 파일이름2
+            // 
+            this.파일이름2.DataPropertyName = "파일이름2";
+            this.파일이름2.HeaderText = "파일이름2";
+            this.파일이름2.Name = "파일이름2";
+            this.파일이름2.ReadOnly = true;
+            this.파일이름2.Visible = false;
+            // 
+            // 파일이름3
+            // 
+            this.파일이름3.DataPropertyName = "파일이름3";
+            this.파일이름3.HeaderText = "파일이름3";
+            this.파일이름3.Name = "파일이름3";
+            this.파일이름3.ReadOnly = true;
+            this.파일이름3.Visible = false;
+            // 
             // P1D03_MAINTENANCE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -475,5 +508,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 소요비용DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 모델번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 파일이름1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 파일이름2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 파일이름3;
     }
 }

@@ -51,6 +51,30 @@ namespace SmartMES_Bluewings
                 tbMan.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();
                 tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
                 tbContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();
+                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
+                string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
+                string sFile3 = parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString();
+
+                if (string.IsNullOrEmpty(sFile1))
+                {
+                    doc1.buttonImage = Properties.Resources.clipB;
+                    doc1.Tag = "";
+                }
+                else
+                {
+                    doc1.buttonImage = Properties.Resources.clipA;
+                    doc1.Tag = sFile1;
+                }
+                if (string.IsNullOrEmpty(sFile2))
+                {
+                    doc2.buttonImage = Properties.Resources.clipB;
+                    doc2.Tag = "";
+                }
+                else
+                {
+                    doc2.buttonImage = Properties.Resources.clipA;
+                    doc2.Tag = sFile2;
+                }
 
                 this.ActiveControl = btnSave;
             }
@@ -273,6 +297,31 @@ namespace SmartMES_Bluewings
             tbModel.Tag = sAddr.Substring(sAddr.IndexOf("#3/") + 3, sAddr.IndexOf("#4/") - (sAddr.IndexOf("#3/") + 3));
             tbModel.Text = sAddr.Substring(sAddr.IndexOf("#4/") + 3, sAddr.Length - (sAddr.IndexOf("#4/") + 3));
             tbGoal.Focus();
+        }
+        #endregion
+
+        #region User Buttons
+        public void userButtonA1_Click(object sender, EventArgs e)
+        {
+            if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
+
+            P1D03_MAINTENANCE_SUB_DOC sub = new P1D03_MAINTENANCE_SUB_DOC();
+            sub.parentWin = this;
+            sub.sNo = "1";
+            sub.sParentCode = machineID;   // 설비ID
+            sub.sFileName = doc1.Tag.ToString();
+            sub.ShowDialog();
+        }
+        public void userButtonA2_Click(object sender, EventArgs e)
+        {
+            if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
+
+            P1D03_MAINTENANCE_SUB_DOC sub = new P1D03_MAINTENANCE_SUB_DOC();
+            sub.parentWin = this;
+            sub.sNo = "2";
+            sub.sParentCode = machineID;   // 작성일자
+            sub.sFileName = doc2.Tag.ToString();
+            sub.ShowDialog();
         }
         #endregion
     }

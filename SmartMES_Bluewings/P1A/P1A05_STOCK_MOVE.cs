@@ -26,8 +26,8 @@ namespace SmartMES_Bluewings
                 cbDepot.ValueMember = "co_code";
                 cbDepot.DisplayMember = "co_item";
             }
-
             cbGubun.SelectedIndex = 0;
+            cbDepot.SelectedIndex = 0;
         }
 
         public async void ListSearch()
@@ -38,7 +38,7 @@ namespace SmartMES_Bluewings
 
                 string sFrom = dtpFromDate.Value.ToString("yyyy-MM-dd");
                 string sTo = dtpToDate.Value.ToString("yyyy-MM-dd");
-                string sDepot = cbDepot.SelectedValue.ToString();
+                string sDepot = "0001";
                 string sGubun = cbGubun.Text.Substring(0, 1);
 
                 sP_StockMove_QueryTableAdapter.Fill(dataSetP1A.SP_StockMove_Query, G.Pos, DateTime.Parse(sFrom), DateTime.Parse(sTo), sDepot, sGubun);

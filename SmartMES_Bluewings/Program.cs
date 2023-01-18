@@ -14,19 +14,19 @@ namespace SmartMES_Bluewings
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //G.UserID = "admin";
-            //G.Pos = "A";
-            //G.ComName = "은경케미칼";
-            //G.PosName = "은경케미칼";
-            //G.UserName = "원이설";
-            //G.Authority = "A";
-            //Application.Run(new MDIForm());
+            G.UserID = "admin";
+            G.Pos = "A";
+            G.ComName = "은경케미칼";
+            G.PosName = "은경케미칼";
+            G.UserName = "원이설";
+            G.Authority = "A";
+            Application.Run(new MDIForm());
 
-            using (var form = new FormLogin())
-            {
-                if (form.ShowDialog() == DialogResult.OK)
-                    Application.Run(new MDIForm());
-            }
+            //using (var form = new FormLogin())
+            //{
+            //    if (form.ShowDialog() == DialogResult.OK)
+            //        Application.Run(new MDIForm());
+            //}
         }
     }
 }

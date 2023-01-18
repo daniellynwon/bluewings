@@ -49,7 +49,10 @@ namespace SmartMES_Bluewings
         }
         private void pbAdd_Click(object sender, EventArgs e)
         {
-            //
+            P1A06_RECIPE_SUB sub = new P1A06_RECIPE_SUB();
+            sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
+            sub.parentWin = this;
+            sub.ShowDialog();
         }
         private async void pbDel_Click(object sender, EventArgs e)
         {
