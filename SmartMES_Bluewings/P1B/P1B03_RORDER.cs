@@ -99,11 +99,10 @@ namespace SmartMES_Bluewings
                 {
                     if (dataGridView1.Rows[i].Cells[2].Value != null) iCnt++;
 
-                    if (dataGridView1.Rows[i].Cells[9].Value == null ||
-                        string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[9].Value.ToString()))
+                    if (dataGridView1.Rows[i].Cells[10].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[10].Value.ToString()))
                         sMoney = "0";
                     else
-                        sMoney = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        sMoney = dataGridView1.Rows[i].Cells[10].Value.ToString();
 
                     lSum += long.Parse(sMoney);
                 }
@@ -186,8 +185,8 @@ namespace SmartMES_Bluewings
                 return;
             }
 
-            sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_name, add_size, qty, danga,  amount, vat, bigo, proc_std) " +
-                  "select '" + sNewNo + "', rorder_seq, prod_id, add_name, add_size, qty, danga, amount, vat, bigo, proc_std " +
+            sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_name, add_size, qty, danga, discount, amount, vat, bigo, proc_std) " +
+                  "select '" + sNewNo + "', rorder_seq, prod_id, add_name, add_size, qty, danga, discount, amount, vat, bigo, proc_std " +
                   "from tb_rorder_sub " +
                   "where rorder_id = '" + sNo + "' " +
                   "order by rorder_seq";
@@ -280,7 +279,7 @@ namespace SmartMES_Bluewings
                     int rowIndex = dataGridView1.CurrentCell.RowIndex;
 
                     //if (columnIndex == dataGridView1.Columns.Count - 1)
-                    if (columnIndex == 9)
+                    if (columnIndex == 10)
                         dataGridView1.CurrentCell = dataGridView1[4, rowIndex + 1];
                     else
                         dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
@@ -307,19 +306,22 @@ namespace SmartMES_Bluewings
                 float money2 = 0;
                 long moneyA = 0;
                 long moneyB = 0;
+                float discount = 100;
 
-                if (columnIndex == 7 || columnIndex == 8)
+                if (columnIndex == 7 || columnIndex == 8 || columnIndex == 9)
                 {
-                    if (dataGridView1.Rows[rowIndex].Cells[7].Value != null &&
-                        dataGridView1.Rows[rowIndex].Cells[7].Value.ToString().Length != 0)
-                        money1 = float.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());
+                    if (dataGridView1.Rows[rowIndex].Cells[7].Value != null && dataGridView1.Rows[rowIndex].Cells[7].Value.ToString().Length != 0)
+                        money1 = float.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());   // 수량
 
-                    if (dataGridView1.Rows[rowIndex].Cells[8].Value != null &&
-                        dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Length != 0)
-                        money2 = float.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());
+                    if (dataGridView1.Rows[rowIndex].Cells[8].Value != null && dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Length != 0)
+                        money2 = float.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());   // 단가
 
+                    if (dataGridView1.Rows[rowIndex].Cells[9].Value != null && dataGridView1.Rows[rowIndex].Cells[9].Value.ToString().Length != 0)  // 할인율 추가 (1/19)
+                        discount = money2 * (float.Parse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString())/100);
+
+                    money2 -= discount;
                     moneyA = (long)(money1 * money2);
-                    dataGridView1.Rows[rowIndex].Cells[9].Value = moneyA;
+                    dataGridView1.Rows[rowIndex].Cells[10].Value = moneyA;
                     ListSearch4();
                 }
             }
@@ -335,7 +337,7 @@ namespace SmartMES_Bluewings
                 if (dataGridView1.CurrentCell != null && endEdit)
                 {
                     //if (columnIndex == dataGridView1.Columns.Count - 1)
-                    if (columnIndex == 9)
+                    if (columnIndex == 10)
                         dataGridView1.CurrentCell = dataGridView1[4, rowIndex + 1];
                     else
                         dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
@@ -375,8 +377,7 @@ namespace SmartMES_Bluewings
                         return;
                     }
 
-                    if (dataGridView1.Rows[e.RowIndex].Cells[1].Value == null ||
-                        string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()))
+                    if (dataGridView1.Rows[e.RowIndex].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()))
                     {
                         dataGridView1.Rows.Remove(dataGridView1.Rows[e.RowIndex]);
                         return;
@@ -460,7 +461,7 @@ namespace SmartMES_Bluewings
             try
             {
                 int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-                if (columnIndex == 7 || columnIndex == 8 || columnIndex == 9 || columnIndex == 10)
+                if (columnIndex == 7 || columnIndex == 8 || columnIndex == 9 || columnIndex == 10 || columnIndex == 11)
                 {
                     if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
                     {
@@ -559,8 +560,6 @@ namespace SmartMES_Bluewings
             dataGridView1.CurrentCell = dataGridView1[4, 0];
             lblMsg.Text = "";
 
-            
-
             if (tbCust.Tag == null || string.IsNullOrEmpty(tbCust.Tag.ToString()))
             {
                 lblMsg.Text = "거래처명을 선택해 주세요.";
@@ -601,6 +600,7 @@ namespace SmartMES_Bluewings
             string sAddSize = string.Empty;
             string sQty = string.Empty;
             string sDanga = string.Empty;
+            string discount = string.Empty;
             string sAmount = string.Empty;
             string sProcStd = "0001";
 
@@ -632,14 +632,16 @@ namespace SmartMES_Bluewings
                     sAddSize = dataGridView1.Rows[i].Cells[5].Value.ToString().Trim();
                     sQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
                     sDanga = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
-                    sAmount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    discount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();  // 할인율
+                    sAmount = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
 
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
                     if (string.IsNullOrEmpty(sDanga)) sDanga = "0";
+                    if (string.IsNullOrEmpty(discount)) discount = "100";
                     if (string.IsNullOrEmpty(sAmount)) sAmount = "0";
 
-                    sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_size, qty, danga, amount, proc_std) " +
-                          "values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + sAmount + ",'" + sProcStd + "')";
+                    sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_size, qty, danga, discount, amount, proc_std) " +
+                          "values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + "," + discount + "," + sAmount + ",'" + sProcStd + "')";
 
                     m.dbCUD(sql, ref msg);
                     var data = sql;
@@ -672,22 +674,23 @@ namespace SmartMES_Bluewings
                     sAddSize = dataGridView1.Rows[i].Cells[5].Value.ToString().Trim();
                     sQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
                     sDanga = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
-                    sAmount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    discount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();  // 할인율
+                    sAmount = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
 
-                    if (dataGridView1.Rows[i].Cells[1].Value == null ||
-                        string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString()))
+                    if (dataGridView1.Rows[i].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString()))
                         sSeq = getROrderSeq(sNo);
                     else
                         sSeq = dataGridView1.Rows[i].Cells[1].Value.ToString();
 
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
                     if (string.IsNullOrEmpty(sDanga)) sDanga = "0";
+                    if (string.IsNullOrEmpty(discount)) discount = "100";
                     if (string.IsNullOrEmpty(sAmount)) sAmount = "0";
 
-                    sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_size, qty, danga, amount, proc_std)" +
-                        " values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + sAmount + ",'" + sProcStd + "')" +
+                    sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_size, qty, danga, discount, amount, proc_std) " +
+                        " values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + discount + "," + sAmount + ",'" + sProcStd + "')" +
                         " on duplicate key update" +
-                        " prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', qty = " + sQty + ", danga = " + sDanga + ", amount = " + sAmount + ", proc_std = '" + sProcStd + "'";
+                        " prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', qty = " + sQty + ", danga = " + sDanga + ", discount = " + discount + ", amount = " + sAmount + ", proc_std = '" + sProcStd + "'";
 
                     m.dbCUD(sql, ref msg);
                 }
