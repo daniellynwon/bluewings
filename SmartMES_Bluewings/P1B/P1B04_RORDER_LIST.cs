@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SmartFactory;
+using Org.BouncyCastle.Crypto.Tls;
 
 namespace SmartMES_Bluewings
 {
@@ -23,6 +24,10 @@ namespace SmartMES_Bluewings
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+                string sGubun = "%";
+                if (cb1.Checked && cb2.Checked) sGubun = "%";
+                else if (cb1.Checked && (!cb2.Checked)) sGubun = "A";
+                else if (!(cb1.Checked) && cb2.Checked) sGubun = "B";
 
                 DateTime dtFromDate = DateTime.Parse(dtpFromDate.Value.ToString("yyyy-MM-dd"));
                 DateTime dtToDate = DateTime.Parse(dtpToDate.Value.ToString("yyyy-MM-dd"));
@@ -32,7 +37,7 @@ namespace SmartMES_Bluewings
 
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_ROrderList_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderList_Query, dtFromDate, dtToDate, sSearch);
+                sP_ROrderList_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderList_Query, dtFromDate, dtToDate, sSearch, sGubun);
                 var data = dataSetP1B.SP_ROrderList_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -61,6 +66,10 @@ namespace SmartMES_Bluewings
                 ListSearch();
             }
         }
+        private void cb_CheckedChanged(object sender, EventArgs e)
+        {
+            ListSearch();
+        }
         #endregion
 
         #region GridView Events
@@ -81,14 +90,14 @@ namespace SmartMES_Bluewings
 
                 for (int i = 0; i < rowIndex; i++)
                 {
-                    iSum1 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
-                    iSum2 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
-                    iSum3 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                    iSum1 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
+                    iSum2 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                    iSum3 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
                 }
 
-                dataGridView1[7, rowIndex].Value = iSum1;
-                dataGridView1[8, rowIndex].Value = iSum2;
-                dataGridView1[9, rowIndex].Value = iSum3;
+                dataGridView1[8, rowIndex].Value = iSum1;
+                dataGridView1[9, rowIndex].Value = iSum2;
+                dataGridView1[10, rowIndex].Value = iSum3;
             }
             catch (NullReferenceException)
             {
@@ -99,7 +108,7 @@ namespace SmartMES_Bluewings
         {
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 3) return;
+            if (e.ColumnIndex != 4) return;
 
             string sNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             P1B03_RORDER form = new P1B03_RORDER();

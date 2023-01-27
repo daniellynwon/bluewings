@@ -16,6 +16,7 @@ namespace SmartMES_Bluewings
         }
         private void P1B03_RORDER_Load(object sender, EventArgs e)
         {
+            cbGubun.SelectedIndex = 0;
             ListSearch1();
         }
         public async void ListSearch1()
@@ -56,7 +57,10 @@ namespace SmartMES_Bluewings
             tbPlace.Text = dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString();
             dtpDeliDate.Value = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString());
             tbContents.Text = dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString();
-            
+            if (dataGridViewList.Rows[rowIndex].Cells[11].Value.ToString() == "B") cbGubun.Text = "B.민간";
+            else cbGubun.Text = "A.조달";
+            tbMethod.Text = dataGridViewList.Rows[rowIndex].Cells[12].Value.ToString();
+
             Cursor.Current = Cursors.Default;
         }
         public async void ListSearch3()
@@ -131,6 +135,8 @@ namespace SmartMES_Bluewings
             tbPlace.Text = string.Empty;
             dtpDeliDate.Value = DateTime.Today;
             tbContents.Text = string.Empty;
+            cbGubun.SelectedIndex = 0;
+            tbMethod.Text = string.Empty;
 
             sP_ROrderSub_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderSub_Query, "");
 
@@ -172,8 +178,8 @@ namespace SmartMES_Bluewings
             MariaCRUD m = new MariaCRUD();
             string sNewNo = getROrderNo();
 
-            sql = "insert into tb_rorder_main (rorder_id, pos, rorder_date, cust_id, project, place, deli_date, enter_man) " +
-                  "select '" + sNewNo + "','" + G.Pos + "', CURDATE(), cust_id, project, place, CURDATE(), '" + G.UserID + "' " +
+            sql = "insert into tb_rorder_main (rorder_id, pos, rorder_date, cust_id, gubun, project, place, deli_date, method, enter_man) " +
+                  "select '" + sNewNo + "','" + G.Pos + "', CURDATE(), cust_id, gubun, project, place, CURDATE(), method, '" + G.UserID + "' " +
                   "from tb_rorder_main " +
                   "where rorder_id = '" + sNo + "'";
 
@@ -589,6 +595,8 @@ namespace SmartMES_Bluewings
             string sPlace = ""; // tbPlace.Text.Trim();
             string sDeliDate = dtpDeliDate.Value.ToString("yyyy-MM-dd");
             string sContents = tbContents.Text.Trim();
+            string sGubun = cbGubun.Text.Substring(0,1);
+            string sMethod = tbMethod.Text.Trim();
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -606,8 +614,8 @@ namespace SmartMES_Bluewings
             if (string.IsNullOrEmpty(sNo)) //추가
             {
                 sNo = getROrderNo();
-                sql = "insert into tb_rorder_main (rorder_id, pos, rorder_date, cust_id, project, place, deli_date, contents, enter_man) " +
-                    "values('" + sNo + "','" + G.Pos + "','" + sDate + "','" + sCust + "','" + sProject + "','" + sPlace + "','" + sDeliDate + "','" + sContents + "','" + G.UserID + "')";
+                sql = "insert into tb_rorder_main (rorder_id, pos, rorder_date, cust_id, gubun, project, place, deli_date, method, contents, enter_man) " +
+                    "values('" + sNo + "','" + G.Pos + "','" + sDate + "','" + sCust + "','" + sGubun + "','" + sProject + "','" + sPlace + "','" + sDeliDate + "','" + sMethod + "','" + sContents + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -650,7 +658,7 @@ namespace SmartMES_Bluewings
             else //수정
             {
                 sql = "update tb_rorder_main " +
-                    "set rorder_date = '" + sDate + "', cust_id = '" + sCust + "', project = '" + sProject + "', place = '" + sPlace + "', deli_date = '" + sDeliDate + "', contents = '" + sContents + "'" +
+                    "set rorder_date = '" + sDate + "', cust_id = '" + sCust + "', gubun = '" + sGubun + "', project = '" + sProject + "', place = '" + sPlace + "', deli_date = '" + sDeliDate + "', method = '" + sMethod + "', contents = '" + sContents + "'" +
                     " where rorder_id = '" + sNo + "'";
 
                 m.dbCUD(sql, ref msg);

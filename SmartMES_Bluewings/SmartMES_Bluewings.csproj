@@ -342,6 +342,9 @@
     <Compile Include="P1A\P1A06_RECIPE_SUB.designer.cs">
       <DependentUpon>P1A06_RECIPE_SUB.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1B\DataSetP1B.cs">
+      <DependentUpon>DataSetP1B.xsd</DependentUpon>
+    </Compile>
     <Compile Include="P1B\DataSetP1B.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

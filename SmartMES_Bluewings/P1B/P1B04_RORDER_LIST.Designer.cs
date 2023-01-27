@@ -43,6 +43,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.cb2 = new System.Windows.Forms.CheckBox();
+            this.cb1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
@@ -55,6 +57,8 @@
             this.sP_ROrderList_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.접수일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.구분 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거리처ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.영업담당DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.프로젝트명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,6 +118,8 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.cb2);
+            this.panSearch.Controls.Add(this.cb1);
             this.panSearch.Controls.Add(this.label3);
             this.panSearch.Controls.Add(this.label2);
             this.panSearch.Controls.Add(this.dtpToDate);
@@ -122,8 +128,38 @@
             this.panSearch.Controls.Add(this.label1);
             this.panSearch.Location = new System.Drawing.Point(2, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1319, 71);
+            this.panSearch.Size = new System.Drawing.Size(1319, 929);
             this.panSearch.TabIndex = 0;
+            // 
+            // cb2
+            // 
+            this.cb2.AutoSize = true;
+            this.cb2.Checked = true;
+            this.cb2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cb2.Location = new System.Drawing.Point(9, 29);
+            this.cb2.Name = "cb2";
+            this.cb2.Size = new System.Drawing.Size(61, 25);
+            this.cb2.TabIndex = 12;
+            this.cb2.Text = "민간";
+            this.cb2.UseVisualStyleBackColor = true;
+            this.cb2.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            // 
+            // cb1
+            // 
+            this.cb1.AutoSize = true;
+            this.cb1.Checked = true;
+            this.cb1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cb1.Location = new System.Drawing.Point(9, 8);
+            this.cb1.Name = "cb1";
+            this.cb1.Size = new System.Drawing.Size(61, 25);
+            this.cb1.TabIndex = 11;
+            this.cb1.Text = "조달";
+            this.cb1.UseVisualStyleBackColor = true;
+            this.cb1.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
             // 
             // label3
             // 
@@ -222,6 +258,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.수주번호DataGridViewTextBoxColumn,
             this.접수일자DataGridViewTextBoxColumn,
+            this.구분,
+            this.거리처ID,
             this.거래처명DataGridViewTextBoxColumn,
             this.영업담당DataGridViewTextBoxColumn,
             this.프로젝트명DataGridViewTextBoxColumn,
@@ -296,10 +334,26 @@
             this.접수일자DataGridViewTextBoxColumn.Name = "접수일자DataGridViewTextBoxColumn";
             this.접수일자DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // 구분
+            // 
+            this.구분.DataPropertyName = "구분";
+            this.구분.FillWeight = 30F;
+            this.구분.HeaderText = "구분";
+            this.구분.Name = "구분";
+            this.구분.ReadOnly = true;
+            // 
+            // 거리처ID
+            // 
+            this.거리처ID.DataPropertyName = "거래처ID";
+            this.거리처ID.HeaderText = "거래처ID";
+            this.거리처ID.Name = "거리처ID";
+            this.거리처ID.ReadOnly = true;
+            this.거리처ID.Visible = false;
+            // 
             // 거래처명DataGridViewTextBoxColumn
             // 
             this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.FillWeight = 90F;
+            this.거래처명DataGridViewTextBoxColumn.FillWeight = 80F;
             this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
             this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
             this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
@@ -319,12 +373,11 @@
             this.프로젝트명DataGridViewTextBoxColumn.DataPropertyName = "프로젝트명";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             this.프로젝트명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.프로젝트명DataGridViewTextBoxColumn.FillWeight = 150F;
-            this.프로젝트명DataGridViewTextBoxColumn.HeaderText = "프로젝트명";
+            this.프로젝트명DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.프로젝트명DataGridViewTextBoxColumn.HeaderText = "계약명";
             this.프로젝트명DataGridViewTextBoxColumn.Name = "프로젝트명DataGridViewTextBoxColumn";
             this.프로젝트명DataGridViewTextBoxColumn.ReadOnly = true;
             this.프로젝트명DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.프로젝트명DataGridViewTextBoxColumn.Visible = false;
             // 
             // 현장정보DataGridViewTextBoxColumn
             // 
@@ -431,8 +484,12 @@
         private P1B.DataSetP1B dataSetP1B;
         private P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter sP_ROrderList_QueryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 거래처IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckBox cb1;
+        private System.Windows.Forms.CheckBox cb2;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 접수일자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 구분;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 거리처ID;
         private System.Windows.Forms.DataGridViewLinkColumn 거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 영업담당DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 프로젝트명DataGridViewTextBoxColumn;
