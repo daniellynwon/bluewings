@@ -438,7 +438,7 @@ namespace SmartMES_Bluewings
 
                 dataGridView1.Rows[rowIndex].Cells[2].Value = sProd.Substring(0, sProd.IndexOf("#1/"));
                 dataGridView1.Rows[rowIndex].Cells[4].Value = sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
-                dataGridView1.Rows[rowIndex].Cells[6].Value = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.Length - (sProd.IndexOf("#2/") + 3));
+                dataGridView1.Rows[rowIndex].Cells[6].Value = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.IndexOf("#3/") - (sProd.IndexOf("#2/") + 3)); // sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.Length - (sProd.IndexOf("#2/") + 3));
                 dataGridView1.CurrentCell = dataGridView1[7, rowIndex];
 
                 //if (rowIndex < 1)
@@ -571,8 +571,7 @@ namespace SmartMES_Bluewings
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (!(dataGridView1.Rows[i].Cells[2].Value == null ||
-                    string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString()))) iCnt++;
+                if (!(dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString()))) iCnt++;
             }
 
             if (iCnt == 0)
@@ -586,8 +585,8 @@ namespace SmartMES_Bluewings
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             string sCust = tbCust.Tag.ToString();
             string sCustName = tbCust.Text;
-            string sProject = tbCust.Text + "의 건";
-            string sPlace = tbPlace.Text.Trim();
+            string sProject = tbPlace.Text.Trim();
+            string sPlace = ""; // tbPlace.Text.Trim();
             string sDeliDate = dtpDeliDate.Value.ToString("yyyy-MM-dd");
             string sContents = tbContents.Text.Trim();
 
@@ -623,8 +622,7 @@ namespace SmartMES_Bluewings
                 int seq = 0;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[2].Value == null ||
-                        string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString())) continue;
+                    if (dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString())) continue;
 
                     seq = seq + 10;
                     sSeq = seq.ToString();
@@ -667,8 +665,7 @@ namespace SmartMES_Bluewings
 
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[2].Value == null ||
-                        string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString())) continue;
+                    if (dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString())) continue;
 
                     sProdID = dataGridView1.Rows[i].Cells[2].Value.ToString().Trim();
                     sAddSize = dataGridView1.Rows[i].Cells[5].Value.ToString().Trim();
