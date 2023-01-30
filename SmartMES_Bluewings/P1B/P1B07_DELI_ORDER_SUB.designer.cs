@@ -38,6 +38,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPDeliOrderROrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDeli = new System.Windows.Forms.Button();
+            this.sP_DeliOrder_ROrderTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_DeliOrder_ROrderTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -55,14 +63,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPDeliOrderROrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnDeli = new System.Windows.Forms.Button();
-            this.sP_DeliOrder_ROrderTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_DeliOrder_ROrderTableAdapter();
+            this.구분 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPDeliOrderROrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -108,7 +109,8 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
-            this.비고});
+            this.비고,
+            this.구분});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPDeliOrderROrderBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -142,6 +144,79 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // sPDeliOrderROrderBindingSource
+            // 
+            this.sPDeliOrderROrderBindingSource.DataMember = "SP_DeliOrder_ROrder";
+            this.sPDeliOrderROrderBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pbSearch);
+            this.panel1.Controls.Add(this.tbSearch);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnDeli);
+            this.panel1.Location = new System.Drawing.Point(5, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1010, 59);
+            this.panel1.TabIndex = 0;
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.pbSearch.Image = global::SmartMES_Bluewings.Properties.Resources.search;
+            this.pbSearch.Location = new System.Drawing.Point(388, 19);
+            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(32, 26);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSearch.TabIndex = 11;
+            this.pbSearch.TabStop = false;
+            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSearch.Location = new System.Drawing.Point(195, 18);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(238, 29);
+            this.tbSearch.TabIndex = 9;
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(58, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 21);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "수주번호/거래처";
+            // 
+            // btnDeli
+            // 
+            this.btnDeli.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeli.Location = new System.Drawing.Point(753, 17);
+            this.btnDeli.Name = "btnDeli";
+            this.btnDeli.Size = new System.Drawing.Size(197, 29);
+            this.btnDeli.TabIndex = 2;
+            this.btnDeli.Text = "출하지시";
+            this.btnDeli.UseVisualStyleBackColor = true;
+            this.btnDeli.Click += new System.EventHandler(this.btnDeli_Click);
+            // 
+            // sP_DeliOrder_ROrderTableAdapter
+            // 
+            this.sP_DeliOrder_ROrderTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -246,7 +321,7 @@
             dataGridViewCellStyle4.Format = "#,##0";
             this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn10.FillWeight = 60F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "수량";
+            this.dataGridViewTextBoxColumn10.HeaderText = "수주수량";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // dataGridViewTextBoxColumn11
@@ -275,78 +350,12 @@
             this.비고.Name = "비고";
             this.비고.Visible = false;
             // 
-            // sPDeliOrderROrderBindingSource
+            // 구분
             // 
-            this.sPDeliOrderROrderBindingSource.DataMember = "SP_DeliOrder_ROrder";
-            this.sPDeliOrderROrderBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pbSearch);
-            this.panel1.Controls.Add(this.tbSearch);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDeli);
-            this.panel1.Location = new System.Drawing.Point(5, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1010, 59);
-            this.panel1.TabIndex = 0;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pbSearch.Image = global::SmartMES_Bluewings.Properties.Resources.search;
-            this.pbSearch.Location = new System.Drawing.Point(388, 19);
-            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(32, 26);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSearch.TabIndex = 11;
-            this.pbSearch.TabStop = false;
-            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbSearch.Location = new System.Drawing.Point(195, 18);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(238, 29);
-            this.tbSearch.TabIndex = 9;
-            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(58, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 21);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "수주번호/거래처";
-            // 
-            // btnDeli
-            // 
-            this.btnDeli.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDeli.Location = new System.Drawing.Point(753, 17);
-            this.btnDeli.Name = "btnDeli";
-            this.btnDeli.Size = new System.Drawing.Size(197, 29);
-            this.btnDeli.TabIndex = 2;
-            this.btnDeli.Text = "출하지시";
-            this.btnDeli.UseVisualStyleBackColor = true;
-            this.btnDeli.Click += new System.EventHandler(this.btnDeli_Click);
-            // 
-            // sP_DeliOrder_ROrderTableAdapter
-            // 
-            this.sP_DeliOrder_ROrderTableAdapter.ClearBeforeFill = true;
+            this.구분.DataPropertyName = "구분";
+            this.구분.HeaderText = "구분";
+            this.구분.Name = "구분";
+            this.구분.Visible = false;
             // 
             // P1B07_DELI_ORDER_SUB
             // 
@@ -418,5 +427,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 구분;
     }
 }

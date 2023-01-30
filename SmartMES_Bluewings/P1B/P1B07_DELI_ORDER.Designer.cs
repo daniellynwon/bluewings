@@ -58,6 +58,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.cbGubun = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tbRorder = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbDeliCar = new System.Windows.Forms.ComboBox();
@@ -85,6 +87,7 @@
             this.요청일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.등록일시DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.등록자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.구분 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPDeliorderMainQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
@@ -131,6 +134,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Image = global::SmartMES_Bluewings.Properties.Resources.add_A;
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -321,6 +325,8 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.SystemColors.Info;
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.cbGubun);
+            this.panSearch.Controls.Add(this.label4);
             this.panSearch.Controls.Add(this.tbRorder);
             this.panSearch.Controls.Add(this.label3);
             this.panSearch.Controls.Add(this.cbDeliCar);
@@ -339,8 +345,33 @@
             this.panSearch.Controls.Add(this.cbNo);
             this.panSearch.Location = new System.Drawing.Point(310, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1011, 184);
+            this.panSearch.Size = new System.Drawing.Size(1011, 188);
             this.panSearch.TabIndex = 0;
+            // 
+            // cbGubun
+            // 
+            this.cbGubun.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGubun.FormattingEnabled = true;
+            this.cbGubun.Items.AddRange(new object[] {
+            "A.조달",
+            "B.민간"});
+            this.cbGubun.Location = new System.Drawing.Point(460, 95);
+            this.cbGubun.Name = "cbGubun";
+            this.cbGubun.Size = new System.Drawing.Size(207, 29);
+            this.cbGubun.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(395, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 21);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "구분";
             // 
             // tbRorder
             // 
@@ -376,10 +407,11 @@
             "4.자차",
             "5.퀵",
             "9.기타"});
-            this.cbDeliCar.Location = new System.Drawing.Point(460, 95);
+            this.cbDeliCar.Location = new System.Drawing.Point(758, 154);
             this.cbDeliCar.Name = "cbDeliCar";
             this.cbDeliCar.Size = new System.Drawing.Size(211, 29);
             this.cbDeliCar.TabIndex = 10;
+            this.cbDeliCar.Visible = false;
             // 
             // label6
             // 
@@ -389,9 +421,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(54, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 21);
+            this.label6.Size = new System.Drawing.Size(58, 21);
             this.label6.TabIndex = 0;
-            this.label6.Text = "현장정보";
+            this.label6.Text = "계약명";
             // 
             // tbContents
             // 
@@ -405,6 +437,7 @@
             // tbPlace
             // 
             this.tbPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbPlace.Enabled = false;
             this.tbPlace.Location = new System.Drawing.Point(145, 95);
             this.tbPlace.Name = "tbPlace";
             this.tbPlace.Size = new System.Drawing.Size(211, 29);
@@ -464,11 +497,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(383, 99);
+            this.label7.Location = new System.Drawing.Point(681, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "배송수단";
+            this.label7.Visible = false;
             // 
             // lblCust
             // 
@@ -478,9 +512,9 @@
             this.lblCust.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCust.Location = new System.Drawing.Point(383, 59);
             this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(74, 21);
+            this.lblCust.Size = new System.Drawing.Size(58, 21);
             this.lblCust.TabIndex = 0;
-            this.lblCust.Text = "거래처명";
+            this.lblCust.Text = "납품처";
             this.lblCust.Click += new System.EventHandler(this.lblCust_Click);
             // 
             // tbDeliInfo
@@ -561,7 +595,8 @@
             this.배송수단DataGridViewTextBoxColumn,
             this.요청일자DataGridViewTextBoxColumn,
             this.등록일시DataGridViewTextBoxColumn,
-            this.등록자DataGridViewTextBoxColumn});
+            this.등록자DataGridViewTextBoxColumn,
+            this.구분});
             this.dataGridViewList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridViewList.DataSource = this.sPDeliorderMainQueryBindingSource;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -673,6 +708,14 @@
             this.등록자DataGridViewTextBoxColumn.Name = "등록자DataGridViewTextBoxColumn";
             this.등록자DataGridViewTextBoxColumn.ReadOnly = true;
             this.등록자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 구분
+            // 
+            this.구분.DataPropertyName = "구분";
+            this.구분.HeaderText = "구분";
+            this.구분.Name = "구분";
+            this.구분.ReadOnly = true;
+            this.구분.Visible = false;
             // 
             // sPDeliorderMainQueryBindingSource
             // 
@@ -811,6 +854,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnDel;
         public System.Windows.Forms.TextBox tbContents;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn 지시번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 출하지시일자DataGridViewTextBoxColumn;
@@ -821,5 +865,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 요청일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 등록일시DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 등록자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 구분;
+        public System.Windows.Forms.ComboBox cbGubun;
     }
 }

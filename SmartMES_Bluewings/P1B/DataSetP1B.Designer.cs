@@ -5721,6 +5721,8 @@ namespace SmartMES_Bluewings.P1B {
             
             private global::System.Data.DataColumn column비고;
             
+            private global::System.Data.DataColumn column구분;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Deliorder_Main_QueryDataTable() {
@@ -5852,6 +5854,14 @@ namespace SmartMES_Bluewings.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 구분Column {
+                get {
+                    return this.column구분;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5887,7 +5897,7 @@ namespace SmartMES_Bluewings.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Deliorder_Main_QueryRow AddSP_Deliorder_Main_QueryRow(string 지시번호, string 수주번호, System.DateTime 출하지시일자, string 거래처ID, string 거래처명, string 현장정보, sbyte 배송수단, System.DateTime 요청일자, System.DateTime 등록일시, string 등록자, string 배송정보, string 비고) {
+            public SP_Deliorder_Main_QueryRow AddSP_Deliorder_Main_QueryRow(string 지시번호, string 수주번호, System.DateTime 출하지시일자, string 거래처ID, string 거래처명, string 현장정보, sbyte 배송수단, System.DateTime 요청일자, System.DateTime 등록일시, string 등록자, string 배송정보, string 비고, string 구분) {
                 SP_Deliorder_Main_QueryRow rowSP_Deliorder_Main_QueryRow = ((SP_Deliorder_Main_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         지시번호,
@@ -5901,7 +5911,8 @@ namespace SmartMES_Bluewings.P1B {
                         등록일시,
                         등록자,
                         배송정보,
-                        비고};
+                        비고,
+                        구분};
                 rowSP_Deliorder_Main_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Deliorder_Main_QueryRow);
                 return rowSP_Deliorder_Main_QueryRow;
@@ -5936,6 +5947,7 @@ namespace SmartMES_Bluewings.P1B {
                 this.column등록자 = base.Columns["등록자"];
                 this.column배송정보 = base.Columns["배송정보"];
                 this.column비고 = base.Columns["비고"];
+                this.column구분 = base.Columns["구분"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5965,6 +5977,8 @@ namespace SmartMES_Bluewings.P1B {
                 base.Columns.Add(this.column배송정보);
                 this.column비고 = new global::System.Data.DataColumn("비고", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column비고);
+                this.column구분 = new global::System.Data.DataColumn("구분", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column구분);
                 this.column지시번호.MaxLength = 13;
                 this.column수주번호.MaxLength = 10;
                 this.column거래처ID.MaxLength = 7;
@@ -5973,6 +5987,7 @@ namespace SmartMES_Bluewings.P1B {
                 this.column등록자.MaxLength = 50;
                 this.column배송정보.MaxLength = 500;
                 this.column비고.MaxLength = 1000;
+                this.column구분.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6138,6 +6153,8 @@ namespace SmartMES_Bluewings.P1B {
             
             private global::System.Data.DataColumn column비고;
             
+            private global::System.Data.DataColumn column구분;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_DeliOrder_ROrderDataTable() {
@@ -6301,6 +6318,14 @@ namespace SmartMES_Bluewings.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 구분Column {
+                get {
+                    return this.column구분;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6352,7 +6377,8 @@ namespace SmartMES_Bluewings.P1B {
                         int 수량, 
                         long 단가, 
                         long 공급가액, 
-                        string 비고) {
+                        string 비고, 
+                        string 구분) {
                 SP_DeliOrder_ROrderRow rowSP_DeliOrder_ROrderRow = ((SP_DeliOrder_ROrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         수주번호,
@@ -6370,7 +6396,8 @@ namespace SmartMES_Bluewings.P1B {
                         수량,
                         단가,
                         공급가액,
-                        비고};
+                        비고,
+                        구분};
                 rowSP_DeliOrder_ROrderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_DeliOrder_ROrderRow);
                 return rowSP_DeliOrder_ROrderRow;
@@ -6409,6 +6436,7 @@ namespace SmartMES_Bluewings.P1B {
                 this.column단가 = base.Columns["단가"];
                 this.column공급가액 = base.Columns["공급가액"];
                 this.column비고 = base.Columns["비고"];
+                this.column구분 = base.Columns["구분"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6446,6 +6474,8 @@ namespace SmartMES_Bluewings.P1B {
                 base.Columns.Add(this.column공급가액);
                 this.column비고 = new global::System.Data.DataColumn("비고", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column비고);
+                this.column구분 = new global::System.Data.DataColumn("구분", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column구분);
                 this.column수주번호.MaxLength = 10;
                 this.column거래처ID.MaxLength = 7;
                 this.column거래처명.MaxLength = 50;
@@ -6457,6 +6487,7 @@ namespace SmartMES_Bluewings.P1B {
                 this.column규격.MaxLength = 50;
                 this.column단위.MaxLength = 10;
                 this.column비고.MaxLength = 1000;
+                this.column구분.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13914,6 +13945,22 @@ namespace SmartMES_Bluewings.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 구분 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Deliorder_Main_Query.구분Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Deliorder_Main_Query\' 테이블의 \'구분\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Deliorder_Main_Query.구분Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is지시번호Null() {
                 return this.IsNull(this.tableSP_Deliorder_Main_Query.지시번호Column);
             }
@@ -14054,6 +14101,18 @@ namespace SmartMES_Bluewings.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set비고Null() {
                 this[this.tableSP_Deliorder_Main_Query.비고Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is구분Null() {
+                return this.IsNull(this.tableSP_Deliorder_Main_Query.구분Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set구분Null() {
+                this[this.tableSP_Deliorder_Main_Query.구분Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -14329,6 +14388,22 @@ namespace SmartMES_Bluewings.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 구분 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_DeliOrder_ROrder.구분Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_DeliOrder_ROrder\' 테이블의 \'구분\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_DeliOrder_ROrder.구분Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is수주번호Null() {
                 return this.IsNull(this.tableSP_DeliOrder_ROrder.수주번호Column);
             }
@@ -14517,6 +14592,18 @@ namespace SmartMES_Bluewings.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set비고Null() {
                 this[this.tableSP_DeliOrder_ROrder.비고Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is구분Null() {
+                return this.IsNull(this.tableSP_DeliOrder_ROrder.구분Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set구분Null() {
+                this[this.tableSP_DeliOrder_ROrder.구분Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -20822,6 +20909,7 @@ namespace SmartMES_Bluewings.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("등록자", "등록자");
             tableMapping.ColumnMappings.Add("배송정보", "배송정보");
             tableMapping.ColumnMappings.Add("비고", "비고");
+            tableMapping.ColumnMappings.Add("구분", "구분");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21023,6 +21111,7 @@ namespace SmartMES_Bluewings.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("단가", "단가");
             tableMapping.ColumnMappings.Add("공급가액", "공급가액");
             tableMapping.ColumnMappings.Add("비고", "비고");
+            tableMapping.ColumnMappings.Add("구분", "구분");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -58,6 +58,8 @@ namespace SmartMES_Bluewings
             tbCust.Tag = dataGridViewList.Rows[rowIndex].Cells[3].Value.ToString();
             tbCust.Text = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();
             tbPlace.Text = dataGridViewList.Rows[rowIndex].Cells[5].Value.ToString();
+            if (dataGridViewList.Rows[rowIndex].Cells[10].Value.ToString() == "B") cbGubun.Text = "B.민간";
+            else cbGubun.Text = "A.조달";
 
             string sCar = dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString();
             if (sCar == "9") cbDeliCar.SelectedIndex = cbDeliCar.Items.Count - 1;
@@ -131,6 +133,7 @@ namespace SmartMES_Bluewings
             tbPlace.Text = string.Empty;
             tbContents.Text = string.Empty;
             tbDeliInfo.Text = string.Empty;
+            cbGubun.SelectedIndex = 0;
 
             sP_Deliorder_Sub_QueryTableAdapter.Fill(dataSetP1B.SP_Deliorder_Sub_Query, "");
 
@@ -420,7 +423,6 @@ namespace SmartMES_Bluewings
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             string sReqDate = dtpDate.Value.ToString("yyyy-MM-dd");
             string sCust = tbCust.Tag.ToString();
-            string sPlace = tbPlace.Text.Trim();
             string sDeliCar = cbDeliCar.Text.Substring(0, 1);
             string sDeliInfo = tbDeliInfo.Text.Trim();
             string sContents = tbContents.Text.Trim();
@@ -440,8 +442,8 @@ namespace SmartMES_Bluewings
             if (string.IsNullOrEmpty(sNo)) //추가
             {
                 sNo = getDeliNo(sDate);
-                sql = "insert into tb_deliorder_main (dorder_id, rorder_id, dorder_date, cust_id, place, deli_car, deli_info, request_date, contents, enter_man) " +
-                    "values('" + sNo + "','" + sRorderNo + "','" + sDate + "','" + sCust + "','" + sPlace + "'," + sDeliCar + ",'" + sDeliInfo + "','" + sReqDate + "','" + sContents + "','" + G.UserID + "')";
+                sql = "insert into tb_deliorder_main (dorder_id, rorder_id, dorder_date, cust_id, deli_car, deli_info, request_date, contents, enter_man) " +
+                    "values('" + sNo + "','" + sRorderNo + "','" + sDate + "','" + sCust + "'," + sDeliCar + ",'" + sDeliInfo + "','" + sReqDate + "','" + sContents + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -484,7 +486,7 @@ namespace SmartMES_Bluewings
             else //수정
             {
                 sql = "update tb_deliorder_main " +
-                    "set cust_id = '" + sCust + "', place = '" + sPlace + "', deli_car = '" + sDeliCar + "', deli_info = '" + sDeliInfo + ", request_date" + sReqDate + "', contents = '" + sContents + "'" +
+                    "set cust_id = '" + sCust + "', deli_car = '" + sDeliCar + "', deli_info = '" + sDeliInfo + ", request_date" + sReqDate + "', contents = '" + sContents + "'" +
                     " where dorder_id = '" + sNo + "'";
 
                 m.dbCUD(sql, ref msg);

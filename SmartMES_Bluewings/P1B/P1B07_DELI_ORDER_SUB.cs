@@ -89,8 +89,10 @@ namespace SmartMES_Bluewings
                     parentWin.tbCust.Tag = dataGridView1.Rows[i].Cells[1].Value;
                     parentWin.tbCust.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
                     parentWin.tbRorder.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    parentWin.tbPlace.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                    parentWin.tbPlace.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();   // 현장정보 -> 프로젝트명으로 변경
                     parentWin.tbContents.Text = dataGridView1.Rows[i].Cells[16].Value.ToString();
+                    if (dataGridView1.Rows[i].Cells[17].Value.ToString() == "B") parentWin.cbGubun.Text = "B.민간";
+                    else parentWin.cbGubun.Text = "A.조달";
 
                     parentWin.sPDeliorderSubQueryBindingSource.AddNew();
                     parentWin.dataGridView1.Rows[iSeq].Cells[2].Value = dataGridView1.Rows[i].Cells[8].Value; //품목코드
