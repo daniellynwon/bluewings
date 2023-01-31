@@ -70,8 +70,9 @@ namespace SmartMES_Bluewings
         {
             if (e.RowIndex < 0) return;
             if (e.ColumnIndex != 2) return;
-
-            this.FormSendEvent(dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString() + "#1/" + dataGridView1[3, e.RowIndex].Value.ToString() + "#2/" + dataGridView1[5, e.RowIndex].Value.ToString() + "#3/" + dataGridView1[4, e.RowIndex].Value.ToString());
+            
+            //this.FormSendEvent(dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString() + "#1/" + dataGridView1[3, e.RowIndex].Value.ToString() + "#2/" + dataGridView1[5, e.RowIndex].Value.ToString() + "#3/" + dataGridView1[4, e.RowIndex].Value.ToString());
+            this.FormSendEvent(dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString() + "#1/" + dataGridView1[3, e.RowIndex].Value.ToString() + "#2/" + dataGridView1[5, e.RowIndex].Value.ToString() + "#3/" + dataGridView1[4, e.RowIndex].Value.ToString() + "#4/" + dataGridView1[7, e.RowIndex].Value.ToString());    // 단가까지 추가.
             this.Dispose();
         }
 

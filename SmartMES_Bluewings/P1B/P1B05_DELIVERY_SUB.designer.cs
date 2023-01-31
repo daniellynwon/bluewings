@@ -87,7 +87,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -120,7 +120,7 @@
             this.dataGridView1.DataSource = this.sPDeliveryROderBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -133,7 +133,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
@@ -189,7 +189,7 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbSearch.Location = new System.Drawing.Point(195, 13);
             this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -239,7 +239,7 @@
             // 거래처명DataGridViewTextBoxColumn
             // 
             this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.FillWeight = 85.07002F;
+            this.거래처명DataGridViewTextBoxColumn.FillWeight = 85F;
             this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
             this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
             this.거래처명DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -248,7 +248,6 @@
             // 영업담당DataGridViewTextBoxColumn
             // 
             this.영업담당DataGridViewTextBoxColumn.DataPropertyName = "영업담당";
-            this.영업담당DataGridViewTextBoxColumn.FillWeight = 85.07002F;
             this.영업담당DataGridViewTextBoxColumn.HeaderText = "영업담당";
             this.영업담당DataGridViewTextBoxColumn.Name = "영업담당DataGridViewTextBoxColumn";
             this.영업담당DataGridViewTextBoxColumn.Visible = false;
@@ -270,8 +269,8 @@
             // 출하지시일DataGridViewTextBoxColumn
             // 
             this.출하지시일DataGridViewTextBoxColumn.DataPropertyName = "출하지시일";
-            this.출하지시일DataGridViewTextBoxColumn.FillWeight = 85.07002F;
-            this.출하지시일DataGridViewTextBoxColumn.HeaderText = "출하지시일";
+            this.출하지시일DataGridViewTextBoxColumn.FillWeight = 70F;
+            this.출하지시일DataGridViewTextBoxColumn.HeaderText = "지시일";
             this.출하지시일DataGridViewTextBoxColumn.Name = "출하지시일DataGridViewTextBoxColumn";
             // 
             // ColumnCheckBox
@@ -320,7 +319,7 @@
             // 단위DataGridViewTextBoxColumn
             // 
             this.단위DataGridViewTextBoxColumn.DataPropertyName = "단위";
-            this.단위DataGridViewTextBoxColumn.FillWeight = 85.07002F;
+            this.단위DataGridViewTextBoxColumn.FillWeight = 50F;
             this.단위DataGridViewTextBoxColumn.HeaderText = "단위";
             this.단위DataGridViewTextBoxColumn.Name = "단위DataGridViewTextBoxColumn";
             // 
@@ -329,8 +328,8 @@
             this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
             dataGridViewCellStyle3.Format = "#,##0";
             this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.수량DataGridViewTextBoxColumn.FillWeight = 85.07002F;
-            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
+            this.수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.수량DataGridViewTextBoxColumn.HeaderText = "지시수량";
             this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
             // 
             // 단가DataGridViewTextBoxColumn
@@ -338,7 +337,7 @@
             this.단가DataGridViewTextBoxColumn.DataPropertyName = "단가";
             dataGridViewCellStyle4.Format = "#,##0";
             this.단가DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.단가DataGridViewTextBoxColumn.FillWeight = 85.07002F;
+            this.단가DataGridViewTextBoxColumn.FillWeight = 50F;
             this.단가DataGridViewTextBoxColumn.HeaderText = "단가";
             this.단가DataGridViewTextBoxColumn.Name = "단가DataGridViewTextBoxColumn";
             // 
@@ -347,7 +346,7 @@
             this.공급가액DataGridViewTextBoxColumn.DataPropertyName = "공급가액";
             dataGridViewCellStyle5.Format = "#,##0";
             this.공급가액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.공급가액DataGridViewTextBoxColumn.FillWeight = 85.07002F;
+            this.공급가액DataGridViewTextBoxColumn.FillWeight = 70F;
             this.공급가액DataGridViewTextBoxColumn.HeaderText = "공급가액";
             this.공급가액DataGridViewTextBoxColumn.Name = "공급가액DataGridViewTextBoxColumn";
             // 
@@ -385,7 +384,7 @@
             this.ClientSize = new System.Drawing.Size(1020, 720);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;

@@ -23,6 +23,10 @@ namespace SmartMES_Bluewings
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+                string sGubun = "%";
+                if (cb1.Checked && cb2.Checked) sGubun = "%";
+                else if (cb1.Checked && (!cb2.Checked)) sGubun = "A";
+                else if (!(cb1.Checked) && cb2.Checked) sGubun = "B";
 
                 DateTime dtFromDate = DateTime.Parse(dtpFromDate.Value.ToString("yyyy-MM-dd"));
                 DateTime dtToDate = DateTime.Parse(dtpToDate.Value.ToString("yyyy-MM-dd"));
@@ -32,7 +36,7 @@ namespace SmartMES_Bluewings
 
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_DeliTerm_QueryTableAdapter.Fill(dataSetP1B.SP_DeliTerm_Query, dtFromDate, dtToDate, sSearch);
+                sP_DeliTerm_QueryTableAdapter.Fill(dataSetP1B.SP_DeliTerm_Query, dtFromDate, dtToDate, sSearch, sGubun);
                 var data = dataSetP1B.SP_DeliTerm_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -60,6 +64,10 @@ namespace SmartMES_Bluewings
             {
                 ListSearch();
             }
+        }
+        private void cb_CheckedChanged(object sender, EventArgs e)
+        {
+            ListSearch();
         }
         #endregion
 

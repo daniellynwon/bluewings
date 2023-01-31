@@ -99,6 +99,7 @@ namespace SmartMES_Bluewings
 
             tbProd.Tag = sProd.Substring(0, sProd.IndexOf("#1/"));
             tbProd.Text = sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
+            tbDanga.Text = sProd.Substring(sProd.IndexOf("#4/") + 3, sProd.Length - (sProd.IndexOf("#4/") + 3));        // 단가 추가.
             tbSize.Focus();
         }
         private void lblCost_Click(object sender, EventArgs e)

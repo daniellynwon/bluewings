@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1B08_DELI_TERM));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,6 +43,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.cb2 = new System.Windows.Forms.CheckBox();
+            this.cb1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
@@ -49,9 +52,6 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPDeliTermQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
-            this.sP_DeliTerm_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_DeliTerm_QueryTableAdapter();
             this.전표번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출하일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +65,9 @@
             this.공급가액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.부가세 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.합계금액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDeliTermQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
+            this.sP_DeliTerm_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_DeliTerm_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -89,6 +92,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
             this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pbDel
@@ -114,6 +118,8 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.cb2);
+            this.panSearch.Controls.Add(this.cb1);
             this.panSearch.Controls.Add(this.label3);
             this.panSearch.Controls.Add(this.label2);
             this.panSearch.Controls.Add(this.dtpToDate);
@@ -124,6 +130,36 @@
             this.panSearch.Name = "panSearch";
             this.panSearch.Size = new System.Drawing.Size(1319, 71);
             this.panSearch.TabIndex = 0;
+            // 
+            // cb2
+            // 
+            this.cb2.AutoSize = true;
+            this.cb2.Checked = true;
+            this.cb2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cb2.Location = new System.Drawing.Point(9, 29);
+            this.cb2.Name = "cb2";
+            this.cb2.Size = new System.Drawing.Size(61, 25);
+            this.cb2.TabIndex = 14;
+            this.cb2.Text = "민간";
+            this.cb2.UseVisualStyleBackColor = true;
+            this.cb2.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
+            // 
+            // cb1
+            // 
+            this.cb1.AutoSize = true;
+            this.cb1.Checked = true;
+            this.cb1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cb1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cb1.Location = new System.Drawing.Point(9, 8);
+            this.cb1.Name = "cb1";
+            this.cb1.Size = new System.Drawing.Size(61, 25);
+            this.cb1.TabIndex = 13;
+            this.cb1.Text = "조달";
+            this.cb1.UseVisualStyleBackColor = true;
+            this.cb1.CheckedChanged += new System.EventHandler(this.cb_CheckedChanged);
             // 
             // label3
             // 
@@ -266,20 +302,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // sPDeliTermQueryBindingSource
-            // 
-            this.sPDeliTermQueryBindingSource.DataMember = "SP_DeliTerm_Query";
-            this.sPDeliTermQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_DeliTerm_QueryTableAdapter
-            // 
-            this.sP_DeliTerm_QueryTableAdapter.ClearBeforeFill = true;
-            // 
             // 전표번호DataGridViewTextBoxColumn
             // 
             this.전표번호DataGridViewTextBoxColumn.DataPropertyName = "전표번호";
@@ -408,6 +430,20 @@
             this.합계금액.Name = "합계금액";
             this.합계금액.ReadOnly = true;
             // 
+            // sPDeliTermQueryBindingSource
+            // 
+            this.sPDeliTermQueryBindingSource.DataMember = "SP_DeliTerm_Query";
+            this.sPDeliTermQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_DeliTerm_QueryTableAdapter
+            // 
+            this.sP_DeliTerm_QueryTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B08_DELI_TERM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -467,5 +503,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 공급가액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 부가세;
         private System.Windows.Forms.DataGridViewTextBoxColumn 합계금액;
+        private System.Windows.Forms.CheckBox cb2;
+        private System.Windows.Forms.CheckBox cb1;
     }
 }
