@@ -222,7 +222,38 @@ namespace SmartMES_Bluewings
         }
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //
+            try
+            {
+                columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                rowIndex = dataGridView1.CurrentCell.RowIndex;
+                endEdit = true;
+
+                int qty1 = 0;
+                int qty2 = 0;
+                int qty3 = 0;
+                long moneyA = 0;
+                long moneyB = 0;
+
+                if (columnIndex == 6 || columnIndex == 7)   // 수량6,잔량7,수주수량12
+                {
+                    if (dataGridView1.Rows[rowIndex].Cells[6].Value != null && dataGridView1.Rows[rowIndex].Cells[6].Value.ToString().Length != 0)
+                        qty1 = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 수량
+
+                    if (dataGridView1.Rows[rowIndex].Cells[7].Value != null && dataGridView1.Rows[rowIndex].Cells[7].Value.ToString().Length != 0)
+                        qty2 = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());   // 잔량
+
+                    if (dataGridView1.Rows[rowIndex].Cells[12].Value != null && dataGridView1.Rows[rowIndex].Cells[12].Value.ToString().Length != 0)  // 수주수량
+                        qty3 = Int32.Parse(dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());
+
+                    qty2 = (qty3 - qty1);
+                    dataGridView1.Rows[rowIndex].Cells[7].Value = qty2;
+                    ListSearch4();
+                }
+            }
+            catch(Exception)
+            {
+                return;
+            }
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -435,7 +466,7 @@ namespace SmartMES_Bluewings
             string sProdID = string.Empty;
             string sAddSize = string.Empty;
             string sUnit = string.Empty;
-            string sQty = string.Empty;
+            string sQty = string.Empty; string sRmQty = string.Empty;
             string sRorderSeq = string.Empty;
             string sConts = string.Empty;
 
@@ -467,15 +498,16 @@ namespace SmartMES_Bluewings
                     sProdID = dataGridView1.Rows[i].Cells[2].Value.ToString().Trim();
                     sAddSize = dataGridView1.Rows[i].Cells[4].Value.ToString().Trim();
                     sUnit = dataGridView1.Rows[i].Cells[5].Value.ToString().Trim();
-                    sQty = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();;
-                    sRorderNo = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
-                    sRorderSeq = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
-                    sConts = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    sQty = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();
+                    sRmQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
+                    sRorderNo = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
+                    sRorderSeq = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    sConts = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim(); 
 
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
-                    sql = "insert into tb_deliorder_sub (dorder_id, dorder_seq, depot, prod_id, add_size, qty, rorder_id, rorder_seq) " +
-                          "values('" + sNo + "'," + sSeq + ",'0001','" + sProdID + "','" + sAddSize + "'," + sQty + ",'" + sRorderNo + "'," + sRorderSeq + ")";
+                    sql = "insert into tb_deliorder_sub (dorder_id, dorder_seq, depot, prod_id, add_size, qty, rm_qty, rorder_id, rorder_seq) " +
+                          "values('" + sNo + "'," + sSeq + ",'0001','" + sProdID + "','" + sAddSize + "'," + sQty + "," + sRmQty + ",'" + sRorderNo + "'," + sRorderSeq + ")";
                     m.dbCUD(sql, ref msg);
 
                     // yychoi - 1014
@@ -506,10 +538,11 @@ namespace SmartMES_Bluewings
                     sProdID = dataGridView1.Rows[i].Cells[2].Value.ToString().Trim();
                     sAddSize = dataGridView1.Rows[i].Cells[4].Value.ToString().Trim();
                     sUnit = dataGridView1.Rows[i].Cells[5].Value.ToString().Trim();
-                    sQty = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim(); ;
-                    sRorderNo = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
-                    sRorderSeq = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
-                    sConts = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    sQty = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();
+                    sRmQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
+                    sRorderNo = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
+                    sRorderSeq = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                    sConts = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
 
                     if (dataGridView1.Rows[i].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString()))
                         sSeq = getDeliSeq(sNo);
@@ -518,10 +551,10 @@ namespace SmartMES_Bluewings
 
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
-                    sql = "insert into tb_deliorder_sub (dorder_id, dorder_seq, depot, prod_id, add_size, qty, rorder_id, rorder_seq) " +
-                        "values('" + sNo + "'," + sSeq + ",'0001','" + sProdID + "','" + sAddSize + "'," + sQty + ",'" + sRorderNo + "'," + sRorderSeq + ")" +
+                    sql = "insert into tb_deliorder_sub (dorder_id, dorder_seq, depot, prod_id, add_size, qty, rm_qty, rorder_id, rorder_seq) " +
+                        "values('" + sNo + "'," + sSeq + ",'0001','" + sProdID + "','" + sAddSize + "'," + sQty + "," + sRmQty + ",'" + sRorderNo + "'," + sRorderSeq + ")" +
                     " on duplicate key update " +
-                        "prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', qty = " + sQty + ", rorder_id = '" + sRorderNo + "', rorder_seq = " + sRorderSeq;
+                        "prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', qty = " + sQty + ", rm_qty = " + sRmQty + ", rorder_id = '" + sRorderNo + "', rorder_seq = " + sRorderSeq;
 
                     m.dbCUD(sql, ref msg);
                 }
@@ -556,7 +589,6 @@ namespace SmartMES_Bluewings
                 lblMsg.Text = "저장된 출하건만 명세서 출력이 가능합니다.";
                 return;
             }
-
             //sP_Delivery_PrintTableAdapter.Fill(dataSetP1B.SP_Delivery_Print, sNo);
 
             //string sql = @"select sum(amount+vat) from tb_delivery_sub where deli_id = '" + sNo + "'";

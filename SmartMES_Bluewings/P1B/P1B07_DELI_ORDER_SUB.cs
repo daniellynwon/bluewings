@@ -100,10 +100,12 @@ namespace SmartMES_Bluewings
                     parentWin.dataGridView1.Rows[iSeq].Cells[4].Value = dataGridView1.Rows[i].Cells[11].Value; //규격
                     parentWin.dataGridView1.Rows[iSeq].Cells[5].Value = dataGridView1.Rows[i].Cells[12].Value; //단위
                     parentWin.dataGridView1.Rows[iSeq].Cells[6].Value = dataGridView1.Rows[i].Cells[13].Value; //수량
-                    parentWin.dataGridView1.Rows[iSeq].Cells[9].Value = dataGridView1.Rows[i].Cells[16].Value; //비고
+                    parentWin.dataGridView1.Rows[iSeq].Cells[7].Value = dataGridView1.Rows[i].Cells[13].Value; //잔량(수주수량)
+                    parentWin.dataGridView1.Rows[iSeq].Cells[12].Value = dataGridView1.Rows[i].Cells[13].Value; //잔량(수주수량)
+                    parentWin.dataGridView1.Rows[iSeq].Cells[10].Value = dataGridView1.Rows[i].Cells[16].Value; //비고
 
-                    parentWin.dataGridView1.Rows[iSeq].Cells[7].Value = dataGridView1.Rows[i].Cells[0].Value; //수주번호
-                    parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[7].Value; //수주순번
+                    parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[0].Value; //수주번호
+                    parentWin.dataGridView1.Rows[iSeq].Cells[9].Value = dataGridView1.Rows[i].Cells[7].Value; //수주순번
                     iSeq++;
                 }
             }

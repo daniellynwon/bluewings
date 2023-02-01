@@ -58,6 +58,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
+            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
             this.발주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,9 +85,7 @@
             this.비고DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.요청일자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.순번 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Bluewings.P1B.DataSetP1B();
-            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Bluewings.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
+            this.검사여부 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -291,7 +292,8 @@
             this.입고창고DataGridViewTextBoxColumn,
             this.비고DataGridViewTextBoxColumn,
             this.요청일자,
-            this.순번});
+            this.순번,
+            this.검사여부});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseMatQueryBindingSource;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -325,6 +327,20 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // sPPurchaseMatQueryBindingSource
+            // 
+            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_PurchaseMat_QueryTableAdapter
+            // 
+            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // 발주번호DataGridViewTextBoxColumn
             // 
@@ -590,19 +606,13 @@
             this.순번.ReadOnly = true;
             this.순번.Visible = false;
             // 
-            // sPPurchaseMatQueryBindingSource
+            // 검사여부
             // 
-            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_PurchaseMat_QueryTableAdapter
-            // 
-            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
+            this.검사여부.DataPropertyName = "검사여부";
+            this.검사여부.HeaderText = "검사여부";
+            this.검사여부.Name = "검사여부";
+            this.검사여부.ReadOnly = true;
+            this.검사여부.Visible = false;
             // 
             // P1B10_PURCHASE_MAT
             // 
@@ -670,5 +680,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 요청일자;
         private System.Windows.Forms.DataGridViewTextBoxColumn 순번;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 검사여부;
     }
 }

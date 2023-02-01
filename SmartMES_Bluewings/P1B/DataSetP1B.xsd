@@ -311,6 +311,8 @@
               <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
               <Mapping SourceColumn="수주순번" DataSetColumn="수주순번" />
               <Mapping SourceColumn="비고" DataSetColumn="비고" />
+              <Mapping SourceColumn="잔량" DataSetColumn="잔량" />
+              <Mapping SourceColumn="수주수량" DataSetColumn="수주수량" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -506,7 +508,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_PurchaseMat_QueryTableAdapter" GeneratorDataComponentClassName="SP_PurchaseMat_QueryTableAdapter" Name="SP_PurchaseMat_Query" UserDataComponentName="SP_PurchaseMat_QueryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_PurchaseMat_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_PurchaseMat_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`bluewings_mes`.`SP_PurchaseMat_Query`</CommandText>
@@ -545,6 +547,7 @@
               <Mapping SourceColumn="입고창고" DataSetColumn="입고창고" />
               <Mapping SourceColumn="비고" DataSetColumn="비고" />
               <Mapping SourceColumn="순번" DataSetColumn="순번" />
+              <Mapping SourceColumn="검사여부" DataSetColumn="검사여부" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1382,6 +1385,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="잔량" msprop:Generator_ColumnVarNameInTable="column잔량" msprop:Generator_ColumnPropNameInRow="잔량" msprop:Generator_ColumnPropNameInTable="잔량Column" msprop:Generator_UserColumnName="잔량" type="xs:int" minOccurs="0" />
+              <xs:element name="수주수량" msprop:Generator_ColumnVarNameInTable="column수주수량" msprop:Generator_ColumnPropNameInRow="수주수량" msprop:Generator_ColumnPropNameInTable="수주수량Column" msprop:Generator_UserColumnName="수주수량" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1903,6 +1908,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="순번" msprop:Generator_ColumnVarNameInTable="column순번" msprop:Generator_ColumnPropNameInRow="순번" msprop:Generator_ColumnPropNameInTable="순번Column" msprop:Generator_UserColumnName="순번" type="xs:int" minOccurs="0" />
+              <xs:element name="검사여부" msprop:Generator_ColumnVarNameInTable="column검사여부" msprop:Generator_ColumnPropNameInRow="검사여부" msprop:Generator_ColumnPropNameInTable="검사여부Column" msprop:Generator_UserColumnName="검사여부" type="xs:byte" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

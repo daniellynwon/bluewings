@@ -48,6 +48,7 @@ namespace SmartMES_Bluewings
             lblTitle.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
             tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[21].Value.ToString();
             tbInNum.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[23].Value.ToString();
+            if (parentWin.dataGridView1.Rows[rowIndex].Cells[24].Value.ToString() == "1") rb1.Checked = true;
 
             if (lblTitle.Tag.ToString() == "0" && (isModify == false))
             {
@@ -214,6 +215,8 @@ namespace SmartMES_Bluewings
             if (string.IsNullOrEmpty(sVat)) sVat = "0";
             string sDepot = cbDepot.SelectedValue.ToString();
             string sBigo = tbBigo.Text.Trim();
+            string sCheck = "0";
+            if (rb1.Checked = true) sCheck = "1";
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
@@ -233,10 +236,10 @@ namespace SmartMES_Bluewings
             if (lblTitle.Tag.ToString() == "0" && (isModify == false))
                 sSeq =  getPurchSeq(sNo);
 
-            sql = "insert into tb_purchase_mat_sub (purch_id, purch_seq, in_date, in_qty, vat, amount, depot, enter_man, contents) " +
-                "values ('" + sNo + "'," + sSeq + ",'" +sInDate + "'," + sInQty + "," + sVat + "," + sAmount + ",'" + sDepot + "','" + G.UserID + "','" + sBigo + "')" +
+            sql = "insert into tb_purchase_mat_sub (purch_id, purch_seq, in_date, in_qty, vat, amount, depot, checkYN, enter_man, contents) " +
+                "values ('" + sNo + "'," + sSeq + ",'" +sInDate + "'," + sInQty + "," + sVat + "," + sAmount + ",'" + sDepot + "'," + sCheck + ",'" + G.UserID + "','" + sBigo + "')" +
                 " on duplicate key update " +
-                "in_date = '" + sInDate + "', in_qty = " + sInQty + ", vat = " + sVat + ", amount = " + sAmount + ", depot = '" + sDepot + "', contents = '" + sBigo + "'";
+                "in_date = '" + sInDate + "', in_qty = " + sInQty + ", vat = " + sVat + ", amount = " + sAmount + ", depot = '" + sDepot + "', checkYN = " + sCheck + ", contents = '" + sBigo + "'";
 
             m.dbCUD(sql, ref msg);
             if (msg != "OK")
