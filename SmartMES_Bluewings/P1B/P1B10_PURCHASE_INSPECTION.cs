@@ -5,7 +5,7 @@ using SmartFactory;
 
 namespace SmartMES_Bluewings
 {
-    public partial class P1B10_PURCHASE_MAT_IN : Form
+    public partial class P1B10_PURCHASE_INSPECTION : Form
     {
         public P1B10_PURCHASE_MAT parentWin;
 
@@ -13,11 +13,11 @@ namespace SmartMES_Bluewings
 
         private int rowIndex = 0;
 
-        public P1B10_PURCHASE_MAT_IN()
+        public P1B10_PURCHASE_INSPECTION()
         {
             InitializeComponent();
         }
-        private void P1B10_PURCHASE_MAT_IN_Load(object sender, EventArgs e)
+        private void P1B10_PURCHASE_INSPECTION_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
 

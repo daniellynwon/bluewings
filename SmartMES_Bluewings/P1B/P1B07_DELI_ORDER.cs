@@ -456,7 +456,7 @@ namespace SmartMES_Bluewings
             string sCust = tbCust.Tag.ToString();
             string sDeliCar = cbDeliCar.Text.Substring(0, 1);
             string sDeliInfo = tbDeliInfo.Text.Trim();
-            string sContents = tbContents.Text.Trim();
+            string sContents = tbContents.Text.Trim(); string sGubun = cbGubun.Text.Substring(0, 1);
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -473,8 +473,8 @@ namespace SmartMES_Bluewings
             if (string.IsNullOrEmpty(sNo)) //추가
             {
                 sNo = getDeliNo(sDate);
-                sql = "insert into tb_deliorder_main (dorder_id, rorder_id, dorder_date, cust_id, deli_car, deli_info, request_date, contents, enter_man) " +
-                    "values('" + sNo + "','" + sRorderNo + "','" + sDate + "','" + sCust + "'," + sDeliCar + ",'" + sDeliInfo + "','" + sReqDate + "','" + sContents + "','" + G.UserID + "')";
+                sql = "insert into tb_deliorder_main (dorder_id, rorder_id, dorder_date, cust_id, gubun, deli_car, deli_info, request_date, contents, enter_man) " +
+                    "values('" + sNo + "','" + sRorderNo + "','" + sDate + "','" + sCust + "','" + sGubun +"'," + sDeliCar + ",'" + sDeliInfo + "','" + sReqDate + "','" + sContents + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -502,7 +502,7 @@ namespace SmartMES_Bluewings
                     sRmQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
                     sRorderNo = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
                     sRorderSeq = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
-                    sConts = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim(); 
+                    sConts = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
 
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
@@ -518,7 +518,7 @@ namespace SmartMES_Bluewings
             else //수정
             {
                 sql = "update tb_deliorder_main " +
-                    "set cust_id = '" + sCust + "', deli_car = '" + sDeliCar + "', deli_info = '" + sDeliInfo + ", request_date" + sReqDate + "', contents = '" + sContents + "'" +
+                    "set cust_id = '" + sCust + "', gubun = '" + sGubun + "', deli_car = '" + sDeliCar + "', deli_info = '" + sDeliInfo + ", request_date" + sReqDate + "', contents = '" + sContents + "'" +
                     " where dorder_id = '" + sNo + "'";
 
                 m.dbCUD(sql, ref msg);

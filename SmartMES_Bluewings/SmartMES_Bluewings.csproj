@@ -416,6 +416,12 @@
     <Compile Include="P1B\P1B09_DELI_NON.Designer.cs">
       <DependentUpon>P1B09_DELI_NON.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_INSPECTION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B10_PURCHASE_INSPECTION.designer.cs">
+      <DependentUpon>P1B10_PURCHASE_INSPECTION.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1B\P1B10_PURCHASE_MAT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -856,6 +862,9 @@
     <EmbeddedResource Include="P1B\P1B09_DELI_NON.resx">
       <DependentUpon>P1B09_DELI_NON.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B10_PURCHASE_INSPECTION.resx">
+      <DependentUpon>P1B10_PURCHASE_INSPECTION.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B10_PURCHASE_MAT.resx">
       <DependentUpon>P1B10_PURCHASE_MAT.cs</DependentUpon>
     </EmbeddedResource>
@@ -1009,6 +1018,7 @@
       <DependentUpon>PwdChange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\P1A01_CUSTOMER.rdlc" />
+    <EmbeddedResource Include="Reports\P1B01_PURCHASE_MAT1.rdlc" />
     <EmbeddedResource Include="Reports\P1B04_RORDER_LIST.rdlc" />
     <EmbeddedResource Include="Reports\P1B05_DELIVERY.rdlc" />
     <EmbeddedResource Include="Reports\P1B06_DELI_PROGRESS.rdlc" />
