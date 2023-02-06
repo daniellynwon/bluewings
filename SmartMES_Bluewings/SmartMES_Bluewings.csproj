@@ -476,6 +476,24 @@
     <Compile Include="P1B\P1B14_UNIT_COST.designer.cs">
       <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE.designer.cs">
+      <DependentUpon>P1B15_DEFECTIVE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE0.designer.cs">
+      <DependentUpon>P1B15_DEFECTIVE0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE_IN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B15_DEFECTIVE_IN.designer.cs">
+      <DependentUpon>P1B15_DEFECTIVE_IN.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\DataSetP1C.cs">
       <DependentUpon>DataSetP1C.xsd</DependentUpon>
     </Compile>
@@ -891,6 +909,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B14_UNIT_COST.resx">
       <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B15_DEFECTIVE.resx">
+      <DependentUpon>P1B15_DEFECTIVE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B15_DEFECTIVE0.resx">
+      <DependentUpon>P1B15_DEFECTIVE0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B15_DEFECTIVE_IN.resx">
+      <DependentUpon>P1B15_DEFECTIVE_IN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER.resx">
       <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>

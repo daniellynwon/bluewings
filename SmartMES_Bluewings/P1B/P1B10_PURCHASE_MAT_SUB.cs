@@ -7,9 +7,11 @@ namespace SmartMES_Bluewings
     public partial class P1B10_PURCHASE_MAT_SUB : Form
     {
         public P1B10_PURCHASE_MAT parentWin;
+        public P1B15_DEFECTIVE subWin;
 
         private int rowIndex = 0;
         private string sNo = string.Empty;
+        public string _gubun;
 
 
         public P1B10_PURCHASE_MAT_SUB()
@@ -26,20 +28,40 @@ namespace SmartMES_Bluewings
             }
             else
             {
-                rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
+                if (_gubun == "A")
+                {
+                    rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-                sNo = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                tbNo.Text = sNo;
-                tbCust.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-                tbCust.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-                dtpPutchDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
-                dtpRequestDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
-                tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-                tbSize.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
-                tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
-                tbDanga.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
-                tbMoney.Text = (long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()) * long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString())).ToString("#,##0");
+                    sNo = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                    tbNo.Text = sNo;
+                    tbCust.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                    tbCust.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                    dtpPutchDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
+                    dtpRequestDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
+                    tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                    tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                    tbSize.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+                    tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
+                    tbDanga.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
+                    tbMoney.Text = (long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()) * long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString())).ToString("#,##0");
+                }
+                else if(_gubun == "B")
+                {
+                    rowIndex = subWin.dataGridView1.CurrentCell.RowIndex;
+
+                    sNo = subWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                    tbNo.Text = sNo;
+                    tbCust.Tag = subWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                    tbCust.Text = subWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                    dtpPutchDate.Value = DateTime.Parse(subWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString());
+                    dtpRequestDate.Value = DateTime.Parse(subWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString());
+                    tbProd.Tag = subWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                    tbProd.Text = subWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                    tbSize.Text = subWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+                    tbWeight.Text = subWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
+                    tbDanga.Text = subWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
+                    tbMoney.Text = (long.Parse(subWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()) * long.Parse(subWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString())).ToString("#,##0");
+                }
                 
                 this.ActiveControl = btnSave;
             }
@@ -210,13 +232,14 @@ namespace SmartMES_Bluewings
         {
             lblMsg.Text = "";
 
-            string sCust = string.Empty;
-            string sProd = string.Empty;
+            string sCust = string.Empty; string sProd = string.Empty;
             if (tbCust.Tag != null) sCust = tbCust.Tag.ToString();
             if (tbProd.Tag != null) sProd = tbProd.Tag.ToString();
 
             string sQty = tbQty.Text.Replace(",", "").Trim();
             string sDanga = tbDanga.Text.Replace(",", "").Trim();
+            string sAmount = tbMoney.Text.Replace(",", "").Trim();
+            string sWeight = tbWeight.Text.Replace(",", "").Trim();
 
             if (string.IsNullOrEmpty(sCust))
             {
@@ -232,9 +255,13 @@ namespace SmartMES_Bluewings
             }
             if (string.IsNullOrEmpty(sQty))
             {
-                lblMsg.Text = "발주수량을 입력해 주세요.";
-                tbQty.Focus();
-                return;
+                if (_gubun == "B") sQty = "0";
+                else
+                {
+                    lblMsg.Text = "발주수량을 입력해 주세요.";
+                    tbQty.Focus();
+                    return;
+                }
             }
             if (string.IsNullOrEmpty(sDanga))
             {
@@ -261,8 +288,8 @@ namespace SmartMES_Bluewings
             {
                 sNo = getCode("PM");
 
-                sql = "insert into tb_purchase_mat (purch_id, pos, putch_date, cust_id, request_date, prod_id, add_size, putch_qty, danga, enter_man1) " +
-                    "values('" + sNo + "','" + G.Pos + "','" + sPutchDate + "','" + sCust + "','" + sRequestDate + "','" + sProd + "','" + sSize + "'," + sQty + "," + sDanga + ",'" + G.UserID + "')";
+                sql = "insert into tb_purchase_mat (purch_id, pos, gubun, putch_date, cust_id, request_date, prod_id, add_size, putch_qty, danga, amount, weight,  enter_man1) " +
+                    "values('" + sNo + "','" + G.Pos + "','" + _gubun + "','" + sPutchDate + "','" + sCust + "','" + sRequestDate + "','" + sProd + "','" + sSize + "'," + sQty + "," + sDanga + "," + sAmount + "," + sWeight + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -276,15 +303,31 @@ namespace SmartMES_Bluewings
                 var data = sql;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);//등록로그추가
 
-                parentWin.ListSearch();
-
-                for (int i = 0; i < parentWin.dataGridView1.Rows.Count - 1; i++)
+                if (_gubun == "B")
                 {
-                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                    subWin.ListSearch();
+                    for (int i = 0; i < subWin.dataGridView1.Rows.Count - 1; i++)
                     {
-                        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, i];
-                        parentWin.dataGridView1.CurrentCell.Selected = true;
-                        break;
+                        if (subWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                        {
+                            subWin.dataGridView1.CurrentCell = subWin.dataGridView1[1, i];
+                            subWin.dataGridView1.CurrentCell.Selected = true;
+                            break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    parentWin.ListSearch();
+                    for (int i = 0; i < parentWin.dataGridView1.Rows.Count - 1; i++)
+                    {
+                        if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                        {
+                            parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, i];
+                            parentWin.dataGridView1.CurrentCell.Selected = true;
+                            break;
+                        }
                     }
                 }
 
@@ -299,6 +342,7 @@ namespace SmartMES_Bluewings
             {
                 sql = "update tb_purchase_mat " +
                     "set putch_date = '" + sPutchDate + "', cust_id = '" + sCust + "', request_date = '" + sRequestDate + "', prod_id = '" + sProd + "', add_size = '" + sSize + "', putch_qty = " + sQty + ", danga = " + sDanga +
+                    ", amount = " + sAmount + ", weight = " + sWeight + 
                     " where purch_id = '" + sNo + "'";
 
                 m.dbCUD(sql, ref msg);
@@ -311,21 +355,36 @@ namespace SmartMES_Bluewings
 
                 m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sNo + " " + sPutchDate + " " + tbCust.Text + " " + tbProd.Text);
 
-                parentWin.ListSearch();
-
-                for (int i = 0; i < parentWin.dataGridView1.Rows.Count - 1; i++)
+                if (_gubun == "B")
                 {
-                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                    subWin.ListSearch();
+                    for (int i = 0; i < subWin.dataGridView1.Rows.Count - 1; i++)
                     {
-                        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, i];
-                        parentWin.dataGridView1.CurrentCell.Selected = true;
-                        break;
+                        if (subWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                        {
+                            subWin.dataGridView1.CurrentCell = subWin.dataGridView1[1, i];
+                            subWin.dataGridView1.CurrentCell.Selected = true;
+                            break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    parentWin.ListSearch();
+                    for (int i = 0; i < parentWin.dataGridView1.Rows.Count - 1; i++)
+                    {
+                        if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
+                        {
+                            parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, i];
+                            parentWin.dataGridView1.CurrentCell.Selected = true;
+                            break;
+                        }
                     }
                 }
+
                 this.DialogResult = DialogResult.OK;
             }
         }
-
-        
     }
 }

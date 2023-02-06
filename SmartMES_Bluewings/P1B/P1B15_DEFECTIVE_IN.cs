@@ -5,19 +5,19 @@ using SmartFactory;
 
 namespace SmartMES_Bluewings
 {
-    public partial class P1B10_PURCHASE_MAT_IN : Form
+    public partial class P1B15_DEFECTIVE_IN : Form
     {
-        public P1B10_PURCHASE_MAT parentWin;
+        public P1B15_DEFECTIVE parentWin;
 
         public bool isModify = false;
-
+        public string _gubun;
         private int rowIndex = 0;
 
-        public P1B10_PURCHASE_MAT_IN()
+        public P1B15_DEFECTIVE_IN()
         {
             InitializeComponent();
         }
-        private void P1B10_PURCHASE_MAT_IN_Load(object sender, EventArgs e)
+        private void P1B15_DEFECTIVE_IN_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
 
@@ -43,12 +43,11 @@ namespace SmartMES_Bluewings
             tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
             tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
             tbSize.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
-            tbQty.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("#,##0");
+            tbWeight.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("#,##0");
             tbDanga.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString()).ToString("#,##0");
             lblTitle.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();
             tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[22].Value.ToString();
             tbInNum.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[24].Value.ToString();
-            if (parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString() == "1") rb1.Checked = true;
 
             if (lblTitle.Tag.ToString() == "0" && (isModify == false))
             {
@@ -59,7 +58,7 @@ namespace SmartMES_Bluewings
 
                 long lDanga = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString());
 
-                tbInQty.Text = lQty.ToString();
+                tbInWeight.Text = lQty.ToString();
                 tbAmount.Text = (lQty * lDanga).ToString();
                 tbVat.Text = (lQty * lDanga * 0.1).ToString();
                 tbMoney.Text = ((lQty * lDanga) + (lQty * lDanga * 0.1)).ToString("#,##0");
@@ -69,7 +68,7 @@ namespace SmartMES_Bluewings
             else
             {
                 dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString());
-                tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
+                tbInWeight.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
                 tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
                 tbVat.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString();
                 cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value;
@@ -106,13 +105,13 @@ namespace SmartMES_Bluewings
         {
             try
             {
-                string lgsText = tbInQty.Text.Replace(",", ""); //** 숫자변환시 콤마로 발생하는 에러방지...
-                tbInQty.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText));
+                string lgsText = tbInWeight.Text.Replace(",", ""); //** 숫자변환시 콤마로 발생하는 에러방지...
+                tbInWeight.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText));
 
-                tbInQty.SelectionStart = tbInQty.TextLength; //** 캐럿을 맨 뒤로 보낸다...
-                tbInQty.SelectionLength = 0;
+                tbInWeight.SelectionStart = tbInWeight.TextLength; //** 캐럿을 맨 뒤로 보낸다...
+                tbInWeight.SelectionLength = 0;
 
-                long lQty = long.Parse(tbInQty.Text.Replace(",", "").Trim());
+                long lQty = long.Parse(tbInWeight.Text.Replace(",", "").Trim());
                 long lDanga = long.Parse(tbDanga.Text.Replace(",", "").Trim());
                 tbAmount.Text = (lQty * lDanga).ToString("#,##0");
                 tbVat.Text = (lQty * lDanga * 0.1).ToString("#,##0");
@@ -183,13 +182,13 @@ namespace SmartMES_Bluewings
         {
             lblMsg.Text = "";
 
-            string sInQty = tbInQty.Text.Replace(",", "").Trim();
+            string sInWeight = tbInWeight.Text.Replace(",", "").Trim();
             string sAmount = tbAmount.Text.Replace(",", "").Trim();
 
-            if (string.IsNullOrEmpty(sInQty))
+            if (string.IsNullOrEmpty(sInWeight))
             {
-                lblMsg.Text = "입고수량을 입력해 주세요.";
-                tbInQty.Focus();
+                lblMsg.Text = "입고중량을 입력해 주세요.";
+                tbInWeight.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(sAmount))
@@ -201,7 +200,7 @@ namespace SmartMES_Bluewings
             string purch_flag = "0";
             int inputQty = 0;
 
-            if (cbEndInput.Checked || checkAmount(sInQty, ref inputQty))
+            if (cbEndInput.Checked || checkAmount(sInWeight, ref inputQty))
             {
                 if (MessageBox.Show("입고를 마감하시겠습니까?","YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     purch_flag = "1";
@@ -215,13 +214,12 @@ namespace SmartMES_Bluewings
             string sDepot = cbDepot.SelectedValue.ToString();
             string sBigo = tbBigo.Text.Trim();
             string sCheck = "0";
-            if (rb1.Checked = true) sCheck = "1";
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
 
             string sql = "update tb_purchase_mat " +
-                    "set putch_flag = " + purch_flag + ", in_date = '" + sInDate + "', in_qty = (SELECT in_qty FROM tb_purchase_mat WHERE purch_id = '" + sNo + "')+" + sInQty + 
+                    "set putch_flag = " + purch_flag + ", in_date = '" + sInDate + "', in_weight = (SELECT in_weight FROM tb_purchase_mat WHERE purch_id = '" + sNo + "')+" + sInWeight + 
                     ", enter_dt2 = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "', enter_man2 = '" + G.UserID + "'" +
                     " where purch_id = '" + sNo + "'";
 
@@ -235,10 +233,10 @@ namespace SmartMES_Bluewings
             if (lblTitle.Tag.ToString() == "0" && (isModify == false))
                 sSeq =  getPurchSeq(sNo);
 
-            sql = "insert into tb_purchase_mat_sub (purch_id, purch_seq, in_date, in_qty, vat, amount, depot, checkYN, enter_man, contents) " +
-                "values ('" + sNo + "'," + sSeq + ",'" +sInDate + "'," + sInQty + "," + sVat + "," + sAmount + ",'" + sDepot + "'," + sCheck + ",'" + G.UserID + "','" + sBigo + "')" +
+            sql = "insert into tb_purchase_mat_sub (purch_id, purch_seq, in_date, in_weight, vat, amount, depot, checkYN, enter_man, contents) " +
+                "values ('" + sNo + "'," + sSeq + ",'" +sInDate + "'," + sInWeight + "," + sVat + "," + sAmount + ",'" + sDepot + "'," + sCheck + ",'" + G.UserID + "','" + sBigo + "')" +
                 " on duplicate key update " +
-                "in_date = '" + sInDate + "', in_qty = " + sInQty + ", vat = " + sVat + ", amount = " + sAmount + ", depot = '" + sDepot + "', checkYN = " + sCheck + ", contents = '" + sBigo + "'";
+                "in_date = '" + sInDate + "', in_weight = " + sInWeight + ", vat = " + sVat + ", amount = " + sAmount + ", depot = '" + sDepot + "', checkYN = " + sCheck + ", contents = '" + sBigo + "'";
 
             m.dbCUD(sql, ref msg);
             if (msg != "OK")
@@ -280,10 +278,9 @@ namespace SmartMES_Bluewings
 
         private bool checkAmount(string sInQty, ref int inpuQty)
         {
-
             string Id = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-            string pQty = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
-            string sql = @"SELECT SUM(ps.in_qty) as qty FROM tb_purchase_mat pm LEFT JOIN tb_purchase_mat_sub ps ON pm.purch_id = ps.purch_id WHERE pm.purch_id = '" + Id + "';";
+            string pQty = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString(); // 수량이지만 중량.
+            string sql = @"SELECT SUM(ps.in_weight) as qty FROM tb_purchase_mat pm LEFT JOIN tb_purchase_mat_sub ps ON pm.purch_id = ps.purch_id WHERE pm.purch_id = '" + Id + "';";
 
             MariaCRUD m = new MariaCRUD();
 
@@ -311,8 +308,7 @@ namespace SmartMES_Bluewings
             {
                 string sNo = tbNo.Text;
                 string sSeq = tbInNum.Text;
-
-                int qty = int.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString(), System.Globalization.NumberStyles.AllowThousands);
+                int qty = int.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString(), System.Globalization.NumberStyles.AllowThousands); // 입고중량
 
 
                 DialogResult dr = MessageBox.Show("입고번호 : " + sNo + ", 순번 : " + sSeq + "\r\r해당 정보를 삭제하시겠습니까?", this.lblTitle.Text + "[삭제]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -331,7 +327,7 @@ namespace SmartMES_Bluewings
                     return;
                 }
                 sql = "update tb_purchase_mat " +
-                    "set putch_flag = 0, in_qty = (SELECT in_qty FROM tb_purchase_mat WHERE purch_id = '" + sNo + "')-" + qty.ToString() +
+                    "set putch_flag = 0, in_weight = (SELECT in_weight FROM tb_purchase_mat WHERE purch_id = '" + sNo + "')-" + qty.ToString() +
                     " where purch_id = '" + sNo + "'";
 
                 msg = string.Empty;

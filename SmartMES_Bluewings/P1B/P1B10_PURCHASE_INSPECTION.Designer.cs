@@ -71,7 +71,6 @@
             this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
-            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +80,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(28, 73);
+            this.lblMsg.Location = new System.Drawing.Point(28, 57);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(148, 21);
             this.lblMsg.TabIndex = 0;
@@ -577,25 +576,12 @@
             this.rb1.Text = "실시";
             this.rb1.UseVisualStyleBackColor = true;
             // 
-            // btnReport
-            // 
-            this.btnReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnReport.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.btnReport.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnReport.Location = new System.Drawing.Point(620, 66);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(105, 34);
-            this.btnReport.TabIndex = 40;
-            this.btnReport.Text = "입고검사";
-            this.btnReport.UseVisualStyleBackColor = false;
-            // 
             // P1B10_PURCHASE_INSPECTION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(746, 752);
-            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.rb2);
             this.Controls.Add(this.rb1);
             this.Controls.Add(this.label17);
@@ -685,6 +671,5 @@
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.RadioButton rb2;
         public System.Windows.Forms.RadioButton rb1;
-        private System.Windows.Forms.Button btnReport;
     }
 }

@@ -43,15 +43,17 @@
             this.tbCust = new System.Windows.Forms.TextBox();
             this.lblCust = new System.Windows.Forms.Label();
             this.lblProd = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbMoney = new System.Windows.Forms.TextBox();
             this.tbSize = new System.Windows.Forms.TextBox();
             this.tbProd = new System.Windows.Forms.TextBox();
             this.tbQty = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbWeight = new System.Windows.Forms.TextBox();
+            this.lblWeight = new System.Windows.Forms.Label();
             this.btnClose = new SmartMES_Bluewings.UserButtonA();
             this.btnSave = new SmartMES_Bluewings.UserButtonA();
-            this.label2 = new System.Windows.Forms.Label();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,19 +228,19 @@
             this.lblProd.Name = "lblProd";
             this.lblProd.Size = new System.Drawing.Size(70, 21);
             this.lblProd.TabIndex = 8;
-            this.lblProd.Text = "품 목 명";
+            this.lblProd.Text = "자 재 명";
             this.lblProd.Click += new System.EventHandler(this.lblProd_Click);
             // 
-            // label3
+            // lblQty
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(51, 361);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "발주수량";
+            this.lblQty.AutoSize = true;
+            this.lblQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblQty.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblQty.Location = new System.Drawing.Point(51, 361);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(74, 21);
+            this.lblQty.TabIndex = 0;
+            this.lblQty.Text = "발주수량";
             // 
             // label5
             // 
@@ -297,6 +299,42 @@
             this.tbQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
             this.tbQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(479, 484);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "자재단가표";
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.lblCost_Click);
+            // 
+            // tbWeight
+            // 
+            this.tbWeight.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbWeight.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbWeight.Location = new System.Drawing.Point(125, 424);
+            this.tbWeight.Name = "tbWeight";
+            this.tbWeight.Size = new System.Drawing.Size(211, 29);
+            this.tbWeight.TabIndex = 34;
+            this.tbWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbWeight.Visible = false;
+            // 
+            // lblWeight
+            // 
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblWeight.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblWeight.Location = new System.Drawing.Point(51, 428);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(74, 21);
+            this.lblWeight.TabIndex = 33;
+            this.lblWeight.Text = "발주중량";
+            this.lblWeight.Visible = false;
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -325,32 +363,21 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(479, 484);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "자재단가표";
-            this.label2.Visible = false;
-            this.label2.Click += new System.EventHandler(this.lblCost_Click);
-            // 
             // P1B10_PURCHASE_MAT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(746, 615);
+            this.Controls.Add(this.tbWeight);
+            this.Controls.Add(this.lblWeight);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbQty);
             this.Controls.Add(this.tbSize);
             this.Controls.Add(this.tbProd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbMoney);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblQty);
             this.Controls.Add(this.lblProd);
             this.Controls.Add(this.lblCust);
             this.Controls.Add(this.tbCust);
@@ -402,12 +429,14 @@
         private System.Windows.Forms.TextBox tbCust;
         private System.Windows.Forms.Label lblCust;
         private System.Windows.Forms.Label lblProd;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbMoney;
         private System.Windows.Forms.TextBox tbSize;
         private System.Windows.Forms.TextBox tbProd;
-        private System.Windows.Forms.TextBox tbQty;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblQty;
+        public System.Windows.Forms.Label lblWeight;
+        public System.Windows.Forms.TextBox tbWeight;
+        public System.Windows.Forms.TextBox tbQty;
     }
 }

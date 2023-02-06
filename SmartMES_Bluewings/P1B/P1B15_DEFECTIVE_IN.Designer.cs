@@ -1,6 +1,6 @@
 ﻿namespace SmartMES_Bluewings
 {
-    partial class P1B10_PURCHASE_MAT_IN
+    partial class P1B15_DEFECTIVE_IN
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbQty = new System.Windows.Forms.TextBox();
+            this.tbWeight = new System.Windows.Forms.TextBox();
             this.tbSize = new System.Windows.Forms.TextBox();
             this.tbProd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.tbDanga = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbInQty = new System.Windows.Forms.TextBox();
+            this.tbInWeight = new System.Windows.Forms.TextBox();
             this.lblQty = new System.Windows.Forms.Label();
             this.dtpInDate = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,11 +66,8 @@
             this.tbInNum = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbEndInput = new System.Windows.Forms.CheckBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.btnClose = new SmartMES_Bluewings.UserButtonA();
             this.btnSave = new SmartMES_Bluewings.UserButtonA();
-            this.rb2 = new System.Windows.Forms.RadioButton();
-            this.rb1 = new System.Windows.Forms.RadioButton();
             this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panTitle.SuspendLayout();
@@ -91,7 +88,7 @@
             // 
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tbQty);
+            this.groupBox1.Controls.Add(this.tbWeight);
             this.groupBox1.Controls.Add(this.tbSize);
             this.groupBox1.Controls.Add(this.tbProd);
             this.groupBox1.Controls.Add(this.label3);
@@ -133,18 +130,18 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 0;
-            this.label4.Text = "폼목명";
+            this.label4.Text = "자재명";
             // 
-            // tbQty
+            // tbWeight
             // 
-            this.tbQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbQty.Location = new System.Drawing.Point(106, 187);
-            this.tbQty.Name = "tbQty";
-            this.tbQty.ReadOnly = true;
-            this.tbQty.Size = new System.Drawing.Size(211, 29);
-            this.tbQty.TabIndex = 0;
-            this.tbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbWeight.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbWeight.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbWeight.Location = new System.Drawing.Point(106, 187);
+            this.tbWeight.Name = "tbWeight";
+            this.tbWeight.ReadOnly = true;
+            this.tbWeight.Size = new System.Drawing.Size(211, 29);
+            this.tbWeight.TabIndex = 0;
+            this.tbWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbSize
             // 
@@ -175,7 +172,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "발주수량";
+            this.label3.Text = "발주중량";
             // 
             // tbCust
             // 
@@ -298,18 +295,18 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "입고창고";
             // 
-            // tbInQty
+            // tbInWeight
             // 
-            this.tbInQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbInQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbInQty.Location = new System.Drawing.Point(485, 394);
-            this.tbInQty.Name = "tbInQty";
-            this.tbInQty.Size = new System.Drawing.Size(211, 29);
-            this.tbInQty.TabIndex = 2;
-            this.tbInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbInQty.TextChanged += new System.EventHandler(this.tbInQty_TextChanged);
-            this.tbInQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            this.tbInQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            this.tbInWeight.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbInWeight.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbInWeight.Location = new System.Drawing.Point(485, 394);
+            this.tbInWeight.Name = "tbInWeight";
+            this.tbInWeight.Size = new System.Drawing.Size(211, 29);
+            this.tbInWeight.TabIndex = 2;
+            this.tbInWeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbInWeight.TextChanged += new System.EventHandler(this.tbInQty_TextChanged);
+            this.tbInWeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            this.tbInWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
             // 
             // lblQty
             // 
@@ -320,7 +317,7 @@
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(74, 21);
             this.lblQty.TabIndex = 0;
-            this.lblQty.Text = "입고수량";
+            this.lblQty.Text = "입고중량";
             // 
             // dtpInDate
             // 
@@ -512,17 +509,6 @@
             this.cbEndInput.Text = "입고마감";
             this.cbEndInput.UseVisualStyleBackColor = true;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(53, 352);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 21);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "입고검사";
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -551,32 +537,6 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // rb2
-            // 
-            this.rb2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rb2.AutoSize = true;
-            this.rb2.Checked = true;
-            this.rb2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.rb2.Location = new System.Drawing.Point(199, 350);
-            this.rb2.Name = "rb2";
-            this.rb2.Size = new System.Drawing.Size(60, 25);
-            this.rb2.TabIndex = 39;
-            this.rb2.TabStop = true;
-            this.rb2.Text = "미검";
-            this.rb2.UseVisualStyleBackColor = true;
-            // 
-            // rb1
-            // 
-            this.rb1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rb1.AutoSize = true;
-            this.rb1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.rb1.Location = new System.Drawing.Point(133, 350);
-            this.rb1.Name = "rb1";
-            this.rb1.Size = new System.Drawing.Size(60, 25);
-            this.rb1.TabIndex = 38;
-            this.rb1.Text = "실시";
-            this.rb1.UseVisualStyleBackColor = true;
-            // 
             // btnReport
             // 
             this.btnReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -588,17 +548,15 @@
             this.btnReport.TabIndex = 40;
             this.btnReport.Text = "입고검사";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Visible = false;
             // 
-            // P1B10_PURCHASE_MAT_IN
+            // P1B15_DEFECTIVE_IN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(746, 752);
             this.Controls.Add(this.btnReport);
-            this.Controls.Add(this.rb2);
-            this.Controls.Add(this.rb1);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.cbEndInput);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbInNum);
@@ -614,7 +572,7 @@
             this.Controls.Add(this.tbAmount);
             this.Controls.Add(this.dtpInDate);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.tbInQty);
+            this.Controls.Add(this.tbInWeight);
             this.Controls.Add(this.lblQty);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox1);
@@ -627,10 +585,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "P1B10_PURCHASE_MAT_IN";
+            this.Name = "P1B15_DEFECTIVE_IN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Smart Factory MES";
-            this.Load += new System.EventHandler(this.P1B10_PURCHASE_MAT_IN_Load);
+            this.Load += new System.EventHandler(this.P1B15_DEFECTIVE_IN_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panTitle.ResumeLayout(false);
@@ -650,7 +608,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbQty;
+        private System.Windows.Forms.TextBox tbWeight;
         private System.Windows.Forms.TextBox tbSize;
         private System.Windows.Forms.TextBox tbProd;
         private System.Windows.Forms.Label label3;
@@ -665,7 +623,7 @@
         private System.Windows.Forms.TextBox tbDanga;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbInQty;
+        private System.Windows.Forms.TextBox tbInWeight;
         private System.Windows.Forms.Label lblQty;
         private System.Windows.Forms.DateTimePicker dtpInDate;
         private System.Windows.Forms.Label label13;
@@ -682,9 +640,6 @@
         private System.Windows.Forms.TextBox tbInNum;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbEndInput;
-        private System.Windows.Forms.Label label17;
-        public System.Windows.Forms.RadioButton rb2;
-        public System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.Button btnReport;
     }
 }

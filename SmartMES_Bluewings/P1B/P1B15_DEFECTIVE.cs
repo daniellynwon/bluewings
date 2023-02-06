@@ -6,13 +6,13 @@ using SmartFactory;
 
 namespace SmartMES_Bluewings
 {
-    public partial class P1B10_PURCHASE_MAT : SmartMES_Bluewings.FormBasic
+    public partial class P1B15_DEFECTIVE : SmartMES_Bluewings.FormBasic
     {
-        public P1B10_PURCHASE_MAT()
+        public P1B15_DEFECTIVE()
         {
             InitializeComponent();
         }
-        private void P1B10_PURCHASE_MAT_Load(object sender, EventArgs e)
+        private void P1B15_DEFECTIVE_Load(object sender, EventArgs e)
         {
             cbTerm.SelectedIndex = 0;
             dtpFromDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-01"));
@@ -38,7 +38,7 @@ namespace SmartMES_Bluewings
                 if (sGubun == "<전체>") sGubun = "%";
                 else if (!string.IsNullOrEmpty(sGubun)) sGubun = sGubun.Substring(0, 1);
 
-                sP_PurchaseMat_QueryTableAdapter.Fill(dataSetP1B.SP_PurchaseMat_Query, sFlag, dtFromDate, dtToDate, sSearch, sGubun, "A");
+                sP_PurchaseMat_QueryTableAdapter.Fill(dataSetP1B.SP_PurchaseMat_Query, sFlag, dtFromDate, dtToDate, sSearch, sGubun, "B");
                 var data = dataSetP1B.SP_PurchaseMat_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -96,9 +96,9 @@ namespace SmartMES_Bluewings
 
                 for (int i = 0; i < rowIndex; i++)
                 {
-                    iSum1 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[8].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()));
+                    iSum1 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[8].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()));     //발주중량
                     iSum2 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[10].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString()));   //발주액
-                    iSum3 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[16].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[16].Value.ToString()));   //입고량
+                    iSum3 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[16].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[16].Value.ToString()));   //입고중량
                     iSum4 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[17].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[17].Value.ToString()));   //매입액
                     iSum5 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[18].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[18].Value.ToString()));   //부가세
                     iSum6 += (string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[19].Value.ToString()) ? 0 : long.Parse(dataGridView1.Rows[i].Cells[19].Value.ToString()));   //합계
@@ -156,8 +156,10 @@ namespace SmartMES_Bluewings
             {
                 P1B10_PURCHASE_MAT_SUB sub = new P1B10_PURCHASE_MAT_SUB();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-                sub._gubun = "A";
-                sub.parentWin = this;
+                sub.subWin = this;
+                sub._gubun = "B";
+                sub.lblWeight.Visible = true; sub.tbWeight.Visible = true;
+                sub.lblQty.Visible = false; sub.tbQty.Visible = false;
                 sub.ShowDialog();
             }
             else if (e.ColumnIndex == 12)
@@ -169,25 +171,26 @@ namespace SmartMES_Bluewings
             }
             else if (e.ColumnIndex == 13)   // 입고
             {
-                P1B10_PURCHASE_MAT_IN sub = new P1B10_PURCHASE_MAT_IN();
+                P1B15_DEFECTIVE_IN sub = new P1B15_DEFECTIVE_IN();
                 if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "0")
                     sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
                 else
                     sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                sub._gubun = "B";
                 sub.parentWin = this;
                 sub.isModify = false;
                 sub.ShowDialog();
             }
             else if (e.ColumnIndex == 15)       // 입고일
             {
-                P1B10_PURCHASE_MAT_IN sub = new P1B10_PURCHASE_MAT_IN();
-                if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "0")
-                    sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
-                else
-                    sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-                sub.parentWin = this;
-                sub.isModify = true;
-                sub.ShowDialog();
+                //P1B15_DEFECTIVE_IN sub = new P1B15_DEFECTIVE_IN();
+                //if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "0")
+                //    sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
+                //else
+                //    sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                //sub.parentWin = this;
+                //sub.isModify = true;
+                //sub.ShowDialog();
             }
         }
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -233,8 +236,10 @@ namespace SmartMES_Bluewings
         {
             P1B10_PURCHASE_MAT_SUB sub = new P1B10_PURCHASE_MAT_SUB();
             sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
-            sub.parentWin = this;
-            sub._gubun = "A";
+            sub.subWin = this;
+            sub._gubun = "B";
+            sub.lblWeight.Visible = true; sub.tbWeight.Visible = true;
+            sub.lblQty.Visible = false; sub.tbQty.Visible = false;
             sub.ShowDialog();
         }
         private async void pbDel_Click(object sender, EventArgs e)
@@ -291,7 +296,7 @@ namespace SmartMES_Bluewings
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
-            string reportFileName = "SmartMES_Bluewings.Reports.P1B10_PURCHASE_MAT.rdlc";
+            string reportFileName = "SmartMES_Bluewings.Reports.P1B15_DEFECTIVE.rdlc";
 
             string reportParm1 = cbTerm.Text.Substring(2, cbTerm.Text.Length - 2) + " : ";
             string reportParm2 = "발주처/품목명 : ";
