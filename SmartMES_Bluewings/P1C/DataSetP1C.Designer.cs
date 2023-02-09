@@ -5332,19 +5332,33 @@ namespace SmartMES_Bluewings.P1C {
             
             private global::System.Data.DataColumn column품목;
             
-            private global::System.Data.DataColumn columnD1;
+            private global::System.Data.DataColumn columnD11;
             
-            private global::System.Data.DataColumn columnD2;
+            private global::System.Data.DataColumn columnD12;
             
-            private global::System.Data.DataColumn columnD3;
+            private global::System.Data.DataColumn columnD21;
             
-            private global::System.Data.DataColumn columnD4;
+            private global::System.Data.DataColumn columnD22;
             
-            private global::System.Data.DataColumn columnD5;
+            private global::System.Data.DataColumn columnD31;
             
-            private global::System.Data.DataColumn columnD6;
+            private global::System.Data.DataColumn columnD32;
             
-            private global::System.Data.DataColumn columnD7;
+            private global::System.Data.DataColumn columnD41;
+            
+            private global::System.Data.DataColumn columnD42;
+            
+            private global::System.Data.DataColumn columnD51;
+            
+            private global::System.Data.DataColumn columnD52;
+            
+            private global::System.Data.DataColumn columnD61;
+            
+            private global::System.Data.DataColumn columnD62;
+            
+            private global::System.Data.DataColumn columnD71;
+            
+            private global::System.Data.DataColumn columnD72;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -5413,57 +5427,113 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D1Column {
+            public global::System.Data.DataColumn D11Column {
                 get {
-                    return this.columnD1;
+                    return this.columnD11;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D2Column {
+            public global::System.Data.DataColumn D12Column {
                 get {
-                    return this.columnD2;
+                    return this.columnD12;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D3Column {
+            public global::System.Data.DataColumn D21Column {
                 get {
-                    return this.columnD3;
+                    return this.columnD21;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D4Column {
+            public global::System.Data.DataColumn D22Column {
                 get {
-                    return this.columnD4;
+                    return this.columnD22;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D5Column {
+            public global::System.Data.DataColumn D31Column {
                 get {
-                    return this.columnD5;
+                    return this.columnD31;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D6Column {
+            public global::System.Data.DataColumn D32Column {
                 get {
-                    return this.columnD6;
+                    return this.columnD32;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn D7Column {
+            public global::System.Data.DataColumn D41Column {
                 get {
-                    return this.columnD7;
+                    return this.columnD41;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D42Column {
+                get {
+                    return this.columnD42;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D51Column {
+                get {
+                    return this.columnD51;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D52Column {
+                get {
+                    return this.columnD52;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D61Column {
+                get {
+                    return this.columnD61;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D62Column {
+                get {
+                    return this.columnD62;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D71Column {
+                get {
+                    return this.columnD71;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn D72Column {
+                get {
+                    return this.columnD72;
                 }
             }
             
@@ -5504,20 +5574,45 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdPlan_QueryRow AddSP_ProdPlan_QueryRow(string LL, uint 코드, string 설비명, string 품목, string D1, string D2, string D3, string D4, string D5, string D6, string D7) {
+            public SP_ProdPlan_QueryRow AddSP_ProdPlan_QueryRow(
+                        string LL, 
+                        uint 코드, 
+                        string 설비명, 
+                        string 품목, 
+                        string D11, 
+                        string D12, 
+                        string D21, 
+                        string D22, 
+                        string D31, 
+                        string D32, 
+                        string D41, 
+                        string D42, 
+                        string D51, 
+                        string D52, 
+                        string D61, 
+                        string D62, 
+                        string D71, 
+                        string D72) {
                 SP_ProdPlan_QueryRow rowSP_ProdPlan_QueryRow = ((SP_ProdPlan_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LL,
                         코드,
                         설비명,
                         품목,
-                        D1,
-                        D2,
-                        D3,
-                        D4,
-                        D5,
-                        D6,
-                        D7};
+                        D11,
+                        D12,
+                        D21,
+                        D22,
+                        D31,
+                        D32,
+                        D41,
+                        D42,
+                        D51,
+                        D52,
+                        D61,
+                        D62,
+                        D71,
+                        D72};
                 rowSP_ProdPlan_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdPlan_QueryRow);
                 return rowSP_ProdPlan_QueryRow;
@@ -5544,13 +5639,20 @@ namespace SmartMES_Bluewings.P1C {
                 this.column코드 = base.Columns["코드"];
                 this.column설비명 = base.Columns["설비명"];
                 this.column품목 = base.Columns["품목"];
-                this.columnD1 = base.Columns["D1"];
-                this.columnD2 = base.Columns["D2"];
-                this.columnD3 = base.Columns["D3"];
-                this.columnD4 = base.Columns["D4"];
-                this.columnD5 = base.Columns["D5"];
-                this.columnD6 = base.Columns["D6"];
-                this.columnD7 = base.Columns["D7"];
+                this.columnD11 = base.Columns["D11"];
+                this.columnD12 = base.Columns["D12"];
+                this.columnD21 = base.Columns["D21"];
+                this.columnD22 = base.Columns["D22"];
+                this.columnD31 = base.Columns["D31"];
+                this.columnD32 = base.Columns["D32"];
+                this.columnD41 = base.Columns["D41"];
+                this.columnD42 = base.Columns["D42"];
+                this.columnD51 = base.Columns["D51"];
+                this.columnD52 = base.Columns["D52"];
+                this.columnD61 = base.Columns["D61"];
+                this.columnD62 = base.Columns["D62"];
+                this.columnD71 = base.Columns["D71"];
+                this.columnD72 = base.Columns["D72"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5564,20 +5666,34 @@ namespace SmartMES_Bluewings.P1C {
                 base.Columns.Add(this.column설비명);
                 this.column품목 = new global::System.Data.DataColumn("품목", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column품목);
-                this.columnD1 = new global::System.Data.DataColumn("D1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD1);
-                this.columnD2 = new global::System.Data.DataColumn("D2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD2);
-                this.columnD3 = new global::System.Data.DataColumn("D3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD3);
-                this.columnD4 = new global::System.Data.DataColumn("D4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD4);
-                this.columnD5 = new global::System.Data.DataColumn("D5", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD5);
-                this.columnD6 = new global::System.Data.DataColumn("D6", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD6);
-                this.columnD7 = new global::System.Data.DataColumn("D7", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnD7);
+                this.columnD11 = new global::System.Data.DataColumn("D11", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD11);
+                this.columnD12 = new global::System.Data.DataColumn("D12", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD12);
+                this.columnD21 = new global::System.Data.DataColumn("D21", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD21);
+                this.columnD22 = new global::System.Data.DataColumn("D22", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD22);
+                this.columnD31 = new global::System.Data.DataColumn("D31", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD31);
+                this.columnD32 = new global::System.Data.DataColumn("D32", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD32);
+                this.columnD41 = new global::System.Data.DataColumn("D41", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD41);
+                this.columnD42 = new global::System.Data.DataColumn("D42", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD42);
+                this.columnD51 = new global::System.Data.DataColumn("D51", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD51);
+                this.columnD52 = new global::System.Data.DataColumn("D52", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD52);
+                this.columnD61 = new global::System.Data.DataColumn("D61", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD61);
+                this.columnD62 = new global::System.Data.DataColumn("D62", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD62);
+                this.columnD71 = new global::System.Data.DataColumn("D71", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD71);
+                this.columnD72 = new global::System.Data.DataColumn("D72", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD72);
                 this.columnLL.AllowDBNull = false;
                 this.columnLL.MaxLength = 1;
                 this.column코드.AllowDBNull = false;
@@ -5585,13 +5701,20 @@ namespace SmartMES_Bluewings.P1C {
                 this.column설비명.MaxLength = 50;
                 this.column품목.AllowDBNull = false;
                 this.column품목.MaxLength = 3;
-                this.columnD1.AllowDBNull = false;
-                this.columnD2.AllowDBNull = false;
-                this.columnD3.AllowDBNull = false;
-                this.columnD4.AllowDBNull = false;
-                this.columnD5.AllowDBNull = false;
-                this.columnD6.AllowDBNull = false;
-                this.columnD7.AllowDBNull = false;
+                this.columnD11.AllowDBNull = false;
+                this.columnD12.AllowDBNull = false;
+                this.columnD21.AllowDBNull = false;
+                this.columnD22.AllowDBNull = false;
+                this.columnD31.AllowDBNull = false;
+                this.columnD32.AllowDBNull = false;
+                this.columnD41.AllowDBNull = false;
+                this.columnD42.AllowDBNull = false;
+                this.columnD51.AllowDBNull = false;
+                this.columnD52.AllowDBNull = false;
+                this.columnD61.AllowDBNull = false;
+                this.columnD62.AllowDBNull = false;
+                this.columnD71.AllowDBNull = false;
+                this.columnD72.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8477,78 +8600,155 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D1 {
+            public string D11 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D1Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D11Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D1Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D11Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D2 {
+            public string D12 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D2Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D12Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D2Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D12Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D3 {
+            public string D21 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D3Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D21Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D3Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D21Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D4 {
+            public string D22 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D4Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D22Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D4Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D22Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D5 {
+            public string D31 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D5Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D31Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D5Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D31Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D6 {
+            public string D32 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D6Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D32Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D6Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D32Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string D7 {
+            public string D41 {
                 get {
-                    return ((string)(this[this.tableSP_ProdPlan_Query.D7Column]));
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D41Column]));
                 }
                 set {
-                    this[this.tableSP_ProdPlan_Query.D7Column] = value;
+                    this[this.tableSP_ProdPlan_Query.D41Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D42 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D42Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D42Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D51 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D51Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D51Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D52 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D52Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D52Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D61 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D61Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D61Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D62 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D62Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D62Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D71 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D71Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D71Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D72 {
+                get {
+                    return ((string)(this[this.tableSP_ProdPlan_Query.D72Column]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query.D72Column] = value;
                 }
             }
         }
@@ -11852,13 +12052,20 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("코드", "코드");
             tableMapping.ColumnMappings.Add("설비명", "설비명");
             tableMapping.ColumnMappings.Add("품목", "품목");
-            tableMapping.ColumnMappings.Add("D1", "D1");
-            tableMapping.ColumnMappings.Add("D2", "D2");
-            tableMapping.ColumnMappings.Add("D3", "D3");
-            tableMapping.ColumnMappings.Add("D4", "D4");
-            tableMapping.ColumnMappings.Add("D5", "D5");
-            tableMapping.ColumnMappings.Add("D6", "D6");
-            tableMapping.ColumnMappings.Add("D7", "D7");
+            tableMapping.ColumnMappings.Add("D11", "D11");
+            tableMapping.ColumnMappings.Add("D12", "D12");
+            tableMapping.ColumnMappings.Add("D21", "D21");
+            tableMapping.ColumnMappings.Add("D22", "D22");
+            tableMapping.ColumnMappings.Add("D31", "D31");
+            tableMapping.ColumnMappings.Add("D32", "D32");
+            tableMapping.ColumnMappings.Add("D41", "D41");
+            tableMapping.ColumnMappings.Add("D42", "D42");
+            tableMapping.ColumnMappings.Add("D51", "D51");
+            tableMapping.ColumnMappings.Add("D52", "D52");
+            tableMapping.ColumnMappings.Add("D61", "D61");
+            tableMapping.ColumnMappings.Add("D62", "D62");
+            tableMapping.ColumnMappings.Add("D71", "D71");
+            tableMapping.ColumnMappings.Add("D72", "D72");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
