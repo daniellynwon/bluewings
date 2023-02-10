@@ -494,6 +494,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1319, 391);
             this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
             // 

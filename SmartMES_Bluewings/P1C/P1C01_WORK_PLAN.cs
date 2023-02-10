@@ -213,26 +213,30 @@ namespace SmartMES_Bluewings
 
             string sDate = string.Empty; string sWeight = string.Empty;
 
-            for (int i = 4; i < dataGridView1.ColumnCount-1; i+=2)    // column 먼저
+            //for (int t = 0; t < 7; t++)
+            //{
+            //    if (t == 0) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
+            //    else
+            //        sDate = dtpFromDate.Value.AddDays(t).ToString("yyyy-MM-dd");
+            //}
+            int d = 4;
+            for (int i = 4; i < dataGridView1.ColumnCount - 1; i += 2)    // column 먼저
             {
-                for (int t = 0; t < 7; t++){
-                    if(t == 0) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
-                    else
-                        sDate = dtpFromDate.Value.AddDays(t).ToString("yyyy-MM-dd");
+                if (i == 4) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
+                else sDate = dtpFromDate.Value.AddDays(i - d).ToString("yyyy-MM-dd");
+                d++;
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
+                    string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
+                    sWeight = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();
+                    if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
 
-                    for(int j=0; j < dataGridView1.RowCount-1; j++)
-                    {
-                        string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
-                        string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
-                        sWeight = dataGridView1.Rows[j].Cells[i+1].Value.ToString().Trim();
-                        if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
-
-                        sql = "insert into tb_prod_plan (plan_date, machine_id, prod_id, plan_weight, enter_man)" +
-                            " values('" + sDate + "','" + sMachine + "','" + sProd + "'," + sWeight + ",'" + G.UserID + "')" +
-                            " on duplicate key update" +
-                            " prod_id = '" + sProd + "', plan_weight = " + sWeight;
-                        m.dbCUD(sql, ref msg);
-                    }
+                    sql = "insert into tb_prod_plan (plan_date, machine_id, prod_id, plan_weight, enter_man)" +
+                        " values('" + sDate + "','" + sMachine + "','" + sProd + "'," + sWeight + ",'" + G.UserID + "')" +
+                        " on duplicate key update" +
+                        " prod_id = '" + sProd + "', plan_weight = " + sWeight;
+                    m.dbCUD(sql, ref msg);
                 }
             }
         }
