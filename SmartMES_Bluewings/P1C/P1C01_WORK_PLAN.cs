@@ -211,6 +211,30 @@ namespace SmartMES_Bluewings
             string sql = string.Empty;
             string msg = string.Empty;
 
+            string sDate = string.Empty; string sWeight = string.Empty;
+
+            for (int i = 4; i < dataGridView1.ColumnCount-1; i+=2)    // column 먼저
+            {
+                for (int t = 0; t < 7; t++){
+                    if(t == 0) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
+                    else
+                        sDate = dtpFromDate.Value.AddDays(t).ToString("yyyy-MM-dd");
+
+                    for(int j=0; j < dataGridView1.RowCount-1; j++)
+                    {
+                        string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
+                        string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
+                        sWeight = dataGridView1.Rows[j].Cells[i+1].Value.ToString().Trim();
+                        if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
+
+                        sql = "insert into tb_prod_plan (plan_date, machine_id, prod_id, plan_weight, enter_man)" +
+                            " values('" + sDate + "','" + sMachine + "','" + sProd + "'," + sWeight + ",'" + G.UserID + "')" +
+                            " on duplicate key update" +
+                            " prod_id = '" + sProd + "', plan_weight = " + sWeight;
+                        m.dbCUD(sql, ref msg);
+                    }
+                }
+            }
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
@@ -219,7 +243,6 @@ namespace SmartMES_Bluewings
             string reportFileName = "SmartMES_DongLimConrod.Reports.P1B06_STOCK_INVEL_DT.rdlc";
 
             //string reportParm1 = " [ 전체 소재/제품 ] ";
-
             //reportParm1 = reportParm1 + " "; 
 
             ViewReport_H viewReport = new ViewReport_H();
@@ -255,7 +278,7 @@ namespace SmartMES_Bluewings
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
 
-            // Category Painting 
+            // Category Painting 헤더 그리는 부분
             {
                 //--------------------------------- 범위 지정
                 Rectangle r1 = gv.GetCellDisplayRectangle(2, -1, false);  //범위 시작
