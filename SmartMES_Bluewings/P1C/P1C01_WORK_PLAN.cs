@@ -232,7 +232,7 @@ namespace SmartMES_Bluewings
                             " on duplicate key update" +
                             " prod_id = '" + sProd + "', plan_weight = " + sWeight;
                         m.dbCUD(sql, ref msg);
-                    }
+                    } // git 확인
                 }
             }
         }
