@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1C01_PROD_ORDER));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,9 +43,6 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
-            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +52,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.완료DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.레시피 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
+            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -68,7 +69,7 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.Text = "생산지시등록";
+            this.lblTitle.Text = "작업지시등록";
             // 
             // pbPrint
             // 
@@ -88,6 +89,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -262,20 +264,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // sPProdOrderQueryBindingSource
-            // 
-            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
-            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_ProdOrder_QueryTableAdapter
-            // 
-            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
-            // 
             // 일자DataGridViewTextBoxColumn
             // 
             this.일자DataGridViewTextBoxColumn.DataPropertyName = "일자";
@@ -346,6 +334,20 @@
             this.레시피.ReadOnly = true;
             this.레시피.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.레시피.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sPProdOrderQueryBindingSource
+            // 
+            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
+            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_ProdOrder_QueryTableAdapter
+            // 
+            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1C01_PROD_ORDER
             // 

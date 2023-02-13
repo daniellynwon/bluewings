@@ -203,7 +203,6 @@ namespace SmartMES_Bluewings
         private void pbSave_Click(object sender, EventArgs e)
         {
             lblMsg.Text = "";
-            //string s
             DialogResult dr = MessageBox.Show("해당 생산계획을 저장하시겠습니까?", "생산계획등록", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.No) return;
 
@@ -211,15 +210,8 @@ namespace SmartMES_Bluewings
             string sql = string.Empty;
             string msg = string.Empty;
 
-            string sDate = string.Empty; string sWeight = string.Empty;
+            string sDate = string.Empty; string sWeight = string.Empty; int d = 4;
 
-            //for (int t = 0; t < 7; t++)
-            //{
-            //    if (t == 0) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
-            //    else
-            //        sDate = dtpFromDate.Value.AddDays(t).ToString("yyyy-MM-dd");
-            //}
-            int d = 4;
             for (int i = 4; i < dataGridView1.ColumnCount - 1; i += 2)    // column 먼저
             {
                 if (i == 4) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
@@ -229,6 +221,7 @@ namespace SmartMES_Bluewings
                 {
                     string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
                     string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
+                    if (string.IsNullOrEmpty(sProd)) return;
                     sWeight = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();
                     if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
 

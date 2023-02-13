@@ -131,31 +131,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdOrder_ROrderTableAdapter" GeneratorDataComponentClassName="SP_ProdOrder_ROrderTableAdapter" Name="SP_ProdOrder_ROrder" UserDataComponentName="SP_ProdOrder_ROrderTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdOrder_ROrder`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>`bluewings_mes`.`SP_ProdOrder_ROrder`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
-              <Mapping SourceColumn="거래처명" DataSetColumn="거래처명" />
-              <Mapping SourceColumn="프로젝트명" DataSetColumn="프로젝트명" />
-              <Mapping SourceColumn="납기" DataSetColumn="납기" />
-              <Mapping SourceColumn="수주순번" DataSetColumn="수주순번" />
-              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
-              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
-              <Mapping SourceColumn="제품명" DataSetColumn="제품명" />
-              <Mapping SourceColumn="규격" DataSetColumn="규격" />
-              <Mapping SourceColumn="수량" DataSetColumn="수량" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_RecipeDetail_QueryTableAdapter" GeneratorDataComponentClassName="SP_RecipeDetail_QueryTableAdapter" Name="SP_RecipeDetail_Query" UserDataComponentName="SP_RecipeDetail_QueryTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_RecipeDetail_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -375,6 +350,28 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdOrder_ROrderTableAdapter" GeneratorDataComponentClassName="SP_ProdOrder_ROrderTableAdapter" Name="SP_ProdOrder_ROrder" UserDataComponentName="SP_ProdOrder_ROrderTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdOrder_ROrder`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`bluewings_mes`.`SP_ProdOrder_ROrder`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="계획일자" DataSetColumn="계획일자" />
+              <Mapping SourceColumn="설비ID" DataSetColumn="설비ID" />
+              <Mapping SourceColumn="설비명" DataSetColumn="설비명" />
+              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
+              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
+              <Mapping SourceColumn="계획량" DataSetColumn="계획량" />
+              <Mapping SourceColumn="등록자" DataSetColumn="등록자" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -568,64 +565,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_ProdOrder_ROrder" msprop:Generator_TableClassName="SP_ProdOrder_ROrderDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder" msprop:Generator_RowChangedName="SP_ProdOrder_ROrderRowChanged" msprop:Generator_TablePropName="SP_ProdOrder_ROrder" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrderRowDeleted" msprop:Generator_RowClassName="SP_ProdOrder_ROrderRow" msprop:Generator_UserTableName="SP_ProdOrder_ROrder" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrderRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="프로젝트명" msprop:Generator_ColumnVarNameInTable="column프로젝트명" msprop:Generator_ColumnPropNameInRow="프로젝트명" msprop:Generator_ColumnPropNameInTable="프로젝트명Column" msprop:Generator_UserColumnName="프로젝트명">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="납기" msprop:Generator_ColumnVarNameInTable="column납기" msprop:Generator_ColumnPropNameInRow="납기" msprop:Generator_ColumnPropNameInTable="납기Column" msprop:Generator_UserColumnName="납기" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="수주순번" msprop:Generator_ColumnVarNameInTable="column수주순번" msprop:Generator_ColumnPropNameInRow="수주순번" msprop:Generator_ColumnPropNameInTable="수주순번Column" msprop:Generator_UserColumnName="수주순번" type="xs:unsignedInt" />
-              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="8" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="제품명" msprop:Generator_ColumnVarNameInTable="column제품명" msprop:Generator_ColumnPropNameInRow="제품명" msprop:Generator_ColumnPropNameInTable="제품명Column" msprop:Generator_UserColumnName="제품명" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="규격" msprop:Generator_ColumnVarNameInTable="column규격" msprop:Generator_ColumnPropNameInRow="규격" msprop:Generator_ColumnPropNameInTable="규격Column" msprop:Generator_UserColumnName="규격" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="수량" msprop:Generator_ColumnVarNameInTable="column수량" msprop:Generator_ColumnPropNameInRow="수량" msprop:Generator_ColumnPropNameInTable="수량Column" msprop:Generator_UserColumnName="수량" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -964,6 +903,43 @@
               <xs:element name="D62" msprop:Generator_ColumnVarNameInTable="columnD62" msprop:Generator_ColumnPropNameInRow="D62" msprop:Generator_ColumnPropNameInTable="D62Column" msprop:Generator_UserColumnName="D62" type="xs:string" />
               <xs:element name="D71" msprop:Generator_ColumnVarNameInTable="columnD71" msprop:Generator_ColumnPropNameInRow="D71" msprop:Generator_ColumnPropNameInTable="D71Column" msprop:Generator_UserColumnName="D71" type="xs:string" />
               <xs:element name="D72" msprop:Generator_ColumnVarNameInTable="columnD72" msprop:Generator_ColumnPropNameInRow="D72" msprop:Generator_ColumnPropNameInTable="D72Column" msprop:Generator_UserColumnName="D72" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_ProdOrder_ROrder" msprop:Generator_TableClassName="SP_ProdOrder_ROrderDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder" msprop:Generator_TablePropName="SP_ProdOrder_ROrder" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrderRowDeleted" msprop:Generator_UserTableName="SP_ProdOrder_ROrder" msprop:Generator_RowChangedName="SP_ProdOrder_ROrderRowChanged" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrderRowChangeEvent" msprop:Generator_RowClassName="SP_ProdOrder_ROrderRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="계획일자" msprop:Generator_ColumnVarNameInTable="column계획일자" msprop:Generator_ColumnPropNameInRow="계획일자" msprop:Generator_ColumnPropNameInTable="계획일자Column" msprop:Generator_UserColumnName="계획일자" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="설비ID" msprop:Generator_ColumnVarNameInTable="column설비ID" msprop:Generator_ColumnPropNameInRow="설비ID" msprop:Generator_ColumnPropNameInTable="설비IDColumn" msprop:Generator_UserColumnName="설비ID" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="설비명" msprop:Generator_ColumnVarNameInTable="column설비명" msprop:Generator_ColumnPropNameInRow="설비명" msprop:Generator_ColumnPropNameInTable="설비명Column" msprop:Generator_UserColumnName="설비명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="계획량" msprop:Generator_ColumnVarNameInTable="column계획량" msprop:Generator_ColumnPropNameInRow="계획량" msprop:Generator_ColumnPropNameInTable="계획량Column" msprop:Generator_UserColumnName="계획량" type="xs:int" minOccurs="0" />
+              <xs:element name="등록자" msprop:Generator_ColumnVarNameInTable="column등록자" msprop:Generator_ColumnPropNameInRow="등록자" msprop:Generator_ColumnPropNameInTable="등록자Column" msprop:Generator_UserColumnName="등록자" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
