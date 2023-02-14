@@ -374,7 +374,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdOrder_ROrder1TableAdapter" GeneratorDataComponentClassName="SP_ProdOrder_ROrder1TableAdapter" Name="SP_ProdOrder_ROrder1" UserDataComponentName="SP_ProdOrder_ROrder1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdOrder_ROrder1`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdOrder_ROrder1`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`bluewings_mes`.`SP_ProdOrder_ROrder1`</CommandText>
@@ -396,6 +396,12 @@
               <Mapping SourceColumn="자재코드" DataSetColumn="자재코드" />
               <Mapping SourceColumn="중량" DataSetColumn="중량" />
               <Mapping SourceColumn="배합시간" DataSetColumn="배합시간" />
+              <Mapping SourceColumn="A1" DataSetColumn="A1" />
+              <Mapping SourceColumn="A2" DataSetColumn="A2" />
+              <Mapping SourceColumn="B1" DataSetColumn="B1" />
+              <Mapping SourceColumn="B2" DataSetColumn="B2" />
+              <Mapping SourceColumn="MB1" DataSetColumn="MB1" />
+              <Mapping SourceColumn="MB2" DataSetColumn="MB2" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -982,8 +988,8 @@
               </xs:element>
               <xs:element name="생산일자" msprop:Generator_ColumnVarNameInTable="column생산일자" msprop:Generator_ColumnPropNameInRow="생산일자" msprop:Generator_ColumnPropNameInTable="생산일자Column" msprop:Generator_UserColumnName="생산일자" type="xs:dateTime" minOccurs="0" />
               <xs:element name="계획일자" msprop:Generator_ColumnVarNameInTable="column계획일자" msprop:Generator_ColumnPropNameInRow="계획일자" msprop:Generator_ColumnPropNameInTable="계획일자Column" msprop:Generator_UserColumnName="계획일자" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="설비코드" msprop:Generator_ColumnVarNameInTable="column설비코드" msprop:Generator_ColumnPropNameInRow="설비코드" msprop:Generator_ColumnPropNameInTable="설비코드Column" msprop:Generator_UserColumnName="설비코드" type="xs:unsignedInt" minOccurs="0" />
-              <xs:element name="설비명" msprop:Generator_ColumnVarNameInTable="column설비명" msprop:Generator_ColumnPropNameInRow="설비명" msprop:Generator_ColumnPropNameInTable="설비명Column" msprop:Generator_UserColumnName="설비명" minOccurs="0">
+              <xs:element name="설비코드" msprop:Generator_ColumnVarNameInTable="column설비코드" msprop:Generator_ColumnPropNameInRow="설비코드" msprop:Generator_ColumnPropNameInTable="설비코드Column" msprop:Generator_UserColumnName="설비코드" type="xs:unsignedInt" />
+              <xs:element name="설비명" msprop:Generator_ColumnVarNameInTable="column설비명" msprop:Generator_ColumnPropNameInRow="설비명" msprop:Generator_ColumnPropNameInTable="설비명Column" msprop:Generator_UserColumnName="설비명">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1025,6 +1031,12 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="A1" msprop:Generator_ColumnVarNameInTable="columnA1" msprop:Generator_ColumnPropNameInRow="A1" msprop:Generator_ColumnPropNameInTable="A1Column" msprop:Generator_UserColumnName="A1" type="xs:string" />
+              <xs:element name="A2" msprop:Generator_ColumnVarNameInTable="columnA2" msprop:Generator_ColumnPropNameInRow="A2" msprop:Generator_ColumnPropNameInTable="A2Column" msprop:Generator_UserColumnName="A2" type="xs:string" />
+              <xs:element name="B1" msprop:Generator_ColumnVarNameInTable="columnB1" msprop:Generator_ColumnPropNameInRow="B1" msprop:Generator_ColumnPropNameInTable="B1Column" msprop:Generator_UserColumnName="B1" type="xs:string" />
+              <xs:element name="B2" msprop:Generator_ColumnVarNameInTable="columnB2" msprop:Generator_ColumnPropNameInRow="B2" msprop:Generator_ColumnPropNameInTable="B2Column" msprop:Generator_UserColumnName="B2" type="xs:string" />
+              <xs:element name="MB1" msprop:Generator_ColumnVarNameInTable="columnMB1" msprop:Generator_ColumnPropNameInRow="MB1" msprop:Generator_ColumnPropNameInTable="MB1Column" msprop:Generator_UserColumnName="MB1" type="xs:string" />
+              <xs:element name="MB2" msprop:Generator_ColumnVarNameInTable="columnMB2" msprop:Generator_ColumnPropNameInRow="MB2" msprop:Generator_ColumnPropNameInTable="MB2Column" msprop:Generator_UserColumnName="MB2" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

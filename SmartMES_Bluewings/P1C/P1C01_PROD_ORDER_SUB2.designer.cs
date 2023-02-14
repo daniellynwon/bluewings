@@ -35,13 +35,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panTitle = new System.Windows.Forms.Panel();
+            this.btnClose = new SmartMES_Bluewings.UserButtonA();
+            this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.lblMsg = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sPProdOrderROrder1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
             this.sP_ProdOrder_ROrder1TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdOrder_ROrder1TableAdapter();
-            this.btnClose = new SmartMES_Bluewings.UserButtonA();
-            this.btnSave = new SmartMES_Bluewings.UserButtonA();
+            this.lblCol = new System.Windows.Forms.Label();
+            this.lblRow = new System.Windows.Forms.Label();
             this.jobnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.생산일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.계획일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +51,15 @@
             this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MB1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MB2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.자재코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.중량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.배합시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblCol = new System.Windows.Forms.Label();
-            this.lblRow = new System.Windows.Forms.Label();
             this.panTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderROrder1BindingSource)).BeginInit();
@@ -90,6 +90,34 @@
             this.panTitle.Name = "panTitle";
             this.panTitle.Size = new System.Drawing.Size(1337, 54);
             this.panTitle.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.buttonImage = global::SmartMES_Bluewings.Properties.Resources.close;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Location = new System.Drawing.Point(1215, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 27);
+            this.btnClose.TabIndex = 33;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.buttonImage = global::SmartMES_Bluewings.Properties.Resources.save;
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(1071, 13);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.TabIndex = 32;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblMsg
             // 
@@ -131,12 +159,12 @@
             this.설비명DataGridViewTextBoxColumn,
             this.품목코드DataGridViewTextBoxColumn,
             this.품목명DataGridViewTextBoxColumn,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
+            this.A1,
+            this.A2,
+            this.B1,
+            this.B2,
+            this.MB1,
+            this.MB2,
             this.자재코드DataGridViewTextBoxColumn,
             this.중량DataGridViewTextBoxColumn,
             this.배합시간DataGridViewTextBoxColumn});
@@ -170,10 +198,10 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1303, 439);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
-            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
             // 
             // sPProdOrderROrder1BindingSource
@@ -190,33 +218,29 @@
             // 
             this.sP_ProdOrder_ROrder1TableAdapter.ClearBeforeFill = true;
             // 
-            // btnClose
+            // lblCol
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.buttonImage = global::SmartMES_Bluewings.Properties.Resources.close;
-            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(1215, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 27);
-            this.btnClose.TabIndex = 33;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.lblCol.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCol.AutoSize = true;
+            this.lblCol.Font = new System.Drawing.Font("맑은 고딕", 14F);
+            this.lblCol.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCol.Location = new System.Drawing.Point(1247, 67);
+            this.lblCol.Name = "lblCol";
+            this.lblCol.Size = new System.Drawing.Size(20, 25);
+            this.lblCol.TabIndex = 49;
+            this.lblCol.Text = "-";
             // 
-            // btnSave
+            // lblRow
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.buttonImage = global::SmartMES_Bluewings.Properties.Resources.save;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(1071, 13);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
-            this.btnSave.TabIndex = 32;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.lblRow.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblRow.AutoSize = true;
+            this.lblRow.Font = new System.Drawing.Font("맑은 고딕", 14F);
+            this.lblRow.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblRow.Location = new System.Drawing.Point(1210, 67);
+            this.lblRow.Name = "lblRow";
+            this.lblRow.Size = new System.Drawing.Size(20, 25);
+            this.lblRow.TabIndex = 48;
+            this.lblRow.Text = "-";
             // 
             // jobnoDataGridViewTextBoxColumn
             // 
@@ -265,40 +289,41 @@
             this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
             // 
-            // Column1
+            // A1
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.A1.DataPropertyName = "A1";
+            this.A1.HeaderText = "A1";
+            this.A1.Name = "A1";
             // 
-            // Column2
+            // A2
             // 
-            this.Column2.DataPropertyName = "jobno";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
+            this.A2.DataPropertyName = "A2";
+            this.A2.HeaderText = "A2";
+            this.A2.Name = "A2";
             // 
-            // Column3
+            // B1
             // 
-            this.Column3.DataPropertyName = "jobno";
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
+            this.B1.DataPropertyName = "B1";
+            this.B1.HeaderText = "B1";
+            this.B1.Name = "B1";
             // 
-            // Column4
+            // B2
             // 
-            this.Column4.DataPropertyName = "jobno";
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
+            this.B2.DataPropertyName = "B2";
+            this.B2.HeaderText = "B2";
+            this.B2.Name = "B2";
             // 
-            // Column5
+            // MB1
             // 
-            this.Column5.DataPropertyName = "jobno";
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
+            this.MB1.DataPropertyName = "MB1";
+            this.MB1.HeaderText = "MB1";
+            this.MB1.Name = "MB1";
             // 
-            // Column6
+            // MB2
             // 
-            this.Column6.DataPropertyName = "jobno";
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
+            this.MB2.DataPropertyName = "MB2";
+            this.MB2.HeaderText = "MB2";
+            this.MB2.Name = "MB2";
             // 
             // 자재코드DataGridViewTextBoxColumn
             // 
@@ -319,30 +344,6 @@
             this.배합시간DataGridViewTextBoxColumn.DataPropertyName = "배합시간";
             this.배합시간DataGridViewTextBoxColumn.HeaderText = "배합시간";
             this.배합시간DataGridViewTextBoxColumn.Name = "배합시간DataGridViewTextBoxColumn";
-            // 
-            // lblCol
-            // 
-            this.lblCol.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblCol.AutoSize = true;
-            this.lblCol.Font = new System.Drawing.Font("맑은 고딕", 14F);
-            this.lblCol.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCol.Location = new System.Drawing.Point(1247, 67);
-            this.lblCol.Name = "lblCol";
-            this.lblCol.Size = new System.Drawing.Size(20, 25);
-            this.lblCol.TabIndex = 49;
-            this.lblCol.Text = "-";
-            // 
-            // lblRow
-            // 
-            this.lblRow.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblRow.AutoSize = true;
-            this.lblRow.Font = new System.Drawing.Font("맑은 고딕", 14F);
-            this.lblRow.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRow.Location = new System.Drawing.Point(1210, 67);
-            this.lblRow.Name = "lblRow";
-            this.lblRow.Size = new System.Drawing.Size(20, 25);
-            this.lblRow.TabIndex = 48;
-            this.lblRow.Text = "-";
             // 
             // P1C01_PROD_ORDER_SUB2
             // 
@@ -408,6 +409,8 @@
         private System.Windows.Forms.BindingSource sPProdOrderROrder1BindingSource;
         private P1C.DataSetP1C dataSetP1C;
         private P1C.DataSetP1CTableAdapters.SP_ProdOrder_ROrder1TableAdapter sP_ProdOrder_ROrder1TableAdapter;
+        private System.Windows.Forms.Label lblCol;
+        private System.Windows.Forms.Label lblRow;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 생산일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 계획일자DataGridViewTextBoxColumn;
@@ -415,16 +418,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn A1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn A2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn B1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn B2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MB1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MB2;
         private System.Windows.Forms.DataGridViewTextBoxColumn 자재코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 중량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 배합시간DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label lblCol;
-        private System.Windows.Forms.Label lblRow;
     }
 }

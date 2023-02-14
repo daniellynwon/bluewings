@@ -223,7 +223,7 @@ namespace SmartMES_Bluewings
                     string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
                     string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
                     if (string.IsNullOrEmpty(sProd)) return;
-                    sWeight = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();
+                    sWeight = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();   // if (!(string.IsNullOrEmpty(sProd) && string.IsNullOrEmpty(sWeight))) return;
                     if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
 
                     sql = "insert into tb_prod_plan (plan_date, machine_id, prod_id, plan_weight, enter_man)" +

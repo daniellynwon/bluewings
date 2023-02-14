@@ -16,7 +16,6 @@ namespace SmartMES_Bluewings
         public int rowIndex;
         private string rorderID;
         private string rorderSeq;
-        // 검색조건 거래처/영업담당/프로젝트명/현장
         public P1C01_PROD_ORDER_SUB2()
         {
             InitializeComponent();
@@ -43,7 +42,6 @@ namespace SmartMES_Bluewings
 
                 this.ActiveControl = btnSave;
             }
-
         }
         public void ListSearch()
         {
@@ -59,9 +57,9 @@ namespace SmartMES_Bluewings
 
                 if (dataGridView1.Rows.Count > 0)
                 {
-                    dataGridView1.Columns[7].HeaderText = "품목"; dataGridView1.Columns[8].HeaderText = "중량";
-                    dataGridView1.Columns[9].HeaderText = "품목"; dataGridView1.Columns[10].HeaderText = "중량";
-                    dataGridView1.Columns[11].HeaderText = "품목"; dataGridView1.Columns[12].HeaderText = "중량";
+                    dataGridView1.Columns[7].HeaderText = "자재"; dataGridView1.Columns[8].HeaderText = "중량";
+                    dataGridView1.Columns[9].HeaderText = "자재"; dataGridView1.Columns[10].HeaderText = "중량";
+                    dataGridView1.Columns[11].HeaderText = "자재"; dataGridView1.Columns[12].HeaderText = "중량";
                 }
             }
             catch (NullReferenceException)
@@ -89,73 +87,59 @@ namespace SmartMES_Bluewings
         private void ProdEventMethod(object sender)
         {
             string sProd = sender.ToString();
-
             if (string.IsNullOrEmpty(sProd)) return;
 
-            //tbProd.Tag = sProd.Substring(0, 8);
-            //tbProd.Text = sProd.Substring(9, sProd.Length - 9);
-            //tbSizeT.Focus();
+            string sRow = lblRow.Text.ToString().Trim();
+            string sCol = lblCol.Text.ToString().Trim();
+
+            if (string.IsNullOrEmpty(sRow)) return;
+            if (string.IsNullOrEmpty(sCol)) return;
+            if (sRow.Trim() == "-") return;
+            if (sCol.Trim() == "-") return;
+
+            int irow = Convert.ToInt32(sRow);
+            int icol = Convert.ToInt32(sCol);
+
+            dataGridView1.Rows[irow].Cells[icol].Value = sProd.Substring(0, sProd.IndexOf("#1/")) + "/" + sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
         }
         #endregion
 
-        #region grid View Event
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region gridView Event
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int irow = -1;
+
+            lblRow.Text = "-"; lblCol.Text = "-";
+
+            if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            //if (!(e.ColumnIndex == 2 || e.ColumnIndex == 7)) return;
 
-            if (e.ColumnIndex == 2)     // 프로젝트명
+            irow = e.RowIndex + 1; int icol = e.ColumnIndex;
 
+            if (e.ColumnIndex > 6 && e.ColumnIndex < 13)   // (e.ColumnIndex == 4 || e.ColumnIndex == 5 || e.ColumnIndex == 6 || e.ColumnIndex == 7 || e.ColumnIndex == 8 || e.ColumnIndex == 9 || e.ColumnIndex == 10) //업체, 수주명 선택
             {
-                string sSujuNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-                for (int i = 0; i < dataGridView1.RowCount; i++)
+                if (!(icol % 2 == 0 && icol != 0))
                 {
-                    if (sSujuNo == dataGridView1.Rows[i].Cells[0].Value.ToString())
-                        dataGridView1.Rows[i].Cells[4].Value = 1;
-                    else
-                        dataGridView1.Rows[i].Cells[4].Value = 0;
-                }
-            }
-            else if (e.ColumnIndex == 7)    // 품목명
-            {
-                //tbCust.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //// ERP 연동으로 인한 DeliDate null로 들어오는 value null처리 6/23
-                //if (string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString()) || dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString() == "")
-                //{
-                //    dtpDeli.Value = DateTime.Today; dtpDeli.Enabled = true;
-                //}
-                //else dtpDeli.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
-                //tbProd.Tag = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                //tbProd.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                //tbQty.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
-                //cbProc.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-                //tbSizeT.Text = dataGridView1.Rows[e.RowIndex].Cells[15].Value.ToString();
-                //tbSizeW.Text = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
-                //tbSizeL.Text = dataGridView1.Rows[e.RowIndex].Cells[17].Value.ToString();
-                //tbDoc.Text = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
-                //tbProdNo.Text = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
-                //if (dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString() == "1") cbMatKind.SelectedIndex = 0;
-                //else if (dataGridView1.Rows[e.RowIndex].Cells[20].Value.ToString() == "2") cbMatKind.SelectedIndex = 1;
+                    dataGridView1.Columns[icol].ReadOnly = true;
+                    lblRow.Text = e.RowIndex.ToString();
+                    lblCol.Text = e.ColumnIndex.ToString();
 
-                rorderID = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                rorderSeq = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    dataGridView1.Rows[i].Cells[4].Value = 0;
+                    ProdFinder sub = new ProdFinder();
+                    sub.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
+                    sub.cbGubun.SelectedIndex = 1;
+                    sub._kind = "%";
+                    sub._stockFlag = "1";
+                    sub.ShowDialog();
                 }
-                dataGridView1.Rows[e.RowIndex].Cells[4].Value = 1;
             }
         }
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.ClearSelection();
+            //
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             if (dataGridView1.RowCount < 2) return;
-
             try
             {
                 string sSujuNo = dataGridView1.Rows[0].Cells[0].Value.ToString();
@@ -166,12 +150,8 @@ namespace SmartMES_Bluewings
                     {
                         dataGridView1.Rows[i].Cells[0].Style.ForeColor = Color.Transparent;
                         dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Transparent;
-                        //dataGridView1.Rows[i].Cells[2].Style.ForeColor = Color.Transparent;
                         dataGridView1.Rows[i].Cells[3].Style.ForeColor = Color.Transparent;
-                        //dataGridView1.Rows[i].Cells[0].Value = "";
-                        //dataGridView1.Rows[i].Cells[1].Value = "";
                         dataGridView1.Rows[i].Cells[2].Value = "";
-                        //dataGridView1.Rows[i].Cells[3].Style.ForeColor = Color.Transparent;
                     }
                     sSujuNo = dataGridView1.Rows[i].Cells[0].Value.ToString();
                 }
@@ -288,70 +268,11 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
-        #region QR
-        private void QRCodeCreate(string s1, string s2) // s1 수주번호, s2 수주순번
-        {
-            ZXing.BarcodeWriter barcodeWriter = new ZXing.BarcodeWriter();
-            barcodeWriter.Format = ZXing.BarcodeFormat.QR_CODE;
-
-            barcodeWriter.Options.Width = 128;
-            barcodeWriter.Options.Height = 128;
-
-            string str = s1 + s2;
-
-            barcodeWriter.Write(str).Save(s1 + s2 + ".png", ImageFormat.Png);
-        }
-        private void QRImageSave(string _id)
-        {
-            string sql = string.Empty;
-            UInt32 FileSize;
-            byte[] rawData;
-            FileStream fs;
-
-            con = new MySqlConnection(G.conStr);
-            MySqlCommand cmd = new MySqlCommand();
-
-            try
-            {
-                fs = new FileStream(_id + ".png", FileMode.Open, FileAccess.Read);
-                FileSize = (UInt32)fs.Length;
-
-                rawData = new byte[FileSize];
-                fs.Read(rawData, 0, (int)FileSize);
-                fs.Close();
-
-                string sRorder = _id.Substring(0, 10);
-                string sSeq = _id.Substring(10,Int32.Parse((_id.Length-10).ToString()));    // ERP 연동으로 인한 수주순번 자릿수 변경으로 로직 변경. 6/23
-
-                con.Open();
-                sql = "update tb_prod_order set qrcode = @QRCODE where rorder_id = @CODE_NOA and rorder_seq = @CODE_NOB";
-
-                cmd.Connection = con;
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@CODE_NOA", sRorder);
-                cmd.Parameters.AddWithValue("@CODE_NOB", sSeq);
-                cmd.Parameters.AddWithValue("@QRCODE", rawData);
-                cmd.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error " + ex.Number + " has occurred: " + ex.Message,
-                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        #endregion
-
         #region Cell Paint
         private void dataGridView1_Paint(object sender, PaintEventArgs e)
         {
             DataGridView gv = (DataGridView)sender;
-            string[] strHeaders = {"폴리에틸렌수지(A)", "폴리에틸렌수지(B)", "폴리에틸렌수지(M/B)" };
+            string[] strHeaders = { "폴리에틸렌수지(A)", "폴리에틸렌수지(B)", "폴리에틸렌수지(M/B)" };
             StringFormat format = new StringFormat();
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;

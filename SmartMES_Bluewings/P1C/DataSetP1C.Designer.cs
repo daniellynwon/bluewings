@@ -5854,6 +5854,18 @@ namespace SmartMES_Bluewings.P1C {
             
             private global::System.Data.DataColumn column배합시간;
             
+            private global::System.Data.DataColumn columnA1;
+            
+            private global::System.Data.DataColumn columnA2;
+            
+            private global::System.Data.DataColumn columnB1;
+            
+            private global::System.Data.DataColumn columnB2;
+            
+            private global::System.Data.DataColumn columnMB1;
+            
+            private global::System.Data.DataColumn columnMB2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdOrder_ROrder1DataTable() {
@@ -5969,6 +5981,54 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn A1Column {
+                get {
+                    return this.columnA1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn A2Column {
+                get {
+                    return this.columnA2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn B1Column {
+                get {
+                    return this.columnB1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn B2Column {
+                get {
+                    return this.columnB2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MB1Column {
+                get {
+                    return this.columnMB1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MB2Column {
+                get {
+                    return this.columnMB2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6004,7 +6064,23 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdOrder_ROrder1Row AddSP_ProdOrder_ROrder1Row(string jobno, System.DateTime 생산일자, System.DateTime 계획일자, uint 설비코드, string 설비명, string 품목코드, string 품목명, string 자재코드, string 중량, string 배합시간) {
+            public SP_ProdOrder_ROrder1Row AddSP_ProdOrder_ROrder1Row(
+                        string jobno, 
+                        System.DateTime 생산일자, 
+                        System.DateTime 계획일자, 
+                        uint 설비코드, 
+                        string 설비명, 
+                        string 품목코드, 
+                        string 품목명, 
+                        string 자재코드, 
+                        string 중량, 
+                        string 배합시간, 
+                        string A1, 
+                        string A2, 
+                        string B1, 
+                        string B2, 
+                        string MB1, 
+                        string MB2) {
                 SP_ProdOrder_ROrder1Row rowSP_ProdOrder_ROrder1Row = ((SP_ProdOrder_ROrder1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         jobno,
@@ -6016,7 +6092,13 @@ namespace SmartMES_Bluewings.P1C {
                         품목명,
                         자재코드,
                         중량,
-                        배합시간};
+                        배합시간,
+                        A1,
+                        A2,
+                        B1,
+                        B2,
+                        MB1,
+                        MB2};
                 rowSP_ProdOrder_ROrder1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdOrder_ROrder1Row);
                 return rowSP_ProdOrder_ROrder1Row;
@@ -6049,6 +6131,12 @@ namespace SmartMES_Bluewings.P1C {
                 this.column자재코드 = base.Columns["자재코드"];
                 this.column중량 = base.Columns["중량"];
                 this.column배합시간 = base.Columns["배합시간"];
+                this.columnA1 = base.Columns["A1"];
+                this.columnA2 = base.Columns["A2"];
+                this.columnB1 = base.Columns["B1"];
+                this.columnB2 = base.Columns["B2"];
+                this.columnMB1 = base.Columns["MB1"];
+                this.columnMB2 = base.Columns["MB2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6074,13 +6162,33 @@ namespace SmartMES_Bluewings.P1C {
                 base.Columns.Add(this.column중량);
                 this.column배합시간 = new global::System.Data.DataColumn("배합시간", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column배합시간);
+                this.columnA1 = new global::System.Data.DataColumn("A1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnA1);
+                this.columnA2 = new global::System.Data.DataColumn("A2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnA2);
+                this.columnB1 = new global::System.Data.DataColumn("B1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB1);
+                this.columnB2 = new global::System.Data.DataColumn("B2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB2);
+                this.columnMB1 = new global::System.Data.DataColumn("MB1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMB1);
+                this.columnMB2 = new global::System.Data.DataColumn("MB2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMB2);
                 this.columnjobno.MaxLength = 10;
+                this.column설비코드.AllowDBNull = false;
+                this.column설비명.AllowDBNull = false;
                 this.column설비명.MaxLength = 50;
                 this.column품목코드.MaxLength = 8;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 200;
                 this.column중량.MaxLength = 500;
                 this.column배합시간.MaxLength = 500;
+                this.columnA1.AllowDBNull = false;
+                this.columnA2.AllowDBNull = false;
+                this.columnB1.AllowDBNull = false;
+                this.columnB2.AllowDBNull = false;
+                this.columnMB1.AllowDBNull = false;
+                this.columnMB2.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9169,12 +9277,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public uint 설비코드 {
                 get {
-                    try {
-                        return ((uint)(this[this.tableSP_ProdOrder_ROrder1.설비코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_ROrder1\' 테이블의 \'설비코드\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((uint)(this[this.tableSP_ProdOrder_ROrder1.설비코드Column]));
                 }
                 set {
                     this[this.tableSP_ProdOrder_ROrder1.설비코드Column] = value;
@@ -9185,12 +9288,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 설비명 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdOrder_ROrder1.설비명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_ROrder1\' 테이블의 \'설비명\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.설비명Column]));
                 }
                 set {
                     this[this.tableSP_ProdOrder_ROrder1.설비명Column] = value;
@@ -9279,6 +9377,72 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string A1 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.A1Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.A1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string A2 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.A2Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.A2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string B1 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.B1Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.B1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string B2 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.B2Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.B2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MB1 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.MB1Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.MB1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MB2 {
+                get {
+                    return ((string)(this[this.tableSP_ProdOrder_ROrder1.MB2Column]));
+                }
+                set {
+                    this[this.tableSP_ProdOrder_ROrder1.MB2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsjobnoNull() {
                 return this.IsNull(this.tableSP_ProdOrder_ROrder1.jobnoColumn);
             }
@@ -9311,30 +9475,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set계획일자Null() {
                 this[this.tableSP_ProdOrder_ROrder1.계획일자Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is설비코드Null() {
-                return this.IsNull(this.tableSP_ProdOrder_ROrder1.설비코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set설비코드Null() {
-                this[this.tableSP_ProdOrder_ROrder1.설비코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is설비명Null() {
-                return this.IsNull(this.tableSP_ProdOrder_ROrder1.설비명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set설비명Null() {
-                this[this.tableSP_ProdOrder_ROrder1.설비명Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12958,6 +13098,12 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("자재코드", "자재코드");
             tableMapping.ColumnMappings.Add("중량", "중량");
             tableMapping.ColumnMappings.Add("배합시간", "배합시간");
+            tableMapping.ColumnMappings.Add("A1", "A1");
+            tableMapping.ColumnMappings.Add("A2", "A2");
+            tableMapping.ColumnMappings.Add("B1", "B1");
+            tableMapping.ColumnMappings.Add("B2", "B2");
+            tableMapping.ColumnMappings.Add("MB1", "MB1");
+            tableMapping.ColumnMappings.Add("MB2", "MB2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

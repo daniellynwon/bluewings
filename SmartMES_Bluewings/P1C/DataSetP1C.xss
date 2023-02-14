@@ -20,7 +20,7 @@
     <Shape ID="DesignTable:SP_ProdTerm_Query" ZOrder="4" X="594" Y="12" Height="248" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
     <Shape ID="DesignTable:SP_ProdPlan_Query" ZOrder="3" X="1224" Y="25" Height="305" Width="258" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:SP_ProdOrder_ROrder" ZOrder="2" X="589" Y="620" Height="210" Width="273" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:SP_ProdOrder_ROrder1" ZOrder="1" X="1224" Y="347" Height="267" Width="281" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:SP_ProdOrder_ROrder1" ZOrder="1" X="1224" Y="347" Height="305" Width="281" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
