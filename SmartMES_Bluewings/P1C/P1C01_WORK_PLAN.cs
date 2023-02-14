@@ -85,6 +85,7 @@ namespace SmartMES_Bluewings
                 Cursor.Current = Cursors.Default;
             }
         }
+
         #region Condition Bar Events
         private void dtpFromDate_ValueChanged(object sender, EventArgs e)
         {

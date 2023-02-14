@@ -13,7 +13,7 @@ namespace SmartMES_Bluewings
         }
         private void P1C01_PROD_ORDER_Load(object sender, EventArgs e)
         {
-            dtpFromDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-01"));
+            dtpDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-01"));
             this.ActiveControl = tbSearch;
         }
         public async void ListSearch()
@@ -23,11 +23,10 @@ namespace SmartMES_Bluewings
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                string sFrom = dtpFromDate.Value.ToString("yyyy-MM-dd");
-                string sTo = dtpToDate.Value.ToString("yyyy-MM-dd");
+                string sFrom = dtpDate.Value.ToString("yyyy-MM-dd");
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sFrom), DateTime.Parse(sTo), sSearch);
+                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sFrom), DateTime.Parse(sFrom), sSearch);
                 var data = dataSetP1C.SP_ProdOrder_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -98,7 +97,7 @@ namespace SmartMES_Bluewings
         {
             lblMsg.Text = "";
 
-            P1C01_PROD_ORDER_SUB sub = new P1C01_PROD_ORDER_SUB();
+            P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
             sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
             sub.parentWin = this;
             sub.ShowDialog();
@@ -175,11 +174,11 @@ namespace SmartMES_Bluewings
                 }
                 string reportFileName = "SmartMES_Bluewings.Reports.P1C01_PROD_ORDER.rdlc";
 
-                string reportParm1 = "Lot기간 : ";
+                string reportParm1 = "Lot생성일자 : ";
                 string reportParm2 = "품목명/LotNo : ";
                 string reportParm3 = "";
 
-                reportParm1 = reportParm1 + dtpFromDate.Value.ToString("yyyy-MM-dd") + " ~ " + dtpToDate.Value.ToString("yyyy-MM-dd");
+                reportParm1 = reportParm1 + dtpDate.Value.ToString("yyyy-MM-dd");
 
                 if (string.IsNullOrEmpty(tbSearch.Text.Trim()))
                     reportParm2 = reportParm2 + "<전체>";
