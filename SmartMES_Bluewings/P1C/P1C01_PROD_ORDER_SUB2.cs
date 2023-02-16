@@ -32,13 +32,18 @@ namespace SmartMES_Bluewings
             {
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-                //dtpDate.Value = (DateTime)parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value;    // 생산계획일
-                //tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // JobNo
-                //tbSeq.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();      // 순번
-                //tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();   // 품목코드
-                //tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();   // 품목명
-                //tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();      // 지시수량
-                //dtpExpDate.Value = (DateTime)parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value;    // 유효기간
+                //dataGridView1.Rows[rowIndex].Cells[0].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();    // JobNo
+                //dataGridView1.Rows[rowIndex].Cells[3].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // 설비코드
+                //dataGridView1.Rows[rowIndex].Cells[4].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();    // 설비명
+                //dataGridView1.Rows[rowIndex].Cells[5].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();   // 품목코드
+                //dataGridView1.Rows[rowIndex].Cells[6].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();   // 품목명
+                //dataGridView1.Rows[rowIndex].Cells[7].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();   // 자재A
+                //dataGridView1.Rows[rowIndex].Cells[8].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();   // 중량A
+                //dataGridView1.Rows[rowIndex].Cells[9].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();   // 자재B
+                //dataGridView1.Rows[rowIndex].Cells[10].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();   // 중량B
+                //dataGridView1.Rows[rowIndex].Cells[11].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();   // 자재MB
+                //dataGridView1.Rows[rowIndex].Cells[12].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();   // 중량MB
+                //dataGridView1.Rows[rowIndex].Cells[13].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();   // 배합시간
 
                 this.ActiveControl = btnSave;
             }
@@ -186,18 +191,18 @@ namespace SmartMES_Bluewings
 
             if(lblJob.Text == "" || string.IsNullOrEmpty(lblJob.Text))
             {
+                lblJob.Text = getCode();
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    lblJob.Text = getCode();
                     string mNo = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     string sProd = dataGridView1.Rows[i].Cells[5].Value.ToString();
 
-                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString().Split('/')[0];
-                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString().Split('/')[0];
-                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString().Split('/')[0];
-                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Split('/')[0];
-                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString().Split('/')[0];
-                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString().Split('/')[0];
+                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString();
                     string sTime = dataGridView1.Rows[i].Cells[15].Value.ToString();
 
                     sql = "insert into tb_prod_order (job_no, pos, lot_date, machine_id, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, comb_time, enter_man) " +

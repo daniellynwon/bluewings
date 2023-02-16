@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using SmartFactory;
+using System.Drawing;
 
 namespace SmartMES_Bluewings
 {
@@ -23,10 +24,10 @@ namespace SmartMES_Bluewings
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                string sFrom = dtpDate.Value.ToString("yyyy-MM-dd");
+                string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sFrom), DateTime.Parse(sFrom), sSearch);
+                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sDate), sSearch);
                 var data = dataSetP1C.SP_ProdOrder_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -69,22 +70,14 @@ namespace SmartMES_Bluewings
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            string sRecipe = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
 
-            if(e.ColumnIndex == 1)
+            if(e.ColumnIndex == 0)
             {
                 ///////////// Job No 클릭했을 때, Sub창 Job No 라벨에 Job No 가져가기.
                 ///
                 P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();     // LotNo
-                sub.parentWin = this;
-                sub.ShowDialog();
-            }
-            else if(e.ColumnIndex == 8)
-            {
-                P1C01_PROD_ORDER_SUB1 sub = new P1C01_PROD_ORDER_SUB1();
-                sub.sRecipe = sRecipe;
+                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();     // LotNo
                 sub.parentWin = this;
                 sub.ShowDialog();
             }
@@ -117,7 +110,7 @@ namespace SmartMES_Bluewings
             try
             {
                 index = dataGridView1.CurrentRow.Index;
-                sLotNo = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                sLotNo = dataGridView1.Rows[index].Cells[0].Value.ToString();
 
                 if (dataGridView1.Rows[index].Selected != true)
                 {
@@ -209,7 +202,78 @@ namespace SmartMES_Bluewings
             }
         }
         #endregion
-    
+
+        #region Cell Paint
+        private void dataGridView1_Paint(object sender, PaintEventArgs e)
+        {
+            DataGridView gv = (DataGridView)sender;
+            string[] strHeaders = { "폴리에틸렌수지(A)", "폴리에틸렌수지(B)", "폴리에틸렌수지(M/B)" };
+            StringFormat format = new StringFormat();
+            format.Alignment = StringAlignment.Center;
+            format.LineAlignment = StringAlignment.Center;
+
+            // Category Painting 헤더 그리는 부분
+            {
+                //--------------------------------- 범위 지정
+                Rectangle r1 = gv.GetCellDisplayRectangle(6, -1, false);  //범위 시작
+                int width1 = gv.GetCellDisplayRectangle(7, -1, false).Width;
+
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + width1 - 2; // + width1 + width2 + width3 + width4 + width5 + width6
+                r1.Height = (r1.Height / 2) - 2;
+
+                //--------------------------------- 범위 지정 END
+
+                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r1);
+                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r1);   // 셀 병합
+
+                e.Graphics.DrawString(strHeaders[0],
+                    gv.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor),
+                    r1,
+                    format);
+            }
+            {
+                Rectangle r2 = gv.GetCellDisplayRectangle(8, -1, false);
+                int width = gv.GetCellDisplayRectangle(9, -1, false).Width;
+
+                r2.X += 1; r2.Y += 1;
+                r2.Width = r2.Width + width - 2;
+                r2.Height = (r2.Height / 2) - 2;
+
+                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
+                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r2);
+                e.Graphics.DrawString(strHeaders[1], gv.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r2, format);
+            }
+            {
+                Rectangle r3 = gv.GetCellDisplayRectangle(10, -1, false);
+                int width = gv.GetCellDisplayRectangle(11, -1, false).Width;
+
+                r3.X += 1; r3.Y += 1;
+                r3.Width = r3.Width + width - 2;
+                r3.Height = (r3.Height / 2) - 2;
+
+                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r3);
+                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r3);
+                e.Graphics.DrawString(strHeaders[2], gv.ColumnHeadersDefaultCellStyle.Font,
+                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r3, format);
+            }
+        }
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                Rectangle r = e.CellBounds;
+                r.Y += e.CellBounds.Height / 2;
+                r.Height = e.CellBounds.Height / 2;
+                e.PaintBackground(r, true);
+                e.PaintContent(r);
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }
 
