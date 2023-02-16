@@ -166,6 +166,8 @@ namespace SmartMES_Bluewings
         #region Button Events
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("이대로 작업지시를 저장하시겠습니까?", "품목과 중량, 배합시간을 확인하세요.", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.No) return;
             Save();
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -175,84 +177,73 @@ namespace SmartMES_Bluewings
         private void Save()
         {
             lblMsg.Text = "";
+            
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
 
-            //string sQty = tbQty.Text.Replace(",", "").Trim();
+            string sDate = parentWin.dtpDate.Value.ToString("yyyy-MM-dd");
 
-            //if (string.IsNullOrEmpty(sQty))
-            //{
-            //    lblMsg.Text = "지시수량을 입력해 주세요.";
-            //    tbQty.Focus();
-            //    return;
-            //}
+            if(lblJob.Text == "" || string.IsNullOrEmpty(lblJob.Text))
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    lblJob.Text = getCode();
+                    string mNo = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    string sProd = dataGridView1.Rows[i].Cells[5].Value.ToString();
 
-            //string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            //string sProd = tbProd.Tag.ToString();
-            //string sSizeT = tbSizeT.Text.Trim();
-            //string sSizeW = tbSizeW.Text.Trim();
-            //string sSizeL = tbSizeL.Text.Trim();
-            //string sProc = cbProc.SelectedValue.ToString();
-            //string sJobNo = getCode();
-            //string sSujuQty = sQty;
-            //string sRework = "0";
-            //if (cbRework.Checked) sRework = "1";
-            //string sDoc = tbDoc.Text.Trim();
-            //string sProdNo = tbProdNo.Text.Trim();
-            //string sMatKind = cbMatKind.Text.Substring(0, 1);
-            //string sConts = tbContents.Text.Trim();
+                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString().Split('/')[0];
+                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString().Split('/')[0];
+                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString().Split('/')[0];
+                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Split('/')[0];
+                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString().Split('/')[0];
+                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString().Split('/')[0];
+                    string sTime = dataGridView1.Rows[i].Cells[15].Value.ToString();
 
-            //string sProcStd = "0001";
-            //if (cbProc.SelectedValue.ToString() == "0001") sProcStd = "0002";   // 절단만
-            //else if (cbProc.SelectedValue.ToString() == "0002" && sMatKind == "2")
-            //{
-            //    sProcStd = "0003";   // 밀링만
-            //    sProdNo = "20";
-            //}
-            //else sProcStd = "0001";
+                    sql = "insert into tb_prod_order (job_no, pos, lot_date, machine_id, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, comb_time, enter_man) " +
+                        "values('" + lblJob.Text + "','" + G.Pos + "','" + sDate + "'," + mNo + ",'" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 +"'," + sQty1 + 
+                        "," + sQty2 + "," + sQty3 + ",'" + sTime + "','" + G.UserID + "')";
 
-            //if (string.IsNullOrEmpty(rorderSeq))
-            //{
-            //    rorderSeq = "null";
-            //}
-            //else
-            //{
-            //    string sqlQty = "select qty from vw_rorder where rorder_id = '" + rorderID + "' and rorder_seq = " + rorderSeq;
-            //    MariaCRUD mQty = new MariaCRUD();
-            //    string msgQty = string.Empty;
-            //    string com = mQty.dbRonlyOne(sqlQty, ref msgQty).ToString();
+                    m.dbCUD(sql, ref msg);
 
-            //    if (msgQty == "OK") sSujuQty = com;
-            //}
+                    if (msg != "OK")
+                    {
+                        lblMsg.Text = msg;
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    string mNo = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    string sProd = dataGridView1.Rows[i].Cells[5].Value.ToString();
 
-            //string sql = "insert into tb_prod_order (job_no, proc_no, pos, lot_date, prod_id, size_t, size_w, size_l, proc_kind, proc_std, doc_no, prod_no, mat_kind, rework, rorder_id, rorder_seq, rorder_date, order_qty, ment, enter_man) " +
-            //    "select '" + sJobNo + "',p.proc_no,'" + G.Pos + "','" + sDate + "','" + sProd + "'," + sSizeT + "," + sSizeW + "," + sSizeL + ",'" + sProc + "','" + sProcStd + "','" + sDoc + "','" + sProdNo + "'," + sMatKind + "," + sRework + ",'" + rorderID + "'," + rorderSeq + ",'" + sDate + "'," 
-            //    + sSujuQty + " - ifnull((select sum(v.gd_qty) from vw_production v where v.rorder_id = '" + rorderID + "' and v.rorder_seq = " + rorderSeq + " and v.proc_std = p.proc_no),0),'" + sConts + "','" + G.UserID + "' " + 
-            //    "from tb_gi_process p where p.proc_std = '" + sProcStd + "' order by p.proc_no";
+                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString().Split('/')[0];
+                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString().Split('/')[0];
+                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString().Split('/')[0];
+                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Split('/')[0];
+                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString().Split('/')[0];
+                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString().Split('/')[0];
+                    string sTime = dataGridView1.Rows[i].Cells[15].Value.ToString();
 
-            //MariaCRUD m = new MariaCRUD();
-            //string msg = string.Empty;
-            //m.dbCUD(sql, ref msg);
+                    sql = "update tb_prod_order " +
+                        "set lot_date = '" + sDate + "', prod_id = '" + sProd + "', mat1 = '" + sMat1 + "', mat2 = '" + sMat2 + ", mat3 = '" + sMat3
+                        + "', qty1 = " + sQty1 + ", qty2 = " + sQty2 + ", qty3 = " + sQty3 + ", comb_time = '" + sTime + "' " +
+                        "where job_no = '" + lblJob.Text + "' and machine_id = " + mNo;
 
-            //if (msg != "OK")
-            //{
-            //    lblMsg.Text = msg;
-            //    return;
-            //}
-            //QRCodeCreate(rorderID, rorderSeq);
-            //QRImageSave(rorderID + rorderSeq);
+                    m.dbCUD(sql, ref msg);
 
-            //lblMsg.Text = "저장되었습니다.";
-
-            //parentWin.ListSearch();
-
-            //for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
-            //{
-            //    if (parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString() == sJobNo)
-            //    {
-            //        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
-            //        parentWin.dataGridView1.CurrentCell.Selected = true;
-            //        break;
-            //    }
-            //}
+                    if (msg != "OK")
+                    {
+                        lblMsg.Text = msg;
+                        return;
+                    }
+                }
+            }
+            lblMsg.Text = "저장되었습니다.";
+            this.Dispose();
         }
         #endregion
 

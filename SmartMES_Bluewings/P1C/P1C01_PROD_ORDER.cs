@@ -13,7 +13,7 @@ namespace SmartMES_Bluewings
         }
         private void P1C01_PROD_ORDER_Load(object sender, EventArgs e)
         {
-            dtpDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-01"));
+            dtpDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-dd"));
             this.ActiveControl = tbSearch;
         }
         public async void ListSearch()
@@ -73,8 +73,11 @@ namespace SmartMES_Bluewings
 
             if(e.ColumnIndex == 1)
             {
-                P1C01_PROD_ORDER_SUB sub = new P1C01_PROD_ORDER_SUB();
+                ///////////// Job No 클릭했을 때, Sub창 Job No 라벨에 Job No 가져가기.
+                ///
+                P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();     // LotNo
                 sub.parentWin = this;
                 sub.ShowDialog();
             }
