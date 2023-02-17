@@ -23,30 +23,7 @@ namespace SmartMES_Bluewings
         private void P1C01_PROD_ORDER_SUB2_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
-
-            if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
-            {
-                ListSearch();
-            }
-            else
-            {
-                rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
-
-                //dataGridView1.Rows[rowIndex].Cells[0].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();    // JobNo
-                //dataGridView1.Rows[rowIndex].Cells[3].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // 설비코드
-                //dataGridView1.Rows[rowIndex].Cells[4].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();    // 설비명
-                //dataGridView1.Rows[rowIndex].Cells[5].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();   // 품목코드
-                //dataGridView1.Rows[rowIndex].Cells[6].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();   // 품목명
-                //dataGridView1.Rows[rowIndex].Cells[7].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();   // 자재A
-                //dataGridView1.Rows[rowIndex].Cells[8].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();   // 중량A
-                //dataGridView1.Rows[rowIndex].Cells[9].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();   // 자재B
-                //dataGridView1.Rows[rowIndex].Cells[10].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();   // 중량B
-                //dataGridView1.Rows[rowIndex].Cells[11].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();   // 자재MB
-                //dataGridView1.Rows[rowIndex].Cells[12].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();   // 중량MB
-                //dataGridView1.Rows[rowIndex].Cells[13].Value = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();   // 배합시간
-
-                this.ActiveControl = btnSave;
-            }
+            ListSearch();
         }
         public void ListSearch()
         {
