@@ -50,7 +50,7 @@ namespace SmartMES_Bluewings
             if (e.RowIndex < 0) return;
             if (e.ColumnIndex != 0) return;
 
-            //parentWin.tbJobNo.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //parentWin.tbJobNo.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();  -> PROD_RESULT 화면에 tbJobNo 텍스트박스 추가.
             parentWin.dtpDate.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             parentWin.tbContents.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
             parentWin.tbProdCode.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -69,10 +69,6 @@ namespace SmartMES_Bluewings
             parentWin.dataGridView1.ClearSelection();
             parentWin.lblMsg.Text = "작업시작 할 수 있습니다.";
 
-            // 전력사용량
-            parentWin.energyUseToday(DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()).ToString("yyyy-MM-dd"));
-            parentWin.energyUseYesterday(DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()).AddDays(-1).ToString("yyyy-MM-dd"));
-           
             this.Dispose();
         }
     }

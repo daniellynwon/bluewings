@@ -144,7 +144,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>LogHelper\SmartFactory.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -550,6 +552,12 @@
     <Compile Include="P1C\P1C02_PROD_RESULT.Designer.cs">
       <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT1.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT1.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT_IDLE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -948,6 +956,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT.resx">
       <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT1.resx">
+      <DependentUpon>P1C02_PROD_RESULT1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_IDLE.resx">
       <DependentUpon>P1C02_PROD_RESULT_IDLE.cs</DependentUpon>

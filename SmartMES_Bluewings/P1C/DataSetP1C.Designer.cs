@@ -34,13 +34,9 @@ namespace SmartMES_Bluewings.P1C {
         
         private SP_RecipeDetail_QueryDataTable tableSP_RecipeDetail_Query;
         
-        private SP_ProdResult_OrderDataTable tableSP_ProdResult_Order;
-        
         private SP_ProductionResult_QueryDataTable tableSP_ProductionResult_Query;
         
         private SP_ProdDone_QueryDataTable tableSP_ProdDone_Query;
-        
-        private SP_ProdResult_QueryDataTable tableSP_ProdResult_Query;
         
         private SP_ProdResult_ListDataTable tableSP_ProdResult_List;
         
@@ -53,6 +49,10 @@ namespace SmartMES_Bluewings.P1C {
         private SP_ProdOrder_ROrder1DataTable tableSP_ProdOrder_ROrder1;
         
         private SP_ProdOrder_QueryDataTable tableSP_ProdOrder_Query;
+        
+        private SP_ProdResult_OrderDataTable tableSP_ProdResult_Order;
+        
+        private SP_ProdResult_QueryDataTable tableSP_ProdResult_Query;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -97,17 +97,11 @@ namespace SmartMES_Bluewings.P1C {
                 if ((ds.Tables["SP_RecipeDetail_Query"] != null)) {
                     base.Tables.Add(new SP_RecipeDetail_QueryDataTable(ds.Tables["SP_RecipeDetail_Query"]));
                 }
-                if ((ds.Tables["SP_ProdResult_Order"] != null)) {
-                    base.Tables.Add(new SP_ProdResult_OrderDataTable(ds.Tables["SP_ProdResult_Order"]));
-                }
                 if ((ds.Tables["SP_ProductionResult_Query"] != null)) {
                     base.Tables.Add(new SP_ProductionResult_QueryDataTable(ds.Tables["SP_ProductionResult_Query"]));
                 }
                 if ((ds.Tables["SP_ProdDone_Query"] != null)) {
                     base.Tables.Add(new SP_ProdDone_QueryDataTable(ds.Tables["SP_ProdDone_Query"]));
-                }
-                if ((ds.Tables["SP_ProdResult_Query"] != null)) {
-                    base.Tables.Add(new SP_ProdResult_QueryDataTable(ds.Tables["SP_ProdResult_Query"]));
                 }
                 if ((ds.Tables["SP_ProdResult_List"] != null)) {
                     base.Tables.Add(new SP_ProdResult_ListDataTable(ds.Tables["SP_ProdResult_List"]));
@@ -126,6 +120,12 @@ namespace SmartMES_Bluewings.P1C {
                 }
                 if ((ds.Tables["SP_ProdOrder_Query"] != null)) {
                     base.Tables.Add(new SP_ProdOrder_QueryDataTable(ds.Tables["SP_ProdOrder_Query"]));
+                }
+                if ((ds.Tables["SP_ProdResult_Order"] != null)) {
+                    base.Tables.Add(new SP_ProdResult_OrderDataTable(ds.Tables["SP_ProdResult_Order"]));
+                }
+                if ((ds.Tables["SP_ProdResult_Query"] != null)) {
+                    base.Tables.Add(new SP_ProdResult_QueryDataTable(ds.Tables["SP_ProdResult_Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -199,16 +199,6 @@ namespace SmartMES_Bluewings.P1C {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_ProdResult_OrderDataTable SP_ProdResult_Order {
-            get {
-                return this.tableSP_ProdResult_Order;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public SP_ProductionResult_QueryDataTable SP_ProductionResult_Query {
             get {
                 return this.tableSP_ProductionResult_Query;
@@ -222,16 +212,6 @@ namespace SmartMES_Bluewings.P1C {
         public SP_ProdDone_QueryDataTable SP_ProdDone_Query {
             get {
                 return this.tableSP_ProdDone_Query;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_ProdResult_QueryDataTable SP_ProdResult_Query {
-            get {
-                return this.tableSP_ProdResult_Query;
             }
         }
         
@@ -292,6 +272,26 @@ namespace SmartMES_Bluewings.P1C {
         public SP_ProdOrder_QueryDataTable SP_ProdOrder_Query {
             get {
                 return this.tableSP_ProdOrder_Query;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_ProdResult_OrderDataTable SP_ProdResult_Order {
+            get {
+                return this.tableSP_ProdResult_Order;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_ProdResult_QueryDataTable SP_ProdResult_Query {
+            get {
+                return this.tableSP_ProdResult_Query;
             }
         }
         
@@ -377,17 +377,11 @@ namespace SmartMES_Bluewings.P1C {
                 if ((ds.Tables["SP_RecipeDetail_Query"] != null)) {
                     base.Tables.Add(new SP_RecipeDetail_QueryDataTable(ds.Tables["SP_RecipeDetail_Query"]));
                 }
-                if ((ds.Tables["SP_ProdResult_Order"] != null)) {
-                    base.Tables.Add(new SP_ProdResult_OrderDataTable(ds.Tables["SP_ProdResult_Order"]));
-                }
                 if ((ds.Tables["SP_ProductionResult_Query"] != null)) {
                     base.Tables.Add(new SP_ProductionResult_QueryDataTable(ds.Tables["SP_ProductionResult_Query"]));
                 }
                 if ((ds.Tables["SP_ProdDone_Query"] != null)) {
                     base.Tables.Add(new SP_ProdDone_QueryDataTable(ds.Tables["SP_ProdDone_Query"]));
-                }
-                if ((ds.Tables["SP_ProdResult_Query"] != null)) {
-                    base.Tables.Add(new SP_ProdResult_QueryDataTable(ds.Tables["SP_ProdResult_Query"]));
                 }
                 if ((ds.Tables["SP_ProdResult_List"] != null)) {
                     base.Tables.Add(new SP_ProdResult_ListDataTable(ds.Tables["SP_ProdResult_List"]));
@@ -406,6 +400,12 @@ namespace SmartMES_Bluewings.P1C {
                 }
                 if ((ds.Tables["SP_ProdOrder_Query"] != null)) {
                     base.Tables.Add(new SP_ProdOrder_QueryDataTable(ds.Tables["SP_ProdOrder_Query"]));
+                }
+                if ((ds.Tables["SP_ProdResult_Order"] != null)) {
+                    base.Tables.Add(new SP_ProdResult_OrderDataTable(ds.Tables["SP_ProdResult_Order"]));
+                }
+                if ((ds.Tables["SP_ProdResult_Query"] != null)) {
+                    base.Tables.Add(new SP_ProdResult_QueryDataTable(ds.Tables["SP_ProdResult_Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -470,12 +470,6 @@ namespace SmartMES_Bluewings.P1C {
                     this.tableSP_RecipeDetail_Query.InitVars();
                 }
             }
-            this.tableSP_ProdResult_Order = ((SP_ProdResult_OrderDataTable)(base.Tables["SP_ProdResult_Order"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_ProdResult_Order != null)) {
-                    this.tableSP_ProdResult_Order.InitVars();
-                }
-            }
             this.tableSP_ProductionResult_Query = ((SP_ProductionResult_QueryDataTable)(base.Tables["SP_ProductionResult_Query"]));
             if ((initTable == true)) {
                 if ((this.tableSP_ProductionResult_Query != null)) {
@@ -486,12 +480,6 @@ namespace SmartMES_Bluewings.P1C {
             if ((initTable == true)) {
                 if ((this.tableSP_ProdDone_Query != null)) {
                     this.tableSP_ProdDone_Query.InitVars();
-                }
-            }
-            this.tableSP_ProdResult_Query = ((SP_ProdResult_QueryDataTable)(base.Tables["SP_ProdResult_Query"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_ProdResult_Query != null)) {
-                    this.tableSP_ProdResult_Query.InitVars();
                 }
             }
             this.tableSP_ProdResult_List = ((SP_ProdResult_ListDataTable)(base.Tables["SP_ProdResult_List"]));
@@ -530,6 +518,18 @@ namespace SmartMES_Bluewings.P1C {
                     this.tableSP_ProdOrder_Query.InitVars();
                 }
             }
+            this.tableSP_ProdResult_Order = ((SP_ProdResult_OrderDataTable)(base.Tables["SP_ProdResult_Order"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_ProdResult_Order != null)) {
+                    this.tableSP_ProdResult_Order.InitVars();
+                }
+            }
+            this.tableSP_ProdResult_Query = ((SP_ProdResult_QueryDataTable)(base.Tables["SP_ProdResult_Query"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_ProdResult_Query != null)) {
+                    this.tableSP_ProdResult_Query.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -550,14 +550,10 @@ namespace SmartMES_Bluewings.P1C {
             base.Tables.Add(this.tableSP_ProdTerm_Material);
             this.tableSP_RecipeDetail_Query = new SP_RecipeDetail_QueryDataTable();
             base.Tables.Add(this.tableSP_RecipeDetail_Query);
-            this.tableSP_ProdResult_Order = new SP_ProdResult_OrderDataTable();
-            base.Tables.Add(this.tableSP_ProdResult_Order);
             this.tableSP_ProductionResult_Query = new SP_ProductionResult_QueryDataTable();
             base.Tables.Add(this.tableSP_ProductionResult_Query);
             this.tableSP_ProdDone_Query = new SP_ProdDone_QueryDataTable();
             base.Tables.Add(this.tableSP_ProdDone_Query);
-            this.tableSP_ProdResult_Query = new SP_ProdResult_QueryDataTable();
-            base.Tables.Add(this.tableSP_ProdResult_Query);
             this.tableSP_ProdResult_List = new SP_ProdResult_ListDataTable();
             base.Tables.Add(this.tableSP_ProdResult_List);
             this.tableSP_ProdTerm_Query = new SP_ProdTerm_QueryDataTable();
@@ -570,6 +566,10 @@ namespace SmartMES_Bluewings.P1C {
             base.Tables.Add(this.tableSP_ProdOrder_ROrder1);
             this.tableSP_ProdOrder_Query = new SP_ProdOrder_QueryDataTable();
             base.Tables.Add(this.tableSP_ProdOrder_Query);
+            this.tableSP_ProdResult_Order = new SP_ProdResult_OrderDataTable();
+            base.Tables.Add(this.tableSP_ProdResult_Order);
+            this.tableSP_ProdResult_Query = new SP_ProdResult_QueryDataTable();
+            base.Tables.Add(this.tableSP_ProdResult_Query);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -604,12 +604,6 @@ namespace SmartMES_Bluewings.P1C {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_ProdResult_Order() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_ProductionResult_Query() {
             return false;
         }
@@ -617,12 +611,6 @@ namespace SmartMES_Bluewings.P1C {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_ProdDone_Query() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_ProdResult_Query() {
             return false;
         }
         
@@ -659,6 +647,18 @@ namespace SmartMES_Bluewings.P1C {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_ProdOrder_Query() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_ProdResult_Order() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_ProdResult_Query() {
             return false;
         }
         
@@ -733,16 +733,10 @@ namespace SmartMES_Bluewings.P1C {
         public delegate void SP_RecipeDetail_QueryRowChangeEventHandler(object sender, SP_RecipeDetail_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_ProdResult_OrderRowChangeEventHandler(object sender, SP_ProdResult_OrderRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_ProductionResult_QueryRowChangeEventHandler(object sender, SP_ProductionResult_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_ProdDone_QueryRowChangeEventHandler(object sender, SP_ProdDone_QueryRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_ProdResult_QueryRowChangeEventHandler(object sender, SP_ProdResult_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_ProdResult_ListRowChangeEventHandler(object sender, SP_ProdResult_ListRowChangeEvent e);
@@ -761,6 +755,12 @@ namespace SmartMES_Bluewings.P1C {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_ProdOrder_QueryRowChangeEventHandler(object sender, SP_ProdOrder_QueryRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_ProdResult_OrderRowChangeEventHandler(object sender, SP_ProdResult_OrderRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_ProdResult_QueryRowChangeEventHandler(object sender, SP_ProdResult_QueryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2369,416 +2369,6 @@ namespace SmartMES_Bluewings.P1C {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_ProdResult_OrderDataTable : global::System.Data.TypedTableBase<SP_ProdResult_OrderRow> {
-            
-            private global::System.Data.DataColumn columnLotNo;
-            
-            private global::System.Data.DataColumn column일자;
-            
-            private global::System.Data.DataColumn column품목코드;
-            
-            private global::System.Data.DataColumn column품목명;
-            
-            private global::System.Data.DataColumn column제품명;
-            
-            private global::System.Data.DataColumn column규격;
-            
-            private global::System.Data.DataColumn column수량;
-            
-            private global::System.Data.DataColumn column거래처코드;
-            
-            private global::System.Data.DataColumn column거래처명;
-            
-            private global::System.Data.DataColumn column프로젝트명;
-            
-            private global::System.Data.DataColumn column납기;
-            
-            private global::System.Data.DataColumn column작업지도;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderDataTable() {
-                this.TableName = "SP_ProdResult_Order";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_ProdResult_OrderDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_ProdResult_OrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LotNoColumn {
-                get {
-                    return this.columnLotNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 일자Column {
-                get {
-                    return this.column일자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목코드Column {
-                get {
-                    return this.column품목코드;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목명Column {
-                get {
-                    return this.column품목명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 제품명Column {
-                get {
-                    return this.column제품명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 규격Column {
-                get {
-                    return this.column규격;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 수량Column {
-                get {
-                    return this.column수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 거래처코드Column {
-                get {
-                    return this.column거래처코드;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 거래처명Column {
-                get {
-                    return this.column거래처명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 프로젝트명Column {
-                get {
-                    return this.column프로젝트명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 납기Column {
-                get {
-                    return this.column납기;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 작업지도Column {
-                get {
-                    return this.column작업지도;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderRow this[int index] {
-                get {
-                    return ((SP_ProdResult_OrderRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_ProdResult_OrderRow(SP_ProdResult_OrderRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderRow AddSP_ProdResult_OrderRow(string LotNo, System.DateTime 일자, string 품목코드, string 품목명, string 제품명, string 규격, int 수량, string 거래처코드, string 거래처명, string 프로젝트명, System.DateTime 납기, string 작업지도) {
-                SP_ProdResult_OrderRow rowSP_ProdResult_OrderRow = ((SP_ProdResult_OrderRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        LotNo,
-                        일자,
-                        품목코드,
-                        품목명,
-                        제품명,
-                        규격,
-                        수량,
-                        거래처코드,
-                        거래처명,
-                        프로젝트명,
-                        납기,
-                        작업지도};
-                rowSP_ProdResult_OrderRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_ProdResult_OrderRow);
-                return rowSP_ProdResult_OrderRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_ProdResult_OrderDataTable cln = ((SP_ProdResult_OrderDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_ProdResult_OrderDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnLotNo = base.Columns["LotNo"];
-                this.column일자 = base.Columns["일자"];
-                this.column품목코드 = base.Columns["품목코드"];
-                this.column품목명 = base.Columns["품목명"];
-                this.column제품명 = base.Columns["제품명"];
-                this.column규격 = base.Columns["규격"];
-                this.column수량 = base.Columns["수량"];
-                this.column거래처코드 = base.Columns["거래처코드"];
-                this.column거래처명 = base.Columns["거래처명"];
-                this.column프로젝트명 = base.Columns["프로젝트명"];
-                this.column납기 = base.Columns["납기"];
-                this.column작업지도 = base.Columns["작업지도"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnLotNo = new global::System.Data.DataColumn("LotNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLotNo);
-                this.column일자 = new global::System.Data.DataColumn("일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column일자);
-                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목코드);
-                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목명);
-                this.column제품명 = new global::System.Data.DataColumn("제품명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column제품명);
-                this.column규격 = new global::System.Data.DataColumn("규격", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column규격);
-                this.column수량 = new global::System.Data.DataColumn("수량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column수량);
-                this.column거래처코드 = new global::System.Data.DataColumn("거래처코드", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column거래처코드);
-                this.column거래처명 = new global::System.Data.DataColumn("거래처명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column거래처명);
-                this.column프로젝트명 = new global::System.Data.DataColumn("프로젝트명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column프로젝트명);
-                this.column납기 = new global::System.Data.DataColumn("납기", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column납기);
-                this.column작업지도 = new global::System.Data.DataColumn("작업지도", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column작업지도);
-                this.columnLotNo.MaxLength = 10;
-                this.column품목코드.MaxLength = 8;
-                this.column품목명.MaxLength = 50;
-                this.column제품명.MaxLength = 50;
-                this.column규격.MaxLength = 50;
-                this.column거래처코드.MaxLength = 7;
-                this.column거래처명.MaxLength = 50;
-                this.column프로젝트명.MaxLength = 50;
-                this.column작업지도.MaxLength = 1000;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderRow NewSP_ProdResult_OrderRow() {
-                return ((SP_ProdResult_OrderRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_ProdResult_OrderRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_ProdResult_OrderRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_ProdResult_OrderRowChanged != null)) {
-                    this.SP_ProdResult_OrderRowChanged(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_ProdResult_OrderRowChanging != null)) {
-                    this.SP_ProdResult_OrderRowChanging(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_ProdResult_OrderRowDeleted != null)) {
-                    this.SP_ProdResult_OrderRowDeleted(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_ProdResult_OrderRowDeleting != null)) {
-                    this.SP_ProdResult_OrderRowDeleting(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_ProdResult_OrderRow(SP_ProdResult_OrderRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetP1C ds = new DataSetP1C();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_ProdResult_OrderDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SP_ProductionResult_QueryDataTable : global::System.Data.TypedTableBase<SP_ProductionResult_QueryRow> {
             
             private global::System.Data.DataColumn column구분;
@@ -3369,443 +2959,6 @@ namespace SmartMES_Bluewings.P1C {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_ProdDone_QueryDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_ProdResult_QueryDataTable : global::System.Data.TypedTableBase<SP_ProdResult_QueryRow> {
-            
-            private global::System.Data.DataColumn column생산일자;
-            
-            private global::System.Data.DataColumn column입력시간;
-            
-            private global::System.Data.DataColumn column작업조;
-            
-            private global::System.Data.DataColumn column순번;
-            
-            private global::System.Data.DataColumn column품목코드;
-            
-            private global::System.Data.DataColumn column품목명;
-            
-            private global::System.Data.DataColumn column규격;
-            
-            private global::System.Data.DataColumn column단위;
-            
-            private global::System.Data.DataColumn column양품수량;
-            
-            private global::System.Data.DataColumn column불량수량;
-            
-            private global::System.Data.DataColumn column생산수량;
-            
-            private global::System.Data.DataColumn column창고;
-            
-            private global::System.Data.DataColumn column비고;
-            
-            private global::System.Data.DataColumn column생산순번;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryDataTable() {
-                this.TableName = "SP_ProdResult_Query";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_ProdResult_QueryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_ProdResult_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 생산일자Column {
-                get {
-                    return this.column생산일자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입력시간Column {
-                get {
-                    return this.column입력시간;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 작업조Column {
-                get {
-                    return this.column작업조;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 순번Column {
-                get {
-                    return this.column순번;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목코드Column {
-                get {
-                    return this.column품목코드;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목명Column {
-                get {
-                    return this.column품목명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 규격Column {
-                get {
-                    return this.column규격;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 단위Column {
-                get {
-                    return this.column단위;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 양품수량Column {
-                get {
-                    return this.column양품수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 불량수량Column {
-                get {
-                    return this.column불량수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 생산수량Column {
-                get {
-                    return this.column생산수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 창고Column {
-                get {
-                    return this.column창고;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 비고Column {
-                get {
-                    return this.column비고;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 생산순번Column {
-                get {
-                    return this.column생산순번;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryRow this[int index] {
-                get {
-                    return ((SP_ProdResult_QueryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_ProdResult_QueryRow(SP_ProdResult_QueryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryRow AddSP_ProdResult_QueryRow(System.DateTime 생산일자, System.DateTime 입력시간, string 작업조, string 순번, string 품목코드, string 품목명, string 규격, string 단위, int 양품수량, int 불량수량, long 생산수량, string 창고, string 비고, uint 생산순번) {
-                SP_ProdResult_QueryRow rowSP_ProdResult_QueryRow = ((SP_ProdResult_QueryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        생산일자,
-                        입력시간,
-                        작업조,
-                        순번,
-                        품목코드,
-                        품목명,
-                        규격,
-                        단위,
-                        양품수량,
-                        불량수량,
-                        생산수량,
-                        창고,
-                        비고,
-                        생산순번};
-                rowSP_ProdResult_QueryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_ProdResult_QueryRow);
-                return rowSP_ProdResult_QueryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_ProdResult_QueryDataTable cln = ((SP_ProdResult_QueryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_ProdResult_QueryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.column생산일자 = base.Columns["생산일자"];
-                this.column입력시간 = base.Columns["입력시간"];
-                this.column작업조 = base.Columns["작업조"];
-                this.column순번 = base.Columns["순번"];
-                this.column품목코드 = base.Columns["품목코드"];
-                this.column품목명 = base.Columns["품목명"];
-                this.column규격 = base.Columns["규격"];
-                this.column단위 = base.Columns["단위"];
-                this.column양품수량 = base.Columns["양품수량"];
-                this.column불량수량 = base.Columns["불량수량"];
-                this.column생산수량 = base.Columns["생산수량"];
-                this.column창고 = base.Columns["창고"];
-                this.column비고 = base.Columns["비고"];
-                this.column생산순번 = base.Columns["생산순번"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.column생산일자 = new global::System.Data.DataColumn("생산일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column생산일자);
-                this.column입력시간 = new global::System.Data.DataColumn("입력시간", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입력시간);
-                this.column작업조 = new global::System.Data.DataColumn("작업조", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column작업조);
-                this.column순번 = new global::System.Data.DataColumn("순번", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column순번);
-                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목코드);
-                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목명);
-                this.column규격 = new global::System.Data.DataColumn("규격", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column규격);
-                this.column단위 = new global::System.Data.DataColumn("단위", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column단위);
-                this.column양품수량 = new global::System.Data.DataColumn("양품수량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column양품수량);
-                this.column불량수량 = new global::System.Data.DataColumn("불량수량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column불량수량);
-                this.column생산수량 = new global::System.Data.DataColumn("생산수량", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column생산수량);
-                this.column창고 = new global::System.Data.DataColumn("창고", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column창고);
-                this.column비고 = new global::System.Data.DataColumn("비고", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column비고);
-                this.column생산순번 = new global::System.Data.DataColumn("생산순번", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column생산순번);
-                this.column작업조.MaxLength = 1;
-                this.column순번.MaxLength = 10;
-                this.column품목코드.MaxLength = 8;
-                this.column품목명.MaxLength = 50;
-                this.column규격.MaxLength = 50;
-                this.column단위.MaxLength = 10;
-                this.column창고.MaxLength = 4;
-                this.column비고.MaxLength = 1000;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryRow NewSP_ProdResult_QueryRow() {
-                return ((SP_ProdResult_QueryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_ProdResult_QueryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_ProdResult_QueryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_ProdResult_QueryRowChanged != null)) {
-                    this.SP_ProdResult_QueryRowChanged(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_ProdResult_QueryRowChanging != null)) {
-                    this.SP_ProdResult_QueryRowChanging(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_ProdResult_QueryRowDeleted != null)) {
-                    this.SP_ProdResult_QueryRowDeleted(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_ProdResult_QueryRowDeleting != null)) {
-                    this.SP_ProdResult_QueryRowDeleting(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_ProdResult_QueryRow(SP_ProdResult_QueryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetP1C ds = new DataSetP1C();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_ProdResult_QueryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6428,6 +5581,996 @@ namespace SmartMES_Bluewings.P1C {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_ProdResult_OrderDataTable : global::System.Data.TypedTableBase<SP_ProdResult_OrderRow> {
+            
+            private global::System.Data.DataColumn columnLotNo;
+            
+            private global::System.Data.DataColumn column일자;
+            
+            private global::System.Data.DataColumn column설비코드;
+            
+            private global::System.Data.DataColumn column설비명;
+            
+            private global::System.Data.DataColumn column품목코드;
+            
+            private global::System.Data.DataColumn column품목명;
+            
+            private global::System.Data.DataColumn column자재A;
+            
+            private global::System.Data.DataColumn column자재명A;
+            
+            private global::System.Data.DataColumn column자재B;
+            
+            private global::System.Data.DataColumn column자재명B;
+            
+            private global::System.Data.DataColumn column자재MB;
+            
+            private global::System.Data.DataColumn column자재명MB;
+            
+            private global::System.Data.DataColumn column중량A;
+            
+            private global::System.Data.DataColumn column중량B;
+            
+            private global::System.Data.DataColumn column중량MB;
+            
+            private global::System.Data.DataColumn column배합시간;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderDataTable() {
+                this.TableName = "SP_ProdResult_Order";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_ProdResult_OrderDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_ProdResult_OrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LotNoColumn {
+                get {
+                    return this.columnLotNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 일자Column {
+                get {
+                    return this.column일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 설비코드Column {
+                get {
+                    return this.column설비코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 설비명Column {
+                get {
+                    return this.column설비명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목코드Column {
+                get {
+                    return this.column품목코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목명Column {
+                get {
+                    return this.column품목명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재AColumn {
+                get {
+                    return this.column자재A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명AColumn {
+                get {
+                    return this.column자재명A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재BColumn {
+                get {
+                    return this.column자재B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명BColumn {
+                get {
+                    return this.column자재명B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재MBColumn {
+                get {
+                    return this.column자재MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명MBColumn {
+                get {
+                    return this.column자재명MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량AColumn {
+                get {
+                    return this.column중량A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량BColumn {
+                get {
+                    return this.column중량B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량MBColumn {
+                get {
+                    return this.column중량MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 배합시간Column {
+                get {
+                    return this.column배합시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderRow this[int index] {
+                get {
+                    return ((SP_ProdResult_OrderRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_OrderRowChangeEventHandler SP_ProdResult_OrderRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_ProdResult_OrderRow(SP_ProdResult_OrderRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderRow AddSP_ProdResult_OrderRow(
+                        string LotNo, 
+                        System.DateTime 일자, 
+                        uint 설비코드, 
+                        string 설비명, 
+                        string 품목코드, 
+                        string 품목명, 
+                        string 자재A, 
+                        string 자재명A, 
+                        string 자재B, 
+                        string 자재명B, 
+                        string 자재MB, 
+                        string 자재명MB, 
+                        string 중량A, 
+                        string 중량B, 
+                        string 중량MB, 
+                        string 배합시간) {
+                SP_ProdResult_OrderRow rowSP_ProdResult_OrderRow = ((SP_ProdResult_OrderRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        LotNo,
+                        일자,
+                        설비코드,
+                        설비명,
+                        품목코드,
+                        품목명,
+                        자재A,
+                        자재명A,
+                        자재B,
+                        자재명B,
+                        자재MB,
+                        자재명MB,
+                        중량A,
+                        중량B,
+                        중량MB,
+                        배합시간};
+                rowSP_ProdResult_OrderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_ProdResult_OrderRow);
+                return rowSP_ProdResult_OrderRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_ProdResult_OrderDataTable cln = ((SP_ProdResult_OrderDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_ProdResult_OrderDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnLotNo = base.Columns["LotNo"];
+                this.column일자 = base.Columns["일자"];
+                this.column설비코드 = base.Columns["설비코드"];
+                this.column설비명 = base.Columns["설비명"];
+                this.column품목코드 = base.Columns["품목코드"];
+                this.column품목명 = base.Columns["품목명"];
+                this.column자재A = base.Columns["자재A"];
+                this.column자재명A = base.Columns["자재명A"];
+                this.column자재B = base.Columns["자재B"];
+                this.column자재명B = base.Columns["자재명B"];
+                this.column자재MB = base.Columns["자재MB"];
+                this.column자재명MB = base.Columns["자재명MB"];
+                this.column중량A = base.Columns["중량A"];
+                this.column중량B = base.Columns["중량B"];
+                this.column중량MB = base.Columns["중량MB"];
+                this.column배합시간 = base.Columns["배합시간"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnLotNo = new global::System.Data.DataColumn("LotNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLotNo);
+                this.column일자 = new global::System.Data.DataColumn("일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column일자);
+                this.column설비코드 = new global::System.Data.DataColumn("설비코드", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column설비코드);
+                this.column설비명 = new global::System.Data.DataColumn("설비명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column설비명);
+                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목코드);
+                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목명);
+                this.column자재A = new global::System.Data.DataColumn("자재A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재A);
+                this.column자재명A = new global::System.Data.DataColumn("자재명A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명A);
+                this.column자재B = new global::System.Data.DataColumn("자재B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재B);
+                this.column자재명B = new global::System.Data.DataColumn("자재명B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명B);
+                this.column자재MB = new global::System.Data.DataColumn("자재MB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재MB);
+                this.column자재명MB = new global::System.Data.DataColumn("자재명MB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명MB);
+                this.column중량A = new global::System.Data.DataColumn("중량A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량A);
+                this.column중량B = new global::System.Data.DataColumn("중량B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량B);
+                this.column중량MB = new global::System.Data.DataColumn("중량MB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량MB);
+                this.column배합시간 = new global::System.Data.DataColumn("배합시간", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column배합시간);
+                this.columnLotNo.MaxLength = 10;
+                this.column설비명.MaxLength = 50;
+                this.column품목코드.MaxLength = 8;
+                this.column품목명.MaxLength = 50;
+                this.column자재A.MaxLength = 8;
+                this.column자재명A.MaxLength = 50;
+                this.column자재B.MaxLength = 8;
+                this.column자재명B.MaxLength = 50;
+                this.column자재MB.MaxLength = 8;
+                this.column자재명MB.MaxLength = 50;
+                this.column중량A.MaxLength = 50;
+                this.column중량B.MaxLength = 50;
+                this.column중량MB.MaxLength = 50;
+                this.column배합시간.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderRow NewSP_ProdResult_OrderRow() {
+                return ((SP_ProdResult_OrderRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_ProdResult_OrderRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_ProdResult_OrderRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_ProdResult_OrderRowChanged != null)) {
+                    this.SP_ProdResult_OrderRowChanged(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_ProdResult_OrderRowChanging != null)) {
+                    this.SP_ProdResult_OrderRowChanging(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_ProdResult_OrderRowDeleted != null)) {
+                    this.SP_ProdResult_OrderRowDeleted(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_ProdResult_OrderRowDeleting != null)) {
+                    this.SP_ProdResult_OrderRowDeleting(this, new SP_ProdResult_OrderRowChangeEvent(((SP_ProdResult_OrderRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_ProdResult_OrderRow(SP_ProdResult_OrderRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetP1C ds = new DataSetP1C();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_ProdResult_OrderDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_ProdResult_QueryDataTable : global::System.Data.TypedTableBase<SP_ProdResult_QueryRow> {
+            
+            private global::System.Data.DataColumn columnJobNo;
+            
+            private global::System.Data.DataColumn column생산지시일;
+            
+            private global::System.Data.DataColumn column생산일자;
+            
+            private global::System.Data.DataColumn column설비코드;
+            
+            private global::System.Data.DataColumn column설비명;
+            
+            private global::System.Data.DataColumn column품목코드;
+            
+            private global::System.Data.DataColumn column품목명;
+            
+            private global::System.Data.DataColumn column자재A;
+            
+            private global::System.Data.DataColumn column자재명A;
+            
+            private global::System.Data.DataColumn column자재B;
+            
+            private global::System.Data.DataColumn column자재명B;
+            
+            private global::System.Data.DataColumn column자재MB;
+            
+            private global::System.Data.DataColumn column자재명MB;
+            
+            private global::System.Data.DataColumn column중량A;
+            
+            private global::System.Data.DataColumn column중량B;
+            
+            private global::System.Data.DataColumn column중량MB;
+            
+            private global::System.Data.DataColumn column배합시간;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryDataTable() {
+                this.TableName = "SP_ProdResult_Query";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_ProdResult_QueryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_ProdResult_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn JobNoColumn {
+                get {
+                    return this.columnJobNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 생산지시일Column {
+                get {
+                    return this.column생산지시일;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 생산일자Column {
+                get {
+                    return this.column생산일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 설비코드Column {
+                get {
+                    return this.column설비코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 설비명Column {
+                get {
+                    return this.column설비명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목코드Column {
+                get {
+                    return this.column품목코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목명Column {
+                get {
+                    return this.column품목명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재AColumn {
+                get {
+                    return this.column자재A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명AColumn {
+                get {
+                    return this.column자재명A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재BColumn {
+                get {
+                    return this.column자재B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명BColumn {
+                get {
+                    return this.column자재명B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재MBColumn {
+                get {
+                    return this.column자재MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재명MBColumn {
+                get {
+                    return this.column자재명MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량AColumn {
+                get {
+                    return this.column중량A;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량BColumn {
+                get {
+                    return this.column중량B;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 중량MBColumn {
+                get {
+                    return this.column중량MB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 배합시간Column {
+                get {
+                    return this.column배합시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryRow this[int index] {
+                get {
+                    return ((SP_ProdResult_QueryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_ProdResult_QueryRowChangeEventHandler SP_ProdResult_QueryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_ProdResult_QueryRow(SP_ProdResult_QueryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryRow AddSP_ProdResult_QueryRow(
+                        string JobNo, 
+                        System.DateTime 생산지시일, 
+                        System.DateTime 생산일자, 
+                        uint 설비코드, 
+                        string 설비명, 
+                        string 품목코드, 
+                        string 품목명, 
+                        string 자재A, 
+                        string 자재명A, 
+                        string 자재B, 
+                        string 자재명B, 
+                        string 자재MB, 
+                        string 자재명MB, 
+                        int 중량A, 
+                        int 중량B, 
+                        int 중량MB, 
+                        string 배합시간) {
+                SP_ProdResult_QueryRow rowSP_ProdResult_QueryRow = ((SP_ProdResult_QueryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        JobNo,
+                        생산지시일,
+                        생산일자,
+                        설비코드,
+                        설비명,
+                        품목코드,
+                        품목명,
+                        자재A,
+                        자재명A,
+                        자재B,
+                        자재명B,
+                        자재MB,
+                        자재명MB,
+                        중량A,
+                        중량B,
+                        중량MB,
+                        배합시간};
+                rowSP_ProdResult_QueryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_ProdResult_QueryRow);
+                return rowSP_ProdResult_QueryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_ProdResult_QueryDataTable cln = ((SP_ProdResult_QueryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_ProdResult_QueryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnJobNo = base.Columns["JobNo"];
+                this.column생산지시일 = base.Columns["생산지시일"];
+                this.column생산일자 = base.Columns["생산일자"];
+                this.column설비코드 = base.Columns["설비코드"];
+                this.column설비명 = base.Columns["설비명"];
+                this.column품목코드 = base.Columns["품목코드"];
+                this.column품목명 = base.Columns["품목명"];
+                this.column자재A = base.Columns["자재A"];
+                this.column자재명A = base.Columns["자재명A"];
+                this.column자재B = base.Columns["자재B"];
+                this.column자재명B = base.Columns["자재명B"];
+                this.column자재MB = base.Columns["자재MB"];
+                this.column자재명MB = base.Columns["자재명MB"];
+                this.column중량A = base.Columns["중량A"];
+                this.column중량B = base.Columns["중량B"];
+                this.column중량MB = base.Columns["중량MB"];
+                this.column배합시간 = base.Columns["배합시간"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnJobNo = new global::System.Data.DataColumn("JobNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJobNo);
+                this.column생산지시일 = new global::System.Data.DataColumn("생산지시일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column생산지시일);
+                this.column생산일자 = new global::System.Data.DataColumn("생산일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column생산일자);
+                this.column설비코드 = new global::System.Data.DataColumn("설비코드", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column설비코드);
+                this.column설비명 = new global::System.Data.DataColumn("설비명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column설비명);
+                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목코드);
+                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목명);
+                this.column자재A = new global::System.Data.DataColumn("자재A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재A);
+                this.column자재명A = new global::System.Data.DataColumn("자재명A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명A);
+                this.column자재B = new global::System.Data.DataColumn("자재B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재B);
+                this.column자재명B = new global::System.Data.DataColumn("자재명B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명B);
+                this.column자재MB = new global::System.Data.DataColumn("자재MB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재MB);
+                this.column자재명MB = new global::System.Data.DataColumn("자재명MB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재명MB);
+                this.column중량A = new global::System.Data.DataColumn("중량A", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량A);
+                this.column중량B = new global::System.Data.DataColumn("중량B", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량B);
+                this.column중량MB = new global::System.Data.DataColumn("중량MB", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column중량MB);
+                this.column배합시간 = new global::System.Data.DataColumn("배합시간", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column배합시간);
+                this.columnJobNo.AllowDBNull = false;
+                this.columnJobNo.MaxLength = 10;
+                this.column생산지시일.AllowDBNull = false;
+                this.column설비코드.AllowDBNull = false;
+                this.column설비명.MaxLength = 50;
+                this.column품목코드.MaxLength = 10;
+                this.column품목명.AllowDBNull = false;
+                this.column품목명.MaxLength = 50;
+                this.column자재A.MaxLength = 8;
+                this.column자재명A.MaxLength = 50;
+                this.column자재B.MaxLength = 8;
+                this.column자재명B.MaxLength = 50;
+                this.column자재MB.MaxLength = 8;
+                this.column자재명MB.MaxLength = 50;
+                this.column배합시간.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryRow NewSP_ProdResult_QueryRow() {
+                return ((SP_ProdResult_QueryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_ProdResult_QueryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_ProdResult_QueryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_ProdResult_QueryRowChanged != null)) {
+                    this.SP_ProdResult_QueryRowChanged(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_ProdResult_QueryRowChanging != null)) {
+                    this.SP_ProdResult_QueryRowChanging(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_ProdResult_QueryRowDeleted != null)) {
+                    this.SP_ProdResult_QueryRowDeleted(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_ProdResult_QueryRowDeleting != null)) {
+                    this.SP_ProdResult_QueryRowDeleting(this, new SP_ProdResult_QueryRowChangeEvent(((SP_ProdResult_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_ProdResult_QueryRow(SP_ProdResult_QueryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetP1C ds = new DataSetP1C();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_ProdResult_QueryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class SP_Z_Common_IDRow : global::System.Data.DataRow {
@@ -7000,357 +7143,6 @@ namespace SmartMES_Bluewings.P1C {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SP_ProdResult_OrderRow : global::System.Data.DataRow {
-            
-            private SP_ProdResult_OrderDataTable tableSP_ProdResult_Order;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_ProdResult_OrderRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_ProdResult_Order = ((SP_ProdResult_OrderDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string LotNo {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.LotNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'LotNo\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.LotNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 일자 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Order.일자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'일자\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.일자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목코드 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.품목코드Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.품목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.품목명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 제품명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.제품명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'제품명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.제품명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 규격 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.규격Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'규격\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.규격Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 수량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_ProdResult_Order.수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 거래처코드 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.거래처코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'거래처코드\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.거래처코드Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 거래처명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.거래처명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'거래처명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.거래처명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 프로젝트명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.프로젝트명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'프로젝트명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.프로젝트명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 납기 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Order.납기Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'납기\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.납기Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 작업지도 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Order.작업지도Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'작업지도\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Order.작업지도Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLotNoNull() {
-                return this.IsNull(this.tableSP_ProdResult_Order.LotNoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLotNoNull() {
-                this[this.tableSP_ProdResult_Order.LotNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is일자Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.일자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set일자Null() {
-                this[this.tableSP_ProdResult_Order.일자Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_ProdResult_Order.품목코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목명Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.품목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목명Null() {
-                this[this.tableSP_ProdResult_Order.품목명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is제품명Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.제품명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set제품명Null() {
-                this[this.tableSP_ProdResult_Order.제품명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is규격Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.규격Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set규격Null() {
-                this[this.tableSP_ProdResult_Order.규격Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is수량Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set수량Null() {
-                this[this.tableSP_ProdResult_Order.수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is거래처코드Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.거래처코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set거래처코드Null() {
-                this[this.tableSP_ProdResult_Order.거래처코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is거래처명Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.거래처명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set거래처명Null() {
-                this[this.tableSP_ProdResult_Order.거래처명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is프로젝트명Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.프로젝트명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set프로젝트명Null() {
-                this[this.tableSP_ProdResult_Order.프로젝트명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is납기Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.납기Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set납기Null() {
-                this[this.tableSP_ProdResult_Order.납기Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is작업지도Null() {
-                return this.IsNull(this.tableSP_ProdResult_Order.작업지도Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set작업지도Null() {
-                this[this.tableSP_ProdResult_Order.작업지도Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class SP_ProductionResult_QueryRow : global::System.Data.DataRow {
             
             private SP_ProductionResult_QueryDataTable tableSP_ProductionResult_Query;
@@ -7632,413 +7424,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set생산량Null() {
                 this[this.tableSP_ProdDone_Query.생산량Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class SP_ProdResult_QueryRow : global::System.Data.DataRow {
-            
-            private SP_ProdResult_QueryDataTable tableSP_ProdResult_Query;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_ProdResult_QueryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_ProdResult_Query = ((SP_ProdResult_QueryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 생산일자 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Query.생산일자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'생산일자\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.생산일자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 입력시간 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Query.입력시간Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'입력시간\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.입력시간Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 작업조 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.작업조Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'작업조\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.작업조Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 순번 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.순번Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'순번\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.순번Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목코드 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.품목코드Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.품목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.품목명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 규격 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.규격Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'규격\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.규격Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 단위 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.단위Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'단위\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.단위Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 양품수량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_ProdResult_Query.양품수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'양품수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.양품수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 불량수량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_ProdResult_Query.불량수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'불량수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.불량수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 생산수량 {
-                get {
-                    try {
-                        return ((long)(this[this.tableSP_ProdResult_Query.생산수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'생산수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.생산수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 창고 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.창고Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'창고\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.창고Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 비고 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdResult_Query.비고Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'비고\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.비고Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public uint 생산순번 {
-                get {
-                    try {
-                        return ((uint)(this[this.tableSP_ProdResult_Query.생산순번Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'생산순번\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_ProdResult_Query.생산순번Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is생산일자Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.생산일자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set생산일자Null() {
-                this[this.tableSP_ProdResult_Query.생산일자Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입력시간Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.입력시간Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입력시간Null() {
-                this[this.tableSP_ProdResult_Query.입력시간Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is작업조Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.작업조Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set작업조Null() {
-                this[this.tableSP_ProdResult_Query.작업조Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is순번Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.순번Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set순번Null() {
-                this[this.tableSP_ProdResult_Query.순번Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_ProdResult_Query.품목코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목명Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.품목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목명Null() {
-                this[this.tableSP_ProdResult_Query.품목명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is규격Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.규격Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set규격Null() {
-                this[this.tableSP_ProdResult_Query.규격Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is단위Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.단위Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set단위Null() {
-                this[this.tableSP_ProdResult_Query.단위Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is양품수량Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.양품수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set양품수량Null() {
-                this[this.tableSP_ProdResult_Query.양품수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is불량수량Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.불량수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set불량수량Null() {
-                this[this.tableSP_ProdResult_Query.불량수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is생산수량Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.생산수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set생산수량Null() {
-                this[this.tableSP_ProdResult_Query.생산수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is창고Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.창고Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set창고Null() {
-                this[this.tableSP_ProdResult_Query.창고Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is비고Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.비고Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set비고Null() {
-                this[this.tableSP_ProdResult_Query.비고Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is생산순번Null() {
-                return this.IsNull(this.tableSP_ProdResult_Query.생산순번Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set생산순번Null() {
-                this[this.tableSP_ProdResult_Query.생산순번Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -9830,6 +9215,892 @@ namespace SmartMES_Bluewings.P1C {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_ProdResult_OrderRow : global::System.Data.DataRow {
+            
+            private SP_ProdResult_OrderDataTable tableSP_ProdResult_Order;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_ProdResult_OrderRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_ProdResult_Order = ((SP_ProdResult_OrderDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string LotNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.LotNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'LotNo\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.LotNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Order.일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint 설비코드 {
+                get {
+                    try {
+                        return ((uint)(this[this.tableSP_ProdResult_Order.설비코드Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'설비코드\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.설비코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 설비명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.설비명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'설비명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.설비명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목코드 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.품목코드Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.품목코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.품목명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.품목명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재A {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명A {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재명AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재명A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재명AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재B {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명B {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재명BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재명B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재명BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재MB {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명MB {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.자재명MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'자재명MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.자재명MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 중량A {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.중량AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'중량A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.중량AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 중량B {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.중량BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'중량B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.중량BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 중량MB {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.중량MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'중량MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.중량MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 배합시간 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Order.배합시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Order\' 테이블의 \'배합시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Order.배합시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLotNoNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.LotNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLotNoNull() {
+                this[this.tableSP_ProdResult_Order.LotNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is일자Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.일자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set일자Null() {
+                this[this.tableSP_ProdResult_Order.일자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is설비코드Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.설비코드Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set설비코드Null() {
+                this[this.tableSP_ProdResult_Order.설비코드Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is설비명Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.설비명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set설비명Null() {
+                this[this.tableSP_ProdResult_Order.설비명Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is품목코드Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.품목코드Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set품목코드Null() {
+                this[this.tableSP_ProdResult_Order.품목코드Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is품목명Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.품목명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set품목명Null() {
+                this[this.tableSP_ProdResult_Order.품목명Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재ANull() {
+                this[this.tableSP_ProdResult_Order.자재AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재명AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명ANull() {
+                this[this.tableSP_ProdResult_Order.자재명AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재BNull() {
+                this[this.tableSP_ProdResult_Order.자재BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재명BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명BNull() {
+                this[this.tableSP_ProdResult_Order.자재명BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재MBNull() {
+                this[this.tableSP_ProdResult_Order.자재MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.자재명MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명MBNull() {
+                this[this.tableSP_ProdResult_Order.자재명MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.중량AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량ANull() {
+                this[this.tableSP_ProdResult_Order.중량AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.중량BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량BNull() {
+                this[this.tableSP_ProdResult_Order.중량BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Order.중량MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량MBNull() {
+                this[this.tableSP_ProdResult_Order.중량MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is배합시간Null() {
+                return this.IsNull(this.tableSP_ProdResult_Order.배합시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set배합시간Null() {
+                this[this.tableSP_ProdResult_Order.배합시간Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_ProdResult_QueryRow : global::System.Data.DataRow {
+            
+            private SP_ProdResult_QueryDataTable tableSP_ProdResult_Query;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_ProdResult_QueryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_ProdResult_Query = ((SP_ProdResult_QueryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string JobNo {
+                get {
+                    return ((string)(this[this.tableSP_ProdResult_Query.JobNoColumn]));
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.JobNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 생산지시일 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_ProdResult_Query.생산지시일Column]));
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.생산지시일Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 생산일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Query.생산일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'생산일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.생산일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint 설비코드 {
+                get {
+                    return ((uint)(this[this.tableSP_ProdResult_Query.설비코드Column]));
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.설비코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 설비명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.설비명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'설비명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.설비명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목코드 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.품목코드Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.품목코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목명 {
+                get {
+                    return ((string)(this[this.tableSP_ProdResult_Query.품목명Column]));
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.품목명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재A {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명A {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재명AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재명A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재명AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재B {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명B {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재명BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재명B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재명BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재MB {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재명MB {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.자재명MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'자재명MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.자재명MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 중량A {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_ProdResult_Query.중량AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'중량A\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.중량AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 중량B {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_ProdResult_Query.중량BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'중량B\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.중량BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 중량MB {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_ProdResult_Query.중량MBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'중량MB\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.중량MBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 배합시간 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.배합시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'배합시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.배합시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is생산일자Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.생산일자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set생산일자Null() {
+                this[this.tableSP_ProdResult_Query.생산일자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is설비명Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.설비명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set설비명Null() {
+                this[this.tableSP_ProdResult_Query.설비명Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is품목코드Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.품목코드Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set품목코드Null() {
+                this[this.tableSP_ProdResult_Query.품목코드Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재ANull() {
+                this[this.tableSP_ProdResult_Query.자재AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재명AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명ANull() {
+                this[this.tableSP_ProdResult_Query.자재명AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재BNull() {
+                this[this.tableSP_ProdResult_Query.자재BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재명BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명BNull() {
+                this[this.tableSP_ProdResult_Query.자재명BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재MBNull() {
+                this[this.tableSP_ProdResult_Query.자재MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재명MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.자재명MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재명MBNull() {
+                this[this.tableSP_ProdResult_Query.자재명MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량ANull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.중량AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량ANull() {
+                this[this.tableSP_ProdResult_Query.중량AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량BNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.중량BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량BNull() {
+                this[this.tableSP_ProdResult_Query.중량BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is중량MBNull() {
+                return this.IsNull(this.tableSP_ProdResult_Query.중량MBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set중량MBNull() {
+                this[this.tableSP_ProdResult_Query.중량MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is배합시간Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.배합시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set배합시간Null() {
+                this[this.tableSP_ProdResult_Query.배합시간Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -10003,40 +10274,6 @@ namespace SmartMES_Bluewings.P1C {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_ProdResult_OrderRowChangeEvent : global::System.EventArgs {
-            
-            private SP_ProdResult_OrderRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderRowChangeEvent(SP_ProdResult_OrderRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_OrderRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class SP_ProductionResult_QueryRowChangeEvent : global::System.EventArgs {
             
             private SP_ProductionResult_QueryRow eventRow;
@@ -10087,40 +10324,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdDone_QueryRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_ProdResult_QueryRowChangeEvent : global::System.EventArgs {
-            
-            private SP_ProdResult_QueryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryRowChangeEvent(SP_ProdResult_QueryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_QueryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -10325,6 +10528,74 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdOrder_QueryRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_ProdResult_OrderRowChangeEvent : global::System.EventArgs {
+            
+            private SP_ProdResult_OrderRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderRowChangeEvent(SP_ProdResult_OrderRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_OrderRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_ProdResult_QueryRowChangeEvent : global::System.EventArgs {
+            
+            private SP_ProdResult_QueryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryRowChangeEvent(SP_ProdResult_QueryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdResult_QueryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11405,204 +11676,6 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_ProdResult_OrderTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_ProdResult_OrderTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_ProdResult_Order";
-            tableMapping.ColumnMappings.Add("LotNo", "LotNo");
-            tableMapping.ColumnMappings.Add("일자", "일자");
-            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
-            tableMapping.ColumnMappings.Add("품목명", "품목명");
-            tableMapping.ColumnMappings.Add("제품명", "제품명");
-            tableMapping.ColumnMappings.Add("규격", "규격");
-            tableMapping.ColumnMappings.Add("수량", "수량");
-            tableMapping.ColumnMappings.Add("거래처코드", "거래처코드");
-            tableMapping.ColumnMappings.Add("거래처명", "거래처명");
-            tableMapping.ColumnMappings.Add("프로젝트명", "프로젝트명");
-            tableMapping.ColumnMappings.Add("납기", "납기");
-            tableMapping.ColumnMappings.Add("작업지도", "작업지도");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SmartMES_Bluewings.Properties.Settings.Default.Bluewings_mesConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "`bluewings_mes`.`SP_ProdResult_Order`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1C.SP_ProdResult_OrderDataTable dataTable, global::System.Nullable<global::System.DateTime> _date) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1C.SP_ProdResult_OrderDataTable GetData(global::System.Nullable<global::System.DateTime> _date) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            DataSetP1C.SP_ProdResult_OrderDataTable dataTable = new DataSetP1C.SP_ProdResult_OrderDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class SP_ProductionResult_QueryTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
@@ -12011,206 +12084,6 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DataSetP1C.SP_ProdDone_QueryDataTable dataTable = new DataSetP1C.SP_ProdDone_QueryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_ProdResult_QueryTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_ProdResult_QueryTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_ProdResult_Query";
-            tableMapping.ColumnMappings.Add("생산일자", "생산일자");
-            tableMapping.ColumnMappings.Add("입력시간", "입력시간");
-            tableMapping.ColumnMappings.Add("작업조", "작업조");
-            tableMapping.ColumnMappings.Add("순번", "순번");
-            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
-            tableMapping.ColumnMappings.Add("품목명", "품목명");
-            tableMapping.ColumnMappings.Add("규격", "규격");
-            tableMapping.ColumnMappings.Add("단위", "단위");
-            tableMapping.ColumnMappings.Add("양품수량", "양품수량");
-            tableMapping.ColumnMappings.Add("불량수량", "불량수량");
-            tableMapping.ColumnMappings.Add("생산수량", "생산수량");
-            tableMapping.ColumnMappings.Add("창고", "창고");
-            tableMapping.ColumnMappings.Add("비고", "비고");
-            tableMapping.ColumnMappings.Add("생산순번", "생산순번");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SmartMES_Bluewings.Properties.Settings.Default.Bluewings_mesConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "`bluewings_mes`.`SP_ProdResult_Query`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_date";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1C.SP_ProdResult_QueryDataTable dataTable, global::System.Nullable<global::System.DateTime> _date) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1C.SP_ProdResult_QueryDataTable GetData(global::System.Nullable<global::System.DateTime> _date) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            DataSetP1C.SP_ProdResult_QueryDataTable dataTable = new DataSetP1C.SP_ProdResult_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13442,6 +13315,410 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(_search));
             }
             DataSetP1C.SP_ProdOrder_QueryDataTable dataTable = new DataSetP1C.SP_ProdOrder_QueryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_ProdResult_OrderTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_ProdResult_OrderTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_ProdResult_Order";
+            tableMapping.ColumnMappings.Add("LotNo", "LotNo");
+            tableMapping.ColumnMappings.Add("일자", "일자");
+            tableMapping.ColumnMappings.Add("설비코드", "설비코드");
+            tableMapping.ColumnMappings.Add("설비명", "설비명");
+            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
+            tableMapping.ColumnMappings.Add("품목명", "품목명");
+            tableMapping.ColumnMappings.Add("자재A", "자재A");
+            tableMapping.ColumnMappings.Add("자재명A", "자재명A");
+            tableMapping.ColumnMappings.Add("자재B", "자재B");
+            tableMapping.ColumnMappings.Add("자재명B", "자재명B");
+            tableMapping.ColumnMappings.Add("자재MB", "자재MB");
+            tableMapping.ColumnMappings.Add("자재명MB", "자재명MB");
+            tableMapping.ColumnMappings.Add("중량A", "중량A");
+            tableMapping.ColumnMappings.Add("중량B", "중량B");
+            tableMapping.ColumnMappings.Add("중량MB", "중량MB");
+            tableMapping.ColumnMappings.Add("배합시간", "배합시간");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SmartMES_Bluewings.Properties.Settings.Default.Bluewings_mesConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "`bluewings_mes`.`SP_ProdResult_Order`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_date";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetP1C.SP_ProdResult_OrderDataTable dataTable, global::System.Nullable<global::System.DateTime> _date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetP1C.SP_ProdResult_OrderDataTable GetData(global::System.Nullable<global::System.DateTime> _date) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_date.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_date.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            DataSetP1C.SP_ProdResult_OrderDataTable dataTable = new DataSetP1C.SP_ProdResult_OrderDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_ProdResult_QueryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_ProdResult_QueryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_ProdResult_Query";
+            tableMapping.ColumnMappings.Add("JobNo", "JobNo");
+            tableMapping.ColumnMappings.Add("생산지시일", "생산지시일");
+            tableMapping.ColumnMappings.Add("생산일자", "생산일자");
+            tableMapping.ColumnMappings.Add("설비코드", "설비코드");
+            tableMapping.ColumnMappings.Add("설비명", "설비명");
+            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
+            tableMapping.ColumnMappings.Add("품목명", "품목명");
+            tableMapping.ColumnMappings.Add("자재A", "자재A");
+            tableMapping.ColumnMappings.Add("자재명A", "자재명A");
+            tableMapping.ColumnMappings.Add("자재B", "자재B");
+            tableMapping.ColumnMappings.Add("자재명B", "자재명B");
+            tableMapping.ColumnMappings.Add("자재MB", "자재MB");
+            tableMapping.ColumnMappings.Add("자재명MB", "자재명MB");
+            tableMapping.ColumnMappings.Add("중량A", "중량A");
+            tableMapping.ColumnMappings.Add("중량B", "중량B");
+            tableMapping.ColumnMappings.Add("중량MB", "중량MB");
+            tableMapping.ColumnMappings.Add("배합시간", "배합시간");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SmartMES_Bluewings.Properties.Settings.Default.Bluewings_mesConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "`bluewings_mes`.`SP_ProdResult_Query`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_no";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetP1C.SP_ProdResult_QueryDataTable dataTable, string _no) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_no == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetP1C.SP_ProdResult_QueryDataTable GetData(string _no) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_no == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
+            }
+            DataSetP1C.SP_ProdResult_QueryDataTable dataTable = new DataSetP1C.SP_ProdResult_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

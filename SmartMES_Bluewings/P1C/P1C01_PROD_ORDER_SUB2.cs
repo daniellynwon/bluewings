@@ -159,7 +159,6 @@ namespace SmartMES_Bluewings
         private void Save()
         {
             lblMsg.Text = "";
-            
             string sql = string.Empty;
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();

@@ -58,7 +58,7 @@ namespace SmartMES_Bluewings
 
                 DateTime checkDate = DateTime.Parse(dataGridViewList[0, rowIndex].Value.ToString());
                 dataGridView1.DataSource = dataSetP1C.SP_ProdResult_Query;  // 생산실적 갱신 후 Sub 그리드뷰 update안되는 에러 수정.
-                sP_ProdResult_QueryTableAdapter.Fill(dataSetP1C.SP_ProdResult_Query, checkDate);
+                //sP_ProdResult_QueryTableAdapter.Fill(dataSetP1C.SP_ProdResult_Query, checkDate);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
@@ -111,7 +111,7 @@ namespace SmartMES_Bluewings
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                sP_ProdResult_QueryTableAdapter.Fill(dataSetP1C.SP_ProdResult_Query, DateTime.Parse("1900-01-01"));
+                //sP_ProdResult_QueryTableAdapter.Fill(dataSetP1C.SP_ProdResult_Query, DateTime.Parse("1900-01-01"));
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
@@ -384,13 +384,12 @@ namespace SmartMES_Bluewings
         }
         private void pbAdd_Click(object sender, EventArgs e)
         {
-            if (G.Authority == "D") return;     // 09/07 수정
+            if (G.Authority == "D") return;
 
-            ListSearch1();
-            ListInit();
-            // 전력사용량
-            energyUseToday(dtpDate.Value.ToString("yyyy-MM-dd"));
-            energyUseYesterday(dtpDate.Value.AddDays(-1).ToString("yyyy-MM-dd"));
+            P1C02_PROD_RESULT_ORDER sub = new P1C02_PROD_RESULT_ORDER();
+            sub.dtDate = dtpDate.Value;
+            sub.parentWin = this;
+            sub.ShowDialog();
         }
         private async void pbDel_Click(object sender, EventArgs e)
         {
