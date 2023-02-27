@@ -549,7 +549,7 @@
     <Compile Include="P1C\P1C02_PROD_RESULT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="P1C\P1C02_PROD_RESULT.Designer.cs">
+    <Compile Include="P1C\P1C02_PROD_RESULT.designer.cs">
       <DependentUpon>P1C02_PROD_RESULT.cs</DependentUpon>
     </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT1.cs">

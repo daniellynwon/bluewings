@@ -52,7 +52,7 @@ namespace SmartMES_Bluewings
 
             //parentWin.tbJobNo.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();  -> PROD_RESULT 화면에 tbJobNo 텍스트박스 추가.
             parentWin.dtpDate.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            parentWin.tbContents.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+            //parentWin.tbContents.Text = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
             parentWin.tbProdCode.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
             parentWin.timer1.Stop();
@@ -65,8 +65,8 @@ namespace SmartMES_Bluewings
 
             parentWin.sP_ProdResult_IdleTableAdapter.Fill(parentWin.dataSetP1C.SP_ProdResult_Idle, DateTime.Parse("1900-01-01"));
 
-            parentWin.dataGridView1.CurrentCell = null;
-            parentWin.dataGridView1.ClearSelection();
+            //parentWin.dataGridView1.CurrentCell = null;
+            //parentWin.dataGridView1.ClearSelection();
             parentWin.lblMsg.Text = "작업시작 할 수 있습니다.";
 
             this.Dispose();

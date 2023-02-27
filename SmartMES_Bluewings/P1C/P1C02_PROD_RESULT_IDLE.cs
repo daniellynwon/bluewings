@@ -73,7 +73,7 @@ namespace SmartMES_Bluewings
                 return;
             }
 
-            parentWin.sP_ProdResult_ListTableAdapter.Fill(parentWin.dataSetP1C.SP_ProdResult_List);
+            //parentWin.sP_ProdResult_ListTableAdapter.Fill(parentWin.dataSetP1C.SP_ProdResult_List);
 
             Label lblMsg = parentWin.Controls.Find("lblMsg", true).FirstOrDefault() as Label;
             DataGridView dataGridView = parentWin.Controls.Find("dataGridViewList", true).FirstOrDefault() as DataGridView;
@@ -112,7 +112,7 @@ namespace SmartMES_Bluewings
                 return;
             }
 
-            parentWin.sP_ProdResult_ListTableAdapter.Fill(parentWin.dataSetP1C.SP_ProdResult_List);
+            //parentWin.sP_ProdResult_ListTableAdapter.Fill(parentWin.dataSetP1C.SP_ProdResult_List);
 
             Label lblMsg = parentWin.Controls.Find("lblMsg", true).FirstOrDefault() as Label;
             DataGridView dataGridView = parentWin.Controls.Find("dataGridViewList", true).FirstOrDefault() as DataGridView;
