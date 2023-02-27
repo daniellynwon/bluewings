@@ -59,8 +59,14 @@ namespace SmartMES_Bluewings
                 Cursor.Current = Cursors.WaitCursor;
 
                 DateTime checkDate = DateTime.Parse(dataGridViewList[3, rowIndex].Value.ToString());
-
                 dtpDate.Value = checkDate;
+
+                tbJobNo.Text = dataGridViewList.Rows[rowIndex].Cells[0].Value.ToString();
+                tbMachine.Tag = dataGridViewList.Rows[rowIndex].Cells[1].Value.ToString();
+                tbMachine.Text = dataGridViewList.Rows[rowIndex].Cells[2].Value.ToString();
+                tbProd.Tag = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();
+                tbProd.Text = dataGridViewList.Rows[rowIndex].Cells[5].Value.ToString();
+
                 dtpDate.Enabled = false;
                 cbDate.Checked = false;
                 if (dataGridViewList.Rows[rowIndex].Cells[6].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString()))
@@ -76,7 +82,7 @@ namespace SmartMES_Bluewings
                 if (dataGridViewList.Rows[rowIndex].Cells[8].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString()))
                     dtpTotalTime.Text = string.Empty;
                 else
-                    dtpTotalTime.Text = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                    dtpTotalTime.Text = dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString();
 
                 btnStart.Tag = dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString();       // 작업시작
 
@@ -86,6 +92,31 @@ namespace SmartMES_Bluewings
                     btnFinish.Tag = dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString();
 
                 sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, checkDate);
+
+                // 주, 보조 압출기
+                {
+                    tbMat1.Text = dataGridViewList.Rows[rowIndex].Cells[9].Value.ToString();
+                    tbMat2.Text = dataGridViewList.Rows[rowIndex].Cells[10].Value.ToString();
+                    tbMat3.Text = dataGridViewList.Rows[rowIndex].Cells[11].Value.ToString();
+                    tbMat4.Text = dataGridViewList.Rows[rowIndex].Cells[12].Value.ToString();
+                    tbMat5.Text = dataGridViewList.Rows[rowIndex].Cells[13].Value.ToString();
+                    tbMat6.Text = dataGridViewList.Rows[rowIndex].Cells[14].Value.ToString();
+                    tbMat7.Text = dataGridViewList.Rows[rowIndex].Cells[15].Value.ToString();
+                    tbMat8.Text = dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString();
+                    tbMat9.Text = dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString();
+                    tbMat10.Text = dataGridViewList.Rows[rowIndex].Cells[18].Value.ToString();
+                    tbMat11.Text = dataGridViewList.Rows[rowIndex].Cells[18].Value.ToString();
+                    tbMat12.Text = dataGridViewList.Rows[rowIndex].Cells[20].Value.ToString();
+                }
+                // 주, 보조 속도(압출, 모터) + 인취 / 냉각수
+                {
+                    tbSpeed1.Text = dataGridViewList.Rows[rowIndex].Cells[21].Value.ToString();
+                    tbSpeed2.Text = dataGridViewList.Rows[rowIndex].Cells[22].Value.ToString();
+                    tbSpeed3.Text = dataGridViewList.Rows[rowIndex].Cells[26].Value.ToString();     // 인취
+                    tbSpeed4.Text = dataGridViewList.Rows[rowIndex].Cells[23].Value.ToString();
+                    tbSpeed5.Text = dataGridViewList.Rows[rowIndex].Cells[24].Value.ToString();
+                    tbTemp.Text = dataGridViewList.Rows[rowIndex].Cells[25].Value.ToString();
+                }
 
                 timer1.Start();
                 timer2.Start();
@@ -208,9 +239,6 @@ namespace SmartMES_Bluewings
 
             ListSearch1();
             ListInit();
-            // 전력사용량
-            energyUseToday(dtpDate.Value.ToString("yyyy-MM-dd"));
-            energyUseYesterday(dtpDate.Value.AddDays(-1).ToString("yyyy-MM-dd"));
         }
         private async void pbDel_Click(object sender, EventArgs e)
         {
@@ -249,7 +277,7 @@ namespace SmartMES_Bluewings
 
             ListSearch1();
             ListInit();
-            set_production_result("1900-01-01");            // Clear table
+            //set_production_result("1900-01-01");            // Clear table
             lblMsg.Text = "삭제되었습니다.";
         }
         private void pbSave_Click(object sender, EventArgs e)
@@ -257,23 +285,14 @@ namespace SmartMES_Bluewings
             if (G.Authority == "D") return;
             lblMsg.Text = "";
 
-            int iCnt = 0;
-
-            if (dtpDate.Enabled)
-            {
-                for(int i=0; i<dataGridViewList.RowCount; i++)
-                {
-                    if(DateTime.Parse(dataGridViewList.Rows[i].Cells[0].Value.ToString()).ToString("yyyy-MM-dd") == dtpDate.Value.ToString("yyyy-MM-dd"))
-                    {
-                        lblMsg.Text = "해당일자 생산실적은 이미 처리되어 있습니다.";
-                        return;
-                    }
-                }
-            }
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
 
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            string sJobTimeA = "";
-            string sJobTimeB = "";
+            string sJobNo = tbJobNo.Text;
+            string sMachine = tbMachine.Tag.ToString();
+            string sJobTimeA = ""; string sJobTimeB = "";
 
             if (dtpStartTime.Text.Length == 19) sJobTimeA = dtpStartTime.Text;
             else sJobTimeA = "";
@@ -282,77 +301,43 @@ namespace SmartMES_Bluewings
             else sJobTimeB = "";
             string sUserID = G.UserID;
 
-            string sql = string.Empty;
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
+            string sProd = tbProd.Tag.ToString();
+            string sMat1 = tbMat1.Text.Trim(); string sMat2 = tbMat2.Text.Trim(); string sMat3 = tbMat3.Text.Trim(); string sMat4 = tbMat4.Text.Trim(); string sMat5 = tbMat5.Text.Trim(); 
+            string sMat6 = tbMat6.Text.Trim(); string sMat7 = tbMat7.Text.Trim(); string sMat8 = tbMat8.Text.Trim(); string sMat9 = tbMat9.Text.Trim(); string sMat10 = tbMat10.Text.Trim();
+            string sMat11 = tbMat11.Text.Trim(); string sMat12 = tbMat12.Text.Trim();
+            string spdM1 = tbSpeed1.Text.Trim(); string spdM2 = tbSpeed2.Text.Trim(); string spd3 = tbSpeed3.Text.Trim();     // Main 압출, 모터, 인취속도
+            string spdS1 = tbSpeed4.Text.Trim(); string spdS2 = tbSpeed5.Text.Trim();     // Sub 압출, 모터 속도
+            string sTemp = tbTemp.Text.Trim();      // Main 냉각수온도
 
-            string sSeq = string.Empty;
-            string sSeq1 = string.Empty;
-            string sProdID = string.Empty;
-            string sAddSize = string.Empty;
-            string sGdQty = string.Empty;
-            string sNgQty = string.Empty;
-            string sDepot = string.Empty;
-            string sTime = string.Empty;
-
-            if (dtpDate.Enabled) //추가 (Enabled가 true)
+            if(isResultSpec(sJobNo, sMachine))
             {
-                sql = "insert into tb_prod_done_main (job_date, job_part, jobtime_a, jobtime_b, jobman_cnt, jobman_list, energy1_a, energy1_b, ment, enter_man) " +
-                    "values('" + sDate + "', 'A', if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),if('" + sJobTimeB + "' = '',null,'" + sJobTimeB + "'),'" + sUserID + "')";
-
+                sql = "update tb_prod_result_spec " +
+                    "set main_mat1 = '" + sMat1 + "', main_mat2 = '" + sMat2 + "', main_mat3 = '" + sMat3 + "', main_mat4 = '" + sMat4 + "', main_mat5 = '" + sMat5 + "', main_mat6 = '" + sMat6 +
+                    "', sub_mat1 = '" + sMat7 + "', sub_mat2 = '" + sMat8 + "', sub_mat3 = '" + sMat9 + "', sub_mat4 = '" + sMat10 + "', sub_mat5 = '" + sMat11 + "', sub_mat6 = '" + sMat12 +
+                    "', main_speed1 = '" + spdM1 + "', main_speed2 = '" + spdM2 + "', sub_speed1 = '" + spdS1 + "', sub_speed2 = '" + spdS2 + "', coolant = '" + sTemp + "', import_good = '" + spd3 +
+                    " where job_no = '" + sJobNo + "' and machine_ id = " + sMachine;
                 m.dbCUD(sql, ref msg);
-
-                if (msg != "OK")
-                {
-                    MessageBox.Show(msg);
-                    return;
-                }
-
-                //int seq = 0;
-                //for (int i = 0; i < dataGridView1.RowCount; i++)
-                //{
-                //    if (dataGridView1.Rows[i].Cells[3].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[3].Value.ToString())) continue;
-
-                //    if (i == 0) seq = seq + 10;
-                //    else seq = seq + 1;
-
-                //    sSeq = getProdNoSeq();
-                //    sSeq1 = seq.ToString();
-                //    sProdID = dataGridView1.Rows[i].Cells[3].Value.ToString().Trim();
-                //    sTime = DateTime.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                //    sAddSize = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
-                //    sGdQty = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
-                //    sNgQty = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
-                //    sDepot = dataGridView1.Rows[i].Cells[12].Value.ToString().Trim();
-
-                //    if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0";
-                //    if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
-
-                //    sql = "insert into tb_prod_done_sub (job_date, job_part, job_seq, prod_no, prod_id, add_size, done_qty, ng_qty, depot, enter_dt) " +
-                //          "values('" + sDate + "', 'A'," + sSeq1 + ",'" + sSeq + "','" + sProdID + "','" + sAddSize + "'," + sGdQty + "," + sNgQty + ",'" + sDepot + "','" + sTime + "')";
-
-                //    m.dbCUD(sql, ref msg);
-                //}
             }
-            else //수정
+            else
             {
-                sql = "update tb_prod_done_main " +
-                    "set jobtime_a = if('" + sJobTimeA + "' = '',now(),'" + sJobTimeA + "'), jobtime_b = if('" + sJobTimeB + "' = '',null,'" + sJobTimeB + "')" +
-                     " where job_date = '" + sDate + "'";
-
+                sql = "insert into tb_prod_result_spec (job_no, machine_id, main_mat1, main_mat2, main_mat3, main_mat4, main_mat5, main_mat6, " +
+                    "sub_mat1, sub_mat2, sub_mat3, sub_mat4, sub_mat5, sub_mat6, main_speed1, main_speed2, sub_speed1, sub_speed2, coolant, import_good , enter_man) " +
+                    "values ('" + sJobNo + "'," + sMachine + ",'" + sMat1 + "','" + sMat2 + "','" + sMat3 + "','" + sMat4 + "','" + sMat5 + "','" + sMat6 + "','" + sMat7 +
+                    "','" + sMat8 + "','" + sMat9 + "','" + sMat10 + "','" + sMat11 + "','" + sMat12 + "','" + spdM1 + "','" + spdM2 + "','" + spdS1 + "','" + spdS2 +
+                    "','" + sTemp + "','" + spd3 + "','" + G.UserID + "') ";
                 m.dbCUD(sql, ref msg);
+            }
 
-                if (msg != "OK")
-                {
-                    MessageBox.Show(msg);
-                    return;
-                }
+            if (msg != "OK")
+            {
+                MessageBox.Show(msg);
+                return;
             }
             ListSearch1();
 
             for (int i = 0; i < dataGridViewList.Rows.Count; i++)
             {
-                if (DateTime.Parse(dataGridViewList.Rows[i].Cells[0].Value.ToString()).ToString("yyyy-MM-dd") == sDate)
+                if (dataGridViewList.Rows[i].Cells[0].Value.ToString() == sJobNo)
                 {
                     dataGridViewList.CurrentCell = dataGridViewList[0, i];
                     dataGridViewList.CurrentCell.Selected = true;
@@ -378,7 +363,21 @@ namespace SmartMES_Bluewings
         }
         private void btUpdate_Click(object sender, EventArgs e)
         {
-            set_production_result(dtpDate.Value.ToString("yyyy-MM-dd"));
+            //set_production_result(dtpDate.Value.ToString("yyyy-MM-dd"));
+        }
+        // tb_prod_result_spec 테이블에 데이터 있는지 없는지 확인
+        private bool isResultSpec(string _jobNo, string _machNo)
+        {
+            string sql = @"SELECT * FROM tb_prod_result_spec WHERE job_noo = '" + _jobNo + "' and machine_id  = " + _machNo;
+
+            MariaCRUD m = new MariaCRUD();
+            string msg = string.Empty;
+            object id = m.dbRonlyOne(sql, ref msg);
+
+            if (msg == "OK" && id != null)
+                return true;
+            else
+                return false;
         }
         #endregion
 
@@ -641,159 +640,6 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
-        #region 생산실적/전력사용량 불러오기
-        private void set_production_result(string today)
-        {
-            MySqlCommand cmd = new MySqlCommand();
-            DataSet ds = new DataSet();
-            //ProResult[] proResult = new ProResult[10];
-            int seq = 10;
-            int i = 0;
-
-            using (MySqlConnection conn = new MySqlConnection(G.conStr))
-            {
-                try
-                {
-                    conn.Open();
-                    cmd.Connection = conn;
-
-                    cmd.CommandText = "SP_ProductionResult_Query";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add(new MySqlParameter("workday", MySqlDbType.Date));
-                    cmd.Parameters.Add(new MySqlParameter("eqid", MySqlDbType.VarChar));
-                    cmd.Parameters["workday"].Value = today;
-                    //cmd.Parameters["eqid"].Value = "P006";
-
-                    cmd.ExecuteNonQuery();
-
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                    // Fill the DataSet using default values for DataTable names, etc
-                    da.Fill(ds);
-
-                    foreach (DataRow r in ds.Tables[0].Rows)
-                    {
-                        //dataGridView1.DataSource = null;
-                        //dataGridView1.Rows.Add();
-                        //dataGridView1.Rows[i].Cells[0].Value = dtpDate.Value.ToString("yyyy-MM-dd");    // 생산일자
-                        //dataGridView1.Rows[i].Cells[1].Value = r["작업조"].ToString();                 // 작업조
-                        //dataGridView1.Rows[i].Cells[3].Value = r["제품코드"].ToString();
-                        //dataGridView1.Rows[i].Cells[5].Value = r["생산시간"];
-                        //dataGridView1.Rows[i].Cells[6].Value = r["품목명"].ToString();
-                        //dataGridView1.Rows[i].Cells[7].Value = r["규격"].ToString();
-                        //dataGridView1.Rows[i].Cells[8].Value = "Kg";
-                        //dataGridView1.Rows[i].Cells[9].Value = r["양품량"].ToString();
-                        //dataGridView1.Rows[i].Cells[10].Value = r["불량량"].ToString();
-                        //dataGridView1.Rows[i].Cells[11].Value = r["생산량"].ToString();
-                        //dataGridView1.Rows[i].Cells[12].Value = r["출하창고"].ToString();
-                        //dataGridView1.Rows[i].Cells[15].Value = seq.ToString();
-                        seq += 1;
-                        i += 1;
-                    }
-                    //lblMsg.Text = "생산실적이 반영되었습니다.";   주석처리 -> 삭제할때도 뜸.
-                }
-                catch (Exception ex)
-                {
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                conn.Close();
-                conn.Dispose();
-            }
-        }
-        public void energyUseToday(string today)
-        {
-            MySqlCommand cmd = new MySqlCommand();
-            DataSet ds = new DataSet();
-            //ProResult[] proResult = new ProResult[10];
-            int i = 0;
-
-            using (MySqlConnection conn = new MySqlConnection(G.conStr))
-            {
-                try
-                {
-                    conn.Open();
-                    cmd.Connection = conn;
-
-                    cmd.CommandText = "SP_ProductionEnergy_Query";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add(new MySqlParameter("eqid", MySqlDbType.VarChar));
-                    cmd.Parameters.Add(new MySqlParameter("workday", MySqlDbType.Date));
-                    cmd.Parameters["workday"].Value = today;
-                    cmd.Parameters["eqid"].Value = "EM01";
-
-                    cmd.ExecuteNonQuery();
-
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                    // Fill the DataSet using default values for DataTable names, etc
-                    da.Fill(ds);
-
-                    foreach (DataRow r in ds.Tables[0].Rows)
-                    {
-                        //tbEnergy2.Text = r["전력량"].ToString();
-                        i += 1;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                conn.Close();
-                conn.Dispose();
-            }
-        }
-        public void energyUseYesterday(string today)
-        {
-            MySqlCommand cmd = new MySqlCommand();
-            DataSet ds = new DataSet();
-            //ProResult[] proResult = new ProResult[10];
-            int i = 0;
-
-            using (MySqlConnection conn = new MySqlConnection(G.conStr))
-            {
-                try
-                {
-                    conn.Open();
-                    cmd.Connection = conn;
-
-                    cmd.CommandText = "SP_ProductionEnergy_Query";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add(new MySqlParameter("eqid", MySqlDbType.VarChar));
-                    cmd.Parameters.Add(new MySqlParameter("workday", MySqlDbType.Date));
-                    cmd.Parameters["workday"].Value = today;
-                    cmd.Parameters["eqid"].Value = "EM01";
-
-                    cmd.ExecuteNonQuery();
-
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                    // Fill the DataSet using default values for DataTable names, etc
-                    da.Fill(ds);
-
-                    foreach (DataRow r in ds.Tables[0].Rows)
-                    {
-                        //tbEnergy1.Text = r["전력량"].ToString();
-                        i += 1;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                conn.Close();
-                conn.Dispose();
-            }
-        }
-        #endregion
 
     }
 }
