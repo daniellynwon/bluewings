@@ -85,6 +85,41 @@ namespace SmartMES_Bluewings
             dataGridView1[13, rowIndex].Value = iSum2;
             dataGridView1[14, rowIndex].Value = iSum3;
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Visible) == e.RowIndex) return;
+            if (G.Authority == "D") return;
+            if (e.RowIndex < 0) return;
+            if (e.ColumnIndex != 0) return;
+
+            string sNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            P1C02_PROD_RESULT form = new P1C02_PROD_RESULT();
+
+            if (formIsExist(form.GetType()))
+            {
+                form.Dispose();
+            }
+            else
+            {
+                MDIForm parent = (MDIForm)this.MdiParent;
+                form.MdiParent = parent;
+                form.Dock = DockStyle.Fill;
+                form.Show();
+                form.ListSearch1();
+
+                for (int i = 0; i < form.dataGridViewList.Rows.Count; i++)
+                {
+                    if (form.dataGridViewList.Rows[i].Cells[0].Value.ToString() == sNo)
+                    {
+                        form.dataGridViewList.CurrentCell = form.dataGridViewList[0, i];
+                        form.dataGridViewList.CurrentCell.Selected = true;
+
+                        form.ListSearch2(i);
+                        break;
+                    }
+                }
+            }
+        }
         #endregion
 
         #region Button Events
@@ -136,9 +171,24 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
+        #region other functions
         private void P1C05_PROD_TERM_Activated(object sender, EventArgs e)
         {
             ListSearch();
         }
+        // 자식 폼 중복 여부
+        private bool formIsExist(Type tp)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.GetType() == tp)
+                {
+                    form.Activate();
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion
     }
 }

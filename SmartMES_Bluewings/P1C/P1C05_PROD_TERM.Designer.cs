@@ -47,7 +47,7 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.panSearch = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jobNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.설비코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.생산일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -295,6 +295,8 @@
             this.jobNoDataGridViewTextBoxColumn.HeaderText = "JobNo";
             this.jobNoDataGridViewTextBoxColumn.Name = "jobNoDataGridViewTextBoxColumn";
             this.jobNoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jobNoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.jobNoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // 설비코드DataGridViewTextBoxColumn
             // 
@@ -442,7 +444,7 @@
         public System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Panel panSearch;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn jobNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 생산일자DataGridViewTextBoxColumn;
