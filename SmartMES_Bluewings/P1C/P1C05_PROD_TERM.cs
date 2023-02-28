@@ -30,18 +30,11 @@ namespace SmartMES_Bluewings
                     MessageBox.Show("기간 설정이 정확하지 않습니다.\r\r다시 확인해 주세요.");
 
                 sP_ProdTerm_QueryTableAdapter.Fill(dataSetP1C.SP_ProdTerm_Query, dtFromDate, dtToDate, sSearch);
-                sP_ProdTerm_MaterialTableAdapter.Fill(dataSetP1C.SP_ProdTerm_Material, dtFromDate, dtToDate);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
                 var data = dataSetP1C.SP_ProdTerm_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
-
-                dataGridView2.CurrentCell = null;
-                dataGridView2.ClearSelection();
-                var data1 = dataSetP1C.SP_ProdTerm_Material;
-                result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data1); //조회로그추가
-
             }
             catch (NullReferenceException)
             {
@@ -79,34 +72,18 @@ namespace SmartMES_Bluewings
 
             dataGridView1[2, rowIndex].Value = rowIndex.ToString() + "건";
 
-            long iSum = 0;
+            long iSum1 = 0; long iSum2 = 0; long iSum3 = 0;
 
             for (int i = 0; i < rowIndex; i++)
             {
-                iSum += long.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
+                iSum1 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
+                iSum2 += long.Parse(dataGridView1.Rows[i].Cells[13].Value.ToString());
+                iSum3 += long.Parse(dataGridView1.Rows[i].Cells[14].Value.ToString());
             }
 
-            dataGridView1[5, rowIndex].Value = iSum;
-        }
-        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            int rowIndex = dataGridView2.Rows.GetLastRow(DataGridViewElementStates.Visible);
-            if (rowIndex <= 0) return;
-
-            dataGridView2.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(93, 123, 157);
-            dataGridView2.Rows[rowIndex].DefaultCellStyle.SelectionBackColor = Color.FromArgb(93, 123, 157);
-            dataGridView2.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.White;
-
-            dataGridView2[1, rowIndex].Value = rowIndex.ToString() + "건";
-
-            long iSum = 0;
-
-            for (int i = 0; i < rowIndex; i++)
-            {
-                iSum += long.Parse(dataGridView2.Rows[i].Cells[3].Value.ToString());
-            }
-
-            dataGridView2[3, rowIndex].Value = iSum;
+            dataGridView1[12, rowIndex].Value = iSum1;
+            dataGridView1[13, rowIndex].Value = iSum2;
+            dataGridView1[14, rowIndex].Value = iSum3;
         }
         #endregion
 
