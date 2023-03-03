@@ -82,10 +82,10 @@ namespace SmartMES_Bluewings
                 form.Dock = DockStyle.Fill;
                 form.Show();
 
-                form.dtpFromDate.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                form.dtpJobDate.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
                 form.dtpToDate.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                form.tbSearch1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.tbSearch2.Text = "";   // 두 건 이상일 때, 다 나오게 하려고 빈칸.
+                form.tbCust.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                form.tbProd.Text = "";   // 두 건 이상일 때, 다 나오게 하려고 빈칸.
                 form.ListSearch1();
 
                 for (int i = 0; i < form.dataGridViewList.Rows.Count; i++)
@@ -95,7 +95,7 @@ namespace SmartMES_Bluewings
                         form.dataGridViewList.CurrentCell = form.dataGridViewList[1, i];
                         form.dataGridViewList.CurrentCell.Selected = true;
 
-                        form.ListSearch2(sNo);
+                        //form.ListSearch2(sNo);
                         break;
                     }
                 }

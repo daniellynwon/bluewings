@@ -65,7 +65,7 @@
             this.합격DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불합격DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.의견DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPQualityInspectionQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            //this.sPQualityInspectionQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
             this.splitContainerChart = new System.Windows.Forms.SplitContainer();
             this.splitContainerT = new System.Windows.Forms.SplitContainer();
@@ -92,7 +92,7 @@
             this.splitContBottom.Panel2.SuspendLayout();
             this.splitContBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQualityInspectionQueryBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPQualityInspectionQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1E)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerChart)).BeginInit();
             this.splitContainerChart.Panel1.SuspendLayout();
@@ -255,7 +255,7 @@
             this.불합격DataGridViewTextBoxColumn,
             this.의견DataGridViewTextBoxColumn});
             this.dgv1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dgv1.DataSource = this.sPQualityInspectionQueryBindingSource;
+            //this.dgv1.DataSource = this.sPQualityInspectionQueryBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -393,8 +393,8 @@
             // 
             // sPQualityInspectionQueryBindingSource
             // 
-            this.sPQualityInspectionQueryBindingSource.DataMember = "SP_QualityInspection_Query";
-            this.sPQualityInspectionQueryBindingSource.DataSource = this.dataSetP1E;
+            //this.sPQualityInspectionQueryBindingSource.DataMember = "SP_QualityInspection_Query";
+            //this.sPQualityInspectionQueryBindingSource.DataSource = this.dataSetP1E;
             // 
             // dataSetP1E
             // 
@@ -579,7 +579,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContBottom)).EndInit();
             this.splitContBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQualityInspectionQueryBindingSource)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sPQualityInspectionQueryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1E)).EndInit();
             this.splitContainerChart.Panel1.ResumeLayout(false);
             this.splitContainerChart.Panel2.ResumeLayout(false);
@@ -634,7 +634,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 생산량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수율DataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.BindingSource sPQualityInspectionQueryBindingSource;
+        //private System.Windows.Forms.BindingSource sPQualityInspectionQueryBindingSource;
         private P1E.DataSetP1E dataSetP1E;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업일시DataGridViewTextBoxColumn;
