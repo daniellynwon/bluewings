@@ -46,32 +46,58 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D72 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
-            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDeliveryPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
+            this.설비DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sPProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.월DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.화DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.금DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.토DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPProdPlanQuery2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
+            this.sP_ProdPlan_Query2TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter();
+            this.sP_Product_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter();
+            this.sP_DeliveryPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter();
+            this.sPCustomerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_Customer_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter();
+            this.품목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.재고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.q7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.w7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pdsum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pdstock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -80,9 +106,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -243,26 +273,23 @@
             this.dataGridView1.ColumnHeadersHeight = 60;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.설비명DataGridViewTextBoxColumn,
-            this.품목DataGridViewTextBoxColumn,
-            this.D11,
-            this.D12,
-            this.D21,
-            this.D22,
-            this.D31,
-            this.D32,
-            this.D41,
-            this.D42,
-            this.D51,
-            this.D52,
-            this.D61,
-            this.D62,
-            this.D71,
-            this.D72});
+            this.설비DataGridViewTextBoxColumn,
+            this.p1DataGridViewTextBoxColumn,
+            this.월DataGridViewTextBoxColumn,
+            this.p2DataGridViewTextBoxColumn,
+            this.화DataGridViewTextBoxColumn,
+            this.p3DataGridViewTextBoxColumn,
+            this.수DataGridViewTextBoxColumn,
+            this.p4DataGridViewTextBoxColumn,
+            this.목DataGridViewTextBoxColumn,
+            this.p5DataGridViewTextBoxColumn,
+            this.금DataGridViewTextBoxColumn,
+            this.p6DataGridViewTextBoxColumn,
+            this.토DataGridViewTextBoxColumn,
+            this.p7DataGridViewTextBoxColumn,
+            this.일DataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView1.DataSource = this.sPProdPlanQueryBindingSource;
+            this.dataGridView1.DataSource = this.sPProdPlanQuery2BindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -290,151 +317,9 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1319, 386);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "LL";
-            this.dataGridViewTextBoxColumn1.HeaderText = "LL";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "코드";
-            this.dataGridViewTextBoxColumn2.HeaderText = "코드";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // 설비명DataGridViewTextBoxColumn
-            // 
-            this.설비명DataGridViewTextBoxColumn.DataPropertyName = "설비명";
-            this.설비명DataGridViewTextBoxColumn.FillWeight = 150F;
-            this.설비명DataGridViewTextBoxColumn.HeaderText = "설비명";
-            this.설비명DataGridViewTextBoxColumn.Name = "설비명DataGridViewTextBoxColumn";
-            // 
-            // 품목DataGridViewTextBoxColumn
-            // 
-            this.품목DataGridViewTextBoxColumn.DataPropertyName = "품목";
-            this.품목DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.품목DataGridViewTextBoxColumn.HeaderText = "품목";
-            this.품목DataGridViewTextBoxColumn.Name = "품목DataGridViewTextBoxColumn";
-            this.품목DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // D11
-            // 
-            this.D11.DataPropertyName = "D11";
-            this.D11.FillWeight = 50F;
-            this.D11.HeaderText = "D11";
-            this.D11.Name = "D11";
-            // 
-            // D12
-            // 
-            this.D12.DataPropertyName = "D12";
-            this.D12.FillWeight = 30F;
-            this.D12.HeaderText = "D12";
-            this.D12.Name = "D12";
-            // 
-            // D21
-            // 
-            this.D21.DataPropertyName = "D21";
-            this.D21.FillWeight = 50F;
-            this.D21.HeaderText = "D21";
-            this.D21.Name = "D21";
-            // 
-            // D22
-            // 
-            this.D22.DataPropertyName = "D22";
-            this.D22.FillWeight = 30F;
-            this.D22.HeaderText = "D22";
-            this.D22.Name = "D22";
-            // 
-            // D31
-            // 
-            this.D31.DataPropertyName = "D31";
-            this.D31.FillWeight = 50F;
-            this.D31.HeaderText = "D31";
-            this.D31.Name = "D31";
-            // 
-            // D32
-            // 
-            this.D32.DataPropertyName = "D32";
-            this.D32.FillWeight = 30F;
-            this.D32.HeaderText = "D32";
-            this.D32.Name = "D32";
-            // 
-            // D41
-            // 
-            this.D41.DataPropertyName = "D41";
-            this.D41.FillWeight = 50F;
-            this.D41.HeaderText = "D41";
-            this.D41.Name = "D41";
-            // 
-            // D42
-            // 
-            this.D42.DataPropertyName = "D42";
-            this.D42.FillWeight = 30F;
-            this.D42.HeaderText = "D42";
-            this.D42.Name = "D42";
-            // 
-            // D51
-            // 
-            this.D51.DataPropertyName = "D51";
-            this.D51.FillWeight = 50F;
-            this.D51.HeaderText = "D51";
-            this.D51.Name = "D51";
-            // 
-            // D52
-            // 
-            this.D52.DataPropertyName = "D52";
-            this.D52.FillWeight = 30F;
-            this.D52.HeaderText = "D52";
-            this.D52.Name = "D52";
-            // 
-            // D61
-            // 
-            this.D61.DataPropertyName = "D61";
-            this.D61.FillWeight = 50F;
-            this.D61.HeaderText = "D61";
-            this.D61.Name = "D61";
-            // 
-            // D62
-            // 
-            this.D62.DataPropertyName = "D62";
-            this.D62.FillWeight = 30F;
-            this.D62.HeaderText = "D62";
-            this.D62.Name = "D62";
-            // 
-            // D71
-            // 
-            this.D71.DataPropertyName = "D71";
-            this.D71.FillWeight = 50F;
-            this.D71.HeaderText = "D71";
-            this.D71.Name = "D71";
-            // 
-            // D72
-            // 
-            this.D72.DataPropertyName = "D72";
-            this.D72.FillWeight = 30F;
-            this.D72.HeaderText = "D72";
-            this.D72.Name = "D72";
-            // 
-            // sPProdPlanQueryBindingSource
-            // 
-            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
-            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_ProdPlan_QueryTableAdapter
-            // 
-            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView2
             // 
@@ -460,12 +345,33 @@
             this.dataGridView2.ColumnHeadersHeight = 60;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
+            this.품목DataGridViewTextBoxColumn,
+            this.재고,
+            this.c1DataGridViewTextBoxColumn,
+            this.q1DataGridViewTextBoxColumn,
+            this.w1DataGridViewTextBoxColumn,
+            this.c2DataGridViewTextBoxColumn,
+            this.q2DataGridViewTextBoxColumn,
+            this.w2DataGridViewTextBoxColumn,
+            this.c3DataGridViewTextBoxColumn,
+            this.q3DataGridViewTextBoxColumn,
+            this.w3DataGridViewTextBoxColumn,
+            this.c4DataGridViewTextBoxColumn,
+            this.q4DataGridViewTextBoxColumn,
+            this.w4DataGridViewTextBoxColumn,
+            this.c5DataGridViewTextBoxColumn,
+            this.q5DataGridViewTextBoxColumn,
+            this.w5DataGridViewTextBoxColumn,
+            this.c6DataGridViewTextBoxColumn,
+            this.q6DataGridViewTextBoxColumn,
+            this.w6DataGridViewTextBoxColumn,
+            this.c7DataGridViewTextBoxColumn,
+            this.q7DataGridViewTextBoxColumn,
+            this.w7DataGridViewTextBoxColumn,
+            this.pdsum,
+            this.pdstock});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView2.DataSource = this.sPProdPlanQueryBindingSource;
+            this.dataGridView2.DataSource = this.sPDeliveryPlanQueryBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -478,7 +384,6 @@
             this.dataGridView2.Location = new System.Drawing.Point(3, 525);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -494,39 +399,391 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1319, 391);
             this.dataGridView2.TabIndex = 15;
-            this.dataGridView2.Visible = false;
+            this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
+            this.dataGridView2.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView2_Paint);
             // 
-            // dataGridViewTextBoxColumn10
+            // sPDeliveryPlanQueryBindingSource
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "LL";
-            this.dataGridViewTextBoxColumn10.HeaderText = "LL";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.sPDeliveryPlanQueryBindingSource.DataMember = "SP_DeliveryPlan_Query";
+            this.sPDeliveryPlanQueryBindingSource.DataSource = this.dataSetP1C;
             // 
-            // dataGridViewTextBoxColumn11
+            // dataSetP1C
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "코드";
-            this.dataGridViewTextBoxColumn11.HeaderText = "코드";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn12
+            // 설비DataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "설비명";
-            this.dataGridViewTextBoxColumn12.FillWeight = 190F;
-            this.dataGridViewTextBoxColumn12.HeaderText = "품목명";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.설비DataGridViewTextBoxColumn.DataPropertyName = "설비";
+            this.설비DataGridViewTextBoxColumn.HeaderText = "설비";
+            this.설비DataGridViewTextBoxColumn.Name = "설비DataGridViewTextBoxColumn";
+            this.설비DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // dataGridViewTextBoxColumn13
+            // p1DataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "품목";
-            this.dataGridViewTextBoxColumn13.FillWeight = 60F;
-            this.dataGridViewTextBoxColumn13.HeaderText = "현재재고";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.p1DataGridViewTextBoxColumn.DataPropertyName = "P1";
+            this.p1DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p1DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p1DataGridViewTextBoxColumn.HeaderText = "P1";
+            this.p1DataGridViewTextBoxColumn.Name = "p1DataGridViewTextBoxColumn";
+            this.p1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p1DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // sPProductListBindingSource
+            // 
+            this.sPProductListBindingSource.DataMember = "SP_Product_List";
+            this.sPProductListBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // 월DataGridViewTextBoxColumn
+            // 
+            this.월DataGridViewTextBoxColumn.DataPropertyName = "월";
+            this.월DataGridViewTextBoxColumn.HeaderText = "월";
+            this.월DataGridViewTextBoxColumn.Name = "월DataGridViewTextBoxColumn";
+            // 
+            // p2DataGridViewTextBoxColumn
+            // 
+            this.p2DataGridViewTextBoxColumn.DataPropertyName = "P2";
+            this.p2DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p2DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p2DataGridViewTextBoxColumn.HeaderText = "P2";
+            this.p2DataGridViewTextBoxColumn.Name = "p2DataGridViewTextBoxColumn";
+            this.p2DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p2DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p2DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 화DataGridViewTextBoxColumn
+            // 
+            this.화DataGridViewTextBoxColumn.DataPropertyName = "화";
+            this.화DataGridViewTextBoxColumn.HeaderText = "화";
+            this.화DataGridViewTextBoxColumn.Name = "화DataGridViewTextBoxColumn";
+            // 
+            // p3DataGridViewTextBoxColumn
+            // 
+            this.p3DataGridViewTextBoxColumn.DataPropertyName = "P3";
+            this.p3DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p3DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p3DataGridViewTextBoxColumn.HeaderText = "P3";
+            this.p3DataGridViewTextBoxColumn.Name = "p3DataGridViewTextBoxColumn";
+            this.p3DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p3DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 수DataGridViewTextBoxColumn
+            // 
+            this.수DataGridViewTextBoxColumn.DataPropertyName = "수";
+            this.수DataGridViewTextBoxColumn.HeaderText = "수";
+            this.수DataGridViewTextBoxColumn.Name = "수DataGridViewTextBoxColumn";
+            // 
+            // p4DataGridViewTextBoxColumn
+            // 
+            this.p4DataGridViewTextBoxColumn.DataPropertyName = "P4";
+            this.p4DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p4DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p4DataGridViewTextBoxColumn.HeaderText = "P4";
+            this.p4DataGridViewTextBoxColumn.Name = "p4DataGridViewTextBoxColumn";
+            this.p4DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p4DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p4DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 목DataGridViewTextBoxColumn
+            // 
+            this.목DataGridViewTextBoxColumn.DataPropertyName = "목";
+            this.목DataGridViewTextBoxColumn.HeaderText = "목";
+            this.목DataGridViewTextBoxColumn.Name = "목DataGridViewTextBoxColumn";
+            // 
+            // p5DataGridViewTextBoxColumn
+            // 
+            this.p5DataGridViewTextBoxColumn.DataPropertyName = "P5";
+            this.p5DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p5DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p5DataGridViewTextBoxColumn.HeaderText = "P5";
+            this.p5DataGridViewTextBoxColumn.Name = "p5DataGridViewTextBoxColumn";
+            this.p5DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p5DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p5DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 금DataGridViewTextBoxColumn
+            // 
+            this.금DataGridViewTextBoxColumn.DataPropertyName = "금";
+            this.금DataGridViewTextBoxColumn.HeaderText = "금";
+            this.금DataGridViewTextBoxColumn.Name = "금DataGridViewTextBoxColumn";
+            // 
+            // p6DataGridViewTextBoxColumn
+            // 
+            this.p6DataGridViewTextBoxColumn.DataPropertyName = "P6";
+            this.p6DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p6DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p6DataGridViewTextBoxColumn.HeaderText = "P6";
+            this.p6DataGridViewTextBoxColumn.Name = "p6DataGridViewTextBoxColumn";
+            this.p6DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p6DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p6DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 토DataGridViewTextBoxColumn
+            // 
+            this.토DataGridViewTextBoxColumn.DataPropertyName = "토";
+            this.토DataGridViewTextBoxColumn.HeaderText = "토";
+            this.토DataGridViewTextBoxColumn.Name = "토DataGridViewTextBoxColumn";
+            // 
+            // p7DataGridViewTextBoxColumn
+            // 
+            this.p7DataGridViewTextBoxColumn.DataPropertyName = "P7";
+            this.p7DataGridViewTextBoxColumn.DataSource = this.sPProductListBindingSource;
+            this.p7DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.p7DataGridViewTextBoxColumn.HeaderText = "P7";
+            this.p7DataGridViewTextBoxColumn.Name = "p7DataGridViewTextBoxColumn";
+            this.p7DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.p7DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.p7DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // 일DataGridViewTextBoxColumn
+            // 
+            this.일DataGridViewTextBoxColumn.DataPropertyName = "일";
+            this.일DataGridViewTextBoxColumn.HeaderText = "일";
+            this.일DataGridViewTextBoxColumn.Name = "일DataGridViewTextBoxColumn";
+            // 
+            // sPProdPlanQuery2BindingSource
+            // 
+            this.sPProdPlanQuery2BindingSource.DataMember = "SP_ProdPlan_Query2";
+            this.sPProdPlanQuery2BindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sPProdPlanQueryBindingSource
+            // 
+            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
+            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sP_ProdPlan_QueryTableAdapter
+            // 
+            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_ProdPlan_Query2TableAdapter
+            // 
+            this.sP_ProdPlan_Query2TableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Product_ListTableAdapter
+            // 
+            this.sP_Product_ListTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_DeliveryPlan_QueryTableAdapter
+            // 
+            this.sP_DeliveryPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPCustomerListBindingSource
+            // 
+            this.sPCustomerListBindingSource.DataMember = "SP_Customer_List";
+            this.sPCustomerListBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sP_Customer_ListTableAdapter
+            // 
+            this.sP_Customer_ListTableAdapter.ClearBeforeFill = true;
+            // 
+            // 품목DataGridViewTextBoxColumn
+            // 
+            this.품목DataGridViewTextBoxColumn.DataPropertyName = "품목";
+            this.품목DataGridViewTextBoxColumn.FillWeight = 223.3503F;
+            this.품목DataGridViewTextBoxColumn.HeaderText = "품목";
+            this.품목DataGridViewTextBoxColumn.Name = "품목DataGridViewTextBoxColumn";
+            this.품목DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 재고
+            // 
+            this.재고.DataPropertyName = "재고";
+            this.재고.HeaderText = "재고";
+            this.재고.Name = "재고";
+            this.재고.ReadOnly = true;
+            // 
+            // c1DataGridViewTextBoxColumn
+            // 
+            this.c1DataGridViewTextBoxColumn.DataPropertyName = "C1";
+            this.c1DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c1DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c1DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c1DataGridViewTextBoxColumn.HeaderText = "C1";
+            this.c1DataGridViewTextBoxColumn.Name = "c1DataGridViewTextBoxColumn";
+            this.c1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c1DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q1DataGridViewTextBoxColumn
+            // 
+            this.q1DataGridViewTextBoxColumn.DataPropertyName = "Q1";
+            this.q1DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q1DataGridViewTextBoxColumn.HeaderText = "Q1";
+            this.q1DataGridViewTextBoxColumn.Name = "q1DataGridViewTextBoxColumn";
+            // 
+            // w1DataGridViewTextBoxColumn
+            // 
+            this.w1DataGridViewTextBoxColumn.DataPropertyName = "W1";
+            this.w1DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w1DataGridViewTextBoxColumn.HeaderText = "W1";
+            this.w1DataGridViewTextBoxColumn.Name = "w1DataGridViewTextBoxColumn";
+            // 
+            // c2DataGridViewTextBoxColumn
+            // 
+            this.c2DataGridViewTextBoxColumn.DataPropertyName = "C2";
+            this.c2DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c2DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c2DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c2DataGridViewTextBoxColumn.HeaderText = "C2";
+            this.c2DataGridViewTextBoxColumn.Name = "c2DataGridViewTextBoxColumn";
+            this.c2DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c2DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c2DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q2DataGridViewTextBoxColumn
+            // 
+            this.q2DataGridViewTextBoxColumn.DataPropertyName = "Q2";
+            this.q2DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q2DataGridViewTextBoxColumn.HeaderText = "Q2";
+            this.q2DataGridViewTextBoxColumn.Name = "q2DataGridViewTextBoxColumn";
+            // 
+            // w2DataGridViewTextBoxColumn
+            // 
+            this.w2DataGridViewTextBoxColumn.DataPropertyName = "W2";
+            this.w2DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w2DataGridViewTextBoxColumn.HeaderText = "W2";
+            this.w2DataGridViewTextBoxColumn.Name = "w2DataGridViewTextBoxColumn";
+            // 
+            // c3DataGridViewTextBoxColumn
+            // 
+            this.c3DataGridViewTextBoxColumn.DataPropertyName = "C3";
+            this.c3DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c3DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c3DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c3DataGridViewTextBoxColumn.HeaderText = "C3";
+            this.c3DataGridViewTextBoxColumn.Name = "c3DataGridViewTextBoxColumn";
+            this.c3DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c3DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q3DataGridViewTextBoxColumn
+            // 
+            this.q3DataGridViewTextBoxColumn.DataPropertyName = "Q3";
+            this.q3DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q3DataGridViewTextBoxColumn.HeaderText = "Q3";
+            this.q3DataGridViewTextBoxColumn.Name = "q3DataGridViewTextBoxColumn";
+            // 
+            // w3DataGridViewTextBoxColumn
+            // 
+            this.w3DataGridViewTextBoxColumn.DataPropertyName = "W3";
+            this.w3DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w3DataGridViewTextBoxColumn.HeaderText = "W3";
+            this.w3DataGridViewTextBoxColumn.Name = "w3DataGridViewTextBoxColumn";
+            // 
+            // c4DataGridViewTextBoxColumn
+            // 
+            this.c4DataGridViewTextBoxColumn.DataPropertyName = "C4";
+            this.c4DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c4DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c4DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c4DataGridViewTextBoxColumn.HeaderText = "C4";
+            this.c4DataGridViewTextBoxColumn.Name = "c4DataGridViewTextBoxColumn";
+            this.c4DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c4DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c4DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q4DataGridViewTextBoxColumn
+            // 
+            this.q4DataGridViewTextBoxColumn.DataPropertyName = "Q4";
+            this.q4DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q4DataGridViewTextBoxColumn.HeaderText = "Q4";
+            this.q4DataGridViewTextBoxColumn.Name = "q4DataGridViewTextBoxColumn";
+            // 
+            // w4DataGridViewTextBoxColumn
+            // 
+            this.w4DataGridViewTextBoxColumn.DataPropertyName = "W4";
+            this.w4DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w4DataGridViewTextBoxColumn.HeaderText = "W4";
+            this.w4DataGridViewTextBoxColumn.Name = "w4DataGridViewTextBoxColumn";
+            // 
+            // c5DataGridViewTextBoxColumn
+            // 
+            this.c5DataGridViewTextBoxColumn.DataPropertyName = "C5";
+            this.c5DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c5DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c5DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c5DataGridViewTextBoxColumn.HeaderText = "C5";
+            this.c5DataGridViewTextBoxColumn.Name = "c5DataGridViewTextBoxColumn";
+            this.c5DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c5DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c5DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q5DataGridViewTextBoxColumn
+            // 
+            this.q5DataGridViewTextBoxColumn.DataPropertyName = "Q5";
+            this.q5DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q5DataGridViewTextBoxColumn.HeaderText = "Q5";
+            this.q5DataGridViewTextBoxColumn.Name = "q5DataGridViewTextBoxColumn";
+            // 
+            // w5DataGridViewTextBoxColumn
+            // 
+            this.w5DataGridViewTextBoxColumn.DataPropertyName = "W5";
+            this.w5DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w5DataGridViewTextBoxColumn.HeaderText = "W5";
+            this.w5DataGridViewTextBoxColumn.Name = "w5DataGridViewTextBoxColumn";
+            // 
+            // c6DataGridViewTextBoxColumn
+            // 
+            this.c6DataGridViewTextBoxColumn.DataPropertyName = "C6";
+            this.c6DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c6DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c6DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c6DataGridViewTextBoxColumn.HeaderText = "C6";
+            this.c6DataGridViewTextBoxColumn.Name = "c6DataGridViewTextBoxColumn";
+            this.c6DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c6DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c6DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q6DataGridViewTextBoxColumn
+            // 
+            this.q6DataGridViewTextBoxColumn.DataPropertyName = "Q6";
+            this.q6DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q6DataGridViewTextBoxColumn.HeaderText = "Q6";
+            this.q6DataGridViewTextBoxColumn.Name = "q6DataGridViewTextBoxColumn";
+            // 
+            // w6DataGridViewTextBoxColumn
+            // 
+            this.w6DataGridViewTextBoxColumn.DataPropertyName = "W6";
+            this.w6DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w6DataGridViewTextBoxColumn.HeaderText = "W6";
+            this.w6DataGridViewTextBoxColumn.Name = "w6DataGridViewTextBoxColumn";
+            // 
+            // c7DataGridViewTextBoxColumn
+            // 
+            this.c7DataGridViewTextBoxColumn.DataPropertyName = "C7";
+            this.c7DataGridViewTextBoxColumn.DataSource = this.sPCustomerListBindingSource;
+            this.c7DataGridViewTextBoxColumn.DisplayMember = "name";
+            this.c7DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.c7DataGridViewTextBoxColumn.HeaderText = "C7";
+            this.c7DataGridViewTextBoxColumn.Name = "c7DataGridViewTextBoxColumn";
+            this.c7DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.c7DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.c7DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // q7DataGridViewTextBoxColumn
+            // 
+            this.q7DataGridViewTextBoxColumn.DataPropertyName = "Q7";
+            this.q7DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.q7DataGridViewTextBoxColumn.HeaderText = "Q7";
+            this.q7DataGridViewTextBoxColumn.Name = "q7DataGridViewTextBoxColumn";
+            // 
+            // w7DataGridViewTextBoxColumn
+            // 
+            this.w7DataGridViewTextBoxColumn.DataPropertyName = "W7";
+            this.w7DataGridViewTextBoxColumn.FillWeight = 94.12617F;
+            this.w7DataGridViewTextBoxColumn.HeaderText = "W7";
+            this.w7DataGridViewTextBoxColumn.Name = "w7DataGridViewTextBoxColumn";
+            // 
+            // pdsum
+            // 
+            this.pdsum.HeaderText = "예상출고합계";
+            this.pdsum.Name = "pdsum";
+            // 
+            // pdstock
+            // 
+            this.pdstock.HeaderText = "예상출고후재고";
+            this.pdstock.Name = "pdstock";
             // 
             // P1C01_WORK_PLAN
             // 
@@ -550,9 +807,13 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,10 +862,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         public System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
@@ -612,24 +869,54 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 설비명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 품목DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D41;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D42;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D51;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D52;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D61;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D62;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D71;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D72;
         private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.BindingSource sPProdPlanQuery2BindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter sP_ProdPlan_Query2TableAdapter;
+        private System.Windows.Forms.BindingSource sPProductListBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter sP_Product_ListTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 설비DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 월DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 화DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 목DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 금DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 토DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn p7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sPDeliveryPlanQueryBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter sP_DeliveryPlan_QueryTableAdapter;
+        private System.Windows.Forms.BindingSource sPCustomerListBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter sP_Customer_ListTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 품목DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 재고;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn c7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn q7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn w7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pdsum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pdstock;
     }
 }
