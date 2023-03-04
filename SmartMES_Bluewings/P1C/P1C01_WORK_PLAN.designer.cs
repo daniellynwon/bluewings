@@ -47,11 +47,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.sPDeliveryPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPCustomerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
+            this.sPDeliveryPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPProdPlanQuery2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
+            this.sP_ProdPlan_Query2TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter();
+            this.sP_Product_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter();
+            this.sP_DeliveryPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter();
+            this.sP_Customer_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter();
             this.설비DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.sPProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.월DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.화DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,14 +73,7 @@
             this.토DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProdPlanQuery2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
-            this.sP_ProdPlan_Query2TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter();
-            this.sP_Product_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter();
-            this.sP_DeliveryPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter();
-            this.sPCustomerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_Customer_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.재고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -98,6 +99,7 @@
             this.w7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pdsum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pdstock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -107,12 +109,12 @@
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -287,7 +289,8 @@
             this.p6DataGridViewTextBoxColumn,
             this.토DataGridViewTextBoxColumn,
             this.p7DataGridViewTextBoxColumn,
-            this.일DataGridViewTextBoxColumn});
+            this.일DataGridViewTextBoxColumn,
+            this.ID});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPProdPlanQuery2BindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -369,7 +372,8 @@
             this.q7DataGridViewTextBoxColumn,
             this.w7DataGridViewTextBoxColumn,
             this.pdsum,
-            this.pdstock});
+            this.pdstock,
+            this.dataGridViewTextBoxColumn1});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView2.DataSource = this.sPDeliveryPlanQueryBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -402,15 +406,55 @@
             this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
             this.dataGridView2.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView2_Paint);
             // 
-            // sPDeliveryPlanQueryBindingSource
+            // sPCustomerListBindingSource
             // 
-            this.sPDeliveryPlanQueryBindingSource.DataMember = "SP_DeliveryPlan_Query";
-            this.sPDeliveryPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            this.sPCustomerListBindingSource.DataMember = "SP_Customer_List";
+            this.sPCustomerListBindingSource.DataSource = this.dataSetP1C;
             // 
             // dataSetP1C
             // 
             this.dataSetP1C.DataSetName = "DataSetP1C";
             this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPDeliveryPlanQueryBindingSource
+            // 
+            this.sPDeliveryPlanQueryBindingSource.DataMember = "SP_DeliveryPlan_Query";
+            this.sPDeliveryPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sPProductListBindingSource
+            // 
+            this.sPProductListBindingSource.DataMember = "SP_Product_List";
+            this.sPProductListBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sPProdPlanQuery2BindingSource
+            // 
+            this.sPProdPlanQuery2BindingSource.DataMember = "SP_ProdPlan_Query2";
+            this.sPProdPlanQuery2BindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sPProdPlanQueryBindingSource
+            // 
+            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
+            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sP_ProdPlan_QueryTableAdapter
+            // 
+            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_ProdPlan_Query2TableAdapter
+            // 
+            this.sP_ProdPlan_Query2TableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Product_ListTableAdapter
+            // 
+            this.sP_Product_ListTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_DeliveryPlan_QueryTableAdapter
+            // 
+            this.sP_DeliveryPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Customer_ListTableAdapter
+            // 
+            this.sP_Customer_ListTableAdapter.ClearBeforeFill = true;
             // 
             // 설비DataGridViewTextBoxColumn
             // 
@@ -429,11 +473,6 @@
             this.p1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.p1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.p1DataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // sPProductListBindingSource
-            // 
-            this.sPProductListBindingSource.DataMember = "SP_Product_List";
-            this.sPProductListBindingSource.DataSource = this.dataSetP1C;
             // 
             // 월DataGridViewTextBoxColumn
             // 
@@ -543,40 +582,13 @@
             this.일DataGridViewTextBoxColumn.HeaderText = "일";
             this.일DataGridViewTextBoxColumn.Name = "일DataGridViewTextBoxColumn";
             // 
-            // sPProdPlanQuery2BindingSource
+            // ID
             // 
-            this.sPProdPlanQuery2BindingSource.DataMember = "SP_ProdPlan_Query2";
-            this.sPProdPlanQuery2BindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sPProdPlanQueryBindingSource
-            // 
-            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
-            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sP_ProdPlan_QueryTableAdapter
-            // 
-            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_ProdPlan_Query2TableAdapter
-            // 
-            this.sP_ProdPlan_Query2TableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_Product_ListTableAdapter
-            // 
-            this.sP_Product_ListTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_DeliveryPlan_QueryTableAdapter
-            // 
-            this.sP_DeliveryPlan_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPCustomerListBindingSource
-            // 
-            this.sPCustomerListBindingSource.DataMember = "SP_Customer_List";
-            this.sPCustomerListBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sP_Customer_ListTableAdapter
-            // 
-            this.sP_Customer_ListTableAdapter.ClearBeforeFill = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // 품목DataGridViewTextBoxColumn
             // 
@@ -785,6 +797,14 @@
             this.pdstock.HeaderText = "예상출고후재고";
             this.pdstock.Name = "pdstock";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
             // P1C01_WORK_PLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -808,12 +828,12 @@
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -874,6 +894,10 @@
         private P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter sP_ProdPlan_Query2TableAdapter;
         private System.Windows.Forms.BindingSource sPProductListBindingSource;
         private P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter sP_Product_ListTableAdapter;
+        private System.Windows.Forms.BindingSource sPDeliveryPlanQueryBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter sP_DeliveryPlan_QueryTableAdapter;
+        private System.Windows.Forms.BindingSource sPCustomerListBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter sP_Customer_ListTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn p1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 월DataGridViewTextBoxColumn;
@@ -889,10 +913,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 토DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn p7DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 일DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sPDeliveryPlanQueryBindingSource;
-        private P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter sP_DeliveryPlan_QueryTableAdapter;
-        private System.Windows.Forms.BindingSource sPCustomerListBindingSource;
-        private P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter sP_Customer_ListTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 재고;
         private System.Windows.Forms.DataGridViewComboBoxColumn c1DataGridViewTextBoxColumn;
@@ -918,5 +939,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn w7DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pdsum;
         private System.Windows.Forms.DataGridViewTextBoxColumn pdstock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

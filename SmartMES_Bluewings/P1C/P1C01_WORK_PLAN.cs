@@ -184,17 +184,18 @@ namespace SmartMES_Bluewings
             string sql = string.Empty;
             string msg = string.Empty;
 
-            string sDate = string.Empty; string sWeight = string.Empty; int d = 4;
+            string sDate = string.Empty; string sWeight = string.Empty; string sQty = string.Empty;
 
-            for (int i = 4; i < dataGridView1.ColumnCount - 1; i += 2)    // column 먼저
+            for (int i = 1; i < dataGridView1.ColumnCount - 1; i += 2)    // column 먼저
             {
-                if (i == 4) sDate = dtpFromDate.Value.ToString("yyyy-MM-dd");
-                else sDate = dtpFromDate.Value.AddDays(i - d).ToString("yyyy-MM-dd");
-                d++;
+                int interval = (int)(i / 2);
+                sDate = dtpFromDate.Value.AddDays(interval).ToString("yyyy-MM-dd");
+
                 for (int j = 0; j < dataGridView1.RowCount; j++)
                 {
-                    string sMachine = dataGridView1.Rows[j].Cells[1].Value.ToString().Trim(); // 설비코드
-                    string sProd = dataGridView1.Rows[j].Cells[i].Value.ToString().Split('/')[0];
+                    string sMachine = dataGridView1.Rows[j].Cells[15].Value.ToString().Trim(); // 설비코드
+                    DataGridViewComboBoxCell cbx = (DataGridViewComboBoxCell)dataGridView1.Rows[j].Cells[i];
+                    string sProd = cbx.Value.ToString();
                     if (string.IsNullOrEmpty(sProd)) return;
                     sWeight = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();   // if (!(string.IsNullOrEmpty(sProd) && string.IsNullOrEmpty(sWeight))) return;
                     if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
@@ -203,6 +204,29 @@ namespace SmartMES_Bluewings
                         " values('" + sDate + "','" + sMachine + "','" + sProd + "'," + sWeight + ",'" + G.UserID + "')" +
                         " on duplicate key update" +
                         " prod_id = '" + sProd + "', plan_weight = " + sWeight;
+                    m.dbCUD(sql, ref msg);
+                }
+            }
+            for (int i = 2; i < dataGridView2.ColumnCount - 1; i += 3)    // column 먼저
+            {
+                int interval = (int)(i / 3);
+                sDate = dtpFromDate.Value.AddDays(interval).ToString("yyyy-MM-dd");
+
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    string sProd = dataGridView1.Rows[j].Cells[25].Value.ToString().Trim(); // 품목코드
+                    DataGridViewComboBoxCell cbx = (DataGridViewComboBoxCell)dataGridView1.Rows[j].Cells[i];
+                    string sCust = cbx.Value.ToString();
+                    if (string.IsNullOrEmpty(sCust)) return;
+                    sQty = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();
+                    sWeight = dataGridView1.Rows[j].Cells[i + 2].Value.ToString().Trim();
+                    if (string.IsNullOrEmpty(sQty)) sQty = "0";
+                    if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
+
+                    sql = "insert into tb_delivery_plan (plan_date, prod_id, cust_id, qty, sub_qty, enter_man)" +
+                        " values('" + sDate + "','" + sProd + "','" + sCust + "'," + sQty + "," + sWeight + ",'" + G.UserID + "')" +
+                        " on duplicate key update" +
+                        " cust_id = '" + sCust + "', qty = " + sQty + ", sub_qty = " + sWeight;
                     m.dbCUD(sql, ref msg);
                 }
             }

@@ -8153,6 +8153,8 @@ namespace SmartMES_Bluewings.P1C {
             
             private global::System.Data.DataColumn column일;
             
+            private global::System.Data.DataColumn columnID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdPlan_Query2DataTable() {
@@ -8308,6 +8310,14 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8343,7 +8353,23 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdPlan_Query2Row AddSP_ProdPlan_Query2Row(string 설비, string P1, decimal 월, string P2, decimal 화, string P3, decimal 수, string P4, decimal 목, string P5, decimal 금, string P6, decimal 토, string P7, decimal 일) {
+            public SP_ProdPlan_Query2Row AddSP_ProdPlan_Query2Row(
+                        string 설비, 
+                        string P1, 
+                        decimal 월, 
+                        string P2, 
+                        decimal 화, 
+                        string P3, 
+                        decimal 수, 
+                        string P4, 
+                        decimal 목, 
+                        string P5, 
+                        decimal 금, 
+                        string P6, 
+                        decimal 토, 
+                        string P7, 
+                        decimal 일, 
+                        uint ID) {
                 SP_ProdPlan_Query2Row rowSP_ProdPlan_Query2Row = ((SP_ProdPlan_Query2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         설비,
@@ -8360,10 +8386,18 @@ namespace SmartMES_Bluewings.P1C {
                         P6,
                         토,
                         P7,
-                        일};
+                        일,
+                        ID};
                 rowSP_ProdPlan_Query2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdPlan_Query2Row);
                 return rowSP_ProdPlan_Query2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_ProdPlan_Query2Row FindByID(uint ID) {
+                return ((SP_ProdPlan_Query2Row)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8398,6 +8432,7 @@ namespace SmartMES_Bluewings.P1C {
                 this.column토 = base.Columns["토"];
                 this.columnP7 = base.Columns["P7"];
                 this.column일 = base.Columns["일"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8433,14 +8468,28 @@ namespace SmartMES_Bluewings.P1C {
                 base.Columns.Add(this.columnP7);
                 this.column일 = new global::System.Data.DataColumn("일", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column일);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.column설비.AllowDBNull = false;
                 this.column설비.MaxLength = 50;
+                this.columnP1.AllowDBNull = false;
                 this.columnP1.MaxLength = 8;
+                this.columnP2.AllowDBNull = false;
                 this.columnP2.MaxLength = 8;
+                this.columnP3.AllowDBNull = false;
                 this.columnP3.MaxLength = 8;
+                this.columnP4.AllowDBNull = false;
                 this.columnP4.MaxLength = 8;
+                this.columnP5.AllowDBNull = false;
                 this.columnP5.MaxLength = 8;
+                this.columnP6.AllowDBNull = false;
                 this.columnP6.MaxLength = 8;
+                this.columnP7.AllowDBNull = false;
                 this.columnP7.MaxLength = 8;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9169,6 +9218,8 @@ namespace SmartMES_Bluewings.P1C {
             
             private global::System.Data.DataColumn column재고;
             
+            private global::System.Data.DataColumn columnID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_DeliveryPlan_QueryDataTable() {
@@ -9388,6 +9439,14 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9446,7 +9505,8 @@ namespace SmartMES_Bluewings.P1C {
                         string C7, 
                         decimal Q7, 
                         decimal W7, 
-                        double 재고) {
+                        double 재고, 
+                        string ID) {
                 SP_DeliveryPlan_QueryRow rowSP_DeliveryPlan_QueryRow = ((SP_DeliveryPlan_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         품목,
@@ -9471,7 +9531,8 @@ namespace SmartMES_Bluewings.P1C {
                         C7,
                         Q7,
                         W7,
-                        재고};
+                        재고,
+                        ID};
                 rowSP_DeliveryPlan_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_DeliveryPlan_QueryRow);
                 return rowSP_DeliveryPlan_QueryRow;
@@ -9517,6 +9578,7 @@ namespace SmartMES_Bluewings.P1C {
                 this.columnQ7 = base.Columns["Q7"];
                 this.columnW7 = base.Columns["W7"];
                 this.column재고 = base.Columns["재고"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9568,6 +9630,8 @@ namespace SmartMES_Bluewings.P1C {
                 base.Columns.Add(this.columnW7);
                 this.column재고 = new global::System.Data.DataColumn("재고", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column재고);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.column품목.AllowDBNull = false;
                 this.column품목.MaxLength = 50;
                 this.columnC1.AllowDBNull = false;
@@ -9585,6 +9649,8 @@ namespace SmartMES_Bluewings.P1C {
                 this.columnC7.AllowDBNull = false;
                 this.columnC7.MaxLength = 50;
                 this.column재고.AllowDBNull = false;
+                this.columnID.AllowDBNull = false;
+                this.columnID.MaxLength = 8;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15048,12 +15114,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 설비 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.설비Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'설비\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.설비Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.설비Column] = value;
@@ -15064,12 +15125,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P1\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P1Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P1Column] = value;
@@ -15096,12 +15152,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P2\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P2Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P2Column] = value;
@@ -15128,12 +15179,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P3\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P3Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P3Column] = value;
@@ -15160,12 +15206,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P4 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P4\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P4Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P4Column] = value;
@@ -15192,12 +15233,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P5 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P5Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P5\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P5Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P5Column] = value;
@@ -15224,12 +15260,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P6 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P6Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P6\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P6Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P6Column] = value;
@@ -15256,12 +15287,7 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string P7 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_ProdPlan_Query2.P7Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_ProdPlan_Query2\' 테이블의 \'P7\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_ProdPlan_Query2.P7Column]));
                 }
                 set {
                     this[this.tableSP_ProdPlan_Query2.P7Column] = value;
@@ -15286,26 +15312,13 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is설비Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.설비Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set설비Null() {
-                this[this.tableSP_ProdPlan_Query2.설비Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP1Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP1Null() {
-                this[this.tableSP_ProdPlan_Query2.P1Column] = global::System.Convert.DBNull;
+            public uint ID {
+                get {
+                    return ((uint)(this[this.tableSP_ProdPlan_Query2.IDColumn]));
+                }
+                set {
+                    this[this.tableSP_ProdPlan_Query2.IDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15322,18 +15335,6 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP2Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP2Null() {
-                this[this.tableSP_ProdPlan_Query2.P2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is화Null() {
                 return this.IsNull(this.tableSP_ProdPlan_Query2.화Column);
             }
@@ -15342,18 +15343,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set화Null() {
                 this[this.tableSP_ProdPlan_Query2.화Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP3Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP3Null() {
-                this[this.tableSP_ProdPlan_Query2.P3Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15370,18 +15359,6 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP4Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP4Null() {
-                this[this.tableSP_ProdPlan_Query2.P4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is목Null() {
                 return this.IsNull(this.tableSP_ProdPlan_Query2.목Column);
             }
@@ -15390,18 +15367,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set목Null() {
                 this[this.tableSP_ProdPlan_Query2.목Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP5Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P5Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP5Null() {
-                this[this.tableSP_ProdPlan_Query2.P5Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15418,18 +15383,6 @@ namespace SmartMES_Bluewings.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP6Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P6Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP6Null() {
-                this[this.tableSP_ProdPlan_Query2.P6Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is토Null() {
                 return this.IsNull(this.tableSP_ProdPlan_Query2.토Column);
             }
@@ -15438,18 +15391,6 @@ namespace SmartMES_Bluewings.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set토Null() {
                 this[this.tableSP_ProdPlan_Query2.토Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsP7Null() {
-                return this.IsNull(this.tableSP_ProdPlan_Query2.P7Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetP7Null() {
-                this[this.tableSP_ProdPlan_Query2.P7Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15873,6 +15814,17 @@ namespace SmartMES_Bluewings.P1C {
                 }
                 set {
                     this[this.tableSP_DeliveryPlan_Query.재고Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ID {
+                get {
+                    return ((string)(this[this.tableSP_DeliveryPlan_Query.IDColumn]));
+                }
+                set {
+                    this[this.tableSP_DeliveryPlan_Query.IDColumn] = value;
                 }
             }
             
@@ -20484,6 +20436,7 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("토", "토");
             tableMapping.ColumnMappings.Add("P7", "P7");
             tableMapping.ColumnMappings.Add("일", "일");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21049,6 +21002,7 @@ namespace SmartMES_Bluewings.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("Q7", "Q7");
             tableMapping.ColumnMappings.Add("W7", "W7");
             tableMapping.ColumnMappings.Add("재고", "재고");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
