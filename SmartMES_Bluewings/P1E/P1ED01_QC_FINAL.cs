@@ -9,6 +9,10 @@ namespace SmartMES_Bluewings
 {
     public partial class P1ED01_QC_FINAL : SmartMES_Bluewings.FormBasic
     {
+        int columnIndex = 0;
+        int rowIndex = 0;
+        bool endEdit = false;
+
         public P1ED01_QC_FINAL()
         {
             InitializeComponent();
@@ -142,6 +146,7 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
+            float fVal = 0;
             
             if(e.ColumnIndex == 5 || e.ColumnIndex == 18)
             {
@@ -155,10 +160,90 @@ namespace SmartMES_Bluewings
             else if (e.ColumnIndex == 6 || e.ColumnIndex == 7 || e.ColumnIndex == 8)
             {
                 string minStd = lblStd1.Text.Substring(0, lblStd1.Text.IndexOf("±"));
-                string maxStd = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±"), lblStd1.Text.Length);
-                
-                //if()
+                string maxStd = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+                //if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "") return;
+
+                getResult(e.RowIndex, 6, minStd, maxStd);
+                //string sValue = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                //if(!(dataGridView1.Rows[e.RowIndex].Cells[6].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString())))
+                //    fVal = float.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+                //if(float.Parse(minStd) < fVal && float.Parse(maxStd) > fVal)
+                //    dataGridView1.Rows[e.RowIndex].Cells[18].Value = "합격";
+                //else
+                //    dataGridView1.Rows[e.RowIndex].Cells[18].Value = "불합";
             }
+        }
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                if (!(columnIndex == 5 || columnIndex == 18))
+                {
+                    if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //
+            }
+        }
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    e.SuppressKeyPress = true;
+                    int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+
+                    if (columnIndex == 17)
+                        dataGridView1.CurrentCell = dataGridView1[5, rowIndex + 1];
+                    else
+                        dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
+                }
+                if (e.KeyCode == Keys.Tab)
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.CurrentCell != null && endEdit)
+                {
+                    //if (columnIndex == dataGridView1.Columns.Count - 1)
+                    if (columnIndex == 17)
+                        dataGridView1.CurrentCell = dataGridView1[5, rowIndex + 1];
+                    else
+                        dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
+
+                    endEdit = false;
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+        void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress += new KeyPressEventHandler(dataGridView1_KeyPress);
         }
         #endregion
 
@@ -410,6 +495,38 @@ namespace SmartMES_Bluewings
                 e.PaintContent(r);
                 e.Handled = true;
             }
+        }
+        #endregion
+
+        #region Functions
+        private void getResult(int idx, int col, string min, string max)
+        {
+            float fVal = 0; int iCnt = 0;
+            //string sValue = dataGridView1.Rows[idx].Cells[col].Value.ToString(); string sVal = string.Empty;
+            //if (!(dataGridView1.Rows[idx].Cells[col].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col].Value.ToString())))
+            //    fVal = float.Parse(dataGridView1.Rows[idx].Cells[col].Value.ToString());
+            
+            for(int i=0; i < 3; i++)
+            {
+                if (dataGridView1.Rows[idx].Cells[col+i].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col+i].Value.ToString()))
+                    fVal = 0;
+                else
+                    fVal = float.Parse(dataGridView1.Rows[idx].Cells[col+i].Value.ToString());
+
+                if (float.Parse(min) < fVal && float.Parse(max) > fVal)
+                    dataGridView1.Rows[idx].Cells[18].Value = "합격";
+                else
+                {
+                    dataGridView1.Rows[idx].Cells[18].Value = "불합";
+                    iCnt = 1;
+                }
+
+            }
+
+            //if (float.Parse(minStd) < fVal && float.Parse(maxStd) > fVal)
+            //    dataGridView1.Rows[idx].Cells[18].Value = "합격";
+            //else
+            //    dataGridView1.Rows[idx].Cells[18].Value = "불합";
         }
         #endregion
     }

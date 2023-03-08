@@ -68,10 +68,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>73DFCF32507C5177D6FE35F48E43419B9767FDF7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0D7E2002C39F36CEAE15E2AFE07EA4CE4FFAC2D1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SmartMES_Bluewings_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
