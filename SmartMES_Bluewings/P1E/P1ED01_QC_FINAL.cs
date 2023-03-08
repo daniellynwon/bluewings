@@ -130,6 +130,22 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
+        #region 엔터키로 포커스 이동
+        public bool NextFocus(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+                return true;
+            }
+            return false;
+        }
+        private void nextFocus_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = NextFocus(sender, e);
+        }
+        #endregion
+
         #region GridView Events
         private void dataGridViewList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -140,57 +156,6 @@ namespace SmartMES_Bluewings
             string sMach = dataGridViewList[2, index].Value.ToString();
 
             ListSearch2(sJobNo, sMach);
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            lblMsg.Text = "";
-            if (G.Authority == "D") return;
-            if (e.RowIndex < 0) return;
-            float fVal = 0;
-            
-            if(e.ColumnIndex == 5 || e.ColumnIndex == 18)
-            {
-                if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "")
-                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "적합";
-                else if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "적합")
-                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "불합";
-                else if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "불합")
-                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "";
-            }
-            else if (e.ColumnIndex == 6 || e.ColumnIndex == 7 || e.ColumnIndex == 8)
-            {
-                string minStd = lblStd1.Text.Substring(0, lblStd1.Text.IndexOf("±"));
-                string maxStd = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
-                //if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "") return;
-
-                getResult(e.RowIndex, 6, minStd, maxStd);
-                //string sValue = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                //if(!(dataGridView1.Rows[e.RowIndex].Cells[6].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString())))
-                //    fVal = float.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
-
-                //if(float.Parse(minStd) < fVal && float.Parse(maxStd) > fVal)
-                //    dataGridView1.Rows[e.RowIndex].Cells[18].Value = "합격";
-                //else
-                //    dataGridView1.Rows[e.RowIndex].Cells[18].Value = "불합";
-            }
-        }
-        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-                if (!(columnIndex == 5 || columnIndex == 18))
-                {
-                    if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                //
-            }
         }
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -217,10 +182,67 @@ namespace SmartMES_Bluewings
                 return;
             }
         }
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                rowIndex = dataGridView1.CurrentCell.RowIndex;
+                endEdit = true;
+
+                float value1 = 0; float value2 = 0; float value3 = 0;
+                string minStd = string.Empty; string maxStd = string.Empty;
+                //long moneyA = 0;
+                //long moneyB = 0;
+                //float discount = 100;
+
+                if (columnIndex == 6 || columnIndex == 7 || columnIndex == 8)
+                {
+                    minStd = lblStd1.Text.Substring(0, lblStd1.Text.IndexOf("±"));
+                    maxStd = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+
+                    if (dataGridView1.Rows[rowIndex].Cells[6].Value != null && dataGridView1.Rows[rowIndex].Cells[6].Value.ToString().Length != 0)
+                        value1 = float.Parse(dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 수량
+
+                    if (dataGridView1.Rows[rowIndex].Cells[7].Value != null && dataGridView1.Rows[rowIndex].Cells[7].Value.ToString().Length != 0)
+                        value2 = float.Parse(dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());   // 단가
+
+                    if (dataGridView1.Rows[rowIndex].Cells[8].Value != null && dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Length != 0)
+                        value3 = float.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());
+
+                    if (value1 >= float.Parse(minStd) && float.Parse(maxStd) >= value1)
+                        dataGridView1.Rows[rowIndex].Cells[18].Value = "합격";
+
+                    if (value2 >= float.Parse(minStd) && float.Parse(maxStd) >= value2)
+                        dataGridView1.Rows[rowIndex].Cells[18].Value = "합격";
+                    else
+                        dataGridView1.Rows[rowIndex].Cells[18].Value = "불합";
+                }
+                else if (columnIndex == 9 || columnIndex == 10 || columnIndex == 11)
+                {
+                    //
+                }
+                else if (columnIndex == 12 || columnIndex == 12 || columnIndex == 13)
+                {
+                    //
+                }
+                else if (columnIndex == 14 || columnIndex == 15 || columnIndex == 16)
+                {
+                    //
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
+                //columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                //rowIndex = dataGridView1.CurrentCell.RowIndex;
+
                 if (dataGridView1.CurrentCell != null && endEdit)
                 {
                     //if (columnIndex == dataGridView1.Columns.Count - 1)
@@ -237,13 +259,85 @@ namespace SmartMES_Bluewings
                 return;
             }
         }
-        void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            e.ThrowException = false;
+            lblMsg.Text = "";
+            if (G.Authority == "D") return;
+            if (e.RowIndex < 0) return;
+            float fVal = 0;
+            
+            if(e.ColumnIndex == 5 || e.ColumnIndex == 18)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "")
+                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "적합";
+                else if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "적합")
+                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "불합";
+                else if (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString() == "불합")
+                    dataGridView1.Rows[e.RowIndex].Cells[5].Value = "";
+            }
+            //else if (e.ColumnIndex == 6 || e.ColumnIndex == 7 || e.ColumnIndex == 8)
+            //{
+            //    string minStd = lblStd1.Text.Substring(0, lblStd1.Text.IndexOf("±"));
+            //    string maxStd = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+            //    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "") return;
+            //    string sVal = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+            //    getResult(e.RowIndex, e.ColumnIndex, minStd, maxStd, float.Parse(sVal));
+            //}
+            //else if (e.ColumnIndex == 9 || e.ColumnIndex == 10 || e.ColumnIndex == 11)
+            //{
+            //    string minStd = lblStd2.Text.Substring(0, lblStd1.Text.IndexOf("±"));
+            //    string maxStd = lblStd2.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+            //    string sVal = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+            //    getResult(e.RowIndex, e.ColumnIndex, minStd, maxStd, float.Parse(sVal));
+            //}
+            //else if (e.ColumnIndex == 12 || e.ColumnIndex == 13 || e.ColumnIndex == 14)
+            //{
+            //    string minStd = lblStd3.Text.Substring(0, lblStd1.Text.IndexOf("±"));
+            //    string maxStd = lblStd3.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+            //    string sVal = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+            //    getResult(e.RowIndex, e.ColumnIndex, minStd, maxStd, float.Parse(sVal));
+            //}
+            //else if (e.ColumnIndex == 15 || e.ColumnIndex == 16 || e.ColumnIndex == 17)
+            //{
+            //    string minStd = lblStd4.Text.Substring(0, lblStd1.Text.IndexOf("±"));
+            //    string maxStd = lblStd4.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+            //    string sVal = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+            //    getResult(e.RowIndex, e.ColumnIndex, minStd, maxStd, float.Parse(sVal));
+            //}
+        }
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView1.RowCount < 2) return;
+        }
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+                if (!(columnIndex == 5 || columnIndex == 18))
+                {
+                    if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //
+            }
         }
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress += new KeyPressEventHandler(dataGridView1_KeyPress);
+        }
+        void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
         }
         #endregion
 
@@ -409,6 +503,45 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
+        #region 텍스트 박스 숫자 처리
+        private void tbQty_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string lgsText1, lgsText2, lgsText3, lgsText4, lgsText5, lgsText6, lgsText7, lgsText8, lgsText9, lgsText10,
+                    lgsText11, lgsText12;
+
+                lgsText1 = tbVal1.Text.Replace(",", ""); lgsText2 = tbVal2.Text.Replace(",", ""); lgsText3 = tbVal3.Text.Replace(",", ""); lgsText4 = tbVal4.Text.Replace(",", "");
+                lgsText5 = tbVal5.Text.Replace(",", ""); lgsText6 = tbVal6.Text.Replace(",", ""); lgsText7 = tbVal7.Text.Replace(",", ""); lgsText8 = tbVal8.Text.Replace(",", "");
+                lgsText9 = tbVal9.Text.Replace(",", ""); lgsText10 = tbVal10.Text.Replace(",", ""); lgsText11 = tbVal11.Text.Replace(",", ""); lgsText12 = tbVal12.Text.Replace(",", "");
+                tbVal1.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText1)); tbVal2.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText2));
+                tbVal3.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText3)); tbVal4.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText4));
+                tbVal5.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText5)); tbVal6.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText6));
+                tbVal7.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText7)); tbVal8.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText8));
+                tbVal9.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText9)); tbVal10.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText10));
+                tbVal11.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText11)); tbVal12.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText12));
+
+                tbVal1.SelectionStart = tbVal1.TextLength; tbVal2.SelectionStart = tbVal2.TextLength; tbVal3.SelectionStart = tbVal3.TextLength; tbVal4.SelectionStart = tbVal4.TextLength;
+                tbVal5.SelectionStart = tbVal5.TextLength; tbVal6.SelectionStart = tbVal6.TextLength; tbVal7.SelectionStart = tbVal7.TextLength; tbVal8.SelectionStart = tbVal8.TextLength;
+                tbVal9.SelectionStart = tbVal9.TextLength; tbVal10.SelectionStart = tbVal10.TextLength; tbVal11.SelectionStart = tbVal11.TextLength; tbVal12.SelectionStart = tbVal12.TextLength;
+                tbVal1.SelectionLength = 0; tbVal2.SelectionLength = 0; tbVal3.SelectionLength = 0; tbVal4.SelectionLength = 0;
+                tbVal5.SelectionLength = 0; tbVal6.SelectionLength = 0; tbVal7.SelectionLength = 0; tbVal8.SelectionLength = 0;
+                tbVal9.SelectionLength = 0; tbVal10.SelectionLength = 0; tbVal11.SelectionLength = 0; tbVal12.SelectionLength = 0;
+            }
+            catch (FormatException)
+            {
+                return;
+            }
+        }
+        private void tbQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '-'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
         #region Cell Paint
         private void dataGridView1_Paint(object sender, PaintEventArgs e)
         {
@@ -499,34 +632,38 @@ namespace SmartMES_Bluewings
         #endregion
 
         #region Functions
-        private void getResult(int idx, int col, string min, string max)
+        private void getResult(int idx, int col, string min, string max, float fVal)
         {
-            float fVal = 0; int iCnt = 0;
+            int iCnt = 0;
             //string sValue = dataGridView1.Rows[idx].Cells[col].Value.ToString(); string sVal = string.Empty;
             //if (!(dataGridView1.Rows[idx].Cells[col].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col].Value.ToString())))
             //    fVal = float.Parse(dataGridView1.Rows[idx].Cells[col].Value.ToString());
             
-            for(int i=0; i < 3; i++)
+            if(col == 6 || col == 7 || col == 8)
             {
-                if (dataGridView1.Rows[idx].Cells[col+i].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col+i].Value.ToString()))
-                    fVal = 0;
-                else
-                    fVal = float.Parse(dataGridView1.Rows[idx].Cells[col+i].Value.ToString());
-
-                if (float.Parse(min) < fVal && float.Parse(max) > fVal)
-                    dataGridView1.Rows[idx].Cells[18].Value = "합격";
-                else
+                if (fVal >= float.Parse(min) && float.Parse(max) >= fVal)
                 {
-                    dataGridView1.Rows[idx].Cells[18].Value = "불합";
-                    iCnt = 1;
+                    dataGridView1.Rows[idx].Cells[18].Value = "합격";
                 }
-
+                else
+                    dataGridView1.Rows[idx].Cells[18].Value = "불합";
             }
 
-            //if (float.Parse(minStd) < fVal && float.Parse(maxStd) > fVal)
-            //    dataGridView1.Rows[idx].Cells[18].Value = "합격";
-            //else
-            //    dataGridView1.Rows[idx].Cells[18].Value = "불합";
+            //for(int i=0; i < 3; i++)
+            //{
+            //    if (dataGridView1.Rows[idx].Cells[col+i].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col+i].Value.ToString()))
+            //        fVal = 0;
+            //    else
+            //        fVal = float.Parse(dataGridView1.Rows[idx].Cells[col+i].Value.ToString());
+
+            //    if (float.Parse(min) < fVal && float.Parse(max) > fVal)
+            //        dataGridView1.Rows[idx].Cells[18].Value = "합격";
+            //    else
+            //    {
+            //        dataGridView1.Rows[idx].Cells[18].Value = "불합";
+            //        iCnt = 1;
+            //    }
+            //}
         }
         #endregion
     }

@@ -52,6 +52,14 @@ namespace SmartMES_Bluewings
             this.label9 = new System.Windows.Forms.Label();
             this.tbContents = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.코드 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.포대번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.작업일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.규격DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.작업지도DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPQcClassSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
             this.cbWorker = new System.Windows.Forms.ComboBox();
@@ -60,15 +68,6 @@ namespace SmartMES_Bluewings
             this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.label7 = new System.Windows.Forms.Label();
             this.tbQc2 = new System.Windows.Forms.TextBox();
-            this.코드 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.포대번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.규격DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업지도DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.tbQc3 = new System.Windows.Forms.TextBox();
             this.panTitle.SuspendLayout();
@@ -271,7 +270,6 @@ namespace SmartMES_Bluewings
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.코드,
-            this.lotNoDataGridViewTextBoxColumn,
             this.포대번호,
             this.작업일자DataGridViewTextBoxColumn,
             this.품목코드DataGridViewTextBoxColumn,
@@ -312,6 +310,73 @@ namespace SmartMES_Bluewings
             this.dataGridView1.TabIndex = 40;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // 코드
+            // 
+            this.코드.DataPropertyName = "코드";
+            this.코드.HeaderText = "LotNo-포대번호";
+            this.코드.Name = "코드";
+            this.코드.ReadOnly = true;
+            this.코드.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.코드.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 포대번호
+            // 
+            this.포대번호.DataPropertyName = "포대번호";
+            this.포대번호.HeaderText = "포대번호";
+            this.포대번호.Name = "포대번호";
+            this.포대번호.ReadOnly = true;
+            this.포대번호.Visible = false;
+            // 
+            // 작업일자DataGridViewTextBoxColumn
+            // 
+            this.작업일자DataGridViewTextBoxColumn.DataPropertyName = "작업일자";
+            this.작업일자DataGridViewTextBoxColumn.HeaderText = "작업일자";
+            this.작업일자DataGridViewTextBoxColumn.Name = "작업일자DataGridViewTextBoxColumn";
+            this.작업일자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.작업일자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목코드DataGridViewTextBoxColumn
+            // 
+            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
+            this.품목코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목명DataGridViewTextBoxColumn
+            // 
+            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.FillWeight = 120F;
+            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 규격DataGridViewTextBoxColumn
+            // 
+            this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
+            this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
+            this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
+            this.규격DataGridViewTextBoxColumn.ReadOnly = true;
+            this.규격DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 수량DataGridViewTextBoxColumn
+            // 
+            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
+            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
+            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
+            this.수량DataGridViewTextBoxColumn.ReadOnly = true;
+            this.수량DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 작업지도DataGridViewTextBoxColumn
+            // 
+            this.작업지도DataGridViewTextBoxColumn.DataPropertyName = "작업지도";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.작업지도DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.작업지도DataGridViewTextBoxColumn.FillWeight = 200F;
+            this.작업지도DataGridViewTextBoxColumn.HeaderText = "작업지도";
+            this.작업지도DataGridViewTextBoxColumn.Name = "작업지도DataGridViewTextBoxColumn";
+            this.작업지도DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sPQcClassSubBindingSource
             // 
@@ -384,82 +449,6 @@ namespace SmartMES_Bluewings
             this.tbQc2.TabIndex = 21;
             this.tbQc2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbQc2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbQty_KeyPress);
-            // 
-            // 코드
-            // 
-            this.코드.DataPropertyName = "코드";
-            this.코드.HeaderText = "LotNo-포대번호";
-            this.코드.Name = "코드";
-            this.코드.ReadOnly = true;
-            this.코드.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.코드.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // lotNoDataGridViewTextBoxColumn
-            // 
-            this.lotNoDataGridViewTextBoxColumn.DataPropertyName = "LotNo";
-            this.lotNoDataGridViewTextBoxColumn.HeaderText = "LotNo";
-            this.lotNoDataGridViewTextBoxColumn.Name = "lotNoDataGridViewTextBoxColumn";
-            this.lotNoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lotNoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lotNoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 포대번호
-            // 
-            this.포대번호.DataPropertyName = "포대번호";
-            this.포대번호.HeaderText = "포대번호";
-            this.포대번호.Name = "포대번호";
-            this.포대번호.ReadOnly = true;
-            this.포대번호.Visible = false;
-            // 
-            // 작업일자DataGridViewTextBoxColumn
-            // 
-            this.작업일자DataGridViewTextBoxColumn.DataPropertyName = "작업일자";
-            this.작업일자DataGridViewTextBoxColumn.HeaderText = "작업일자";
-            this.작업일자DataGridViewTextBoxColumn.Name = "작업일자DataGridViewTextBoxColumn";
-            this.작업일자DataGridViewTextBoxColumn.ReadOnly = true;
-            this.작업일자DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 품목코드DataGridViewTextBoxColumn
-            // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 품목명DataGridViewTextBoxColumn
-            // 
-            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.FillWeight = 120F;
-            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
-            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 규격DataGridViewTextBoxColumn
-            // 
-            this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
-            this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
-            this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
-            this.규격DataGridViewTextBoxColumn.ReadOnly = true;
-            this.규격DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 수량DataGridViewTextBoxColumn
-            // 
-            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
-            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
-            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
-            this.수량DataGridViewTextBoxColumn.ReadOnly = true;
-            this.수량DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 작업지도DataGridViewTextBoxColumn
-            // 
-            this.작업지도DataGridViewTextBoxColumn.DataPropertyName = "작업지도";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.작업지도DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.작업지도DataGridViewTextBoxColumn.FillWeight = 200F;
-            this.작업지도DataGridViewTextBoxColumn.HeaderText = "작업지도";
-            this.작업지도DataGridViewTextBoxColumn.Name = "작업지도DataGridViewTextBoxColumn";
-            this.작업지도DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // label4
             // 
