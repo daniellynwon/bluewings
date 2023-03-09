@@ -4639,7 +4639,9 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column판정);
                 this.columnjobNo.MaxLength = 8;
                 this.column설비명.MaxLength = 50;
+                this.column품목코드.AllowDBNull = false;
                 this.column품목코드.MaxLength = 8;
+                this.column품목명.AllowDBNull = false;
                 this.column품목명.MaxLength = 50;
                 this.column외관.MaxLength = 1;
                 this.column관벽두께1.MaxLength = 300;
@@ -4804,6 +4806,34 @@ namespace SmartMES_Bluewings.P1E {
             
             private global::System.Data.DataColumn column상태;
             
+            private global::System.Data.DataColumn column외관;
+            
+            private global::System.Data.DataColumn column관벽1;
+            
+            private global::System.Data.DataColumn column관벽2;
+            
+            private global::System.Data.DataColumn column관벽3;
+            
+            private global::System.Data.DataColumn column내벽1;
+            
+            private global::System.Data.DataColumn column내벽2;
+            
+            private global::System.Data.DataColumn column내벽3;
+            
+            private global::System.Data.DataColumn column지름1;
+            
+            private global::System.Data.DataColumn column지름2;
+            
+            private global::System.Data.DataColumn column지름3;
+            
+            private global::System.Data.DataColumn column길이1;
+            
+            private global::System.Data.DataColumn column길이2;
+            
+            private global::System.Data.DataColumn column길이3;
+            
+            private global::System.Data.DataColumn column판정;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_QcFinal_ROderDataTable() {
@@ -4903,6 +4933,118 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 외관Column {
+                get {
+                    return this.column외관;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 관벽1Column {
+                get {
+                    return this.column관벽1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 관벽2Column {
+                get {
+                    return this.column관벽2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 관벽3Column {
+                get {
+                    return this.column관벽3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 내벽1Column {
+                get {
+                    return this.column내벽1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 내벽2Column {
+                get {
+                    return this.column내벽2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 내벽3Column {
+                get {
+                    return this.column내벽3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 지름1Column {
+                get {
+                    return this.column지름1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 지름2Column {
+                get {
+                    return this.column지름2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 지름3Column {
+                get {
+                    return this.column지름3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 길이1Column {
+                get {
+                    return this.column길이1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 길이2Column {
+                get {
+                    return this.column길이2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 길이3Column {
+                get {
+                    return this.column길이3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 판정Column {
+                get {
+                    return this.column판정;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4938,7 +5080,29 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcFinal_ROderRow AddSP_QcFinal_ROderRow(string JobNo, System.DateTime 생산일자, uint 설비코드, string 설비명, string 작업조, string 품목코드, string 품목명, string 상태) {
+            public SP_QcFinal_ROderRow AddSP_QcFinal_ROderRow(
+                        string JobNo, 
+                        System.DateTime 생산일자, 
+                        uint 설비코드, 
+                        string 설비명, 
+                        string 작업조, 
+                        string 품목코드, 
+                        string 품목명, 
+                        string 상태, 
+                        string 외관, 
+                        string 관벽1, 
+                        string 관벽2, 
+                        string 관벽3, 
+                        string 내벽1, 
+                        string 내벽2, 
+                        string 내벽3, 
+                        string 지름1, 
+                        string 지름2, 
+                        string 지름3, 
+                        string 길이1, 
+                        string 길이2, 
+                        string 길이3, 
+                        string 판정) {
                 SP_QcFinal_ROderRow rowSP_QcFinal_ROderRow = ((SP_QcFinal_ROderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         JobNo,
@@ -4948,7 +5112,21 @@ namespace SmartMES_Bluewings.P1E {
                         작업조,
                         품목코드,
                         품목명,
-                        상태};
+                        상태,
+                        외관,
+                        관벽1,
+                        관벽2,
+                        관벽3,
+                        내벽1,
+                        내벽2,
+                        내벽3,
+                        지름1,
+                        지름2,
+                        지름3,
+                        길이1,
+                        길이2,
+                        길이3,
+                        판정};
                 rowSP_QcFinal_ROderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_QcFinal_ROderRow);
                 return rowSP_QcFinal_ROderRow;
@@ -4979,6 +5157,20 @@ namespace SmartMES_Bluewings.P1E {
                 this.column품목코드 = base.Columns["품목코드"];
                 this.column품목명 = base.Columns["품목명"];
                 this.column상태 = base.Columns["상태"];
+                this.column외관 = base.Columns["외관"];
+                this.column관벽1 = base.Columns["관벽1"];
+                this.column관벽2 = base.Columns["관벽2"];
+                this.column관벽3 = base.Columns["관벽3"];
+                this.column내벽1 = base.Columns["내벽1"];
+                this.column내벽2 = base.Columns["내벽2"];
+                this.column내벽3 = base.Columns["내벽3"];
+                this.column지름1 = base.Columns["지름1"];
+                this.column지름2 = base.Columns["지름2"];
+                this.column지름3 = base.Columns["지름3"];
+                this.column길이1 = base.Columns["길이1"];
+                this.column길이2 = base.Columns["길이2"];
+                this.column길이3 = base.Columns["길이3"];
+                this.column판정 = base.Columns["판정"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5000,6 +5192,34 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column품목명);
                 this.column상태 = new global::System.Data.DataColumn("상태", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column상태);
+                this.column외관 = new global::System.Data.DataColumn("외관", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column외관);
+                this.column관벽1 = new global::System.Data.DataColumn("관벽1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column관벽1);
+                this.column관벽2 = new global::System.Data.DataColumn("관벽2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column관벽2);
+                this.column관벽3 = new global::System.Data.DataColumn("관벽3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column관벽3);
+                this.column내벽1 = new global::System.Data.DataColumn("내벽1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column내벽1);
+                this.column내벽2 = new global::System.Data.DataColumn("내벽2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column내벽2);
+                this.column내벽3 = new global::System.Data.DataColumn("내벽3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column내벽3);
+                this.column지름1 = new global::System.Data.DataColumn("지름1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column지름1);
+                this.column지름2 = new global::System.Data.DataColumn("지름2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column지름2);
+                this.column지름3 = new global::System.Data.DataColumn("지름3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column지름3);
+                this.column길이1 = new global::System.Data.DataColumn("길이1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column길이1);
+                this.column길이2 = new global::System.Data.DataColumn("길이2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column길이2);
+                this.column길이3 = new global::System.Data.DataColumn("길이3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column길이3);
+                this.column판정 = new global::System.Data.DataColumn("판정", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column판정);
                 this.columnJobNo.AllowDBNull = false;
                 this.columnJobNo.MaxLength = 10;
                 this.column생산일자.AllowDBNull = false;
@@ -5012,6 +5232,20 @@ namespace SmartMES_Bluewings.P1E {
                 this.column품목명.MaxLength = 50;
                 this.column상태.AllowDBNull = false;
                 this.column상태.MaxLength = 2;
+                this.column외관.MaxLength = 50;
+                this.column관벽1.MaxLength = 300;
+                this.column관벽2.MaxLength = 300;
+                this.column관벽3.MaxLength = 300;
+                this.column내벽1.MaxLength = 300;
+                this.column내벽2.MaxLength = 300;
+                this.column내벽3.MaxLength = 300;
+                this.column지름1.MaxLength = 300;
+                this.column지름2.MaxLength = 300;
+                this.column지름3.MaxLength = 300;
+                this.column길이1.MaxLength = 300;
+                this.column길이2.MaxLength = 300;
+                this.column길이3.MaxLength = 300;
+                this.column판정.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7708,12 +7942,7 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 품목코드 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Qc_Query.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Qc_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Qc_Query.품목코드Column]));
                 }
                 set {
                     this[this.tableSP_Qc_Query.품목코드Column] = value;
@@ -7724,12 +7953,7 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 품목명 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Qc_Query.품목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Qc_Query\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Qc_Query.품목명Column]));
                 }
                 set {
                     this[this.tableSP_Qc_Query.품목명Column] = value;
@@ -7994,30 +8218,6 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set설비명Null() {
                 this[this.tableSP_Qc_Query.설비명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_Qc_Query.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_Qc_Query.품목코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목명Null() {
-                return this.IsNull(this.tableSP_Qc_Query.품목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목명Null() {
-                this[this.tableSP_Qc_Query.품목명Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8303,6 +8503,230 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 외관 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.외관Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'외관\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.외관Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 관벽1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.관벽1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'관벽1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.관벽1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 관벽2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.관벽2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'관벽2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.관벽2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 관벽3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.관벽3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'관벽3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.관벽3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 내벽1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.내벽1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'내벽1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.내벽1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 내벽2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.내벽2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'내벽2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.내벽2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 내벽3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.내벽3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'내벽3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.내벽3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 지름1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.지름1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'지름1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.지름1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 지름2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.지름2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'지름2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.지름2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 지름3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.지름3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'지름3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.지름3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 길이1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.길이1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'길이1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.길이1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 길이2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.길이2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'길이2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.길이2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 길이3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.길이3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'길이3\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.길이3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 판정 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcFinal_ROder.판정Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcFinal_ROder\' 테이블의 \'판정\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcFinal_ROder.판정Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is설비명Null() {
                 return this.IsNull(this.tableSP_QcFinal_ROder.설비명Column);
             }
@@ -8323,6 +8747,174 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set품목명Null() {
                 this[this.tableSP_QcFinal_ROder.품목명Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is외관Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.외관Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set외관Null() {
+                this[this.tableSP_QcFinal_ROder.외관Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is관벽1Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.관벽1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set관벽1Null() {
+                this[this.tableSP_QcFinal_ROder.관벽1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is관벽2Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.관벽2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set관벽2Null() {
+                this[this.tableSP_QcFinal_ROder.관벽2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is관벽3Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.관벽3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set관벽3Null() {
+                this[this.tableSP_QcFinal_ROder.관벽3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is내벽1Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.내벽1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set내벽1Null() {
+                this[this.tableSP_QcFinal_ROder.내벽1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is내벽2Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.내벽2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set내벽2Null() {
+                this[this.tableSP_QcFinal_ROder.내벽2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is내벽3Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.내벽3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set내벽3Null() {
+                this[this.tableSP_QcFinal_ROder.내벽3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is지름1Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.지름1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set지름1Null() {
+                this[this.tableSP_QcFinal_ROder.지름1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is지름2Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.지름2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set지름2Null() {
+                this[this.tableSP_QcFinal_ROder.지름2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is지름3Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.지름3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set지름3Null() {
+                this[this.tableSP_QcFinal_ROder.지름3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is길이1Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.길이1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set길이1Null() {
+                this[this.tableSP_QcFinal_ROder.길이1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is길이2Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.길이2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set길이2Null() {
+                this[this.tableSP_QcFinal_ROder.길이2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is길이3Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.길이3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set길이3Null() {
+                this[this.tableSP_QcFinal_ROder.길이3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is판정Null() {
+                return this.IsNull(this.tableSP_QcFinal_ROder.판정Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set판정Null() {
+                this[this.tableSP_QcFinal_ROder.판정Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -11063,6 +11655,20 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("품목코드", "품목코드");
             tableMapping.ColumnMappings.Add("품목명", "품목명");
             tableMapping.ColumnMappings.Add("상태", "상태");
+            tableMapping.ColumnMappings.Add("외관", "외관");
+            tableMapping.ColumnMappings.Add("관벽1", "관벽1");
+            tableMapping.ColumnMappings.Add("관벽2", "관벽2");
+            tableMapping.ColumnMappings.Add("관벽3", "관벽3");
+            tableMapping.ColumnMappings.Add("내벽1", "내벽1");
+            tableMapping.ColumnMappings.Add("내벽2", "내벽2");
+            tableMapping.ColumnMappings.Add("내벽3", "내벽3");
+            tableMapping.ColumnMappings.Add("지름1", "지름1");
+            tableMapping.ColumnMappings.Add("지름2", "지름2");
+            tableMapping.ColumnMappings.Add("지름3", "지름3");
+            tableMapping.ColumnMappings.Add("길이1", "길이1");
+            tableMapping.ColumnMappings.Add("길이2", "길이2");
+            tableMapping.ColumnMappings.Add("길이3", "길이3");
+            tableMapping.ColumnMappings.Add("판정", "판정");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

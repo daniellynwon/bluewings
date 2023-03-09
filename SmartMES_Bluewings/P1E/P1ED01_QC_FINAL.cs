@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using SmartFactory;
 using System.Drawing;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SmartMES_Bluewings
 {
@@ -43,7 +44,7 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
             try
             {
-                Cursor.Current = Cursors.WaitCursor;
+                //Cursor.Current = Cursors.WaitCursor;
 
                 sP_QcFinal_ROderTableAdapter.Fill(dataSetP1E.SP_QcFinal_ROder);
                 var data = dataSetP1E.SP_QcFinal_ROder;
@@ -58,34 +59,40 @@ namespace SmartMES_Bluewings
             }
             finally
             {
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
             }
         }
-        public async void ListSearch2(string jobNo, string mach)
+        public void ListSearch2(int rowIndex)
         {
             lblMsg.Text = "";
             try
             {
-                Cursor.Current = Cursors.WaitCursor;
-
-                sP_Qc_QueryTableAdapter.Fill(dataSetP1E.SP_Qc_Query, jobNo, int.Parse(mach));
-                var data = dataSetP1E.SP_Qc_Query;
-                var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
+                //Cursor.Current = Cursors.WaitCursor;
                 int idx = dataGridViewList.CurrentRow.Index;
-
-                dataGridView1.CurrentCell = null;
-                dataGridView1.ClearSelection();
-
                 string sProd = dataGridViewList[5, idx].Value.ToString();
+
                 string sql = "select tube_skin_thickness, min_in_thickness, avg_inner_diameter, product_length from tb_gi_product_spec where prod_id = '" + sProd + "'";
                 MariaCRUD m = new MariaCRUD();
                 string msg = string.Empty;
                 DataTable table = m.dbDataTable(sql, ref msg);
 
-                lblStd1.Text = Convert.ToString(table.Rows[0][0]);
-                lblStd2.Text = Convert.ToString(table.Rows[0][1]);
-                lblStd3.Text = Convert.ToString(table.Rows[0][2]);
-                lblStd4.Text = Convert.ToString(table.Rows[0][3]);
+                lblStd1.Text = Convert.ToString(table.Rows[0][0]); lblStd2.Text = Convert.ToString(table.Rows[0][1]);
+                lblStd3.Text = Convert.ToString(table.Rows[0][2]); lblStd4.Text = Convert.ToString(table.Rows[0][3]);
+
+                if (dataGridViewList[7, idx].Value.ToString() == "F") cbResult.Checked = false;
+                tbVal1.Text = dataGridViewList[8, idx].Value.ToString();
+                tbVal2.Text = dataGridViewList[9, idx].Value.ToString();
+                tbVal3.Text = dataGridViewList[10, idx].Value.ToString();
+                tbVal4.Text = dataGridViewList[11, idx].Value.ToString();
+                tbVal5.Text = dataGridViewList[12, idx].Value.ToString();
+                tbVal6.Text = dataGridViewList[13, idx].Value.ToString();
+                tbVal7.Text = dataGridViewList[14, idx].Value.ToString();
+                tbVal8.Text = dataGridViewList[15, idx].Value.ToString();
+                tbVal9.Text = dataGridViewList[16, idx].Value.ToString();
+                tbVal10.Text = dataGridViewList[17, idx].Value.ToString();
+                tbVal11.Text = dataGridViewList[18, idx].Value.ToString();
+                tbVal12.Text = dataGridViewList[19, idx].Value.ToString();
+                if (dataGridViewList[20, idx].Value.ToString() == "F") lblResult.Text = "불합";
             }
             catch (NullReferenceException)
             {
@@ -93,27 +100,18 @@ namespace SmartMES_Bluewings
             }
             finally
             {
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
             }
         }
         public void ListInit()
         {
             lblMsg.Text = "";
-            try
-            {
-                sP_QcFinal_QueryTableAdapter.Fill(dataSetP1E.SP_QcFinal_Query, "-", "-");
-
-                dataGridView1.CurrentCell = null;
-                dataGridView1.ClearSelection();
-
-                dtpDate.Value = DateTime.Today;
-                cbQcMan.SelectedValue = "-";
-                tbContents.Text = string.Empty;
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
+            dtpDate.Value = DateTime.Today;
+            cbQcMan.SelectedValue = "-";
+            tbContents.Text = string.Empty;
+            tbVal1.Text = ""; tbVal2.Text = ""; tbVal3.Text = ""; tbVal4.Text = "";
+            tbVal5.Text = ""; tbVal6.Text = ""; tbVal7.Text = ""; tbVal8.Text = "";
+            tbVal9.Text = ""; tbVal10.Text = ""; tbVal11.Text = ""; tbVal12.Text = "";
         }
 
         #region Controls Event
@@ -150,12 +148,9 @@ namespace SmartMES_Bluewings
         private void dataGridViewList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
             int index = dataGridViewList.CurrentRow.Index;
-            string sJobNo = dataGridViewList[0, index].Value.ToString();
-            string sMach = dataGridViewList[2, index].Value.ToString();
 
-            ListSearch2(sJobNo, sMach);
+            ListSearch2(index);
         }
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -350,35 +345,7 @@ namespace SmartMES_Bluewings
         private void pbAdd_Click(object sender, EventArgs e)
         {
             if (G.Authority == "D") return;
-
-            if (dataGridViewList.RowCount <= 0 || dataGridViewList.CurrentRow == null)
-            {
-                lblMsg.Text = "추가할 검사건이 선택되지 않았습니다.";
-                return;
-            }
-            if (dataGridView1.RowCount > 0)
-            {
-                lblMsg.Text = "이미 검사 데이터가 존재합니다.";
-                return;
-            }
-            try
-            {
-                sP_QcFinal_QueryTableAdapter.Fill(dataSetP1E.SP_QcFinal_Query, "", "%");
-
-                dataGridView1.CurrentCell = dataGridView1[3, 0];
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    row.Cells[4].Value = "1.합 격";
-                }
-
-                cbQcMan.SelectedValue = "-";
-                tbContents.Text = string.Empty;
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
+            ListInit();
         }
         private async void pbDel_Click(object sender, EventArgs e)
         {
@@ -431,111 +398,91 @@ namespace SmartMES_Bluewings
                 lblMsg.Text = "저장할 검사건이 선택되지 않았습니다.";
                 return;
             }
-            if (dataGridView1.RowCount <= 0)
-            {
-                lblMsg.Text = "저장 검사 건이 추가되지 않았습니다.";
-                return;
-            }
-            if (string.IsNullOrEmpty(cbQcMan.SelectedValue.ToString()) || cbQcMan.SelectedValue.ToString() == "-")
-            {
-                lblMsg.Text = "검사원이 선택되지 않았습니다.";
-                return;
-            }
-            dataGridView1.CurrentCell = dataGridView1[1, 0];
+            getResult();
 
             string sQcMan = cbQcMan.SelectedValue.ToString();
-            string sNo= dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString();
-            string sItem = string.Empty;
-            string sResult = string.Empty;
-            string sDecison = string.Empty;
-            string sContents = tbContents.Text.Trim();
+            string sNo= dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString(); // JobNo
+            string sMach = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[2].Value.ToString(); // 설비코드
+            string sProd = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[5].Value.ToString(); // 설비코드
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sVal1 = tbVal1.Text; string sVal2 = tbVal2.Text; string sVal3 = tbVal3.Text; string sVal4 = tbVal4.Text;
+            string sVal5 = tbVal5.Text; string sVal6 = tbVal6.Text; string sVal7 = tbVal7.Text; string sVal8 = tbVal8.Text;
+            string sVal9 = tbVal9.Text; string sVal10 = tbVal10.Text; string sVal11 = tbVal11.Text; string sVal12 = tbVal12.Text;
+            string sResult1 = "F"; string sResult2 = "P";
+
+            if (cbResult.Checked) sResult1 = "P";
+            if (lblResult.Text == "불합") sResult2 = "F";
 
             string sql = string.Empty;
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
 
-            //sql = "INSERT INTO tb_qc_inspection(job_no, machine_id, prod_id, result1, tube1, tube2, tube3, in1, in2, in3, diameter1, diameter2, diameter3, length1, length2, length3, result2) " +
-            //            "VALUES('" + sItem + "','" + sProdNo + "','" + sResult + "'," + sDecison + ",'" + sContents + "','" + sDate + "','" + sQcMan + "','" + G.UserID + "') " +
-            //            "ON DUPLICATE KEY UPDATE " +
-            //            "qc_result = '" + sResult + "', qc_decision = " + sDecison + ", contents = '" + sContents + "', qc_date = '" + sDate + "', qc_man = '" + sQcMan + "'";
+            sql = "INSERT INTO tb_qc_inspection(job_no, machine_id, prod_id, result1, tube1, tube2, tube3, in1, in2, in3, diameter1, diameter2, diameter3, length1, length2, length3, result2) " +
+                    "VALUES('" + sNo + "'," + sMach + ",'" + sProd + "','" + sResult1 + "','" + sVal1 + "','" + sVal2 + "','" + sVal3 + "','" + sVal4 + "','" + sVal5 + "','" + sVal6 + "','" +
+                    sVal7 + "','" + sVal8 + "','" + sVal9 + "','" + sVal10 + "','" + sVal11 + "','" + sVal12 + "','" + sResult2 + "') " +
+                    "ON DUPLICATE KEY UPDATE " +
+                    "result1 = '" + sResult1 + "', tube1 = '" + sVal1 + "', tube2 = '" + sVal2 + "', tube3 = '" + sVal3 + "', in1 = '" + sVal4 + "', in2 = '" + sVal5 + "', in3 = '" + 
+                    sVal6 + "', diameter1 = '" + sVal7 + "', diameter2 = '" + sVal8 + "', diameter3 = '" + sVal9 + "', length1 = '" + sVal10 + "', length2 = '" + sVal11 +
+                    "', length3 = '" + sVal12 + "', result2 = '" + sResult2 + "'";
 
-            //m.dbCUD(sql, ref msg);
-
-            //sql = "update tb_prod_done_sub set qc_flag = 1 where prod_no = '" + sProdNo + "'";
             m.dbCUD(sql, ref msg);
+
             var data = sql;
             var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
-
-            //dataGridViewList[6, dataGridViewList.CurrentRow.Index].Value = q;   // 검사건수
             lblMsg.Text = "저장되었습니다.";
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
             lblMsg.Text = "";
 
-            if (dataGridView1.RowCount <= 0)
-            {
-                lblMsg.Text = "성적서 발행건이 선택되지 않았습니다.";
-                return;
-            }
+            //if (dataGridView1.RowCount <= 0)
+            //{
+            //    lblMsg.Text = "성적서 발행건이 선택되지 않았습니다.";
+            //    return;
+            //}
 
-            if (dataGridView1[6, 0].Value == null || string.IsNullOrEmpty(dataGridView1[6, 0].Value.ToString()))
-            {
-                lblMsg.Text = "저장된 검사건만 성적서 출력이 가능합니다.";
-                return;
-            }
+            //if (dataGridView1[6, 0].Value == null || string.IsNullOrEmpty(dataGridView1[6, 0].Value.ToString()))
+            //{
+            //    lblMsg.Text = "저장된 검사건만 성적서 출력이 가능합니다.";
+            //    return;
+            //}
 
-            string sJobNo = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString();
-            sP_QcFinal_PrintTableAdapter.Fill(dataSetP1E.SP_QcFinal_Print, sJobNo);
+            //string sJobNo = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString();
+            //sP_QcFinal_PrintTableAdapter.Fill(dataSetP1E.SP_QcFinal_Print, sJobNo);
 
-            string reportFileName = "SmartMES_Bluewings.Reports.P1ED01_QC_FINAL.rdlc";
+            //string reportFileName = "SmartMES_Bluewings.Reports.P1ED01_QC_FINAL.rdlc";
 
-            ViewReport_V viewReport = new ViewReport_V();
-            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
-            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+            //ViewReport_V viewReport = new ViewReport_V();
+            //viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+            //viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
 
-            ReportDataSource rds = new ReportDataSource("DataSet1", sPQcFinalPrintBindingSource);
-            viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
-            viewReport.reportViewer1.LocalReport.Refresh();
+            //ReportDataSource rds = new ReportDataSource("DataSet1", sPQcFinalPrintBindingSource);
+            //viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+            //viewReport.reportViewer1.LocalReport.Refresh();
 
-            viewReport.ShowDialog();
+            //viewReport.ShowDialog();
         }
         #endregion
 
         #region 텍스트 박스 숫자 처리
-        private void tbQty_TextChanged(object sender, EventArgs e)
+        private void tb_KeyPressComa(object sender, KeyPressEventArgs e)
         {
-            try
+            // TODO : (221101) 소숫점 입력 기능 
+            if (e.KeyChar == Convert.ToChar("."))   //숫자와 백스페이스를 제외한 나머지를 바로 처리
             {
-                string lgsText1, lgsText2, lgsText3, lgsText4, lgsText5, lgsText6, lgsText7, lgsText8, lgsText9, lgsText10,
-                    lgsText11, lgsText12;
-
-                lgsText1 = tbVal1.Text.Replace(",", ""); lgsText2 = tbVal2.Text.Replace(",", ""); lgsText3 = tbVal3.Text.Replace(",", ""); lgsText4 = tbVal4.Text.Replace(",", "");
-                lgsText5 = tbVal5.Text.Replace(",", ""); lgsText6 = tbVal6.Text.Replace(",", ""); lgsText7 = tbVal7.Text.Replace(",", ""); lgsText8 = tbVal8.Text.Replace(",", "");
-                lgsText9 = tbVal9.Text.Replace(",", ""); lgsText10 = tbVal10.Text.Replace(",", ""); lgsText11 = tbVal11.Text.Replace(",", ""); lgsText12 = tbVal12.Text.Replace(",", "");
-                tbVal1.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText1)); tbVal2.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText2));
-                tbVal3.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText3)); tbVal4.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText4));
-                tbVal5.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText5)); tbVal6.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText6));
-                tbVal7.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText7)); tbVal8.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText8));
-                tbVal9.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText9)); tbVal10.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText10));
-                tbVal11.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText11)); tbVal12.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText12));
-
-                tbVal1.SelectionStart = tbVal1.TextLength; tbVal2.SelectionStart = tbVal2.TextLength; tbVal3.SelectionStart = tbVal3.TextLength; tbVal4.SelectionStart = tbVal4.TextLength;
-                tbVal5.SelectionStart = tbVal5.TextLength; tbVal6.SelectionStart = tbVal6.TextLength; tbVal7.SelectionStart = tbVal7.TextLength; tbVal8.SelectionStart = tbVal8.TextLength;
-                tbVal9.SelectionStart = tbVal9.TextLength; tbVal10.SelectionStart = tbVal10.TextLength; tbVal11.SelectionStart = tbVal11.TextLength; tbVal12.SelectionStart = tbVal12.TextLength;
-                tbVal1.SelectionLength = 0; tbVal2.SelectionLength = 0; tbVal3.SelectionLength = 0; tbVal4.SelectionLength = 0;
-                tbVal5.SelectionLength = 0; tbVal6.SelectionLength = 0; tbVal7.SelectionLength = 0; tbVal8.SelectionLength = 0;
-                tbVal9.SelectionLength = 0; tbVal10.SelectionLength = 0; tbVal11.SelectionLength = 0; tbVal12.SelectionLength = 0;
+                e.Handled = false;  // fasle : 인정 true : 미인정 - 소숫점이 들어오면 인정 다른 값이면 아래 판단
             }
-            catch (FormatException)
+            else
             {
-                return;
+                // TODO : (221101) 소숫점 입력 기능 
+                if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))  //숫자와 백스페이스를 제외한 나머지를 바로 처리
+                {
+                    e.Handled = true;
+                }
             }
-        }
-        private void tbQty_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '-'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -632,38 +579,59 @@ namespace SmartMES_Bluewings
         #endregion
 
         #region Functions
-        private void getResult(int idx, int col, string min, string max, float fVal)
+        private void getResult()
         {
-            int iCnt = 0;
-            //string sValue = dataGridView1.Rows[idx].Cells[col].Value.ToString(); string sVal = string.Empty;
-            //if (!(dataGridView1.Rows[idx].Cells[col].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col].Value.ToString())))
-            //    fVal = float.Parse(dataGridView1.Rows[idx].Cells[col].Value.ToString());
+            int iCnt = 0; string sValue = string.Empty;
+            string minStd1 = lblStd1.Text.Substring(0, lblStd1.Text.IndexOf("±")); string maxStd1 = lblStd1.Text.Substring(lblStd1.Text.IndexOf("±") + 1, lblStd1.Text.Length - (lblStd1.Text.IndexOf("±") + 1));
+            string minStd2 = lblStd2.Text.Substring(0, lblStd2.Text.IndexOf("±")); string maxStd2 = lblStd2.Text.Substring(lblStd2.Text.IndexOf("±") + 1, lblStd2.Text.Length - (lblStd2.Text.IndexOf("±") + 1));
+            string minStd3 = lblStd3.Text.Substring(0, lblStd3.Text.IndexOf("±")); string maxStd3 = lblStd3.Text.Substring(lblStd3.Text.IndexOf("±") + 1, lblStd3.Text.Length - (lblStd3.Text.IndexOf("±") + 1));
+            string minStd4 = lblStd4.Text.Substring(0, lblStd4.Text.IndexOf("±")); string maxStd4 = lblStd4.Text.Substring(lblStd4.Text.IndexOf("±") + 1, lblStd4.Text.Length - (lblStd4.Text.IndexOf("±") + 1));
             
-            if(col == 6 || col == 7 || col == 8)
+            for (int i = 0; i < 3; i++)
             {
-                if (fVal >= float.Parse(min) && float.Parse(max) >= fVal)
-                {
-                    dataGridView1.Rows[idx].Cells[18].Value = "합격";
-                }
-                else
-                    dataGridView1.Rows[idx].Cells[18].Value = "불합";
+                if (i == 0) sValue = tbVal1.Text;
+                else if (i == 1) sValue = tbVal2.Text;
+                else if (i == 2) sValue = tbVal3.Text;
+
+                if (!(float.Parse(sValue) >= float.Parse(minStd1) && float.Parse(maxStd1) >= float.Parse(sValue)))
+                    iCnt = 1;
+                else iCnt = 0; break;
             }
 
-            //for(int i=0; i < 3; i++)
-            //{
-            //    if (dataGridView1.Rows[idx].Cells[col+i].Value == "" || string.IsNullOrEmpty(dataGridView1.Rows[idx].Cells[col+i].Value.ToString()))
-            //        fVal = 0;
-            //    else
-            //        fVal = float.Parse(dataGridView1.Rows[idx].Cells[col+i].Value.ToString());
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 0) sValue = tbVal4.Text;
+                else if (i == 1) sValue = tbVal5.Text;
+                else if (i == 2) sValue = tbVal6.Text;
 
-            //    if (float.Parse(min) < fVal && float.Parse(max) > fVal)
-            //        dataGridView1.Rows[idx].Cells[18].Value = "합격";
-            //    else
-            //    {
-            //        dataGridView1.Rows[idx].Cells[18].Value = "불합";
-            //        iCnt = 1;
-            //    }
-            //}
+                if (!(float.Parse(sValue) >= float.Parse(minStd2) && float.Parse(maxStd2) >= float.Parse(sValue)))
+                    iCnt = 1;
+                else iCnt = 0; break;
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 0) sValue = tbVal7.Text;
+                else if (i == 1) sValue = tbVal8.Text;
+                else if (i == 2) sValue = tbVal9.Text;
+
+                if (!(float.Parse(sValue) >= float.Parse(minStd3) && float.Parse(maxStd3) >= float.Parse(sValue)))
+                    iCnt = 1;
+                else iCnt = 0; break;
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 0) sValue = tbVal10.Text;
+                else if (i == 1) sValue = tbVal11.Text;
+                else if (i == 2) sValue = tbVal12.Text;
+
+                if (!(float.Parse(sValue) >= float.Parse(minStd4) && float.Parse(maxStd4) >= float.Parse(sValue)))
+                    iCnt = 1;
+                else iCnt = 0; break;
+            }
+            
+            if (iCnt == 1) lblResult.Text = "불합";
         }
         #endregion
     }

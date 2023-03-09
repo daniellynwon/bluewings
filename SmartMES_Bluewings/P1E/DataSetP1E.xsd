@@ -274,7 +274,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_Qc_QueryTableAdapter" GeneratorDataComponentClassName="SP_Qc_QueryTableAdapter" Name="SP_Qc_Query" UserDataComponentName="SP_Qc_QueryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_Qc_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_Qc_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`bluewings_mes`.`SP_Qc_Query`</CommandText>
@@ -311,7 +311,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_QcFinal_ROderTableAdapter" GeneratorDataComponentClassName="SP_QcFinal_ROderTableAdapter" Name="SP_QcFinal_ROder" UserDataComponentName="SP_QcFinal_ROderTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_QcFinal_ROder`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_QcFinal_ROder`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`bluewings_mes`.`SP_QcFinal_ROder`</CommandText>
@@ -329,6 +329,20 @@
               <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
               <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
               <Mapping SourceColumn="상태" DataSetColumn="상태" />
+              <Mapping SourceColumn="외관" DataSetColumn="외관" />
+              <Mapping SourceColumn="관벽1" DataSetColumn="관벽1" />
+              <Mapping SourceColumn="관벽2" DataSetColumn="관벽2" />
+              <Mapping SourceColumn="관벽3" DataSetColumn="관벽3" />
+              <Mapping SourceColumn="내벽1" DataSetColumn="내벽1" />
+              <Mapping SourceColumn="내벽2" DataSetColumn="내벽2" />
+              <Mapping SourceColumn="내벽3" DataSetColumn="내벽3" />
+              <Mapping SourceColumn="지름1" DataSetColumn="지름1" />
+              <Mapping SourceColumn="지름2" DataSetColumn="지름2" />
+              <Mapping SourceColumn="지름3" DataSetColumn="지름3" />
+              <Mapping SourceColumn="길이1" DataSetColumn="길이1" />
+              <Mapping SourceColumn="길이2" DataSetColumn="길이2" />
+              <Mapping SourceColumn="길이3" DataSetColumn="길이3" />
+              <Mapping SourceColumn="판정" DataSetColumn="판정" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -340,7 +354,7 @@
   <xs:element name="DataSetP1E" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetP1E" msprop:Generator_UserDSName="DataSetP1E">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_QcFinalList_Query" msprop:Generator_TableClassName="SP_QcFinalList_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcFinalList_Query" msprop:Generator_TablePropName="SP_QcFinalList_Query" msprop:Generator_RowDeletingName="SP_QcFinalList_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcFinalList_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinalList_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinalList_QueryRowDeleted" msprop:Generator_UserTableName="SP_QcFinalList_Query" msprop:Generator_RowChangedName="SP_QcFinalList_QueryRowChanged" msprop:Generator_RowEvArgName="SP_QcFinalList_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_QcFinalList_QueryRow">
+        <xs:element name="SP_QcFinalList_Query" msprop:Generator_TableClassName="SP_QcFinalList_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcFinalList_Query" msprop:Generator_RowChangedName="SP_QcFinalList_QueryRowChanged" msprop:Generator_TablePropName="SP_QcFinalList_Query" msprop:Generator_RowDeletingName="SP_QcFinalList_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcFinalList_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinalList_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinalList_QueryRowDeleted" msprop:Generator_RowClassName="SP_QcFinalList_QueryRow" msprop:Generator_UserTableName="SP_QcFinalList_Query" msprop:Generator_RowEvArgName="SP_QcFinalList_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
@@ -403,7 +417,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcAS_Query" msprop:Generator_TableClassName="SP_QcAS_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcAS_Query" msprop:Generator_TablePropName="SP_QcAS_Query" msprop:Generator_RowDeletingName="SP_QcAS_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcAS_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcAS_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcAS_QueryRowDeleted" msprop:Generator_UserTableName="SP_QcAS_Query" msprop:Generator_RowChangedName="SP_QcAS_QueryRowChanged" msprop:Generator_RowEvArgName="SP_QcAS_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_QcAS_QueryRow">
+        <xs:element name="SP_QcAS_Query" msprop:Generator_TableClassName="SP_QcAS_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcAS_Query" msprop:Generator_RowChangedName="SP_QcAS_QueryRowChanged" msprop:Generator_TablePropName="SP_QcAS_Query" msprop:Generator_RowDeletingName="SP_QcAS_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcAS_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcAS_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcAS_QueryRowDeleted" msprop:Generator_RowClassName="SP_QcAS_QueryRow" msprop:Generator_UserTableName="SP_QcAS_Query" msprop:Generator_RowEvArgName="SP_QcAS_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="접수번호" msprop:Generator_ColumnVarNameInTable="column접수번호" msprop:Generator_ColumnPropNameInRow="접수번호" msprop:Generator_ColumnPropNameInTable="접수번호Column" msprop:Generator_UserColumnName="접수번호">
@@ -477,7 +491,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcAs_Deli" msprop:Generator_TableClassName="SP_QcAs_DeliDataTable" msprop:Generator_TableVarName="tableSP_QcAs_Deli" msprop:Generator_TablePropName="SP_QcAs_Deli" msprop:Generator_RowDeletingName="SP_QcAs_DeliRowDeleting" msprop:Generator_RowChangingName="SP_QcAs_DeliRowChanging" msprop:Generator_RowEvHandlerName="SP_QcAs_DeliRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcAs_DeliRowDeleted" msprop:Generator_UserTableName="SP_QcAs_Deli" msprop:Generator_RowChangedName="SP_QcAs_DeliRowChanged" msprop:Generator_RowEvArgName="SP_QcAs_DeliRowChangeEvent" msprop:Generator_RowClassName="SP_QcAs_DeliRow">
+        <xs:element name="SP_QcAs_Deli" msprop:Generator_TableClassName="SP_QcAs_DeliDataTable" msprop:Generator_TableVarName="tableSP_QcAs_Deli" msprop:Generator_RowChangedName="SP_QcAs_DeliRowChanged" msprop:Generator_TablePropName="SP_QcAs_Deli" msprop:Generator_RowDeletingName="SP_QcAs_DeliRowDeleting" msprop:Generator_RowChangingName="SP_QcAs_DeliRowChanging" msprop:Generator_RowEvHandlerName="SP_QcAs_DeliRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcAs_DeliRowDeleted" msprop:Generator_RowClassName="SP_QcAs_DeliRow" msprop:Generator_UserTableName="SP_QcAs_Deli" msprop:Generator_RowEvArgName="SP_QcAs_DeliRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="전표번호" msprop:Generator_ColumnVarNameInTable="column전표번호" msprop:Generator_ColumnPropNameInRow="전표번호" msprop:Generator_ColumnPropNameInTable="전표번호Column" msprop:Generator_UserColumnName="전표번호">
@@ -516,7 +530,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcFinal_Print" msprop:Generator_TableClassName="SP_QcFinal_PrintDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_Print" msprop:Generator_TablePropName="SP_QcFinal_Print" msprop:Generator_RowDeletingName="SP_QcFinal_PrintRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_PrintRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_PrintRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_PrintRowDeleted" msprop:Generator_UserTableName="SP_QcFinal_Print" msprop:Generator_RowChangedName="SP_QcFinal_PrintRowChanged" msprop:Generator_RowEvArgName="SP_QcFinal_PrintRowChangeEvent" msprop:Generator_RowClassName="SP_QcFinal_PrintRow">
+        <xs:element name="SP_QcFinal_Print" msprop:Generator_TableClassName="SP_QcFinal_PrintDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_Print" msprop:Generator_RowChangedName="SP_QcFinal_PrintRowChanged" msprop:Generator_TablePropName="SP_QcFinal_Print" msprop:Generator_RowDeletingName="SP_QcFinal_PrintRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_PrintRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_PrintRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_PrintRowDeleted" msprop:Generator_RowClassName="SP_QcFinal_PrintRow" msprop:Generator_UserTableName="SP_QcFinal_Print" msprop:Generator_RowEvArgName="SP_QcFinal_PrintRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="검사번호" msprop:Generator_ColumnVarNameInTable="column검사번호" msprop:Generator_ColumnPropNameInRow="검사번호" msprop:Generator_ColumnPropNameInTable="검사번호Column" msprop:Generator_UserColumnName="검사번호" minOccurs="0">
@@ -606,7 +620,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QualityInspection_Chart_Query" msprop:Generator_TableClassName="SP_QualityInspection_Chart_QueryDataTable" msprop:Generator_TableVarName="tableSP_QualityInspection_Chart_Query" msprop:Generator_RowChangedName="SP_QualityInspection_Chart_QueryRowChanged" msprop:Generator_TablePropName="SP_QualityInspection_Chart_Query" msprop:Generator_RowDeletingName="SP_QualityInspection_Chart_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QualityInspection_Chart_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QualityInspection_Chart_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QualityInspection_Chart_QueryRowDeleted" msprop:Generator_RowClassName="SP_QualityInspection_Chart_QueryRow" msprop:Generator_UserTableName="SP_QualityInspection_Chart_Query" msprop:Generator_RowEvArgName="SP_QualityInspection_Chart_QueryRowChangeEvent">
+        <xs:element name="SP_QualityInspection_Chart_Query" msprop:Generator_TableClassName="SP_QualityInspection_Chart_QueryDataTable" msprop:Generator_TableVarName="tableSP_QualityInspection_Chart_Query" msprop:Generator_TablePropName="SP_QualityInspection_Chart_Query" msprop:Generator_RowDeletingName="SP_QualityInspection_Chart_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QualityInspection_Chart_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QualityInspection_Chart_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QualityInspection_Chart_QueryRowDeleted" msprop:Generator_UserTableName="SP_QualityInspection_Chart_Query" msprop:Generator_RowChangedName="SP_QualityInspection_Chart_QueryRowChanged" msprop:Generator_RowEvArgName="SP_QualityInspection_Chart_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_QualityInspection_Chart_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="row_num" msprop:Generator_ColumnVarNameInTable="columnrow_num" msprop:Generator_ColumnPropNameInRow="row_num" msprop:Generator_ColumnPropNameInTable="row_numColumn" msprop:Generator_UserColumnName="row_num" type="xs:long" />
@@ -635,7 +649,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcClass_Sub" msprop:Generator_TableClassName="SP_QcClass_SubDataTable" msprop:Generator_TableVarName="tableSP_QcClass_Sub" msprop:Generator_TablePropName="SP_QcClass_Sub" msprop:Generator_RowDeletingName="SP_QcClass_SubRowDeleting" msprop:Generator_RowChangingName="SP_QcClass_SubRowChanging" msprop:Generator_RowEvHandlerName="SP_QcClass_SubRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcClass_SubRowDeleted" msprop:Generator_UserTableName="SP_QcClass_Sub" msprop:Generator_RowChangedName="SP_QcClass_SubRowChanged" msprop:Generator_RowEvArgName="SP_QcClass_SubRowChangeEvent" msprop:Generator_RowClassName="SP_QcClass_SubRow">
+        <xs:element name="SP_QcClass_Sub" msprop:Generator_TableClassName="SP_QcClass_SubDataTable" msprop:Generator_TableVarName="tableSP_QcClass_Sub" msprop:Generator_RowChangedName="SP_QcClass_SubRowChanged" msprop:Generator_TablePropName="SP_QcClass_Sub" msprop:Generator_RowDeletingName="SP_QcClass_SubRowDeleting" msprop:Generator_RowChangingName="SP_QcClass_SubRowChanging" msprop:Generator_RowEvHandlerName="SP_QcClass_SubRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcClass_SubRowDeleted" msprop:Generator_RowClassName="SP_QcClass_SubRow" msprop:Generator_UserTableName="SP_QcClass_Sub" msprop:Generator_RowEvArgName="SP_QcClass_SubRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="포대번호" msprop:Generator_ColumnVarNameInTable="column포대번호" msprop:Generator_ColumnPropNameInRow="포대번호" msprop:Generator_ColumnPropNameInTable="포대번호Column" msprop:Generator_UserColumnName="포대번호">
@@ -685,7 +699,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Qc_Class_Query" msprop:Generator_TableClassName="SP_Qc_Class_QueryDataTable" msprop:Generator_TableVarName="tableSP_Qc_Class_Query" msprop:Generator_TablePropName="SP_Qc_Class_Query" msprop:Generator_RowDeletingName="SP_Qc_Class_QueryRowDeleting" msprop:Generator_RowChangingName="SP_Qc_Class_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_Qc_Class_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Qc_Class_QueryRowDeleted" msprop:Generator_UserTableName="SP_Qc_Class_Query" msprop:Generator_RowChangedName="SP_Qc_Class_QueryRowChanged" msprop:Generator_RowEvArgName="SP_Qc_Class_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_Qc_Class_QueryRow">
+        <xs:element name="SP_Qc_Class_Query" msprop:Generator_TableClassName="SP_Qc_Class_QueryDataTable" msprop:Generator_TableVarName="tableSP_Qc_Class_Query" msprop:Generator_RowChangedName="SP_Qc_Class_QueryRowChanged" msprop:Generator_TablePropName="SP_Qc_Class_Query" msprop:Generator_RowDeletingName="SP_Qc_Class_QueryRowDeleting" msprop:Generator_RowChangingName="SP_Qc_Class_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_Qc_Class_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Qc_Class_QueryRowDeleted" msprop:Generator_RowClassName="SP_Qc_Class_QueryRow" msprop:Generator_UserTableName="SP_Qc_Class_Query" msprop:Generator_RowEvArgName="SP_Qc_Class_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="검사일자" msprop:Generator_ColumnVarNameInTable="column검사일자" msprop:Generator_ColumnPropNameInRow="검사일자" msprop:Generator_ColumnPropNameInTable="검사일자Column" msprop:Generator_UserColumnName="검사일자" type="xs:dateTime" minOccurs="0" />
@@ -776,7 +790,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcFinal_Query" msprop:Generator_TableClassName="SP_QcFinal_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_Query" msprop:Generator_RowChangedName="SP_QcFinal_QueryRowChanged" msprop:Generator_TablePropName="SP_QcFinal_Query" msprop:Generator_RowDeletingName="SP_QcFinal_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_QueryRowDeleted" msprop:Generator_RowClassName="SP_QcFinal_QueryRow" msprop:Generator_UserTableName="SP_QcFinal_Query" msprop:Generator_RowEvArgName="SP_QcFinal_QueryRowChangeEvent">
+        <xs:element name="SP_QcFinal_Query" msprop:Generator_TableClassName="SP_QcFinal_QueryDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_Query" msprop:Generator_TablePropName="SP_QcFinal_Query" msprop:Generator_RowDeletingName="SP_QcFinal_QueryRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_QueryRowDeleted" msprop:Generator_UserTableName="SP_QcFinal_Query" msprop:Generator_RowChangedName="SP_QcFinal_QueryRowChanged" msprop:Generator_RowEvArgName="SP_QcFinal_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_QcFinal_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="항목코드" msprop:Generator_ColumnVarNameInTable="column항목코드" msprop:Generator_ColumnPropNameInRow="항목코드" msprop:Generator_ColumnPropNameInTable="항목코드Column" msprop:Generator_UserColumnName="항목코드">
@@ -840,7 +854,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcFinalList_List" msprop:Generator_TableClassName="SP_QcFinalList_ListDataTable" msprop:Generator_TableVarName="tableSP_QcFinalList_List" msprop:Generator_TablePropName="SP_QcFinalList_List" msprop:Generator_RowDeletingName="SP_QcFinalList_ListRowDeleting" msprop:Generator_RowChangingName="SP_QcFinalList_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinalList_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinalList_ListRowDeleted" msprop:Generator_UserTableName="SP_QcFinalList_List" msprop:Generator_RowChangedName="SP_QcFinalList_ListRowChanged" msprop:Generator_RowEvArgName="SP_QcFinalList_ListRowChangeEvent" msprop:Generator_RowClassName="SP_QcFinalList_ListRow">
+        <xs:element name="SP_QcFinalList_List" msprop:Generator_TableClassName="SP_QcFinalList_ListDataTable" msprop:Generator_TableVarName="tableSP_QcFinalList_List" msprop:Generator_RowChangedName="SP_QcFinalList_ListRowChanged" msprop:Generator_TablePropName="SP_QcFinalList_List" msprop:Generator_RowDeletingName="SP_QcFinalList_ListRowDeleting" msprop:Generator_RowChangingName="SP_QcFinalList_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinalList_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinalList_ListRowDeleted" msprop:Generator_RowClassName="SP_QcFinalList_ListRow" msprop:Generator_UserTableName="SP_QcFinalList_List" msprop:Generator_RowEvArgName="SP_QcFinalList_ListRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="번호" msprop:Generator_ColumnVarNameInTable="column번호" msprop:Generator_ColumnPropNameInRow="번호" msprop:Generator_ColumnPropNameInTable="번호Column" msprop:Generator_UserColumnName="번호" type="xs:long" minOccurs="0" />
@@ -939,7 +953,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Qc_Query" msprop:Generator_TableClassName="SP_Qc_QueryDataTable" msprop:Generator_TableVarName="tableSP_Qc_Query" msprop:Generator_RowChangedName="SP_Qc_QueryRowChanged" msprop:Generator_TablePropName="SP_Qc_Query" msprop:Generator_RowDeletingName="SP_Qc_QueryRowDeleting" msprop:Generator_RowChangingName="SP_Qc_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_Qc_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Qc_QueryRowDeleted" msprop:Generator_RowClassName="SP_Qc_QueryRow" msprop:Generator_UserTableName="SP_Qc_Query" msprop:Generator_RowEvArgName="SP_Qc_QueryRowChangeEvent">
+        <xs:element name="SP_Qc_Query" msprop:Generator_TableClassName="SP_Qc_QueryDataTable" msprop:Generator_TableVarName="tableSP_Qc_Query" msprop:Generator_TablePropName="SP_Qc_Query" msprop:Generator_RowDeletingName="SP_Qc_QueryRowDeleting" msprop:Generator_RowChangingName="SP_Qc_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_Qc_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Qc_QueryRowDeleted" msprop:Generator_UserTableName="SP_Qc_Query" msprop:Generator_RowChangedName="SP_Qc_QueryRowChanged" msprop:Generator_RowEvArgName="SP_Qc_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_Qc_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jobNo" msprop:Generator_ColumnVarNameInTable="columnjobNo" msprop:Generator_ColumnPropNameInRow="jobNo" msprop:Generator_ColumnPropNameInTable="jobNoColumn" msprop:Generator_UserColumnName="jobNo" minOccurs="0">
@@ -957,14 +971,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드" minOccurs="0">
+              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명" minOccurs="0">
+              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1072,7 +1086,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_QcFinal_ROder" msprop:Generator_TableClassName="SP_QcFinal_ROderDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_ROder" msprop:Generator_TablePropName="SP_QcFinal_ROder" msprop:Generator_RowDeletingName="SP_QcFinal_ROderRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_ROderRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_ROderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_ROderRowDeleted" msprop:Generator_UserTableName="SP_QcFinal_ROder" msprop:Generator_RowChangedName="SP_QcFinal_ROderRowChanged" msprop:Generator_RowEvArgName="SP_QcFinal_ROderRowChangeEvent" msprop:Generator_RowClassName="SP_QcFinal_ROderRow">
+        <xs:element name="SP_QcFinal_ROder" msprop:Generator_TableClassName="SP_QcFinal_ROderDataTable" msprop:Generator_TableVarName="tableSP_QcFinal_ROder" msprop:Generator_RowChangedName="SP_QcFinal_ROderRowChanged" msprop:Generator_TablePropName="SP_QcFinal_ROder" msprop:Generator_RowDeletingName="SP_QcFinal_ROderRowDeleting" msprop:Generator_RowChangingName="SP_QcFinal_ROderRowChanging" msprop:Generator_RowEvHandlerName="SP_QcFinal_ROderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcFinal_ROderRowDeleted" msprop:Generator_RowClassName="SP_QcFinal_ROderRow" msprop:Generator_UserTableName="SP_QcFinal_ROder" msprop:Generator_RowEvArgName="SP_QcFinal_ROderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo">
@@ -1116,6 +1130,104 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="외관" msprop:Generator_ColumnVarNameInTable="column외관" msprop:Generator_ColumnPropNameInRow="외관" msprop:Generator_ColumnPropNameInTable="외관Column" msprop:Generator_UserColumnName="외관" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="관벽1" msprop:Generator_ColumnVarNameInTable="column관벽1" msprop:Generator_ColumnPropNameInRow="관벽1" msprop:Generator_ColumnPropNameInTable="관벽1Column" msprop:Generator_UserColumnName="관벽1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="관벽2" msprop:Generator_ColumnVarNameInTable="column관벽2" msprop:Generator_ColumnPropNameInRow="관벽2" msprop:Generator_ColumnPropNameInTable="관벽2Column" msprop:Generator_UserColumnName="관벽2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="관벽3" msprop:Generator_ColumnVarNameInTable="column관벽3" msprop:Generator_ColumnPropNameInRow="관벽3" msprop:Generator_ColumnPropNameInTable="관벽3Column" msprop:Generator_UserColumnName="관벽3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="내벽1" msprop:Generator_ColumnVarNameInTable="column내벽1" msprop:Generator_ColumnPropNameInRow="내벽1" msprop:Generator_ColumnPropNameInTable="내벽1Column" msprop:Generator_UserColumnName="내벽1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="내벽2" msprop:Generator_ColumnVarNameInTable="column내벽2" msprop:Generator_ColumnPropNameInRow="내벽2" msprop:Generator_ColumnPropNameInTable="내벽2Column" msprop:Generator_UserColumnName="내벽2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="내벽3" msprop:Generator_ColumnVarNameInTable="column내벽3" msprop:Generator_ColumnPropNameInRow="내벽3" msprop:Generator_ColumnPropNameInTable="내벽3Column" msprop:Generator_UserColumnName="내벽3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="지름1" msprop:Generator_ColumnVarNameInTable="column지름1" msprop:Generator_ColumnPropNameInRow="지름1" msprop:Generator_ColumnPropNameInTable="지름1Column" msprop:Generator_UserColumnName="지름1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="지름2" msprop:Generator_ColumnVarNameInTable="column지름2" msprop:Generator_ColumnPropNameInRow="지름2" msprop:Generator_ColumnPropNameInTable="지름2Column" msprop:Generator_UserColumnName="지름2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="지름3" msprop:Generator_ColumnVarNameInTable="column지름3" msprop:Generator_ColumnPropNameInRow="지름3" msprop:Generator_ColumnPropNameInTable="지름3Column" msprop:Generator_UserColumnName="지름3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="길이1" msprop:Generator_ColumnVarNameInTable="column길이1" msprop:Generator_ColumnPropNameInRow="길이1" msprop:Generator_ColumnPropNameInTable="길이1Column" msprop:Generator_UserColumnName="길이1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="길이2" msprop:Generator_ColumnVarNameInTable="column길이2" msprop:Generator_ColumnPropNameInRow="길이2" msprop:Generator_ColumnPropNameInTable="길이2Column" msprop:Generator_UserColumnName="길이2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="길이3" msprop:Generator_ColumnVarNameInTable="column길이3" msprop:Generator_ColumnPropNameInRow="길이3" msprop:Generator_ColumnPropNameInTable="길이3Column" msprop:Generator_UserColumnName="길이3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="판정" msprop:Generator_ColumnVarNameInTable="column판정" msprop:Generator_ColumnPropNameInRow="판정" msprop:Generator_ColumnPropNameInTable="판정Column" msprop:Generator_UserColumnName="판정" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
