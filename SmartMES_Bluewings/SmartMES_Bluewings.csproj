@@ -704,6 +704,24 @@
     <Compile Include="P1E\P1ED03_QC_AS_SUB.designer.cs">
       <DependentUpon>P1ED03_QC_AS_SUB.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC.designer.cs">
+      <DependentUpon>P1ED03_QC_DOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC_DOC.designer.cs">
+      <DependentUpon>P1ED03_QC_DOC_DOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_QC_DOC_SUB.designer.cs">
+      <DependentUpon>P1ED03_QC_DOC_SUB.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1E\P1ED05_QC_CLASS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1026,6 +1044,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1E\P1ED03_QC_AS_SUB.resx">
       <DependentUpon>P1ED03_QC_AS_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_DOC.resx">
+      <DependentUpon>P1ED03_QC_DOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_DOC_DOC.resx">
+      <DependentUpon>P1ED03_QC_DOC_DOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_QC_DOC_SUB.resx">
+      <DependentUpon>P1ED03_QC_DOC_SUB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1E\P1ED05_QC_CLASS.resx">
       <DependentUpon>P1ED05_QC_CLASS.cs</DependentUpon>
