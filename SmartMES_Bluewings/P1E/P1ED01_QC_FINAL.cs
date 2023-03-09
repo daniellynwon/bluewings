@@ -80,6 +80,7 @@ namespace SmartMES_Bluewings
                 lblStd3.Text = Convert.ToString(table.Rows[0][2]); lblStd4.Text = Convert.ToString(table.Rows[0][3]);
 
                 if (dataGridViewList[7, idx].Value.ToString() == "F") cbResult.Checked = false;
+                else cbResult.Checked = true;
                 tbVal1.Text = dataGridViewList[8, idx].Value.ToString();
                 tbVal2.Text = dataGridViewList[9, idx].Value.ToString();
                 tbVal3.Text = dataGridViewList[10, idx].Value.ToString();
@@ -93,6 +94,8 @@ namespace SmartMES_Bluewings
                 tbVal11.Text = dataGridViewList[18, idx].Value.ToString();
                 tbVal12.Text = dataGridViewList[19, idx].Value.ToString();
                 if (dataGridViewList[20, idx].Value.ToString() == "F") lblResult.Text = "불합";
+                else lblResult.Text = "합격";
+                dtpDate.Value = DateTime.Parse(dataGridViewList[21, idx].Value.ToString());
             }
             catch (NullReferenceException)
             {
@@ -400,7 +403,6 @@ namespace SmartMES_Bluewings
             }
             getResult();
 
-            string sQcMan = cbQcMan.SelectedValue.ToString();
             string sNo= dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString(); // JobNo
             string sMach = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[2].Value.ToString(); // 설비코드
             string sProd = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[5].Value.ToString(); // 설비코드
@@ -417,13 +419,12 @@ namespace SmartMES_Bluewings
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
 
-            sql = "INSERT INTO tb_qc_inspection(job_no, machine_id, prod_id, result1, tube1, tube2, tube3, in1, in2, in3, diameter1, diameter2, diameter3, length1, length2, length3, result2) " +
-                    "VALUES('" + sNo + "'," + sMach + ",'" + sProd + "','" + sResult1 + "','" + sVal1 + "','" + sVal2 + "','" + sVal3 + "','" + sVal4 + "','" + sVal5 + "','" + sVal6 + "','" +
-                    sVal7 + "','" + sVal8 + "','" + sVal9 + "','" + sVal10 + "','" + sVal11 + "','" + sVal12 + "','" + sResult2 + "') " +
-                    "ON DUPLICATE KEY UPDATE " +
-                    "result1 = '" + sResult1 + "', tube1 = '" + sVal1 + "', tube2 = '" + sVal2 + "', tube3 = '" + sVal3 + "', in1 = '" + sVal4 + "', in2 = '" + sVal5 + "', in3 = '" + 
-                    sVal6 + "', diameter1 = '" + sVal7 + "', diameter2 = '" + sVal8 + "', diameter3 = '" + sVal9 + "', length1 = '" + sVal10 + "', length2 = '" + sVal11 +
-                    "', length3 = '" + sVal12 + "', result2 = '" + sResult2 + "'";
+            sql = "INSERT INTO tb_qc_inspection(job_no, machine_id, qc_date, prod_id, result1, tube1, tube2, tube3, in1, in2, in3, diameter1, diameter2, diameter3, length1, length2, length3, result2, enter_man) " +
+                    "VALUES('" + sNo + "'," + sMach + ",'" + sDate + ",'" + sProd + "','" + sResult1 + "','" + sVal1 + "','" + sVal2 + "','" + sVal3 + "','" + sVal4 + "','" + sVal5 + "','" + sVal6 + "','" +
+                    sVal7 + "','" + sVal8 + "','" + sVal9 + "','" + sVal10 + "','" + sVal11 + "','" + sVal12 + "','" + sResult2 + "','" + G.UserID + "') " +
+                    "ON DUPLICATE KEY UPDATE qc_date = '" + sDate + "', result1 = '" + sResult1 + "', tube1 = '" + sVal1 + "', tube2 = '" + sVal2 + "', tube3 = '" + sVal3 + 
+                    "', in1 = '" + sVal4 + "', in2 = '" + sVal5 + "', in3 = '" + sVal6 + "', diameter1 = '" + sVal7 + "', diameter2 = '" + sVal8 + "', diameter3 = '" + sVal9 + 
+                    "', length1 = '" + sVal10 + "', length2 = '" + sVal11 + "', length3 = '" + sVal12 + "', result2 = '" + sResult2 + "', enter_man = '" + G.UserID + "'";
 
             m.dbCUD(sql, ref msg);
 
