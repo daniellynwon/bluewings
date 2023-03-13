@@ -41,6 +41,9 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.doc2 = new SmartMES_Bluewings.UserButtonA();
             this.doc1 = new SmartMES_Bluewings.UserButtonA();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblNotice = new System.Windows.Forms.Label();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@
             this.panTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panTitle.Location = new System.Drawing.Point(0, 0);
             this.panTitle.Name = "panTitle";
-            this.panTitle.Size = new System.Drawing.Size(425, 54);
+            this.panTitle.Size = new System.Drawing.Size(375, 54);
             this.panTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -61,7 +64,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 13F);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(27, 15);
+            this.lblTitle.Location = new System.Drawing.Point(19, 15);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(120, 25);
             this.lblTitle.TabIndex = 0;
@@ -74,9 +77,9 @@
             this.cbGubun.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.cbGubun.FormattingEnabled = true;
             this.cbGubun.Items.AddRange(new object[] {
-            "1.환경문서",
-            "2.성적서"});
-            this.cbGubun.Location = new System.Drawing.Point(124, 187);
+            "환경문서",
+            "성적서"});
+            this.cbGubun.Location = new System.Drawing.Point(114, 187);
             this.cbGubun.Name = "cbGubun";
             this.cbGubun.Size = new System.Drawing.Size(217, 29);
             this.cbGubun.TabIndex = 3;
@@ -85,7 +88,7 @@
             // tbNo
             // 
             this.tbNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbNo.Location = new System.Drawing.Point(124, 124);
+            this.tbNo.Location = new System.Drawing.Point(114, 124);
             this.tbNo.Name = "tbNo";
             this.tbNo.ReadOnly = true;
             this.tbNo.Size = new System.Drawing.Size(217, 29);
@@ -98,7 +101,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(39, 190);
+            this.label2.Location = new System.Drawing.Point(29, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 21);
             this.label2.TabIndex = 0;
@@ -109,7 +112,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(30, 128);
+            this.label1.Location = new System.Drawing.Point(20, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;
@@ -120,7 +123,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(28, 73);
+            this.lblMsg.Location = new System.Drawing.Point(18, 73);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(148, 21);
             this.lblMsg.TabIndex = 0;
@@ -131,7 +134,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(30, 245);
+            this.label5.Location = new System.Drawing.Point(20, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 0;
@@ -144,7 +147,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.buttonImage = global::SmartMES_Bluewings.Properties.Resources.close;
             this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(232, 311);
+            this.btnClose.Location = new System.Drawing.Point(232, 371);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 27);
@@ -158,7 +161,7 @@
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSave.buttonImage = global::SmartMES_Bluewings.Properties.Resources.save;
             this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(76, 311);
+            this.btnSave.Location = new System.Drawing.Point(76, 371);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 27);
@@ -169,7 +172,7 @@
             // 
             this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Location = new System.Drawing.Point(124, 241);
+            this.dtpDate.Location = new System.Drawing.Point(114, 241);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(217, 29);
@@ -183,7 +186,7 @@
             this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.doc2.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
             this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(317, 82);
+            this.doc2.Location = new System.Drawing.Point(307, 82);
             this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.doc2.Name = "doc2";
             this.doc2.Size = new System.Drawing.Size(24, 23);
@@ -198,19 +201,53 @@
             this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.doc1.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
             this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(285, 82);
+            this.doc1.Location = new System.Drawing.Point(275, 82);
             this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.doc1.Name = "doc1";
             this.doc1.Size = new System.Drawing.Size(24, 23);
             this.doc1.TabIndex = 83;
             this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
             // 
+            // tbName
+            // 
+            this.tbName.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbName.Location = new System.Drawing.Point(114, 298);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(217, 29);
+            this.tbName.TabIndex = 86;
+            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(20, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.TabIndex = 85;
+            this.label3.Text = "문서명";
+            // 
+            // lblNotice
+            // 
+            this.lblNotice.AutoSize = true;
+            this.lblNotice.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblNotice.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            this.lblNotice.Location = new System.Drawing.Point(31, 55);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.Size = new System.Drawing.Size(301, 17);
+            this.lblNotice.TabIndex = 1;
+            this.lblNotice.Text = "파일 첨부는 문서관리 저장 후에 첨부 가능합니다.";
+            // 
             // P1ED03_QC_DOC_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(425, 366);
+            this.ClientSize = new System.Drawing.Size(375, 441);
+            this.Controls.Add(this.lblNotice);
+            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.doc2);
             this.Controls.Add(this.doc1);
             this.Controls.Add(this.dtpDate);
@@ -254,5 +291,8 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         public UserButtonA doc2;
         public UserButtonA doc1;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNotice;
     }
 }

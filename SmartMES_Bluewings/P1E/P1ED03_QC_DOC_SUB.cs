@@ -21,17 +21,22 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                this.ActiveControl = tbNo;
+                this.ActiveControl = tbName;
+                int iNo = getDocNo() + 1;
+                tbNo.Text = iNo.ToString();
                 cbGubun.SelectedIndex = 0;
+                doc1.Visible = false; doc2.Visible = false;
             }
             else
             {
+                lblNotice.Visible = false;
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-                tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-                cbGubun.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
-                string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
+                tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                cbGubun.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
 
                 if (string.IsNullOrEmpty(sFile1))
                 {
@@ -79,8 +84,9 @@ namespace SmartMES_Bluewings
 
             string sNo = tbNo.Text.Trim();
             if (tbNo.Text == "") sNo = "null";
-            string sGubun = cbGubun.Text.Substring(0, 1);
+            string sGubun = cbGubun.Text;
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sName = tbName.Text;
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -88,8 +94,8 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                sql = "insert into tb_quality_doc (docdata_no, check_date, gubun, enter_man) " +
-                    "values('" + sNo + "','" + sDate + "','" + sGubun + "','" + G.UserID + "')";
+                sql = "insert into tb_quality_doc (docdata_no, check_date, gubun, doc_name, enter_man) " +
+                    "values(" + sNo + ",'" + sDate + "','" + sGubun + "','" + sName + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -121,7 +127,7 @@ namespace SmartMES_Bluewings
             else
             {
                 sql = "update tb_quality_doc " +
-                    "set check_date = '" + sDate + "', gubun = " + sGubun + ", enter_man = '" + G.UserID + "' where docdata_no = '" + sNo + "'";
+                    "set check_date = '" + sDate + "', gubun = '" + sGubun + "', doc_name = '" + sName + "', enter_man = '" + G.UserID + "' where docdata_no = " + sNo;
 
                 m.dbCUD(sql, ref msg);
 
@@ -130,6 +136,7 @@ namespace SmartMES_Bluewings
                     lblMsg.Text = msg;
                     return;
                 }
+                lblMsg.Text = "수정되었습니다.";
                 var data = sql;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
 
@@ -150,6 +157,7 @@ namespace SmartMES_Bluewings
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            parentWin.ListSearch();
         }
         #endregion
 
@@ -157,7 +165,7 @@ namespace SmartMES_Bluewings
         public void userButtonA1_Click(object sender, EventArgs e)
         {
             P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
-            sub.parentWin = this;
+            sub.parentWin1 = this;
             sub.sNo = "1";
             sub.sParentCode = tbNo.Text;    // 문서번호
             if (tbNo.Text == "") lblMsg.Text = "작성일자와 구분을 먼저 저장하세요.";
@@ -171,7 +179,7 @@ namespace SmartMES_Bluewings
             if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
 
             P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
-            sub.parentWin = this;
+            sub.parentWin1 = this;
             sub.sNo = "2";
             sub.sParentCode = tbNo.Text;    // 문서번호
             if (tbNo.Text == "") lblMsg.Text = "작성일자와 구분을 먼저 저장하세요.";
@@ -181,5 +189,25 @@ namespace SmartMES_Bluewings
             sub.ShowDialog();
         }
         #endregion
+
+        #region 문서번호 확인
+        private int getDocNo()
+        {
+            MariaCRUD m = new MariaCRUD();
+            string msg = string.Empty;
+            string sql = @"SELECT COUNT(*) FROM tb_quality_doc";
+            
+            DataTable tbLv1 = m.dbDataTable(sql, ref msg);
+            int value = 0;
+
+            if (tbLv1.Rows.Count > 0)
+            {
+                value = Int32.Parse(tbLv1.Rows[0][0].ToString());
+            }
+                
+            return value;
+        }
+        #endregion
+
     }
 }

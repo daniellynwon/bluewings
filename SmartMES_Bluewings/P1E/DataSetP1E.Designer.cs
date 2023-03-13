@@ -5452,6 +5452,8 @@ namespace SmartMES_Bluewings.P1E {
             
             private global::System.Data.DataColumn column파일명2;
             
+            private global::System.Data.DataColumn column문서명;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_QualityDoc_ListDataTable() {
@@ -5527,6 +5529,14 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 문서명Column {
+                get {
+                    return this.column문서명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5562,14 +5572,15 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QualityDoc_ListRow AddSP_QualityDoc_ListRow(uint 문서번호, System.DateTime 작성일자, string 문서구분, string 파일명1, string 파일명2) {
+            public SP_QualityDoc_ListRow AddSP_QualityDoc_ListRow(uint 문서번호, System.DateTime 작성일자, string 문서구분, string 파일명1, string 파일명2, string 문서명) {
                 SP_QualityDoc_ListRow rowSP_QualityDoc_ListRow = ((SP_QualityDoc_ListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         문서번호,
                         작성일자,
                         문서구분,
                         파일명1,
-                        파일명2};
+                        파일명2,
+                        문서명};
                 rowSP_QualityDoc_ListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_QualityDoc_ListRow);
                 return rowSP_QualityDoc_ListRow;
@@ -5597,6 +5608,7 @@ namespace SmartMES_Bluewings.P1E {
                 this.column문서구분 = base.Columns["문서구분"];
                 this.column파일명1 = base.Columns["파일명1"];
                 this.column파일명2 = base.Columns["파일명2"];
+                this.column문서명 = base.Columns["문서명"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5612,9 +5624,12 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column파일명1);
                 this.column파일명2 = new global::System.Data.DataColumn("파일명2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column파일명2);
+                this.column문서명 = new global::System.Data.DataColumn("문서명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column문서명);
                 this.column문서구분.MaxLength = 4;
                 this.column파일명1.MaxLength = 50;
                 this.column파일명2.MaxLength = 50;
+                this.column문서명.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9473,6 +9488,22 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 문서명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QualityDoc_List.문서명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QualityDoc_List\' 테이블의 \'문서명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QualityDoc_List.문서명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is문서번호Null() {
                 return this.IsNull(this.tableSP_QualityDoc_List.문서번호Column);
             }
@@ -9529,6 +9560,18 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set파일명2Null() {
                 this[this.tableSP_QualityDoc_List.파일명2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is문서명Null() {
+                return this.IsNull(this.tableSP_QualityDoc_List.문서명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set문서명Null() {
+                this[this.tableSP_QualityDoc_List.문서명Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -12510,6 +12553,7 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("문서구분", "문서구분");
             tableMapping.ColumnMappings.Add("파일명1", "파일명1");
             tableMapping.ColumnMappings.Add("파일명2", "파일명2");
+            tableMapping.ColumnMappings.Add("문서명", "문서명");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

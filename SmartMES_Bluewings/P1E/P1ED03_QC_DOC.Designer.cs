@@ -43,16 +43,17 @@ namespace SmartMES_Bluewings
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPQualityDocListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
+            this.sP_QualityDoc_ListTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_QualityDoc_ListTableAdapter();
             this.문서번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작성일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.문서구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.문서명 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.파일명1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.파일명2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.sPQualityDocListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
-            this.sP_QualityDoc_ListTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_QualityDoc_ListTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -86,7 +87,7 @@ namespace SmartMES_Bluewings
             // 
             // pbAdd
             // 
-            this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
+            this.pbAdd.Image = global::SmartMES_Bluewings.Properties.Resources.add_A;
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -208,6 +209,7 @@ namespace SmartMES_Bluewings
             this.문서번호DataGridViewTextBoxColumn,
             this.작성일자DataGridViewTextBoxColumn,
             this.문서구분DataGridViewTextBoxColumn,
+            this.문서명,
             this.파일명1DataGridViewTextBoxColumn,
             this.파일명2DataGridViewTextBoxColumn,
             this.Column1,
@@ -244,11 +246,26 @@ namespace SmartMES_Bluewings
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
+            // sPQualityDocListBindingSource
+            // 
+            this.sPQualityDocListBindingSource.DataMember = "SP_QualityDoc_List";
+            this.sPQualityDocListBindingSource.DataSource = this.dataSetP1E;
+            // 
+            // dataSetP1E
+            // 
+            this.dataSetP1E.DataSetName = "DataSetP1E";
+            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_QualityDoc_ListTableAdapter
+            // 
+            this.sP_QualityDoc_ListTableAdapter.ClearBeforeFill = true;
+            // 
             // 문서번호DataGridViewTextBoxColumn
             // 
             this.문서번호DataGridViewTextBoxColumn.DataPropertyName = "문서번호";
             this.문서번호DataGridViewTextBoxColumn.HeaderText = "순번";
             this.문서번호DataGridViewTextBoxColumn.Name = "문서번호DataGridViewTextBoxColumn";
+            this.문서번호DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 작성일자DataGridViewTextBoxColumn
             // 
@@ -262,6 +279,14 @@ namespace SmartMES_Bluewings
             this.문서구분DataGridViewTextBoxColumn.DataPropertyName = "문서구분";
             this.문서구분DataGridViewTextBoxColumn.HeaderText = "구분";
             this.문서구분DataGridViewTextBoxColumn.Name = "문서구분DataGridViewTextBoxColumn";
+            // 
+            // 문서명
+            // 
+            this.문서명.DataPropertyName = "문서명";
+            this.문서명.HeaderText = "문서명";
+            this.문서명.Name = "문서명";
+            this.문서명.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.문서명.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // 파일명1DataGridViewTextBoxColumn
             // 
@@ -281,26 +306,14 @@ namespace SmartMES_Bluewings
             this.Column1.HeaderText = "1";
             this.Column1.Name = "Column1";
             this.Column1.Text = "";
+            this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.FillWeight = 30F;
             this.Column2.HeaderText = "2";
             this.Column2.Name = "Column2";
-            // 
-            // sPQualityDocListBindingSource
-            // 
-            this.sPQualityDocListBindingSource.DataMember = "SP_QualityDoc_List";
-            this.sPQualityDocListBindingSource.DataSource = this.dataSetP1E;
-            // 
-            // dataSetP1E
-            // 
-            this.dataSetP1E.DataSetName = "DataSetP1E";
-            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_QualityDoc_ListTableAdapter
-            // 
-            this.sP_QualityDoc_ListTableAdapter.ClearBeforeFill = true;
+            this.Column2.Visible = false;
             // 
             // P1ED03_QC_DOC
             // 
@@ -354,6 +367,7 @@ namespace SmartMES_Bluewings
         private System.Windows.Forms.DataGridViewTextBoxColumn 문서번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작성일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 문서구분DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn 문서명;
         private System.Windows.Forms.DataGridViewTextBoxColumn 파일명1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 파일명2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;

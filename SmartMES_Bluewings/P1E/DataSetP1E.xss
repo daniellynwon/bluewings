@@ -17,7 +17,7 @@
     <Shape ID="DesignTable:SP_QcFinalList_List" ZOrder="4" X="877" Y="340" Height="305" Width="253" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:SP_QcFinal_ROder" ZOrder="3" X="7" Y="10" Height="305" Width="250" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:SP_Qc_Query" ZOrder="2" X="573" Y="620" Height="305" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:SP_QualityDoc_List" ZOrder="1" X="1179" Y="204" Height="172" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:SP_QualityDoc_List" ZOrder="1" X="1179" Y="204" Height="191" Width="255" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

@@ -73,33 +73,45 @@ namespace SmartMES_Bluewings
         {
             if (G.Authority == "D") return;
             if (dataGridView1.RowCount <= 0) return;
+            if (e.ColumnIndex != 3) return;
 
-            if (e.ColumnIndex == 5) // 파일1
+            int index = dataGridView1.CurrentRow.Index;
+            string sCode = dataGridView1.Rows[index].Cells[0].Value.ToString();
+            string sDoc1 = dataGridView1.Rows[index].Cells[4].Value.ToString();
+            string sDoc2 = dataGridView1.Rows[index].Cells[5].Value.ToString();
+
+            P1ED03_QC_DOC_SUB sub = new P1ED03_QC_DOC_SUB();
+            sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+            sub.parentWin = this;
+            sub.ShowDialog();
             {
-                if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0) return;
+                //if (e.ColumnIndex == 6) // 파일1
+                //{
+                //    if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0) return;
 
-                P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
-                sub.parentWin = this;
-                sub.sNo = "1";
-                sub.sParentCode = tbNo.Text;    // 문서번호
-                if (doc1.Tag == null) sub.sFileName = "";
-                else
-                    sub.sFileName = doc1.Tag.ToString();
-                sub.ShowDialog();
-            }
+                //    P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
+                //    sub.parentWin = this;
+                //    sub.sNo = "1";
+                //    sub.sParentCode = sCode;    // 문서번호
+                //    if (sDoc1 == null || string.IsNullOrEmpty(sDoc1)) sub.sFileName = "";
+                //    else
+                //        sub.sFileName = sDoc1;
+                //    sub.ShowDialog();
+                //}
 
-            if (e.ColumnIndex == 6) // 파일2
-            {
-                if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0) return;
+                //if (e.ColumnIndex == 7) // 파일2
+                //{
+                //    if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0) return;
 
-                P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
-                sub.parentWin = this;
-                sub.sNo = "2";
-                sub.sParentCode = tbNo.Text;    // 문서번호
-                if (doc2.Tag == null) sub.sFileName = "";
-                else
-                    sub.sFileName = doc2.Tag.ToString();
-                sub.ShowDialog();
+                //    P1ED03_QC_DOC_DOC sub = new P1ED03_QC_DOC_DOC();
+                //    sub.parentWin = this;
+                //    sub.sNo = "2";
+                //    sub.sParentCode = sCode;    // 문서번호
+                //    if (sDoc2 == null || string.IsNullOrEmpty(sDoc2)) sub.sFileName = "";
+                //    else
+                //        sub.sFileName = sDoc2;
+                //    sub.ShowDialog();
+                //}
             }
         }
         #endregion
@@ -111,10 +123,10 @@ namespace SmartMES_Bluewings
         }
         private void pbAdd_Click(object sender, EventArgs e)
         {
-            //P1ED03_QC_DOC_SUB sub = new P1ED03_QC_DOC_SUB();
-            //sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
-            //sub.parentWin = this;
-            //sub.ShowDialog();
+            P1ED03_QC_DOC_SUB sub = new P1ED03_QC_DOC_SUB();
+            sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
+            sub.parentWin = this;
+            sub.ShowDialog();
         }
         private void pbDel_Click(object sender, EventArgs e)
         {
@@ -145,13 +157,12 @@ namespace SmartMES_Bluewings
             ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
             viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3 });
 
-            ReportDataSource rds1 = new ReportDataSource("DataSet1", sPQcClassQueryBindingSource);
+            ReportDataSource rds1 = new ReportDataSource("DataSet1", sPQualityDocListBindingSource);
             viewReport.reportViewer1.LocalReport.DataSources.Add(rds1);
             viewReport.reportViewer1.LocalReport.Refresh();
 
             viewReport.ShowDialog();
         }
         #endregion
-
     }
 }

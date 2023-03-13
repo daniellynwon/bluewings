@@ -11,6 +11,7 @@ namespace SmartMES_Bluewings
     public partial class P1ED03_QC_DOC_DOC : Form
     {
         public P1ED03_QC_DOC parentWin;       
+        public P1ED03_QC_DOC_SUB parentWin1;       
         public string sNo;
         public string sParentCode;
         public string sFileName;
@@ -160,13 +161,13 @@ namespace SmartMES_Bluewings
 
                     if (sNo == "1")
                     {
-                        parentWin.doc1.buttonImage = Properties.Resources.clipA;
-                        parentWin.doc1.Tag = FileName;
+                        parentWin1.doc1.buttonImage = Properties.Resources.clipA;
+                        parentWin1.doc1.Tag = FileName;
                     }
                     else if (sNo == "2")
                     {
-                        parentWin.doc2.buttonImage = Properties.Resources.clipA;
-                        parentWin.doc2.Tag = FileName;
+                        parentWin1.doc2.buttonImage = Properties.Resources.clipA;
+                        parentWin1.doc2.Tag = FileName;
                     }
 
                     MessageBox.Show("문서가 정상 저장되었습니다.");
@@ -298,13 +299,13 @@ namespace SmartMES_Bluewings
 
                 if (sNo == "1")
                 {
-                    parentWin.doc1.buttonImage = Properties.Resources.clipB;
-                    parentWin.doc1.Tag = "";
+                    parentWin1.doc1.buttonImage = Properties.Resources.clipB;
+                    parentWin1.doc1.Tag = "";
                 }
                 else if (sNo == "2")
                 {
-                    parentWin.doc2.buttonImage = Properties.Resources.clipB;
-                    parentWin.doc2.Tag = "";
+                    parentWin1.doc2.buttonImage = Properties.Resources.clipB;
+                    parentWin1.doc2.Tag = "";
                 }
 
                 this.Close();
