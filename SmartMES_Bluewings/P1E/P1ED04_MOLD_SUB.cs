@@ -25,24 +25,35 @@ namespace SmartMES_Bluewings
             {
                 cbPlace.SelectedIndex = 0;
                 this.ActiveControl = tbName;
+                tbNo.Text = getMoldCode();
             }
             else
             {
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
-
+                string sPlace = "A.생산"; string sStat = "0.양호";
                 moldID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                tbNo.Text = moldID;
+                tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                tbCust.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                tbCust.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                dtpDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString());
+                tbMoneyA.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
 
-                tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-                tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-                dtpDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString());
-                dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                dtpDateB.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                cbPlace.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
-                tbMoneyA.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
-                tbMoneyB.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();
-                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
-                string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
-                string sFile3 = parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString();
+                if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "A")
+                    cbPlace.Text = "A.생산";
+                else if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "B")
+                    cbPlace.Text = "B.대기";
+                else if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "C")
+                    cbPlace.Text = "C.업체";
+
+                if (parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString() == "0")
+                    cbStatus.Text = "0.양호";
+                else cbStatus.Text = "1.수리중";
+
+                dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                dtpDateB.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                tbMoneyB.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
+                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();
 
                 if (string.IsNullOrEmpty(sFile1))
                 {
@@ -53,16 +64,6 @@ namespace SmartMES_Bluewings
                 {
                     doc1.buttonImage = Properties.Resources.clipA;
                     doc1.Tag = sFile1;
-                }
-                if (string.IsNullOrEmpty(sFile2))
-                {
-                    doc2.buttonImage = Properties.Resources.clipB;
-                    doc2.Tag = "";
-                }
-                else
-                {
-                    doc2.buttonImage = Properties.Resources.clipA;
-                    doc2.Tag = sFile2;
                 }
 
                 this.ActiveControl = btnSave;
@@ -118,9 +119,9 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                sNo = getMoldCode();
+                //sNo = getMoldCode();
                 sql = "insert into tb_mold_info (mold_id, mold_name, cust_id, mold_date, mold_amount, location, mold_status, time_move, time_h, use_amount, enter_man) " +
-                    "values('" + sNo + "','" + sName + "','" + sDate + "'," + sMoneyA + ",'" + sPlace + "','" + sStat + "','" + sDate1 + "',if('" + sDate2 + "' = '',null,'" + sDate2 + "')," + sMoneyB + ",'" + G.UserID + "')";
+                    "values('" + sNo + "','" + sName + "','" + sCust + "','" + sDate + "'," + sMoneyA + ",'" + sPlace + "','" + sStat + "','" + sDate1 + "',if('" + sDate2 + "' = '',null,'" + sDate2 + "')," + sMoneyB + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 

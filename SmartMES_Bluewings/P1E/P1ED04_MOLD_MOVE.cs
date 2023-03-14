@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Windows.Forms;
 using SmartFactory;
 
@@ -31,21 +32,11 @@ namespace SmartMES_Bluewings
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
                 moldID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                //tbHo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
-                //tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-                //tbModel.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-                //tbModel.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();
-                //dtpDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString());
-                //dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                //dtpDateB.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                //cbGubun.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
-                //tbGoal.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
-                //tbResult.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();
-                //tbMan.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();
-                tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
+                tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                cbLocationA.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+                dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
                 string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
-                string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
-                string sFile3 = parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString();
 
                 if (string.IsNullOrEmpty(sFile1))
                 {
@@ -57,17 +48,6 @@ namespace SmartMES_Bluewings
                     doc1.buttonImage = Properties.Resources.clipA;
                     doc1.Tag = sFile1;
                 }
-                if (string.IsNullOrEmpty(sFile2))
-                {
-                    doc2.buttonImage = Properties.Resources.clipB;
-                    doc2.Tag = "";
-                }
-                else
-                {
-                    doc2.buttonImage = Properties.Resources.clipA;
-                    doc2.Tag = sFile2;
-                }
-
                 this.ActiveControl = btnSave;
             }
         }
@@ -91,20 +71,12 @@ namespace SmartMES_Bluewings
         private async void Save()
         {
             lblMsg.Text = "";
-            string sDate = DateTime.Parse(dtpDate.Value.ToString()).ToString("yyyy-MM-dd");
-            string sDate1 = dtpDateA.Text;
-            string sDate2 = string.Empty;
-
-            if (dtpDateB.Text.Length == 19) sDate2 = dtpDateB.Text;
-            else sDate2 = "";
-
-            string sKind = cbGubun.Text.Substring(0, 1);
-            string sGoal = tbGoal.Text.Trim();
-            string sResult = tbResult.Text.Trim();
-            string sMan = tbMan.Text.Trim();
+            string sDate = DateTime.Parse(dtpDateA.Text.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+            string sGubun = cbGubun.Text.Substring(0, 1);
+            string sPlaceA = cbLocationA.Text.Substring(0, 1);
+            string sPlaceB = cbLocationB.Text.Substring(0, 1);
             string sMoeny = tbMoney.Text.Replace(",", "").Trim();
             if (string.IsNullOrEmpty(sMoeny)) sMoeny = "NULL";
-            string sContents = tbMoney.Text.Trim();
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -114,8 +86,8 @@ namespace SmartMES_Bluewings
             {
                 moldID = getMoldCode();
 
-                sql = "insert into tb_mold_move (machine_id, seq, repair_date, repairtime_a, repairtime_b, repair_kind, repair_goal, repair_result, repair_man, repair_money, contents, enter_man) " +
-                    "values(" + moldID + "," + seq + ",'" + sDate + "','" + sDate1 + "',if('" + sDate2 + "' = '',null,'" + sDate2 + "')," + sKind + ",'" + sGoal + "','" + sResult + "','" + sMan + "'," + sMoeny + ",'" + sContents + "','" + G.UserID + "')";
+                sql = "insert into tb_mold_move (mold_id, gubun, org_location, mv_location, time_move, amount, enter_man) " +
+                    "values('" + moldID + "','" + sGubun + "','" + sPlaceA + "','" + sPlaceB + "',if('" + sDate + "' = '',null,'" + sDate + "')," + sMoeny + "," + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -133,9 +105,7 @@ namespace SmartMES_Bluewings
 
                 for (int i = 0; i < parentWin.dataGridView1.Rows.Count - 1; i++)
                 {
-                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == moldID
-                        && DateTime.Parse(parentWin.dataGridView1.Rows[i].Cells[5].Value.ToString()).ToString("yyyy-MM-dd") == sDate
-                        && parentWin.dataGridView1.Rows[i].Cells[6].Value.ToString().Substring(0, 1) == sKind)
+                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == moldID)
                     {
                         parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, i];
                         parentWin.dataGridView1.CurrentCell.Selected = true;
@@ -153,8 +123,8 @@ namespace SmartMES_Bluewings
             else // 수정 및 update
             {
                 sql = "update tb_mold_move " +
-                    "set repair_date = '" + sDate + "', repairtime_a = '" + sDate1 + "', repairtime_b = if('" + sDate2 + "' = '',null,'" + sDate2 + "'), repair_kind = " + sKind + ", repair_goal = '" + sGoal + "', repair_result = '" + sResult + "', repair_man = '" + sMan + "', repair_money = " + sMoeny + ", contents = '" + sContents + "'" +
-                    " where machine_id = " + moldID + " and seq = " + seq;
+                    "set gubun = '" + sGubun + "', org_location = '" + sPlaceA + "', mv_location = '" + sPlaceB + "', time_move = if('" + sDate + "' = '',null,'" + sDate + "'), amount = " + sMoeny +
+                    " where mold_id = '" + moldID + "'";
 
                 m.dbCUD(sql, ref msg);
 
@@ -166,7 +136,7 @@ namespace SmartMES_Bluewings
                 var data = sql;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
 
-                m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, moldID + "-" + seq + " " + tbName.Text + " " + tbModel.Text);
+                m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, moldID + " " + tbName.Text);
 
                 parentWin.ListSearch();
                 parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[1, rowIndex];
@@ -218,23 +188,23 @@ namespace SmartMES_Bluewings
         {
             if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
 
-            P1ED04_MOLD_MOVE_DOC sub = new P1ED04_MOLD_MOVE_DOC();
-            sub.parentWin = this;
-            sub.sNo = "1";
-            sub.sParentCode = moldID;   // 설비ID
-            sub.sFileName = doc1.Tag.ToString();
-            sub.ShowDialog();
+            //P1ED04_MOLD_MOVE_DOC sub = new P1ED04_MOLD_MOVE_DOC();
+            //sub.parentWin = this;
+            //sub.sNo = "1";
+            //sub.sParentCode = moldID;   // 설비ID
+            //sub.sFileName = doc1.Tag.ToString();
+            //sub.ShowDialog();
         }
         public void userButtonA2_Click(object sender, EventArgs e)
         {
             if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
 
-            P1ED04_MOLD_MOVE_DOC sub = new P1ED04_MOLD_MOVE_DOC();
-            sub.parentWin = this;
-            sub.sNo = "2";
-            sub.sParentCode = moldID;   // 작성일자
-            sub.sFileName = doc2.Tag.ToString();
-            sub.ShowDialog();
+            //P1ED04_MOLD_MOVE_DOC sub = new P1ED04_MOLD_MOVE_DOC();
+            //sub.parentWin = this;
+            //sub.sNo = "2";
+            //sub.sParentCode = moldID;   // 작성일자
+            //sub.sFileName = doc2.Tag.ToString();
+            //sub.ShowDialog();
         }
         #endregion
 

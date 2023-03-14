@@ -42,6 +42,9 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPMoldListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
+            this.sP_Mold_ListTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_Mold_ListTableAdapter();
             this.금형번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.금형명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.제작사DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +58,7 @@
             this.소요비용DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.파일명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.사용여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPMoldListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
-            this.sP_Mold_ListTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_Mold_ListTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -225,7 +226,8 @@
             this.경과시간DataGridViewTextBoxColumn,
             this.소요비용DataGridViewTextBoxColumn,
             this.파일명DataGridViewTextBoxColumn,
-            this.사용여부DataGridViewTextBoxColumn});
+            this.사용여부DataGridViewTextBoxColumn,
+            this.Column1});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPMoldListBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -258,6 +260,20 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // sPMoldListBindingSource
+            // 
+            this.sPMoldListBindingSource.DataMember = "SP_Mold_List";
+            this.sPMoldListBindingSource.DataSource = this.dataSetP1E;
+            // 
+            // dataSetP1E
+            // 
+            this.dataSetP1E.DataSetName = "DataSetP1E";
+            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Mold_ListTableAdapter
+            // 
+            this.sP_Mold_ListTableAdapter.ClearBeforeFill = true;
             // 
             // 금형번호DataGridViewTextBoxColumn
             // 
@@ -352,19 +368,12 @@
             this.사용여부DataGridViewTextBoxColumn.ReadOnly = true;
             this.사용여부DataGridViewTextBoxColumn.Visible = false;
             // 
-            // sPMoldListBindingSource
+            // Column1
             // 
-            this.sPMoldListBindingSource.DataMember = "SP_Mold_List";
-            this.sPMoldListBindingSource.DataSource = this.dataSetP1E;
-            // 
-            // dataSetP1E
-            // 
-            this.dataSetP1E.DataSetName = "DataSetP1E";
-            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Mold_ListTableAdapter
-            // 
-            this.sP_Mold_ListTableAdapter.ClearBeforeFill = true;
+            this.Column1.FillWeight = 50F;
+            this.Column1.HeaderText = "이동";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // P1ED04_MOLD
             // 
@@ -403,6 +412,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.BindingSource sPMoldListBindingSource;
+        private P1E.DataSetP1E dataSetP1E;
+        private P1E.DataSetP1ETableAdapters.SP_Mold_ListTableAdapter sP_Mold_ListTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금형번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 금형명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 제작사DataGridViewTextBoxColumn;
@@ -416,8 +428,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 소요비용DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 파일명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 사용여부DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sPMoldListBindingSource;
-        private P1E.DataSetP1E dataSetP1E;
-        private P1E.DataSetP1ETableAdapters.SP_Mold_ListTableAdapter sP_Mold_ListTableAdapter;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

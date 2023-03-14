@@ -95,12 +95,21 @@ namespace SmartMES_Bluewings
         {
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 2) return;
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
 
-            P1ED04_MOLD_SUB sub = new P1ED04_MOLD_SUB();
-            sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-            sub.parentWin = this;
-            sub.ShowDialog();
+            if (e.ColumnIndex == 2)
+            {
+                P1ED04_MOLD_SUB sub = new P1ED04_MOLD_SUB();
+                sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                sub.parentWin = this;
+                sub.ShowDialog();
+            }
+            else if(e.ColumnIndex == 13)
+            {
+                P1ED04_MOLD_MOVE sub = new P1ED04_MOLD_MOVE();
+                sub.parentWin = this;
+                sub.ShowDialog();
+            }
         }
         #endregion
 
