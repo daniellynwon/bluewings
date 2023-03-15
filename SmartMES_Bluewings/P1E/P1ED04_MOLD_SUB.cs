@@ -23,7 +23,7 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                cbPlace.SelectedIndex = 0;
+                cbPlace.SelectedIndex = 0; cbStatus.SelectedIndex = 0;
                 this.ActiveControl = tbName;
                 tbNo.Text = getMoldCode();
             }
@@ -38,20 +38,17 @@ namespace SmartMES_Bluewings
                 tbCust.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
                 dtpDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString());
                 tbMoneyA.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                cbPlace.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
 
-                if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "A")
-                    cbPlace.Text = "A.생산";
-                else if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "B")
-                    cbPlace.Text = "B.대기";
-                else if (parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString() == "C")
-                    cbPlace.Text = "C.업체";
-
-                if (parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString() == "0")
+                if (parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString() == "0")
                     cbStatus.Text = "0.양호";
                 else cbStatus.Text = "1.수리중";
 
-                dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                dtpDateB.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                if (parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString() == "")
+                    dtpDateA.Text = "";
+                else 
+                    dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                tbLap.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
                 tbMoneyB.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
                 string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();
 
@@ -100,15 +97,15 @@ namespace SmartMES_Bluewings
             string sNo = tbNo.Text;
             string sName = tbName.Text; string sCust = tbCust.Tag.ToString();
             string sDate = DateTime.Parse(dtpDate.Value.ToString()).ToString("yyyy-MM-dd"); // 제작일자
-            string sDate1 = dtpDateA.Text;
-            string sDate2 = string.Empty;
+            string sDate1 = string.Empty;
 
-            if (dtpDateB.Text.Length == 19) sDate2 = dtpDateB.Text;
-            else sDate2 = "";
+            if (dtpDateA.Text.Length == 19) sDate1 = dtpDateA.Text;
+            else sDate1 = "";
 
             string sPlace = cbPlace.Text.Substring(0, 1);
             string sStat = cbStatus.Text.Substring(0, 1);
             string sMoneyA = tbMoneyA.Text.Replace(",", "").Trim();
+            string sLap = tbLap.Text;
             if (string.IsNullOrEmpty(sMoneyA)) sMoneyA = "NULL";
             string sMoneyB = tbMoneyB.Text.Replace(",", "").Trim();
             if (string.IsNullOrEmpty(sMoneyB)) sMoneyB = "NULL";
@@ -121,7 +118,7 @@ namespace SmartMES_Bluewings
             {
                 //sNo = getMoldCode();
                 sql = "insert into tb_mold_info (mold_id, mold_name, cust_id, mold_date, mold_amount, location, mold_status, time_move, time_h, use_amount, enter_man) " +
-                    "values('" + sNo + "','" + sName + "','" + sCust + "','" + sDate + "'," + sMoneyA + ",'" + sPlace + "','" + sStat + "','" + sDate1 + "',if('" + sDate2 + "' = '',null,'" + sDate2 + "')," + sMoneyB + ",'" + G.UserID + "')";
+                    "values('" + sNo + "','" + sName + "','" + sCust + "','" + sDate + "'," + sMoneyA + ",'" + sPlace + "','" + sStat + "','" + sDate1 + "'," + sLap + "," + sMoneyB + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -149,7 +146,7 @@ namespace SmartMES_Bluewings
 
                 moldID = string.Empty; tbNo.Text = string.Empty;
                 dtpDateA.Text = string.Empty;
-                dtpDateB.Text = string.Empty;
+                tbLap.Text = string.Empty;
                 tbName.Text = string.Empty;
                 tbMoneyA.Text = string.Empty;
                 tbMoneyB.Text = string.Empty;
@@ -160,7 +157,7 @@ namespace SmartMES_Bluewings
             {
                 sql = "update tb_mold_info " +
                     "set mold_name = '" + sName + "', cust_id = '" + sCust + "',mold_date = '" + sDate + "', mold_amount = " + sMoneyA + "', location = '" + sPlace + "', mold_status = '" + sStat +
-                    "', time_move = '" + sDate1 + "', time_h = if('" + sDate2 + "' = '',null,'" + sDate2 + "'), use_amount = " + sMoneyB +
+                    "', time_move = '" + sDate1 + "', time_h = " + sLap + ", use_amount = " + sMoneyB +
                     " where machine_id = '" + moldID + "'";
 
                 m.dbCUD(sql, ref msg);
@@ -182,42 +179,21 @@ namespace SmartMES_Bluewings
             }
         }
 
-        #region 설비별 seq 생성
-        private string getSeq(string _mid)
-        {
-            string sql = @"select seq from tb_mold_info where machine_id = " + _mid + " order by seq desc limit 1";
-
-            MariaCRUD m = new MariaCRUD();
-
-            try
-            {
-                string msg = string.Empty;
-                string seq = m.dbRonlyOne(sql, ref msg).ToString();
-
-                seq = (Int32.Parse(seq) + 1).ToString();
-
-                return seq;
-            }
-            catch (NullReferenceException)
-            {
-                return "1";
-            }
-
-        }
-        #endregion
-
         #region 텍스트 박스 숫자 처리
         private void tbMoney_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string lgsText;
+                string lgsText, lgsText1;
 
                 lgsText = tbMoneyA.Text.Replace(",", ""); //** 숫자변환시 콤마로 발생하는 에러방지...
+                lgsText1 = tbLap.Text.Replace(",", "");
                 tbMoneyA.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText));
+                tbLap.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText1));
 
                 tbMoneyA.SelectionStart = tbMoneyA.TextLength; //** 캐럿을 맨 뒤로 보낸다...
                 tbMoneyA.SelectionLength = 0;
+                tbLap.SelectionStart = tbLap.TextLength; tbLap.SelectionLength = 0;
             }
             catch (FormatException)
             {

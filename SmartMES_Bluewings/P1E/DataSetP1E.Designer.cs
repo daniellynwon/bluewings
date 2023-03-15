@@ -5824,6 +5824,20 @@ namespace SmartMES_Bluewings.P1E {
             
             private global::System.Data.DataColumn column사용여부;
             
+            private global::System.Data.DataColumn column금형상태;
+            
+            private global::System.Data.DataColumn column구분;
+            
+            private global::System.Data.DataColumn column현위치;
+            
+            private global::System.Data.DataColumn column이동장소;
+            
+            private global::System.Data.DataColumn column이동시간;
+            
+            private global::System.Data.DataColumn column첨부파일;
+            
+            private global::System.Data.DataColumn column장소;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Mold_ListDataTable() {
@@ -5963,6 +5977,62 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 금형상태Column {
+                get {
+                    return this.column금형상태;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 구분Column {
+                get {
+                    return this.column구분;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 현위치Column {
+                get {
+                    return this.column현위치;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 이동장소Column {
+                get {
+                    return this.column이동장소;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 이동시간Column {
+                get {
+                    return this.column이동시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 첨부파일Column {
+                get {
+                    return this.column첨부파일;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 장소Column {
+                get {
+                    return this.column장소;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5998,7 +6068,27 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Mold_ListRow AddSP_Mold_ListRow(string 금형번호, string 금형명, string 제작사, string 제작사명, System.DateTime 제작일자, long 제작비용, string 보관장소, string 상태, System.DateTime 이동시각, float 경과시간, long 소요비용, string 파일명, string 사용여부) {
+            public SP_Mold_ListRow AddSP_Mold_ListRow(
+                        string 금형번호, 
+                        string 금형명, 
+                        string 제작사, 
+                        string 제작사명, 
+                        System.DateTime 제작일자, 
+                        long 제작비용, 
+                        string 보관장소, 
+                        string 상태, 
+                        System.DateTime 이동시각, 
+                        float 경과시간, 
+                        long 소요비용, 
+                        string 파일명, 
+                        string 사용여부, 
+                        string 금형상태, 
+                        string 구분, 
+                        string 현위치, 
+                        string 이동장소, 
+                        System.DateTime 이동시간, 
+                        string 첨부파일, 
+                        string 장소) {
                 SP_Mold_ListRow rowSP_Mold_ListRow = ((SP_Mold_ListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         금형번호,
@@ -6013,7 +6103,14 @@ namespace SmartMES_Bluewings.P1E {
                         경과시간,
                         소요비용,
                         파일명,
-                        사용여부};
+                        사용여부,
+                        금형상태,
+                        구분,
+                        현위치,
+                        이동장소,
+                        이동시간,
+                        첨부파일,
+                        장소};
                 rowSP_Mold_ListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Mold_ListRow);
                 return rowSP_Mold_ListRow;
@@ -6049,6 +6146,13 @@ namespace SmartMES_Bluewings.P1E {
                 this.column소요비용 = base.Columns["소요비용"];
                 this.column파일명 = base.Columns["파일명"];
                 this.column사용여부 = base.Columns["사용여부"];
+                this.column금형상태 = base.Columns["금형상태"];
+                this.column구분 = base.Columns["구분"];
+                this.column현위치 = base.Columns["현위치"];
+                this.column이동장소 = base.Columns["이동장소"];
+                this.column이동시간 = base.Columns["이동시간"];
+                this.column첨부파일 = base.Columns["첨부파일"];
+                this.column장소 = base.Columns["장소"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6080,6 +6184,20 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column파일명);
                 this.column사용여부 = new global::System.Data.DataColumn("사용여부", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column사용여부);
+                this.column금형상태 = new global::System.Data.DataColumn("금형상태", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column금형상태);
+                this.column구분 = new global::System.Data.DataColumn("구분", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column구분);
+                this.column현위치 = new global::System.Data.DataColumn("현위치", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column현위치);
+                this.column이동장소 = new global::System.Data.DataColumn("이동장소", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column이동장소);
+                this.column이동시간 = new global::System.Data.DataColumn("이동시간", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column이동시간);
+                this.column첨부파일 = new global::System.Data.DataColumn("첨부파일", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column첨부파일);
+                this.column장소 = new global::System.Data.DataColumn("장소", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column장소);
                 this.column금형번호.MaxLength = 10;
                 this.column금형명.MaxLength = 100;
                 this.column제작사.MaxLength = 7;
@@ -6088,6 +6206,12 @@ namespace SmartMES_Bluewings.P1E {
                 this.column상태.MaxLength = 3;
                 this.column파일명.MaxLength = 50;
                 this.column사용여부.MaxLength = 1;
+                this.column금형상태.MaxLength = 1;
+                this.column구분.MaxLength = 1;
+                this.column현위치.MaxLength = 1;
+                this.column이동장소.MaxLength = 4;
+                this.column첨부파일.MaxLength = 50;
+                this.column장소.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10257,6 +10381,118 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 금형상태 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.금형상태Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'금형상태\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.금형상태Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 구분 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.구분Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'구분\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.구분Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 현위치 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.현위치Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'현위치\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.현위치Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 이동장소 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.이동장소Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'이동장소\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.이동장소Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 이동시간 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Mold_List.이동시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'이동시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.이동시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 첨부파일 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.첨부파일Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'첨부파일\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.첨부파일Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 장소 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Mold_List.장소Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Mold_List\' 테이블의 \'장소\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Mold_List.장소Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is금형번호Null() {
                 return this.IsNull(this.tableSP_Mold_List.금형번호Column);
             }
@@ -10409,6 +10645,90 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set사용여부Null() {
                 this[this.tableSP_Mold_List.사용여부Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is금형상태Null() {
+                return this.IsNull(this.tableSP_Mold_List.금형상태Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set금형상태Null() {
+                this[this.tableSP_Mold_List.금형상태Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is구분Null() {
+                return this.IsNull(this.tableSP_Mold_List.구분Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set구분Null() {
+                this[this.tableSP_Mold_List.구분Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is현위치Null() {
+                return this.IsNull(this.tableSP_Mold_List.현위치Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set현위치Null() {
+                this[this.tableSP_Mold_List.현위치Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is이동장소Null() {
+                return this.IsNull(this.tableSP_Mold_List.이동장소Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set이동장소Null() {
+                this[this.tableSP_Mold_List.이동장소Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is이동시간Null() {
+                return this.IsNull(this.tableSP_Mold_List.이동시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set이동시간Null() {
+                this[this.tableSP_Mold_List.이동시간Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is첨부파일Null() {
+                return this.IsNull(this.tableSP_Mold_List.첨부파일Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set첨부파일Null() {
+                this[this.tableSP_Mold_List.첨부파일Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is장소Null() {
+                return this.IsNull(this.tableSP_Mold_List.장소Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set장소Null() {
+                this[this.tableSP_Mold_List.장소Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -13663,6 +13983,13 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("소요비용", "소요비용");
             tableMapping.ColumnMappings.Add("파일명", "파일명");
             tableMapping.ColumnMappings.Add("사용여부", "사용여부");
+            tableMapping.ColumnMappings.Add("금형상태", "금형상태");
+            tableMapping.ColumnMappings.Add("구분", "구분");
+            tableMapping.ColumnMappings.Add("현위치", "현위치");
+            tableMapping.ColumnMappings.Add("이동장소", "이동장소");
+            tableMapping.ColumnMappings.Add("이동시간", "이동시간");
+            tableMapping.ColumnMappings.Add("첨부파일", "첨부파일");
+            tableMapping.ColumnMappings.Add("장소", "장소");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

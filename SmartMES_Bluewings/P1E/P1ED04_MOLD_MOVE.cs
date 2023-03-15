@@ -21,10 +21,12 @@ namespace SmartMES_Bluewings
         private void P1ED04_MOLD_MOVE_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
+            cbGubun.SelectedIndex = 0;
+            cbLocationB.SelectedIndex = 0;
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                cbGubun.SelectedIndex = 0; cbLocationA.SelectedIndex = 0; cbLocationB.SelectedIndex = 0;
+                cbLocationA.SelectedIndex = 0;
                 this.ActiveControl = tbMoney;
             }
             else
@@ -32,11 +34,12 @@ namespace SmartMES_Bluewings
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
                 moldID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                tbNo.Text = moldID;
                 tbName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
                 cbLocationA.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
                 dtpDateA.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
                 tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
-                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
+                string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();
 
                 if (string.IsNullOrEmpty(sFile1))
                 {
@@ -71,7 +74,7 @@ namespace SmartMES_Bluewings
         private async void Save()
         {
             lblMsg.Text = "";
-            string sDate = DateTime.Parse(dtpDateA.Text.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+            string sDate = dtpDateA.Text;   //DateTime.Parse(dtpDateA.Text.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
             string sGubun = cbGubun.Text.Substring(0, 1);
             string sPlaceA = cbLocationA.Text.Substring(0, 1);
             string sPlaceB = cbLocationB.Text.Substring(0, 1);

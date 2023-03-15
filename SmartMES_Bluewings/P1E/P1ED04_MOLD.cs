@@ -97,7 +97,7 @@ namespace SmartMES_Bluewings
             if (e.RowIndex < 0) return;
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
 
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 0)
             {
                 P1ED04_MOLD_SUB sub = new P1ED04_MOLD_SUB();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";

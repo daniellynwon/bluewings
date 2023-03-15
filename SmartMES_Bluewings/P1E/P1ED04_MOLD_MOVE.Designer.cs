@@ -39,11 +39,6 @@
             this.tbMoney = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.doc3 = new SmartMES_Bluewings.UserButtonA();
-            this.doc2 = new SmartMES_Bluewings.UserButtonA();
-            this.doc1 = new SmartMES_Bluewings.UserButtonA();
-            this.btnClose = new SmartMES_Bluewings.UserButtonA();
-            this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.panTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.cbLocationA = new System.Windows.Forms.ComboBox();
@@ -53,6 +48,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.dtpDateA = new System.Windows.Forms.MaskedTextBox();
+            this.doc3 = new SmartMES_Bluewings.UserButtonA();
+            this.doc2 = new SmartMES_Bluewings.UserButtonA();
+            this.doc1 = new SmartMES_Bluewings.UserButtonA();
+            this.btnClose = new SmartMES_Bluewings.UserButtonA();
+            this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(353, 171);
+            this.label4.Location = new System.Drawing.Point(28, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 0;
@@ -132,7 +132,7 @@
             "A.불출",
             "B.반납",
             "C.수리"});
-            this.cbGubun.Location = new System.Drawing.Point(419, 167);
+            this.cbGubun.Location = new System.Drawing.Point(103, 167);
             this.cbGubun.Name = "cbGubun";
             this.cbGubun.Size = new System.Drawing.Size(211, 29);
             this.cbGubun.TabIndex = 4;
@@ -165,96 +165,24 @@
             this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Enabled = false;
             this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Location = new System.Drawing.Point(103, 167);
+            this.dtpDate.Location = new System.Drawing.Point(419, 167);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(211, 29);
             this.dtpDate.TabIndex = 3;
+            this.dtpDate.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(28, 171);
+            this.label8.Location = new System.Drawing.Point(340, 171);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 21);
             this.label8.TabIndex = 77;
             this.label8.Text = "등록일자";
-            // 
-            // doc3
-            // 
-            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc3.BackColor = System.Drawing.Color.Transparent;
-            this.doc3.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc3.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc3.Location = new System.Drawing.Point(170, 329);
-            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc3.Name = "doc3";
-            this.doc3.Size = new System.Drawing.Size(24, 23);
-            this.doc3.TabIndex = 83;
-            this.doc3.Visible = false;
-            // 
-            // doc2
-            // 
-            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc2.BackColor = System.Drawing.Color.Transparent;
-            this.doc2.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc2.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(138, 329);
-            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc2.Name = "doc2";
-            this.doc2.Size = new System.Drawing.Size(24, 23);
-            this.doc2.TabIndex = 82;
-            this.doc2.Visible = false;
-            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
-            // 
-            // doc1
-            // 
-            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc1.BackColor = System.Drawing.Color.Transparent;
-            this.doc1.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc1.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
-            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(106, 329);
-            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc1.Name = "doc1";
-            this.doc1.Size = new System.Drawing.Size(24, 23);
-            this.doc1.TabIndex = 81;
-            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.buttonImage = global::SmartMES_Bluewings.Properties.Resources.close;
-            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(372, 416);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 27);
-            this.btnClose.TabIndex = 51;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.buttonImage = global::SmartMES_Bluewings.Properties.Resources.save;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(216, 416);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
-            this.btnSave.TabIndex = 50;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.label8.Visible = false;
             // 
             // panTitle
             // 
@@ -351,7 +279,7 @@
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(211, 29);
             this.tbName.TabIndex = 2;
-            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtpDateA
             // 
@@ -361,6 +289,80 @@
             this.dtpDateA.Size = new System.Drawing.Size(211, 29);
             this.dtpDateA.TabIndex = 7;
             this.dtpDateA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // doc3
+            // 
+            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc3.BackColor = System.Drawing.Color.Transparent;
+            this.doc3.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc3.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc3.Location = new System.Drawing.Point(170, 329);
+            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc3.Name = "doc3";
+            this.doc3.Size = new System.Drawing.Size(24, 23);
+            this.doc3.TabIndex = 83;
+            this.doc3.Visible = false;
+            // 
+            // doc2
+            // 
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(138, 329);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(24, 23);
+            this.doc2.TabIndex = 82;
+            this.doc2.Visible = false;
+            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
+            // 
+            // doc1
+            // 
+            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc1.BackColor = System.Drawing.Color.Transparent;
+            this.doc1.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc1.buttonImage = global::SmartMES_Bluewings.Properties.Resources.clipA;
+            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc1.Location = new System.Drawing.Point(106, 329);
+            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc1.Name = "doc1";
+            this.doc1.Size = new System.Drawing.Size(24, 23);
+            this.doc1.TabIndex = 81;
+            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.buttonImage = global::SmartMES_Bluewings.Properties.Resources.close;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Location = new System.Drawing.Point(372, 416);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 27);
+            this.btnClose.TabIndex = 51;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::SmartMES_Bluewings.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.buttonImage = global::SmartMES_Bluewings.Properties.Resources.save;
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(216, 416);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.TabIndex = 50;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // P1ED04_MOLD_MOVE
             // 
