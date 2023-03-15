@@ -256,12 +256,14 @@ namespace SmartMES_Bluewings
         {
             if (parentWin.dataGridView1.CurrentRow == null || parentWin.dataGridView1.CurrentRow.Index < 0) return;
 
-            //P1ED04_MOLD_SUB_DOC sub = new P1ED04_MOLD_SUB_DOC();
-            //sub.parentWin = this;
-            //sub.sNo = "1";
-            //sub.sParentCode = moldID;   // 설비ID
-            //sub.sFileName = doc1.Tag.ToString();
-            //sub.ShowDialog();
+            P1ED04_MOLD_SUB_DOC sub = new P1ED04_MOLD_SUB_DOC();
+            sub.parentWin = this;
+            sub.sNo = "1";
+            sub.sParentCode = moldID;   // 설비ID
+            if (doc1.Tag == null) sub.sFileName = "";
+            else
+                sub.sFileName = doc1.Tag.ToString();
+            sub.ShowDialog();
         }
         public void userButtonA2_Click(object sender, EventArgs e)
         {
