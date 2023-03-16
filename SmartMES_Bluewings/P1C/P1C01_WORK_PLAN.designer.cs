@@ -46,20 +46,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.sPCustomerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
-            this.sPDeliveryPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPProdPlanQuery2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
-            this.sP_ProdPlan_Query2TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter();
-            this.sP_Product_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter();
-            this.sP_DeliveryPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter();
-            this.sP_Customer_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter();
             this.설비DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sPProductListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
             this.월DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.화DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,9 +64,12 @@
             this.p7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPProdPlanQuery2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.품목DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.재고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sPCustomerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.q1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.w1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -100,6 +93,13 @@
             this.pdsum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pdstock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPDeliveryPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPProdPlanQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_ProdPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_QueryTableAdapter();
+            this.sP_ProdPlan_Query2TableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdPlan_Query2TableAdapter();
+            this.sP_Product_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Product_ListTableAdapter();
+            this.sP_DeliveryPlan_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_DeliveryPlan_QueryTableAdapter();
+            this.sP_Customer_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_Customer_ListTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -108,12 +108,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -324,138 +324,6 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView2.ColumnHeadersHeight = 60;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.품목DataGridViewTextBoxColumn,
-            this.재고,
-            this.c1DataGridViewTextBoxColumn,
-            this.q1DataGridViewTextBoxColumn,
-            this.w1DataGridViewTextBoxColumn,
-            this.c2DataGridViewTextBoxColumn,
-            this.q2DataGridViewTextBoxColumn,
-            this.w2DataGridViewTextBoxColumn,
-            this.c3DataGridViewTextBoxColumn,
-            this.q3DataGridViewTextBoxColumn,
-            this.w3DataGridViewTextBoxColumn,
-            this.c4DataGridViewTextBoxColumn,
-            this.q4DataGridViewTextBoxColumn,
-            this.w4DataGridViewTextBoxColumn,
-            this.c5DataGridViewTextBoxColumn,
-            this.q5DataGridViewTextBoxColumn,
-            this.w5DataGridViewTextBoxColumn,
-            this.c6DataGridViewTextBoxColumn,
-            this.q6DataGridViewTextBoxColumn,
-            this.w6DataGridViewTextBoxColumn,
-            this.c7DataGridViewTextBoxColumn,
-            this.q7DataGridViewTextBoxColumn,
-            this.w7DataGridViewTextBoxColumn,
-            this.pdsum,
-            this.pdstock,
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView2.DataSource = this.sPDeliveryPlanQueryBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 525);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 35;
-            this.dataGridView2.RowTemplate.Height = 35;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1319, 391);
-            this.dataGridView2.TabIndex = 15;
-            this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
-            this.dataGridView2.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView2_Paint);
-            // 
-            // sPCustomerListBindingSource
-            // 
-            this.sPCustomerListBindingSource.DataMember = "SP_Customer_List";
-            this.sPCustomerListBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPDeliveryPlanQueryBindingSource
-            // 
-            this.sPDeliveryPlanQueryBindingSource.DataMember = "SP_DeliveryPlan_Query";
-            this.sPDeliveryPlanQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sPProductListBindingSource
-            // 
-            this.sPProductListBindingSource.DataMember = "SP_Product_List";
-            this.sPProductListBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sPProdPlanQuery2BindingSource
-            // 
-            this.sPProdPlanQuery2BindingSource.DataMember = "SP_ProdPlan_Query2";
-            this.sPProdPlanQuery2BindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sPProdPlanQueryBindingSource
-            // 
-            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
-            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // sP_ProdPlan_QueryTableAdapter
-            // 
-            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_ProdPlan_Query2TableAdapter
-            // 
-            this.sP_ProdPlan_Query2TableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_Product_ListTableAdapter
-            // 
-            this.sP_Product_ListTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_DeliveryPlan_QueryTableAdapter
-            // 
-            this.sP_DeliveryPlan_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_Customer_ListTableAdapter
-            // 
-            this.sP_Customer_ListTableAdapter.ClearBeforeFill = true;
-            // 
             // 설비DataGridViewTextBoxColumn
             // 
             this.설비DataGridViewTextBoxColumn.DataPropertyName = "설비";
@@ -473,6 +341,16 @@
             this.p1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.p1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.p1DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // sPProductListBindingSource
+            // 
+            this.sPProductListBindingSource.DataMember = "SP_Product_List";
+            this.sPProductListBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 월DataGridViewTextBoxColumn
             // 
@@ -590,6 +468,93 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
+            // sPProdPlanQuery2BindingSource
+            // 
+            this.sPProdPlanQuery2BindingSource.DataMember = "SP_ProdPlan_Query2";
+            this.sPProdPlanQuery2BindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView2.ColumnHeadersHeight = 80;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.품목DataGridViewTextBoxColumn,
+            this.재고,
+            this.c1DataGridViewTextBoxColumn,
+            this.q1DataGridViewTextBoxColumn,
+            this.w1DataGridViewTextBoxColumn,
+            this.c2DataGridViewTextBoxColumn,
+            this.q2DataGridViewTextBoxColumn,
+            this.w2DataGridViewTextBoxColumn,
+            this.c3DataGridViewTextBoxColumn,
+            this.q3DataGridViewTextBoxColumn,
+            this.w3DataGridViewTextBoxColumn,
+            this.c4DataGridViewTextBoxColumn,
+            this.q4DataGridViewTextBoxColumn,
+            this.w4DataGridViewTextBoxColumn,
+            this.c5DataGridViewTextBoxColumn,
+            this.q5DataGridViewTextBoxColumn,
+            this.w5DataGridViewTextBoxColumn,
+            this.c6DataGridViewTextBoxColumn,
+            this.q6DataGridViewTextBoxColumn,
+            this.w6DataGridViewTextBoxColumn,
+            this.c7DataGridViewTextBoxColumn,
+            this.q7DataGridViewTextBoxColumn,
+            this.w7DataGridViewTextBoxColumn,
+            this.pdsum,
+            this.pdstock,
+            this.dataGridViewTextBoxColumn1});
+            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dataGridView2.DataSource = this.sPDeliveryPlanQueryBindingSource;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LemonChiffon;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 525);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 35;
+            this.dataGridView2.RowTemplate.Height = 35;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1319, 391);
+            this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
+            this.dataGridView2.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView2_Paint);
+            // 
             // 품목DataGridViewTextBoxColumn
             // 
             this.품목DataGridViewTextBoxColumn.DataPropertyName = "품목";
@@ -616,6 +581,11 @@
             this.c1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.c1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.c1DataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // sPCustomerListBindingSource
+            // 
+            this.sPCustomerListBindingSource.DataMember = "SP_Customer_List";
+            this.sPCustomerListBindingSource.DataSource = this.dataSetP1C;
             // 
             // q1DataGridViewTextBoxColumn
             // 
@@ -805,6 +775,36 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // sPDeliveryPlanQueryBindingSource
+            // 
+            this.sPDeliveryPlanQueryBindingSource.DataMember = "SP_DeliveryPlan_Query";
+            this.sPDeliveryPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sPProdPlanQueryBindingSource
+            // 
+            this.sPProdPlanQueryBindingSource.DataMember = "SP_ProdPlan_Query";
+            this.sPProdPlanQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sP_ProdPlan_QueryTableAdapter
+            // 
+            this.sP_ProdPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_ProdPlan_Query2TableAdapter
+            // 
+            this.sP_ProdPlan_Query2TableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Product_ListTableAdapter
+            // 
+            this.sP_Product_ListTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_DeliveryPlan_QueryTableAdapter
+            // 
+            this.sP_DeliveryPlan_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Customer_ListTableAdapter
+            // 
+            this.sP_Customer_ListTableAdapter.ClearBeforeFill = true;
+            // 
             // P1C01_WORK_PLAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -827,12 +827,12 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPCustomerListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPDeliveryPlanQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProductListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQuery2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdPlanQueryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

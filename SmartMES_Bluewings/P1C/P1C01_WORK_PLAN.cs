@@ -207,19 +207,19 @@ namespace SmartMES_Bluewings
                     m.dbCUD(sql, ref msg);
                 }
             }
-            for (int i = 2; i < dataGridView2.ColumnCount - 1; i += 3)    // column 먼저
+            for (int i = 2; i < 23; i += 3)    // column 먼저
             {
                 int interval = (int)(i / 3);
                 sDate = dtpFromDate.Value.AddDays(interval).ToString("yyyy-MM-dd");
 
-                for (int j = 0; j < dataGridView1.RowCount; j++)
+                for (int j = 0; j < dataGridView2.RowCount; j++)
                 {
-                    string sProd = dataGridView1.Rows[j].Cells[25].Value.ToString().Trim(); // 품목코드
-                    DataGridViewComboBoxCell cbx = (DataGridViewComboBoxCell)dataGridView1.Rows[j].Cells[i];
+                    string sProd = dataGridView2.Rows[j].Cells[25].Value.ToString().Trim(); // 품목코드
+                    DataGridViewComboBoxCell cbx = (DataGridViewComboBoxCell)dataGridView2.Rows[j].Cells[i];
                     string sCust = cbx.Value.ToString();
                     if (string.IsNullOrEmpty(sCust)) return;
-                    sQty = dataGridView1.Rows[j].Cells[i + 1].Value.ToString().Trim();
-                    sWeight = dataGridView1.Rows[j].Cells[i + 2].Value.ToString().Trim();
+                    sQty = dataGridView2.Rows[j].Cells[i + 1].Value.ToString().Trim();
+                    sWeight = dataGridView2.Rows[j].Cells[i + 2].Value.ToString().Trim();
                     if (string.IsNullOrEmpty(sQty)) sQty = "0";
                     if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
 
@@ -230,6 +230,8 @@ namespace SmartMES_Bluewings
                     m.dbCUD(sql, ref msg);
                 }
             }
+
+            lblMsg.Text = "저장되었습니다.";
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {

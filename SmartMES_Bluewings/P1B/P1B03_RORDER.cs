@@ -374,7 +374,7 @@ namespace SmartMES_Bluewings
                 pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
                 pop.ShowDialog();
             }
-            else if (e.ColumnIndex == 19) //"X"
+            else if (e.ColumnIndex == 20) //"X"
             {
                 try
                 {
