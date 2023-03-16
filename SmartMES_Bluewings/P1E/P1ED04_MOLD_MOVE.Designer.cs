@@ -246,7 +246,7 @@
             this.tbNo.ReadOnly = true;
             this.tbNo.Size = new System.Drawing.Size(211, 29);
             this.tbNo.TabIndex = 1;
-            this.tbNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 

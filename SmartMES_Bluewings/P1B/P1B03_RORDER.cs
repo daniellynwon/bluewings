@@ -322,14 +322,17 @@ namespace SmartMES_Bluewings
                     if (dataGridView1.Rows[rowIndex].Cells[8].Value != null && dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Length != 0)
                         money2 = float.Parse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());   // 단가
 
-                    if (dataGridView1.Rows[rowIndex].Cells[9].Value != null && dataGridView1.Rows[rowIndex].Cells[9].Value.ToString().Length != 0)  // 할인율 추가 (1/19)
-                        discount = money2 * (float.Parse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString())/100);
-
-                    money2 -= discount;
                     moneyA = (long)(money1 * money2);
-                    dataGridView1.Rows[rowIndex].Cells[10].Value = moneyA;
-                    ListSearch4();
+
+                    if (dataGridView1.Rows[rowIndex].Cells[9].Value != null && dataGridView1.Rows[rowIndex].Cells[9].Value.ToString().Length != 0)  // 할인율 추가 (1/19)
+                    {
+                        discount = (float.Parse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString()) / 100);
+                        moneyA -= (long) (moneyA * discount);
+                    }
                 }
+                
+                dataGridView1.Rows[rowIndex].Cells[10].Value = moneyA;
+                ListSearch4();
             }
             catch(Exception)
             {
@@ -647,7 +650,7 @@ namespace SmartMES_Bluewings
                     if (string.IsNullOrEmpty(sAmount)) sAmount = "0";
 
                     sql = "insert into tb_rorder_sub (rorder_id, rorder_seq, prod_id, add_size, qty, danga, discount, amount, proc_std) " +
-                          "values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + "," + discount + "," + sAmount + ",'" + sProcStd + "')";
+                          "values('" + sNo + "'," + sSeq + ",'" + sProdID + "','" + sAddSize + "'," + sQty + "," + sDanga + "," + discount + "," + sAmount + ",'" + sProcStd + "')";
 
                     m.dbCUD(sql, ref msg);
                     var data = sql;
@@ -747,6 +750,5 @@ namespace SmartMES_Bluewings
             return m.dbRonlyOne(sql, ref msg).ToString();
         }
         #endregion
-
     }
 }

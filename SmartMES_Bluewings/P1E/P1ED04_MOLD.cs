@@ -137,13 +137,13 @@ namespace SmartMES_Bluewings
         {
             string reportFileName = "SmartMES_Bluewings.Reports.P1ED04_MOLD.rdlc";
 
-            string reportParm1 = "점검기간 : ";
-            string reportParm2 = "설비그룹/설비명 :";
+            string reportParm1 = "기간 : ";
+            string reportParm2 = "금형명/제작사 :";
             string reportParm3 = "";
 
             reportParm1 = reportParm1 + dtpFromDate.Value.ToString("yyyy-MM-dd") + " ~ " + dtpToDate.Value.ToString("yyyy-MM-dd");
 
-            if (string.IsNullOrEmpty(tbSearch.Text.Trim())) reportParm2 = reportParm2 + "전체";
+            if (string.IsNullOrEmpty(tbSearch.Text.Trim())) reportParm2 = reportParm2;
             else reportParm2 = reportParm2 + tbSearch.Text.Trim();
 
             reportParm3 = reportParm3 + "";

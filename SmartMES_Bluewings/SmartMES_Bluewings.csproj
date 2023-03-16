@@ -1160,6 +1160,7 @@
     <EmbeddedResource Include="Reports\P1ED01_QC_FINAL.rdlc" />
     <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST.rdlc" />
     <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST1.rdlc" />
+    <EmbeddedResource Include="Reports\P1ED04_MOLD.rdlc" />
     <EmbeddedResource Include="Reports\P1FD01_KPI.rdlc" />
     <EmbeddedResource Include="UserControls\UserButtonA.resx">
       <DependentUpon>UserButtonA.cs</DependentUpon>
