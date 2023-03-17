@@ -7,7 +7,7 @@ namespace SmartMES_Bluewings
     public partial class P1A06_RECIPE_SUB : Form
     {
         public P1A06_RECIPE parentWin;
-        public int parentRowIdx;
+        public int rowIndex;
 
         public P1A06_RECIPE_SUB()
         {
@@ -19,111 +19,88 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[수정]")
             {
-                cbProd.Enabled = false;
+                rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-                tbNo.Text = parentWin.dataGridView1.Rows[parentRowIdx].Cells[1].Value.ToString();
-                tbNo.Tag = parentWin.dataGridView1.Rows[parentRowIdx].Cells[2].Value.ToString();
-
-                cbProd.SelectedValue = parentWin.dataGridView1.Rows[parentRowIdx].Cells[3].Value;
-                cbMat1.SelectedValue = parentWin.dataGridView1.Rows[parentRowIdx].Cells[5].Value;
-                cbMat2.SelectedValue = parentWin.dataGridView1.Rows[parentRowIdx].Cells[1].Value;
-                cbMat3.SelectedValue = parentWin.dataGridView1.Rows[parentRowIdx].Cells[1].Value;
-                tbPer1.Text = parentWin.dataGridView1.Rows[parentRowIdx].Cells[9].Value.ToString();
-                tbPer2.Text = parentWin.dataGridView1.Rows[parentRowIdx].Cells[9].Value.ToString();
-                tbPer3.Text = parentWin.dataGridView1.Rows[parentRowIdx].Cells[9].Value.ToString();
+                //dtpDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString());
+                tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
+                tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                tbKg1.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                tbKg2.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                tbKg3.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
             }
-            this.ActiveControl = tbPer1;
+            else
+            {
+                tbNo.Text = getRecipeCode();
+            }
+            this.ActiveControl = tbKg1;
         }
 
         private void Save()
         {
             lblMsg.Text = "";
 
-            //string sProdID = string.Empty;
-            //if (tbProduct.Tag != null) sProdID = tbProduct.Tag.ToString();
-            //string sPlanId = tbPlanId.Text;
+            string sNo = tbNo.Text;
+            string sDate = DateTime.Today.ToString("yyyy-MM-dd");
+            string sProdID = string.Empty;
+            if (tbProd.Tag != null) sProdID = tbProd.Tag.ToString();
 
-            //string sProdQty = tbProdQty.Text.Replace(",", "").Trim();
-            //if (string.IsNullOrEmpty(sProdQty)) sProdQty = "0";
+            string sKg1 = tbKg1.Text.Replace(",", "").Trim();
+            string sKg2 = tbKg2.Text.Replace(",", "").Trim();
+            string sKg3 = tbKg3.Text.Replace(",", "").Trim();
+            
+            if (string.IsNullOrEmpty(sKg1)) sKg1 = "0";
+            if (string.IsNullOrEmpty(sKg2)) sKg2 = "0";
+            if (string.IsNullOrEmpty(sKg3)) sKg3 = "0";
 
-            //if (string.IsNullOrEmpty(sProdID))
-            //{
-            //    lblMsg.Text = "제품이 선택되지 않았습니다.";
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(sProdID))
+            {
+                lblMsg.Text = "제품이 선택되지 않았습니다.";
+                return;
+            }
 
-            //if (sProdQty == "0")
-            //{
-            //    lblMsg.Text = "작업지시 수량이 입력되지 않았습니다.";
-            //    return;
-            //}
+            if (sKg1 == "0" || sKg2 == "0" || sKg3 == "0")
+            {
+                lblMsg.Text = "배합 중량이 입력되지 않았습니다.";
+                return;
+            }
 
-            //string sPlanDate = dtpPlanDate.Value.ToString("yyyy-MM-dd");
-            //string sBigo = tbContents.Text.Trim();
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
 
-            //string sql = string.Empty;
-            //string msg = string.Empty;
-            //MariaCRUD m = new MariaCRUD();
+            sql = "insert into tb_gi_recipe(recipe_no, prod_id, recipe_date, qty1, qty2, qty3)" +
+                " values('" + sNo + "','" + sProdID + "','" + sDate + "'," + sKg1 + "," + sKg2 + "," + sKg3 + ")" +
+                    " on duplicate key update" +
+                    " qty1 = " + sKg1 + ", qty2 = " + sKg2 + ", qty3 = " + sKg3;
 
-            //if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
-            //{
-            //    sql = "insert into productionplan(PlanDate, ProductID, SaleQty, ProdQty, Contents)" +
-            //        " values('" + sPlanDate + "', " + sProdID + ", 0, " + sProdQty + ", '" + sBigo + "')" +
-            //        " on duplicate key update" +
-            //        " ProdQty = " + sProdQty + ", Contents = '" + sBigo + "'";
+            m.dbCUD(sql, ref msg);
 
-            //    m.dbCUD(sql, ref msg);
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                return;
+            }
+            lblMsg.Text = "저장되었습니다.";
 
-            //    if (msg != "OK")
-            //    {
-            //        lblMsg.Text = msg;
-            //        return;
-            //    }
+            parentWin.ListSearch();
 
-            //    lblMsg.Text = "저장되었습니다.";
+            for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
+            {
+                //if (DateTime.Parse(parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString()).ToString("yyyy-MM-dd") + "_" + parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString()
+                //    == sPlanDate + "_" + sProdID)
+                //{
+                //    parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
+                //    parentWin.dataGridView1.CurrentCell.Selected = true;
+                //    break;
+                //}
+            }
 
-            //    parentWin.ListSearch();
-
-            //    for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
-            //    {
-            //        if (DateTime.Parse(parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString()).ToString("yyyy-MM-dd") + "_" + parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString()
-            //            == sPlanDate + "_" + sProdID)
-            //        {
-            //            parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
-            //            parentWin.dataGridView1.CurrentCell.Selected = true;
-            //            break;
-            //        }
-            //    }
-
-            //    tbProduct.Tag = null;
-            //    tbProduct.Text = string.Empty;
-            //    tbModel.Text = string.Empty;
-            //    tbProdQty.Text = string.Empty;
-            //    tbContents.Text = string.Empty;
-            //    tbProdQty.Focus();
-            //}
-            //else
-            //{
-            //    sql = "update productionplan set ProdQty = " + sProdQty + ", Contents = '" + sBigo + "' " +
-            //        "where ProdPlanID = " + sPlanId;
-
-            //    m.dbCUD(sql, ref msg);
-
-            //    if (msg != "OK")
-            //    {
-            //        lblMsg.Text = msg;
-            //        return;
-            //    }
-
-            //    m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sPlanDate + " " + tbProduct.Text);
-
-            //    parentWin.ListSearch();
-            //    parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, parentRowIdx];
-            //    parentWin.dataGridView1.Rows[parentRowIdx].Selected = true;
-            //    this.DialogResult = DialogResult.OK;
-            //}
+            tbProd.Tag = null; tbProd.Text = string.Empty;
+            tbKg1.Text = string.Empty;
+            tbKg2.Text = string.Empty;
+            tbKg3.Text = string.Empty;
         }
-
 
         #region 엔터키로 포커스 이동
         public bool NextFocus(object sender, KeyEventArgs e)
@@ -169,21 +146,38 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
-        private void lbProd_Click(object sender, EventArgs e)
+        #region 품목명 / RecipeNo. 생성
+        private void lblProd_Click(object sender, EventArgs e)
         {
+            lblMsg.Text = "";
+            if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[수정]") return;
+
             ProdFinder pop = new ProdFinder();
             pop.cbGubun.Text = "A.제품";
+            pop._kind = "%";
+            pop._stockFlag = "%";
             pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
             pop.ShowDialog();
         }
         private void ProdEventMethod(object sender)
         {
             string sProd = sender.ToString();
+
             if (string.IsNullOrEmpty(sProd)) return;
 
-            //tbProduct.Tag = sProd.Substring(0, sProd.IndexOf("#1/"));
-            //tbProduct.Text = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.IndexOf("#3/") - (sProd.IndexOf("#2/") + 3));
-            //tbModel.Text = sProd.Substring(sProd.IndexOf("#3/") + 3, sProd.IndexOf("#4/") - (sProd.IndexOf("#3/") + 3));
+            tbProd.Tag = sProd.Substring(0, sProd.IndexOf("#1/"));
+            tbProd.Text = sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
+            //tbQty.Focus();
         }
+        private string getRecipeCode()
+        {
+            string sql = @"select UF_RecipeNoGenerator()";
+
+            MariaCRUD m = new MariaCRUD();
+
+            string msg = string.Empty;
+            return m.dbRonlyOne(sql, ref msg).ToString();
+        }
+        #endregion
     }
 }

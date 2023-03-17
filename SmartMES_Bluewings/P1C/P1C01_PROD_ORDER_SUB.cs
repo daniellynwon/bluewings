@@ -91,7 +91,7 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
 
             ProdFinder pop = new ProdFinder();
-            pop.cbGubun.Text = "A.정품";
+            pop.cbGubun.Text = "A.제품";
             pop._kind = "%";
             pop._stockFlag = "%";
             pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
