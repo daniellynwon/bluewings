@@ -274,6 +274,9 @@
     <Compile Include="MDIForm.designer.cs">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1A\DataSetP1A.cs">
+      <DependentUpon>DataSetP1A.xsd</DependentUpon>
+    </Compile>
     <Compile Include="P1A\DataSetP1A.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

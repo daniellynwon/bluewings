@@ -163,12 +163,12 @@ namespace SmartMES_Bluewings
         {
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            //if (e.ColumnIndex != 1) return;
+            if (e.ColumnIndex != 1) return;
 
-            //P1A06_RECIPE_SUB sub = new P1A06_RECIPE_SUB();
-            //sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-            //sub.parentWin = this;
-            //sub.ShowDialog();
+            P1A06_RECIPE_SUB sub = new P1A06_RECIPE_SUB();
+            sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+            sub.parentWin = this;
+            sub.ShowDialog();
         }
         #endregion
     }

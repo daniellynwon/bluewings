@@ -39,15 +39,16 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.레시피 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LotNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.비율DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPRecipeQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1A = new SmartMES_Bluewings.P1A.DataSetP1A();
             this.sP_Recipe_QueryTableAdapter = new SmartMES_Bluewings.P1A.DataSetP1ATableAdapters.SP_Recipe_QueryTableAdapter();
+            this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.레시피DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.중량ADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.중량BDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.중량MBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -120,7 +121,7 @@
             this.tbSearch.BackColor = System.Drawing.SystemColors.Window;
             this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbSearch.Location = new System.Drawing.Point(153, 19);
+            this.tbSearch.Location = new System.Drawing.Point(179, 19);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(249, 29);
             this.tbSearch.TabIndex = 1;
@@ -134,9 +135,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(37, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
+            this.label1.Size = new System.Drawing.Size(136, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LotNo/품목명";
+            this.label1.Text = "RecipeNo/품목명";
             // 
             // dataGridView1
             // 
@@ -162,12 +163,13 @@
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.구분DataGridViewTextBoxColumn,
-            this.레시피,
-            this.LotNo,
-            this.자재코드DataGridViewTextBoxColumn,
-            this.자재명DataGridViewTextBoxColumn,
-            this.비율DataGridViewTextBoxColumn});
+            this.일자DataGridViewTextBoxColumn,
+            this.레시피DataGridViewTextBoxColumn,
+            this.품목코드DataGridViewTextBoxColumn,
+            this.품목명DataGridViewTextBoxColumn,
+            this.중량ADataGridViewTextBoxColumn,
+            this.중량BDataGridViewTextBoxColumn,
+            this.중량MBDataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPRecipeQueryBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -201,51 +203,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // 구분DataGridViewTextBoxColumn
-            // 
-            this.구분DataGridViewTextBoxColumn.DataPropertyName = "구분";
-            this.구분DataGridViewTextBoxColumn.FillWeight = 30F;
-            this.구분DataGridViewTextBoxColumn.HeaderText = "No.";
-            this.구분DataGridViewTextBoxColumn.Name = "구분DataGridViewTextBoxColumn";
-            this.구분DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 레시피
-            // 
-            this.레시피.DataPropertyName = "레시피";
-            this.레시피.HeaderText = "레시피No";
-            this.레시피.Name = "레시피";
-            this.레시피.ReadOnly = true;
-            this.레시피.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // LotNo
-            // 
-            this.LotNo.DataPropertyName = "LotNo";
-            this.LotNo.HeaderText = "LotNo";
-            this.LotNo.Name = "LotNo";
-            this.LotNo.ReadOnly = true;
-            // 
-            // 자재코드DataGridViewTextBoxColumn
-            // 
-            this.자재코드DataGridViewTextBoxColumn.DataPropertyName = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.HeaderText = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.Name = "자재코드DataGridViewTextBoxColumn";
-            this.자재코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.자재코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 자재명DataGridViewTextBoxColumn
-            // 
-            this.자재명DataGridViewTextBoxColumn.DataPropertyName = "자재명";
-            this.자재명DataGridViewTextBoxColumn.HeaderText = "자재명";
-            this.자재명DataGridViewTextBoxColumn.Name = "자재명DataGridViewTextBoxColumn";
-            this.자재명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 비율DataGridViewTextBoxColumn
-            // 
-            this.비율DataGridViewTextBoxColumn.DataPropertyName = "비율";
-            this.비율DataGridViewTextBoxColumn.HeaderText = "비율";
-            this.비율DataGridViewTextBoxColumn.Name = "비율DataGridViewTextBoxColumn";
-            this.비율DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // sPRecipeQueryBindingSource
             // 
             this.sPRecipeQueryBindingSource.DataMember = "SP_Recipe_Query";
@@ -259,6 +216,57 @@
             // sP_Recipe_QueryTableAdapter
             // 
             this.sP_Recipe_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // 일자DataGridViewTextBoxColumn
+            // 
+            this.일자DataGridViewTextBoxColumn.DataPropertyName = "일자";
+            this.일자DataGridViewTextBoxColumn.HeaderText = "일자";
+            this.일자DataGridViewTextBoxColumn.Name = "일자DataGridViewTextBoxColumn";
+            this.일자DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 레시피DataGridViewTextBoxColumn
+            // 
+            this.레시피DataGridViewTextBoxColumn.DataPropertyName = "레시피";
+            this.레시피DataGridViewTextBoxColumn.HeaderText = "recipeNo";
+            this.레시피DataGridViewTextBoxColumn.Name = "레시피DataGridViewTextBoxColumn";
+            this.레시피DataGridViewTextBoxColumn.ReadOnly = true;
+            this.레시피DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.레시피DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 품목코드DataGridViewTextBoxColumn
+            // 
+            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 품목명DataGridViewTextBoxColumn
+            // 
+            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 중량ADataGridViewTextBoxColumn
+            // 
+            this.중량ADataGridViewTextBoxColumn.DataPropertyName = "중량A";
+            this.중량ADataGridViewTextBoxColumn.HeaderText = "폴리에틸렌(A)";
+            this.중량ADataGridViewTextBoxColumn.Name = "중량ADataGridViewTextBoxColumn";
+            this.중량ADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 중량BDataGridViewTextBoxColumn
+            // 
+            this.중량BDataGridViewTextBoxColumn.DataPropertyName = "중량B";
+            this.중량BDataGridViewTextBoxColumn.HeaderText = "폴리에틸렌(B)";
+            this.중량BDataGridViewTextBoxColumn.Name = "중량BDataGridViewTextBoxColumn";
+            this.중량BDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 중량MBDataGridViewTextBoxColumn
+            // 
+            this.중량MBDataGridViewTextBoxColumn.DataPropertyName = "중량MB";
+            this.중량MBDataGridViewTextBoxColumn.HeaderText = "폴리에틸렌(MB)";
+            this.중량MBDataGridViewTextBoxColumn.Name = "중량MBDataGridViewTextBoxColumn";
+            this.중량MBDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // P1A06_RECIPE
             // 
@@ -297,11 +305,12 @@
         private P1A.DataSetP1A dataSetP1A;
         private P1A.DataSetP1ATableAdapters.SP_Recipe_QueryTableAdapter sP_Recipe_QueryTableAdapter;
         private System.Windows.Forms.Label lblMsg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 구분DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 레시피;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LotNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재코드DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 비율DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 일자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn 레시피DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 중량ADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 중량BDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 중량MBDataGridViewTextBoxColumn;
     }
 }
