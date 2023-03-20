@@ -164,6 +164,7 @@ namespace SmartMES_Bluewings
             MariaCRUD m = new MariaCRUD();
 
             string sDate = parentWin.dtpDate.Value.ToString("yyyy-MM-dd");
+            string sMat1, sMat2, sMat3, sQty1, sQty2, sQty3, sTime;
 
             if(lblJob.Text == "" || string.IsNullOrEmpty(lblJob.Text))
             {
@@ -173,13 +174,13 @@ namespace SmartMES_Bluewings
                     string mNo = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     string sProd = dataGridView1.Rows[i].Cells[5].Value.ToString();
 
-                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString();
-                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString();
-                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString();
-                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString();
-                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString();
-                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString();
-                    string sTime = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                    sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                    sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                    sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                    sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                    sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                    sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                    sTime = dataGridView1.Rows[i].Cells[13].Value.ToString();
 
                     sql = "insert into tb_prod_order (job_no, pos, lot_date, machine_id, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, comb_time, enter_man) " +
                         "values('" + lblJob.Text + "','" + G.Pos + "','" + sDate + "'," + mNo + ",'" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 +"'," + sQty1 + 
@@ -201,13 +202,13 @@ namespace SmartMES_Bluewings
                     string mNo = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     string sProd = dataGridView1.Rows[i].Cells[5].Value.ToString();
 
-                    string sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString().Split('/')[0];
-                    string sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString().Split('/')[0];
-                    string sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString().Split('/')[0];
-                    string sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Split('/')[0];
-                    string sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString().Split('/')[0];
-                    string sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString().Split('/')[0];
-                    string sTime = dataGridView1.Rows[i].Cells[15].Value.ToString();
+                    sMat1 = dataGridView1.Rows[i].Cells[7].Value.ToString();
+                    sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                    sMat3 = dataGridView1.Rows[i].Cells[11].Value.ToString();
+                    sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                    sQty2 = dataGridView1.Rows[i].Cells[10].Value.ToString();
+                    sQty3 = dataGridView1.Rows[i].Cells[12].Value.ToString();
+                    sTime = dataGridView1.Rows[i].Cells[13].Value.ToString();
 
                     sql = "update tb_prod_order " +
                         "set lot_date = '" + sDate + "', prod_id = '" + sProd + "', mat1 = '" + sMat1 + "', mat2 = '" + sMat2 + ", mat3 = '" + sMat3
@@ -224,6 +225,17 @@ namespace SmartMES_Bluewings
                 }
             }
             lblMsg.Text = "저장되었습니다.";
+            parentWin.ListSearch();
+
+            for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
+            {
+                if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == lblJob.Text)
+                {
+                    parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
+                    parentWin.dataGridView1.CurrentCell.Selected = true;
+                    break;
+                }
+            }
             this.Dispose();
         }
         #endregion
@@ -252,12 +264,12 @@ namespace SmartMES_Bluewings
             // Category Painting 헤더 그리는 부분
             {
                 //--------------------------------- 범위 지정
-                Rectangle r1 = gv.GetCellDisplayRectangle(7, -1, false);  //범위 시작
+                Rectangle r1 = gv.GetCellDisplayRectangle(8, -1, false);  //범위 시작
                 int width1 = gv.GetCellDisplayRectangle(8, -1, false).Width;
 
                 r1.X += 1;
                 r1.Y += 1;
-                r1.Width = r1.Width + width1 - 2; // + width1 + width2 + width3 + width4 + width5 + width6
+                r1.Width = r1.Width - 2; // + width1 + width2 + width3 + width4 + width5 + width6
                 r1.Height = (r1.Height / 2) - 2;
 
                 //--------------------------------- 범위 지정 END
@@ -272,11 +284,11 @@ namespace SmartMES_Bluewings
                     format);
             }
             {
-                Rectangle r2 = gv.GetCellDisplayRectangle(9, -1, false);
+                Rectangle r2 = gv.GetCellDisplayRectangle(10, -1, false);
                 int width = gv.GetCellDisplayRectangle(10, -1, false).Width;
 
                 r2.X += 1; r2.Y += 1;
-                r2.Width = r2.Width + width - 2;
+                r2.Width = r2.Width - 2;
                 r2.Height = (r2.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
@@ -285,11 +297,11 @@ namespace SmartMES_Bluewings
                     new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r2, format);
             }
             {
-                Rectangle r3 = gv.GetCellDisplayRectangle(11, -1, false);
+                Rectangle r3 = gv.GetCellDisplayRectangle(12, -1, false);
                 int width = gv.GetCellDisplayRectangle(12, -1, false).Width;
 
                 r3.X += 1; r3.Y += 1;
-                r3.Width = r3.Width + width - 2;
+                r3.Width = r3.Width - 2;
                 r3.Height = (r3.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r3);

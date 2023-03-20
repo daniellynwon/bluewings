@@ -322,6 +322,7 @@
             this.자재A.HeaderText = "자재";
             this.자재A.Name = "자재A";
             this.자재A.ReadOnly = true;
+            this.자재A.Visible = false;
             // 
             // 중량A
             // 
@@ -336,6 +337,7 @@
             this.자재B.HeaderText = "자재";
             this.자재B.Name = "자재B";
             this.자재B.ReadOnly = true;
+            this.자재B.Visible = false;
             // 
             // 중량B
             // 
@@ -350,6 +352,7 @@
             this.자재MB.HeaderText = "자재";
             this.자재MB.Name = "자재MB";
             this.자재MB.ReadOnly = true;
+            this.자재MB.Visible = false;
             // 
             // 중량MB
             // 

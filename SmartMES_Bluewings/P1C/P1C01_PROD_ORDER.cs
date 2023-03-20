@@ -215,12 +215,12 @@ namespace SmartMES_Bluewings
             // Category Painting 헤더 그리는 부분
             {
                 //--------------------------------- 범위 지정
-                Rectangle r1 = gv.GetCellDisplayRectangle(6, -1, false);  //범위 시작
+                Rectangle r1 = gv.GetCellDisplayRectangle(7, -1, false);  //범위 시작
                 int width1 = gv.GetCellDisplayRectangle(7, -1, false).Width;
 
                 r1.X += 1;
                 r1.Y += 1;
-                r1.Width = r1.Width + width1 - 2; // + width1 + width2 + width3 + width4 + width5 + width6
+                r1.Width = r1.Width - 2; // + width1 + width2 + width3 + width4 + width5 + width6
                 r1.Height = (r1.Height / 2) - 2;
 
                 //--------------------------------- 범위 지정 END
@@ -235,11 +235,11 @@ namespace SmartMES_Bluewings
                     format);
             }
             {
-                Rectangle r2 = gv.GetCellDisplayRectangle(8, -1, false);
+                Rectangle r2 = gv.GetCellDisplayRectangle(9, -1, false);
                 int width = gv.GetCellDisplayRectangle(9, -1, false).Width;
 
                 r2.X += 1; r2.Y += 1;
-                r2.Width = r2.Width + width - 2;
+                r2.Width = r2.Width - 2;
                 r2.Height = (r2.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
@@ -248,11 +248,11 @@ namespace SmartMES_Bluewings
                     new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r2, format);
             }
             {
-                Rectangle r3 = gv.GetCellDisplayRectangle(10, -1, false);
+                Rectangle r3 = gv.GetCellDisplayRectangle(11, -1, false);
                 int width = gv.GetCellDisplayRectangle(11, -1, false).Width;
 
                 r3.X += 1; r3.Y += 1;
-                r3.Width = r3.Width + width - 2;
+                r3.Width = r3.Width  - 2;
                 r3.Height = (r3.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r3);

@@ -16,8 +16,8 @@ namespace SmartMES_Bluewings
 
             G.UserID = "admin";
             G.Pos = "A";
-            G.ComName = "은경케미칼";
-            G.PosName = "은경케미칼";
+            G.ComName = "푸른나래";
+            G.PosName = "푸른나래";
             G.UserName = "원이설";
             G.Authority = "A";
             Application.Run(new MDIForm());
