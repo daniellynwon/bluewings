@@ -26,13 +26,37 @@ namespace SmartMES_Bluewings
         }
         public async void ListSearch1()
         {
-            lblMsg.Text = "";
-            lblBarcode.Text = "";
+            lblMsg.Text = ""; lblBarcode.Text = ""; int index = 0;
+            if(dataGridView1.CurrentCell != null) 
+                index = dataGridView1.CurrentRow.Index;
+
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
                 DateTime dtDate = DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd"));
                 sP_ProdResult_OrderTableAdapter.Fill(dataSetP1C.SP_ProdResult_Order, dtDate);
+
+                lblNo.Text = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                if (dataGridView1.Rows[index].Cells[16].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[index].Cells[16].Value.ToString()))
+                    dtpStartTime.Text = string.Empty;
+                else
+                {
+                    dtpStartTime.Text = DateTime.Parse(dataGridView1.Rows[index].Cells[16].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                    lblDone.Text = "투입완료";
+                }
+
+                if (dataGridView1.Rows[index].Cells[17].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[index].Cells[17].Value.ToString()))
+                    dtpDoneTime.Text = string.Empty;
+                else
+                    dtpDoneTime.Text = DateTime.Parse(dataGridView1.Rows[index].Cells[17].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+
+                btnStart.Tag = dataGridView1.Rows[index].Cells[16].Value.ToString();       // 작업시작
+
+                if (string.IsNullOrEmpty(dataGridView1.Rows[index].Cells[17].Value.ToString()))
+                    btnFinish.Tag = null;
+                else
+                    btnFinish.Tag = dataGridView1.Rows[index].Cells[17].Value.ToString();
+
                 var data = dataSetP1C.SP_ProdResult_Order;
                 await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 
@@ -42,6 +66,9 @@ namespace SmartMES_Bluewings
                 {
                     dataGridView_CellClick(null, new DataGridViewCellEventArgs(0, 0));
                 }
+
+                timer1.Start();
+                timer2.Start();
             }
             catch (NullReferenceException)
             {
@@ -75,7 +102,12 @@ namespace SmartMES_Bluewings
         }
         public void ListInit()
         {
-            lblMsg.Text = ""; lblBarcode.Text = ""; tbBarcode.Text = ""; 
+            lblMsg.Text = ""; lblBarcode.Text = ""; tbBarcode.Text = "";
+            dtpStartTime.Text = string.Empty; dtpDoneTime.Text = string.Empty;
+            btnStart.Tag = null; btnFinish.Tag = null;
+
+            timer1.Stop();
+            timer2.Stop();
 
             dataGridView1.CurrentCell = null;
             dataGridView1.ClearSelection();
@@ -100,6 +132,117 @@ namespace SmartMES_Bluewings
         {
             ListInit();
             ListSearch1();
+        }
+        #endregion
+
+        #region Condition Bar Events2
+        private async void btnStart_Click(object sender, EventArgs e)
+        {
+            lblMsg.Text = "";
+
+            if (btnStart.Tag != null)
+            {
+                lblMsg.Text = "이미 작업시작된 생산일자입니다.";
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("JobNo : " + lblNo.Text + "\r\r해당 정보로 작업시작 하시겠습니까?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.No) return;
+
+            string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sJobTimeA = ""; string sJobTimeB = "";
+
+            if (dtpStartTime.Text.Length == 19) sJobTimeA = dtpStartTime.Text;
+            else sJobTimeA = "";
+
+            if (dtpDoneTime.Text.Length == 19) sJobTimeB = dtpDoneTime.Text;
+            else sJobTimeB = "";
+
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sJobNo, sMachine, sProd, sMat1, sMat2, sMat3, sQty1, sQty2, sQty3;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString())) continue;
+
+                sJobNo = dataGridView1.Rows[i].Cells[0].Value.ToString().Trim();
+                sMachine = dataGridView1.Rows[i].Cells[2].Value.ToString().Trim();
+                sProd = dataGridView1.Rows[i].Cells[4].Value.ToString().Trim();
+                sMat1 = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();
+                sMat2 = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+                sMat3 = dataGridView1.Rows[i].Cells[12].Value.ToString().Trim();
+                sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
+                sQty2 = dataGridView1.Rows[i].Cells[11].Value.ToString().Trim();
+                sQty3 = dataGridView1.Rows[i].Cells[14].Value.ToString().Trim();
+
+                if (string.IsNullOrEmpty(sQty1)) sQty1 = "0";
+                if (string.IsNullOrEmpty(sQty2)) sQty2 = "0";
+                if (string.IsNullOrEmpty(sQty3)) sQty3 = "0";
+
+                sql = "insert into tb_prod_result (job_no, machine_id, prod_date, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, jobtime_start, enter_man) " +
+                    "values ('" + sJobNo + "'," + sMachine + ",'" + sDate + "','" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 + "'," + sQty1 + "," + sQty2 + "," + sQty3 +
+                    ", if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),'" + G.UserID + "')";
+                m.dbCUD(sql, ref msg);
+            }
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = "저장에 문제가 있습니다. 확인해 주세요.";
+                return;
+            }
+
+            int rowIndex = 0;
+            ListSearch1();
+            dataGridView1.CurrentCell = dataGridView1[0, rowIndex];
+            dataGridView1.CurrentCell.Selected = true;
+
+            ListSearch2(rowIndex);
+
+            lblMsg.Text = "작업시작되었습니다.";
+        }
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            lblMsg.Text = "";
+            if (btnStart.Tag == null)
+            {
+                lblMsg.Text = "작업시작되지 않은 생산일자입니다.";
+                return;
+            }
+            if (btnFinish.Tag != null)
+            {
+                lblMsg.Text = "이미 작업종료된 생산일자입니다.";
+                return;
+            }
+
+            DialogResult dr = MessageBox.Show("JobNo : " + lblNo.Text + "\r\r해당 정보로 작업종료 하시겠습니까?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (dr == DialogResult.No) return;
+
+            string sJobDate = dtpDate.Value.ToString("yyyy-MM-dd");
+
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sql = @"update tb_prod_result set jobtime_b = now() where job_no = '" + lblNo.Text + "'";
+
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                return;
+            }
+            int rowIndex = dataGridView1.CurrentRow.Index;
+            ListSearch1();
+            dataGridView1.CurrentCell = dataGridView1[0, rowIndex];
+            dataGridView1.CurrentCell.Selected = true;
+
+            ListSearch2(rowIndex);
+
+            lblMsg.Text = "작업종료되었습니다.";
         }
         #endregion
 
@@ -295,7 +438,9 @@ namespace SmartMES_Bluewings
 
                 sql = "insert into tb_prod_result (job_no, machine_id, prod_date, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, jobtime_start, enter_man) " +
                     "values ('" + sJobNo + "'," + sMachine + ",'" + sDate + "','" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 + "'," + sQty1 + "," + sQty2 + "," + sQty3 +
-                    ", if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),'" + G.UserID + "')";
+                    ", if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),'" + G.UserID + "')" +
+                    " on duplicate key update" +
+                    " prod_date = '" + sDate + "', qty1 = " + sQty1 + ", qty2 = " + sQty2 + ", qty3 = " + sQty3;
                 m.dbCUD(sql, ref msg);
             }
             ListSearch1();
@@ -387,12 +532,12 @@ namespace SmartMES_Bluewings
             // Category Painting 헤더 그리는 부분
             {
                 //--------------------------------- 범위 지정
-                Rectangle r1 = gv.GetCellDisplayRectangle(7, -1, false);  //범위 시작
+                Rectangle r1 = gv.GetCellDisplayRectangle(8, -1, false);  //범위 시작
                 int width1 = gv.GetCellDisplayRectangle(8, -1, false).Width;
 
                 r1.X += 1;
                 r1.Y += 1;
-                r1.Width = r1.Width + width1 - 2; // + width1 + width2 + width3 + width4 + width5 + width6
+                r1.Width = r1.Width - 2; // + width1 + width2 + width3 + width4 + width5 + width6
                 r1.Height = (r1.Height / 2) - 2;
 
                 //--------------------------------- 범위 지정 END
@@ -407,11 +552,11 @@ namespace SmartMES_Bluewings
                     format);
             }
             {
-                Rectangle r2 = gv.GetCellDisplayRectangle(10, -1, false);
+                Rectangle r2 = gv.GetCellDisplayRectangle(11, -1, false);
                 int width = gv.GetCellDisplayRectangle(11, -1, false).Width;
 
                 r2.X += 1; r2.Y += 1;
-                r2.Width = r2.Width + width - 2;
+                r2.Width = r2.Width - 2;
                 r2.Height = (r2.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
@@ -420,11 +565,11 @@ namespace SmartMES_Bluewings
                     new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r2, format);
             }
             {
-                Rectangle r3 = gv.GetCellDisplayRectangle(13, -1, false);
+                Rectangle r3 = gv.GetCellDisplayRectangle(14, -1, false);
                 int width = gv.GetCellDisplayRectangle(14, -1, false).Width;
 
                 r3.X += 1; r3.Y += 1;
-                r3.Width = r3.Width + width - 2;
+                r3.Width = r3.Width - 2;
                 r3.Height = (r3.Height / 2) - 2;
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r3);

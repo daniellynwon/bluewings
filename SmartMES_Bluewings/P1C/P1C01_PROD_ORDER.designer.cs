@@ -364,7 +364,7 @@
             // 배합시간
             // 
             this.배합시간.DataPropertyName = "배합시간";
-            this.배합시간.HeaderText = "배합시간";
+            this.배합시간.HeaderText = "배합시간(분)";
             this.배합시간.Name = "배합시간";
             this.배합시간.ReadOnly = true;
             // 
