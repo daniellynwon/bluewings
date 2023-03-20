@@ -26,7 +26,7 @@ namespace SmartMES_Bluewings
         private void P1C02_PROD_RESULT_Load(object sender, EventArgs e)
         {
             // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_Query1' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
-            this.sP_ProdResult_Query1TableAdapter.Fill(this.dataSetP1C.SP_ProdResult_Query1);
+            //this.sP_ProdResult_Query1TableAdapter.Fill(this.dataSetP1C.SP_ProdResult_Query1);
             this.sP_Z_Common_IDTableAdapter.Fill(this.dataSetP1C.SP_Z_Common_ID, "B");
             ListSearch1();
         }
@@ -37,7 +37,7 @@ namespace SmartMES_Bluewings
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1);
+                //sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1);
 
                 dataGridViewList.CurrentCell = null;
                 dataGridViewList.ClearSelection();
@@ -141,6 +141,9 @@ namespace SmartMES_Bluewings
                 dtpTotalTime.Text = string.Empty;
                 dtpDoneTime.Text = string.Empty;
                 cbDate.Checked = false;
+                tbMat1.Text = string.Empty; tbMat2.Text = string.Empty; tbMat3.Text = string.Empty; tbMat4.Text = string.Empty; tbMat5.Text = string.Empty; tbMat6.Text = string.Empty;
+                tbMat7.Text = string.Empty; tbMat8.Text = string.Empty; tbMat9.Text = string.Empty; tbMat10.Text = string.Empty; tbMat11.Text = string.Empty; tbMat12.Text = string.Empty;
+                tbSpeed1.Text = string.Empty; tbSpeed2.Text = string.Empty; tbSpeed3.Text = string.Empty; tbSpeed4.Text = string.Empty; tbSpeed5.Text = string.Empty; tbTemp.Text = string.Empty;
 
                 timer1.Stop();
                 timer2.Stop();
