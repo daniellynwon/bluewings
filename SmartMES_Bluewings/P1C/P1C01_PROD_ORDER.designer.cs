@@ -43,23 +43,20 @@
             this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1C = new SmartMES_Bluewings.P1C.DataSetP1C();
             this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
+            this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.설비코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.설비명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.배합코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.배합기명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재A = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.생산량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.중량A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재B = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.중량B = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재MB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.중량MB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.배합시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.완료DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재명A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재명B = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.자재명MB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.레시피 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
@@ -202,23 +199,20 @@
             this.dataGridView1.ColumnHeadersHeight = 60;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.일자DataGridViewTextBoxColumn,
             this.lotNoDataGridViewTextBoxColumn,
             this.설비코드,
             this.설비명,
+            this.배합코드,
+            this.배합기명,
             this.품목코드DataGridViewTextBoxColumn,
             this.품목명DataGridViewTextBoxColumn,
-            this.일자DataGridViewTextBoxColumn,
-            this.자재A,
+            this.생산량,
             this.중량A,
-            this.자재B,
             this.중량B,
-            this.자재MB,
             this.중량MB,
             this.배합시간,
             this.완료DataGridViewTextBoxColumn,
-            this.자재명A,
-            this.자재명B,
-            this.자재명MB,
             this.레시피});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPProdOrderQueryBindingSource;
@@ -269,6 +263,14 @@
             // 
             this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
             // 
+            // 일자DataGridViewTextBoxColumn
+            // 
+            this.일자DataGridViewTextBoxColumn.DataPropertyName = "일자";
+            this.일자DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.일자DataGridViewTextBoxColumn.HeaderText = "생산일자";
+            this.일자DataGridViewTextBoxColumn.Name = "일자DataGridViewTextBoxColumn";
+            this.일자DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // lotNoDataGridViewTextBoxColumn
             // 
             this.lotNoDataGridViewTextBoxColumn.DataPropertyName = "LotNo";
@@ -293,6 +295,21 @@
             this.설비명.Name = "설비명";
             this.설비명.ReadOnly = true;
             // 
+            // 배합코드
+            // 
+            this.배합코드.DataPropertyName = "배합코드";
+            this.배합코드.HeaderText = "배합코드";
+            this.배합코드.Name = "배합코드";
+            this.배합코드.ReadOnly = true;
+            this.배합코드.Visible = false;
+            // 
+            // 배합기명
+            // 
+            this.배합기명.DataPropertyName = "배합기명";
+            this.배합기명.HeaderText = "배합기";
+            this.배합기명.Name = "배합기명";
+            this.배합기명.ReadOnly = true;
+            // 
             // 품목코드DataGridViewTextBoxColumn
             // 
             this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
@@ -308,21 +325,12 @@
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
             this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 일자DataGridViewTextBoxColumn
+            // 생산량
             // 
-            this.일자DataGridViewTextBoxColumn.DataPropertyName = "일자";
-            this.일자DataGridViewTextBoxColumn.FillWeight = 70F;
-            this.일자DataGridViewTextBoxColumn.HeaderText = "생산일자";
-            this.일자DataGridViewTextBoxColumn.Name = "일자DataGridViewTextBoxColumn";
-            this.일자DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 자재A
-            // 
-            this.자재A.DataPropertyName = "자재명A";
-            this.자재A.HeaderText = "자재";
-            this.자재A.Name = "자재A";
-            this.자재A.ReadOnly = true;
-            this.자재A.Visible = false;
+            this.생산량.DataPropertyName = "생산량";
+            this.생산량.HeaderText = "생산량";
+            this.생산량.Name = "생산량";
+            this.생산량.ReadOnly = true;
             // 
             // 중량A
             // 
@@ -331,28 +339,12 @@
             this.중량A.Name = "중량A";
             this.중량A.ReadOnly = true;
             // 
-            // 자재B
-            // 
-            this.자재B.DataPropertyName = "자재명B";
-            this.자재B.HeaderText = "자재";
-            this.자재B.Name = "자재B";
-            this.자재B.ReadOnly = true;
-            this.자재B.Visible = false;
-            // 
             // 중량B
             // 
             this.중량B.DataPropertyName = "중량B";
             this.중량B.HeaderText = "중량";
             this.중량B.Name = "중량B";
             this.중량B.ReadOnly = true;
-            // 
-            // 자재MB
-            // 
-            this.자재MB.DataPropertyName = "자재명MB";
-            this.자재MB.HeaderText = "자재";
-            this.자재MB.Name = "자재MB";
-            this.자재MB.ReadOnly = true;
-            this.자재MB.Visible = false;
             // 
             // 중량MB
             // 
@@ -375,30 +367,6 @@
             this.완료DataGridViewTextBoxColumn.HeaderText = "완료";
             this.완료DataGridViewTextBoxColumn.Name = "완료DataGridViewTextBoxColumn";
             this.완료DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 자재명A
-            // 
-            this.자재명A.DataPropertyName = "자재A";
-            this.자재명A.HeaderText = "자재A";
-            this.자재명A.Name = "자재명A";
-            this.자재명A.ReadOnly = true;
-            this.자재명A.Visible = false;
-            // 
-            // 자재명B
-            // 
-            this.자재명B.DataPropertyName = "자재B";
-            this.자재명B.HeaderText = "자재B";
-            this.자재명B.Name = "자재명B";
-            this.자재명B.ReadOnly = true;
-            this.자재명B.Visible = false;
-            // 
-            // 자재명MB
-            // 
-            this.자재명MB.DataPropertyName = "자재MB";
-            this.자재명MB.HeaderText = "자재MB";
-            this.자재명MB.Name = "자재명MB";
-            this.자재명MB.ReadOnly = true;
-            this.자재명MB.Visible = false;
             // 
             // 레시피
             // 
@@ -459,23 +427,20 @@
         private P1C.DataSetP1C dataSetP1C;
         private System.Windows.Forms.BindingSource sPProdOrderQueryBindingSource;
         private P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter sP_ProdOrder_QueryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn lotNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비코드;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비명;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 배합코드;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 배합기명;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 일자DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재A;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 생산량;
         private System.Windows.Forms.DataGridViewTextBoxColumn 중량A;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재B;
         private System.Windows.Forms.DataGridViewTextBoxColumn 중량B;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재MB;
         private System.Windows.Forms.DataGridViewTextBoxColumn 중량MB;
         private System.Windows.Forms.DataGridViewTextBoxColumn 배합시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn 완료DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명A;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명B;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명MB;
         private System.Windows.Forms.DataGridViewLinkColumn 레시피;
     }
 }

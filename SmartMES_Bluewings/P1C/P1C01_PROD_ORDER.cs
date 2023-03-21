@@ -77,7 +77,7 @@ namespace SmartMES_Bluewings
                 ///
                 P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();     // LotNo
+                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();     // LotNo
                 sub.parentWin = this;
                 sub.ShowDialog();
             }
@@ -110,7 +110,7 @@ namespace SmartMES_Bluewings
             try
             {
                 index = dataGridView1.CurrentRow.Index;
-                sLotNo = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                sLotNo = dataGridView1.Rows[index].Cells[1].Value.ToString();
 
                 if (dataGridView1.Rows[index].Selected != true)
                 {
@@ -127,7 +127,7 @@ namespace SmartMES_Bluewings
             DialogResult dr = MessageBox.Show("LotNo. : " + sLotNo + "\r\r해당 정보를 삭제하시겠습니까?", this.lblTitle.Text + "[삭제]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dr == DialogResult.No) return;
 
-            string sql = @"select count(job_no) from tb_prod_done_main where job_no = '" + sLotNo + "'";
+            string sql = @"select count(job_no) from tb_prod_order where job_no = '" + sLotNo + "'";
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             string com = m.dbRonlyOne(sql, ref msg).ToString();
@@ -215,8 +215,8 @@ namespace SmartMES_Bluewings
             // Category Painting 헤더 그리는 부분
             {
                 //--------------------------------- 범위 지정
-                Rectangle r1 = gv.GetCellDisplayRectangle(7, -1, false);  //범위 시작
-                int width1 = gv.GetCellDisplayRectangle(7, -1, false).Width;
+                Rectangle r1 = gv.GetCellDisplayRectangle(9, -1, false);  //범위 시작
+                int width1 = gv.GetCellDisplayRectangle(9, -1, false).Width;
 
                 r1.X += 1;
                 r1.Y += 1;
@@ -235,8 +235,8 @@ namespace SmartMES_Bluewings
                     format);
             }
             {
-                Rectangle r2 = gv.GetCellDisplayRectangle(9, -1, false);
-                int width = gv.GetCellDisplayRectangle(9, -1, false).Width;
+                Rectangle r2 = gv.GetCellDisplayRectangle(10, -1, false);
+                int width = gv.GetCellDisplayRectangle(10, -1, false).Width;
 
                 r2.X += 1; r2.Y += 1;
                 r2.Width = r2.Width - 2;
