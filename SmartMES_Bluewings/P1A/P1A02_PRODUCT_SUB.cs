@@ -159,7 +159,7 @@ namespace SmartMES_Bluewings
                 prodCode = getProdCode(sGubun);
 
                 sql = "insert into tb_gi_product (gubun, prod_id, prod_kind, prod_name, model_name, unit, unit_sub, procure_price, regular_price, stock_flag, identify_no, use_flag, enter_man) " +
-                    "values('" + sGubun + "','" + prodCode + "','" + sKind + "','" + sProdName + "','" + sModel + "','" + sUnit + "','" + sUnitSub + "','" + sPrice1 + "','" + sPrice2 + "'," + sStockFlag + "','" + sID + ",'" + sUseFlag + "','" + G.UserID + "')";
+                    "values('" + sGubun + "','" + prodCode + "','" + sKind + "','" + sProdName + "','" + sModel + "','" + sUnit + "','" + sUnitSub + "','" + sPrice1 + "','" + sPrice2 + "'," + sStockFlag + ",'" + sID + "','" + sUseFlag + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 

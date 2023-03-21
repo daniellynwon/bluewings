@@ -240,6 +240,7 @@ namespace SmartMES_Bluewings
             string sDanga = tbDanga.Text.Replace(",", "").Trim();
             string sAmount = tbMoney.Text.Replace(",", "").Trim();
             string sWeight = tbWeight.Text.Replace(",", "").Trim();
+            if (string.IsNullOrEmpty(sWeight)) sWeight = "0";
 
             if (string.IsNullOrEmpty(sCust))
             {

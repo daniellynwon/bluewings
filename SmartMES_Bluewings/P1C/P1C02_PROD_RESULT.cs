@@ -25,8 +25,8 @@ namespace SmartMES_Bluewings
         }
         private void P1C02_PROD_RESULT_Load(object sender, EventArgs e)
         {
-            // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_Query1' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
-            //this.sP_ProdResult_Query1TableAdapter.Fill(this.dataSetP1C.SP_ProdResult_Query1);
+            // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_List1' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
+            this.sP_ProdResult_List1TableAdapter.Fill(this.dataSetP1C.SP_ProdResult_List1);
             this.sP_Z_Common_IDTableAdapter.Fill(this.dataSetP1C.SP_Z_Common_ID, "B");
             ListSearch1();
         }
@@ -36,8 +36,6 @@ namespace SmartMES_Bluewings
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-
-                //sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1);
 
                 dataGridViewList.CurrentCell = null;
                 dataGridViewList.ClearSelection();
@@ -67,8 +65,9 @@ namespace SmartMES_Bluewings
                 tbProd.Tag = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();
                 tbProd.Text = dataGridViewList.Rows[rowIndex].Cells[5].Value.ToString();
 
-                dtpDate.Enabled = false;
-                cbDate.Checked = false;
+                sP_ProdResult_stdTableAdapter.Fill(dataSetP1C.SP_ProdResult_std, tbProd.Tag.ToString());
+                //sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1, tbJobNo.Text, tbMachine.Tag.ToString());
+
                 if (dataGridViewList.Rows[rowIndex].Cells[6].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString()))
                     dtpStartTime.Text = string.Empty;
                 else
@@ -93,30 +92,54 @@ namespace SmartMES_Bluewings
 
                 sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, checkDate);
 
+                timer1.Start();
+                timer2.Start();
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        public void ListSearch3(int rowIndex)
+        {
+            lblMsg.Text = "";
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+
+                sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1, tbJobNo.Text, tbMachine.Tag.ToString());
+
                 // 주, 보조 압출기
                 {
-                    tbMat1.Text = dataGridViewList.Rows[rowIndex].Cells[9].Value.ToString();
-                    tbMat2.Text = dataGridViewList.Rows[rowIndex].Cells[10].Value.ToString();
-                    tbMat3.Text = dataGridViewList.Rows[rowIndex].Cells[11].Value.ToString();
-                    tbMat4.Text = dataGridViewList.Rows[rowIndex].Cells[12].Value.ToString();
-                    tbMat5.Text = dataGridViewList.Rows[rowIndex].Cells[13].Value.ToString();
-                    tbMat6.Text = dataGridViewList.Rows[rowIndex].Cells[14].Value.ToString();
-                    tbMat7.Text = dataGridViewList.Rows[rowIndex].Cells[15].Value.ToString();
-                    tbMat8.Text = dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString();
-                    tbMat9.Text = dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString();
-                    tbMat10.Text = dataGridViewList.Rows[rowIndex].Cells[18].Value.ToString();
-                    tbMat11.Text = dataGridViewList.Rows[rowIndex].Cells[18].Value.ToString();
-                    tbMat12.Text = dataGridViewList.Rows[rowIndex].Cells[20].Value.ToString();
+                    //tbMat1.Text = dataGridView2.Rows[rowIndex].Cells[0].Value.ToString();
+                    //tbMat2.Text = dataGridView2.Rows[rowIndex].Cells[1].Value.ToString();
+                    //tbMat3.Text = dataGridView2.Rows[rowIndex].Cells[2].Value.ToString();
+                    //tbMat4.Text = dataGridView2.Rows[rowIndex].Cells[3].Value.ToString();
+                    //tbMat5.Text = dataGridView2.Rows[rowIndex].Cells[4].Value.ToString();
+                    //tbMat6.Text = dataGridView2.Rows[rowIndex].Cells[5].Value.ToString();
+                    //tbMat7.Text = dataGridView2.Rows[rowIndex].Cells[6].Value.ToString();
+                    //tbMat8.Text = dataGridView2.Rows[rowIndex].Cells[7].Value.ToString();
+                    //tbMat9.Text = dataGridView2.Rows[rowIndex].Cells[8].Value.ToString();
+                    //tbMat10.Text = dataGridView2.Rows[rowIndex].Cells[9].Value.ToString();
+                    //tbMat11.Text = dataGridView2.Rows[rowIndex].Cells[10].Value.ToString();
+                    //tbMat12.Text = dataGridView2.Rows[rowIndex].Cells[11].Value.ToString();
                 }
                 // 주, 보조 속도(압출, 모터) + 인취 / 냉각수
                 {
-                    tbSpeed1.Text = dataGridViewList.Rows[rowIndex].Cells[21].Value.ToString();
-                    tbSpeed2.Text = dataGridViewList.Rows[rowIndex].Cells[22].Value.ToString();
-                    tbSpeed3.Text = dataGridViewList.Rows[rowIndex].Cells[26].Value.ToString();     // 인취
-                    tbSpeed4.Text = dataGridViewList.Rows[rowIndex].Cells[23].Value.ToString();
-                    tbSpeed5.Text = dataGridViewList.Rows[rowIndex].Cells[24].Value.ToString();
-                    tbTemp.Text = dataGridViewList.Rows[rowIndex].Cells[25].Value.ToString();
+                    tbSpeed1.Text = dataGridView2.Rows[rowIndex].Cells[12].Value.ToString();
+                    tbSpeed2.Text = dataGridView2.Rows[rowIndex].Cells[13].Value.ToString();
+                    tbSpeed3.Text = dataGridView2.Rows[rowIndex].Cells[17].Value.ToString();     // 인취
+                    tbSpeed4.Text = dataGridView2.Rows[rowIndex].Cells[14].Value.ToString();
+                    tbSpeed5.Text = dataGridView2.Rows[rowIndex].Cells[15].Value.ToString();
+                    tbTemp.Text = dataGridView2.Rows[rowIndex].Cells[16].Value.ToString();
                 }
+
+                //sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, checkDate);
 
                 timer1.Start();
                 timer2.Start();
@@ -130,6 +153,7 @@ namespace SmartMES_Bluewings
                 Cursor.Current = Cursors.Default;
             }
         }
+
         public void ListInit()
         {
             lblMsg.Text = "";
@@ -205,9 +229,10 @@ namespace SmartMES_Bluewings
         {
             if (e.RowIndex < 0) return;
 
-            int index = dataGridViewList.CurrentRow.Index;
+            int index = e.RowIndex; // dataGridViewList.CurrentRow.Index;
 
             ListSearch2(index);
+            //ListSearch3(index);
         }
         #endregion
 
@@ -642,7 +667,5 @@ namespace SmartMES_Bluewings
             }
         }
         #endregion
-
-
     }
 }

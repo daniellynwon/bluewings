@@ -155,7 +155,8 @@ namespace SmartMES_Bluewings
                 tbSpec.Text = dataGridView1.Rows[index].Cells[12].Value.ToString();
                 tbIP.Text = dataGridView1.Rows[index].Cells[17].Value.ToString();
 
-                FacilityImageLoad(fid);
+                if(!(dataGridView1.Rows[index].Cells[15].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView1.Rows[index].Cells[15].Value.ToString())))
+                    FacilityImageLoad(fid);
             }
             catch (NullReferenceException)
             {
