@@ -111,7 +111,7 @@ namespace SmartMES_Bluewings
                 dataGridView1[18, rowIndex].Value = iSum5;
                 dataGridView1[19, rowIndex].Value = iSum6;
 
-                buttonCell = (DataGridViewButtonCell)dataGridView1.Rows[rowIndex].Cells[13];
+                buttonCell = (DataGridViewButtonCell)dataGridView1.Rows[rowIndex].Cells[13];    // 입고버튼 없애기...
                 buttonCell.FlatStyle = FlatStyle.Flat;
                 buttonCell.Value = ""; buttonCell.ReadOnly = true;
             }
