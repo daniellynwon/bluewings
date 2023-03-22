@@ -73,6 +73,7 @@ namespace SmartMES_Bluewings
                 tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
                 tbVat.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString();
                 cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value;
+                tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[22].Value.ToString();
 
                 long lAmount = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString());
                 long lVat = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[18].Value.ToString());

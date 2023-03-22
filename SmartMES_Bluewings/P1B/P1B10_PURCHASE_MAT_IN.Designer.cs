@@ -588,6 +588,7 @@
             this.btnReport.TabIndex = 40;
             this.btnReport.Text = "입고검사";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Visible = false;
             // 
             // P1B10_PURCHASE_MAT_IN
             // 
