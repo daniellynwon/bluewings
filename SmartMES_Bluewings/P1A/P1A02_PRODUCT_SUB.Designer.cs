@@ -49,8 +49,6 @@
             this.tbModel = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbPrice1 = new System.Windows.Forms.TextBox();
-            this.btnClose = new SmartMES_Bluewings.UserButtonA();
-            this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.tbIDNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbThick1 = new System.Windows.Forms.TextBox();
@@ -100,6 +98,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.btnClose = new SmartMES_Bluewings.UserButtonA();
+            this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -343,6 +343,501 @@
             this.tbPrice1.TextChanged += new System.EventHandler(this.tbQty_TextChanged);
             this.tbPrice1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbQty_KeyPress);
             // 
+            // tbIDNo
+            // 
+            this.tbIDNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbIDNo.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbIDNo.Location = new System.Drawing.Point(361, 150);
+            this.tbIDNo.Name = "tbIDNo";
+            this.tbIDNo.Size = new System.Drawing.Size(170, 29);
+            this.tbIDNo.TabIndex = 9;
+            this.tbIDNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(289, 154);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "식별번호";
+            // 
+            // tbThick1
+            // 
+            this.tbThick1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbThick1.Location = new System.Drawing.Point(1087, 359);
+            this.tbThick1.Name = "tbThick1";
+            this.tbThick1.Size = new System.Drawing.Size(170, 29);
+            this.tbThick1.TabIndex = 66;
+            this.tbThick1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbKg
+            // 
+            this.tbKg.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbKg.Location = new System.Drawing.Point(1087, 324);
+            this.tbKg.Name = "tbKg";
+            this.tbKg.Size = new System.Drawing.Size(170, 29);
+            this.tbKg.TabIndex = 65;
+            this.tbKg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbLength
+            // 
+            this.tbLength.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbLength.Location = new System.Drawing.Point(1087, 464);
+            this.tbLength.Name = "tbLength";
+            this.tbLength.Size = new System.Drawing.Size(170, 29);
+            this.tbLength.TabIndex = 69;
+            this.tbLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label19.Location = new System.Drawing.Point(881, 468);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(112, 21);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "제품길이(mm)";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label20.Location = new System.Drawing.Point(881, 433);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(128, 21);
+            this.label20.TabIndex = 40;
+            this.label20.Text = "평균안지름(mm)";
+            // 
+            // tbDiameter
+            // 
+            this.tbDiameter.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbDiameter.Location = new System.Drawing.Point(1087, 429);
+            this.tbDiameter.Name = "tbDiameter";
+            this.tbDiameter.Size = new System.Drawing.Size(170, 29);
+            this.tbDiameter.TabIndex = 68;
+            this.tbDiameter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label21.Location = new System.Drawing.Point(881, 398);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(144, 21);
+            this.label21.TabIndex = 43;
+            this.label21.Text = "최소내벽두께(mm)";
+            // 
+            // tbThick2
+            // 
+            this.tbThick2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbThick2.Location = new System.Drawing.Point(1087, 394);
+            this.tbThick2.Name = "tbThick2";
+            this.tbThick2.Size = new System.Drawing.Size(170, 29);
+            this.tbThick2.TabIndex = 67;
+            this.tbThick2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(881, 363);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(112, 21);
+            this.label22.TabIndex = 44;
+            this.label22.Text = "관벽두께(mm)";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label23.Location = new System.Drawing.Point(881, 328);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(76, 21);
+            this.label23.TabIndex = 45;
+            this.label23.Text = "중량 (kg)";
+            // 
+            // mrpm2
+            // 
+            this.mrpm2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.mrpm2.Location = new System.Drawing.Point(1087, 131);
+            this.mrpm2.Name = "mrpm2";
+            this.mrpm2.Size = new System.Drawing.Size(170, 29);
+            this.mrpm2.TabIndex = 60;
+            this.mrpm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mrpm1
+            // 
+            this.mrpm1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.mrpm1.Location = new System.Drawing.Point(1087, 96);
+            this.mrpm1.Name = "mrpm1";
+            this.mrpm1.Size = new System.Drawing.Size(170, 29);
+            this.mrpm1.TabIndex = 59;
+            this.mrpm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temp
+            // 
+            this.temp.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.temp.Location = new System.Drawing.Point(1087, 236);
+            this.temp.Name = "temp";
+            this.temp.Size = new System.Drawing.Size(170, 29);
+            this.temp.TabIndex = 63;
+            this.temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(881, 240);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 21);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "냉각수온도(℃)";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(881, 205);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(200, 21);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "보조압출기 모터속도(rpm)";
+            // 
+            // srpm2
+            // 
+            this.srpm2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.srpm2.Location = new System.Drawing.Point(1087, 201);
+            this.srpm2.Name = "srpm2";
+            this.srpm2.Size = new System.Drawing.Size(170, 29);
+            this.srpm2.TabIndex = 62;
+            this.srpm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // speed
+            // 
+            this.speed.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.speed.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.speed.Location = new System.Drawing.Point(1087, 271);
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(170, 29);
+            this.speed.TabIndex = 64;
+            this.speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label15.Location = new System.Drawing.Point(881, 170);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(200, 21);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "보조압출기 압출속도(rpm)";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(881, 275);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(103, 21);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "인취속도(Hz)";
+            // 
+            // srpm1
+            // 
+            this.srpm1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.srpm1.Location = new System.Drawing.Point(1087, 166);
+            this.srpm1.Name = "srpm1";
+            this.srpm1.Size = new System.Drawing.Size(170, 29);
+            this.srpm1.TabIndex = 61;
+            this.srpm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label17.Location = new System.Drawing.Point(881, 135);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(184, 21);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "주압출기 모터속도(rpm)";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label18.Location = new System.Drawing.Point(881, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(184, 21);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "주압출기 압출속도(rpm)";
+            // 
+            // sub2
+            // 
+            this.sub2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub2.Location = new System.Drawing.Point(676, 359);
+            this.sub2.Name = "sub2";
+            this.sub2.Size = new System.Drawing.Size(170, 29);
+            this.sub2.TabIndex = 54;
+            this.sub2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // sub1
+            // 
+            this.sub1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub1.Location = new System.Drawing.Point(676, 324);
+            this.sub1.Name = "sub1";
+            this.sub1.Size = new System.Drawing.Size(170, 29);
+            this.sub1.TabIndex = 53;
+            this.sub1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // sub5
+            // 
+            this.sub5.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub5.Location = new System.Drawing.Point(676, 464);
+            this.sub5.Name = "sub5";
+            this.sub5.Size = new System.Drawing.Size(170, 29);
+            this.sub5.TabIndex = 57;
+            this.sub5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(539, 468);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 21);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "보조압출기-5(℃)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(539, 433);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 21);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "보조압출기-4(℃)";
+            // 
+            // sub4
+            // 
+            this.sub4.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub4.Location = new System.Drawing.Point(676, 429);
+            this.sub4.Name = "sub4";
+            this.sub4.Size = new System.Drawing.Size(170, 29);
+            this.sub4.TabIndex = 56;
+            this.sub4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // sub6
+            // 
+            this.sub6.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub6.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.sub6.Location = new System.Drawing.Point(676, 499);
+            this.sub6.Name = "sub6";
+            this.sub6.Size = new System.Drawing.Size(170, 29);
+            this.sub6.TabIndex = 58;
+            this.sub6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(539, 398);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(131, 21);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "보조압출기-3(℃)";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(539, 503);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 21);
+            this.label24.TabIndex = 34;
+            this.label24.Text = "보조압출기-6(℃)";
+            // 
+            // sub3
+            // 
+            this.sub3.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.sub3.Location = new System.Drawing.Point(676, 394);
+            this.sub3.Name = "sub3";
+            this.sub3.Size = new System.Drawing.Size(170, 29);
+            this.sub3.TabIndex = 55;
+            this.sub3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label25.Location = new System.Drawing.Point(539, 363);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(131, 21);
+            this.label25.TabIndex = 25;
+            this.label25.Text = "보조압출기-2(℃)";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label26.Location = new System.Drawing.Point(539, 328);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(131, 21);
+            this.label26.TabIndex = 28;
+            this.label26.Text = "보조압출기-1(℃)";
+            // 
+            // main2
+            // 
+            this.main2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main2.Location = new System.Drawing.Point(676, 131);
+            this.main2.Name = "main2";
+            this.main2.Size = new System.Drawing.Size(170, 29);
+            this.main2.TabIndex = 48;
+            this.main2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // main1
+            // 
+            this.main1.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main1.Location = new System.Drawing.Point(676, 96);
+            this.main1.Name = "main1";
+            this.main1.Size = new System.Drawing.Size(170, 29);
+            this.main1.TabIndex = 47;
+            this.main1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // main5
+            // 
+            this.main5.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main5.Location = new System.Drawing.Point(676, 236);
+            this.main5.Name = "main5";
+            this.main5.Size = new System.Drawing.Size(170, 29);
+            this.main5.TabIndex = 51;
+            this.main5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label27.Location = new System.Drawing.Point(555, 240);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(115, 21);
+            this.label27.TabIndex = 42;
+            this.label27.Text = "주압출기-5(℃)";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label28.Location = new System.Drawing.Point(555, 205);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(115, 21);
+            this.label28.TabIndex = 37;
+            this.label28.Text = "주압출기-4(℃)";
+            // 
+            // main4
+            // 
+            this.main4.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main4.Location = new System.Drawing.Point(676, 201);
+            this.main4.Name = "main4";
+            this.main4.Size = new System.Drawing.Size(170, 29);
+            this.main4.TabIndex = 50;
+            this.main4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // main6
+            // 
+            this.main6.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main6.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.main6.Location = new System.Drawing.Point(676, 271);
+            this.main6.Name = "main6";
+            this.main6.Size = new System.Drawing.Size(170, 29);
+            this.main6.TabIndex = 52;
+            this.main6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label29.Location = new System.Drawing.Point(555, 170);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(115, 21);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "주압출기-3(℃)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label30.Location = new System.Drawing.Point(555, 275);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(115, 21);
+            this.label30.TabIndex = 38;
+            this.label30.Text = "주압출기-6(℃)";
+            // 
+            // main3
+            // 
+            this.main3.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.main3.Location = new System.Drawing.Point(676, 166);
+            this.main3.Name = "main3";
+            this.main3.Size = new System.Drawing.Size(170, 29);
+            this.main3.TabIndex = 49;
+            this.main3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label31.Location = new System.Drawing.Point(555, 135);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(115, 21);
+            this.label31.TabIndex = 29;
+            this.label31.Text = "주압출기-2(℃)";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label32.Location = new System.Drawing.Point(555, 100);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(115, 21);
+            this.label32.TabIndex = 24;
+            this.label32.Text = "주압출기-1(℃)";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("바탕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label33.ForeColor = System.Drawing.Color.IndianRed;
+            this.label33.Location = new System.Drawing.Point(555, 76);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(160, 13);
+            this.label33.TabIndex = 102;
+            this.label33.Text = "※※ 규격정보 입력하세요.";
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -371,507 +866,12 @@
             this.btnSave.TabIndex = 100;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // tbIDNo
-            // 
-            this.tbIDNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbIDNo.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbIDNo.Location = new System.Drawing.Point(361, 150);
-            this.tbIDNo.Name = "tbIDNo";
-            this.tbIDNo.Size = new System.Drawing.Size(170, 29);
-            this.tbIDNo.TabIndex = 9;
-            this.tbIDNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(289, 154);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "식별번호";
-            // 
-            // tbThick1
-            // 
-            this.tbThick1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbThick1.Location = new System.Drawing.Point(1087, 363);
-            this.tbThick1.Name = "tbThick1";
-            this.tbThick1.Size = new System.Drawing.Size(170, 29);
-            this.tbThick1.TabIndex = 66;
-            this.tbThick1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbKg
-            // 
-            this.tbKg.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbKg.Location = new System.Drawing.Point(1087, 328);
-            this.tbKg.Name = "tbKg";
-            this.tbKg.Size = new System.Drawing.Size(170, 29);
-            this.tbKg.TabIndex = 65;
-            this.tbKg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbLength
-            // 
-            this.tbLength.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbLength.Location = new System.Drawing.Point(1087, 468);
-            this.tbLength.Name = "tbLength";
-            this.tbLength.Size = new System.Drawing.Size(170, 29);
-            this.tbLength.TabIndex = 69;
-            this.tbLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(881, 472);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(112, 21);
-            this.label19.TabIndex = 39;
-            this.label19.Text = "제품길이(mm)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label20.Location = new System.Drawing.Point(881, 437);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(128, 21);
-            this.label20.TabIndex = 40;
-            this.label20.Text = "평균안지름(mm)";
-            // 
-            // tbDiameter
-            // 
-            this.tbDiameter.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbDiameter.Location = new System.Drawing.Point(1087, 433);
-            this.tbDiameter.Name = "tbDiameter";
-            this.tbDiameter.Size = new System.Drawing.Size(170, 29);
-            this.tbDiameter.TabIndex = 68;
-            this.tbDiameter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(881, 402);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(144, 21);
-            this.label21.TabIndex = 43;
-            this.label21.Text = "최소내벽두께(mm)";
-            // 
-            // tbThick2
-            // 
-            this.tbThick2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbThick2.Location = new System.Drawing.Point(1087, 398);
-            this.tbThick2.Name = "tbThick2";
-            this.tbThick2.Size = new System.Drawing.Size(170, 29);
-            this.tbThick2.TabIndex = 67;
-            this.tbThick2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(881, 367);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(112, 21);
-            this.label22.TabIndex = 44;
-            this.label22.Text = "관벽두께(mm)";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(881, 332);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(76, 21);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "중량 (kg)";
-            // 
-            // mrpm2
-            // 
-            this.mrpm2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.mrpm2.Location = new System.Drawing.Point(1087, 135);
-            this.mrpm2.Name = "mrpm2";
-            this.mrpm2.Size = new System.Drawing.Size(170, 29);
-            this.mrpm2.TabIndex = 60;
-            this.mrpm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mrpm1
-            // 
-            this.mrpm1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.mrpm1.Location = new System.Drawing.Point(1087, 100);
-            this.mrpm1.Name = "mrpm1";
-            this.mrpm1.Size = new System.Drawing.Size(170, 29);
-            this.mrpm1.TabIndex = 59;
-            this.mrpm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // temp
-            // 
-            this.temp.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.temp.Location = new System.Drawing.Point(1087, 240);
-            this.temp.Name = "temp";
-            this.temp.Size = new System.Drawing.Size(170, 29);
-            this.temp.TabIndex = 63;
-            this.temp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(881, 244);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 21);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "냉각수온도(℃)";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(881, 209);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(200, 21);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "보조압출기 모터속도(rpm)";
-            // 
-            // srpm2
-            // 
-            this.srpm2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.srpm2.Location = new System.Drawing.Point(1087, 205);
-            this.srpm2.Name = "srpm2";
-            this.srpm2.Size = new System.Drawing.Size(170, 29);
-            this.srpm2.TabIndex = 62;
-            this.srpm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // speed
-            // 
-            this.speed.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.speed.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.speed.Location = new System.Drawing.Point(1087, 275);
-            this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(170, 29);
-            this.speed.TabIndex = 64;
-            this.speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(881, 174);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(200, 21);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "보조압출기 압출속도(rpm)";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(881, 279);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 21);
-            this.label16.TabIndex = 32;
-            this.label16.Text = "인취속도(Hz)";
-            // 
-            // srpm1
-            // 
-            this.srpm1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.srpm1.Location = new System.Drawing.Point(1087, 170);
-            this.srpm1.Name = "srpm1";
-            this.srpm1.Size = new System.Drawing.Size(170, 29);
-            this.srpm1.TabIndex = 61;
-            this.srpm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(881, 139);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 21);
-            this.label17.TabIndex = 31;
-            this.label17.Text = "주압출기 모터속도(rpm)";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(881, 104);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(184, 21);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "주압출기 압출속도(rpm)";
-            // 
-            // sub2
-            // 
-            this.sub2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub2.Location = new System.Drawing.Point(676, 363);
-            this.sub2.Name = "sub2";
-            this.sub2.Size = new System.Drawing.Size(170, 29);
-            this.sub2.TabIndex = 54;
-            this.sub2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // sub1
-            // 
-            this.sub1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub1.Location = new System.Drawing.Point(676, 328);
-            this.sub1.Name = "sub1";
-            this.sub1.Size = new System.Drawing.Size(170, 29);
-            this.sub1.TabIndex = 53;
-            this.sub1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // sub5
-            // 
-            this.sub5.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub5.Location = new System.Drawing.Point(676, 468);
-            this.sub5.Name = "sub5";
-            this.sub5.Size = new System.Drawing.Size(170, 29);
-            this.sub5.TabIndex = 57;
-            this.sub5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(539, 472);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 21);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "보조압출기-5(℃)";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(539, 437);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 21);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "보조압출기-4(℃)";
-            // 
-            // sub4
-            // 
-            this.sub4.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub4.Location = new System.Drawing.Point(676, 433);
-            this.sub4.Name = "sub4";
-            this.sub4.Size = new System.Drawing.Size(170, 29);
-            this.sub4.TabIndex = 56;
-            this.sub4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // sub6
-            // 
-            this.sub6.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub6.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.sub6.Location = new System.Drawing.Point(676, 503);
-            this.sub6.Name = "sub6";
-            this.sub6.Size = new System.Drawing.Size(170, 29);
-            this.sub6.TabIndex = 58;
-            this.sub6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(539, 402);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 21);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "보조압출기-3(℃)";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label24.Location = new System.Drawing.Point(539, 507);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 21);
-            this.label24.TabIndex = 34;
-            this.label24.Text = "보조압출기-6(℃)";
-            // 
-            // sub3
-            // 
-            this.sub3.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.sub3.Location = new System.Drawing.Point(676, 398);
-            this.sub3.Name = "sub3";
-            this.sub3.Size = new System.Drawing.Size(170, 29);
-            this.sub3.TabIndex = 55;
-            this.sub3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label25.Location = new System.Drawing.Point(539, 367);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(131, 21);
-            this.label25.TabIndex = 25;
-            this.label25.Text = "보조압출기-2(℃)";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label26.Location = new System.Drawing.Point(539, 332);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(131, 21);
-            this.label26.TabIndex = 28;
-            this.label26.Text = "보조압출기-1(℃)";
-            // 
-            // main2
-            // 
-            this.main2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main2.Location = new System.Drawing.Point(676, 135);
-            this.main2.Name = "main2";
-            this.main2.Size = new System.Drawing.Size(170, 29);
-            this.main2.TabIndex = 48;
-            this.main2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // main1
-            // 
-            this.main1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main1.Location = new System.Drawing.Point(676, 100);
-            this.main1.Name = "main1";
-            this.main1.Size = new System.Drawing.Size(170, 29);
-            this.main1.TabIndex = 47;
-            this.main1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // main5
-            // 
-            this.main5.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main5.Location = new System.Drawing.Point(676, 240);
-            this.main5.Name = "main5";
-            this.main5.Size = new System.Drawing.Size(170, 29);
-            this.main5.TabIndex = 51;
-            this.main5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label27.Location = new System.Drawing.Point(555, 244);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(115, 21);
-            this.label27.TabIndex = 42;
-            this.label27.Text = "주압출기-5(℃)";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label28.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label28.Location = new System.Drawing.Point(555, 209);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(115, 21);
-            this.label28.TabIndex = 37;
-            this.label28.Text = "주압출기-4(℃)";
-            // 
-            // main4
-            // 
-            this.main4.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main4.Location = new System.Drawing.Point(676, 205);
-            this.main4.Name = "main4";
-            this.main4.Size = new System.Drawing.Size(170, 29);
-            this.main4.TabIndex = 50;
-            this.main4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // main6
-            // 
-            this.main6.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main6.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.main6.Location = new System.Drawing.Point(676, 275);
-            this.main6.Name = "main6";
-            this.main6.Size = new System.Drawing.Size(170, 29);
-            this.main6.TabIndex = 52;
-            this.main6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label29.Location = new System.Drawing.Point(555, 174);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(115, 21);
-            this.label29.TabIndex = 41;
-            this.label29.Text = "주압출기-3(℃)";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label30.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label30.Location = new System.Drawing.Point(555, 279);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(115, 21);
-            this.label30.TabIndex = 38;
-            this.label30.Text = "주압출기-6(℃)";
-            // 
-            // main3
-            // 
-            this.main3.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.main3.Location = new System.Drawing.Point(676, 170);
-            this.main3.Name = "main3";
-            this.main3.Size = new System.Drawing.Size(170, 29);
-            this.main3.TabIndex = 49;
-            this.main3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label31.Location = new System.Drawing.Point(555, 139);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(115, 21);
-            this.label31.TabIndex = 29;
-            this.label31.Text = "주압출기-2(℃)";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.label32.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label32.Location = new System.Drawing.Point(555, 104);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(115, 21);
-            this.label32.TabIndex = 24;
-            this.label32.Text = "주압출기-1(℃)";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("바탕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label33.ForeColor = System.Drawing.Color.IndianRed;
-            this.label33.Location = new System.Drawing.Point(555, 76);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(160, 13);
-            this.label33.TabIndex = 102;
-            this.label33.Text = "※※ 규격정보 입력하세요.";
-            // 
             // P1A02_PRODUCT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1300, 583);
+            this.ClientSize = new System.Drawing.Size(1300, 551);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.tbThick1);
             this.Controls.Add(this.tbKg);

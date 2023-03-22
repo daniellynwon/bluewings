@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using SmartFactory;
 
@@ -62,6 +63,8 @@ namespace SmartMES_Bluewings
 
             P1A02_PRODUCT_SUB sub = new P1A02_PRODUCT_SUB();
             sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
+            if(sGubun != "A")
+                sub.Size = new Size(570, 622);
             sub.gubun = sGubun;
             sub.parentWin = this;
             sub.ShowDialog();
