@@ -358,9 +358,9 @@
             this.lblCust.ForeColor = System.Drawing.Color.Blue;
             this.lblCust.Location = new System.Drawing.Point(28, 178);
             this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(74, 21);
+            this.lblCust.Size = new System.Drawing.Size(70, 21);
             this.lblCust.TabIndex = 94;
-            this.lblCust.Text = "거래처명";
+            this.lblCust.Text = "제 작 사";
             this.lblCust.Click += new System.EventHandler(this.lblCust_Click);
             // 
             // dtpDate
