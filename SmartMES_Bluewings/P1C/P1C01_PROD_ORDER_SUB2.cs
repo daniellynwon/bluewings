@@ -32,7 +32,7 @@ namespace SmartMES_Bluewings
                 Cursor.Current = Cursors.WaitCursor;
                 DateTime dtDate = DateTime.Parse(parentWin.dtpDate.Value.ToString("yyyy-MM-dd"));
 
-                sP_ProdOrder_ROrder1TableAdapter.Fill(dataSetP1C.SP_ProdOrder_ROrder1, dtDate);
+                //sP_ProdOrder_ROrder1TableAdapter.Fill(dataSetP1C.SP_ProdOrder_ROrder1, dtDate);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();

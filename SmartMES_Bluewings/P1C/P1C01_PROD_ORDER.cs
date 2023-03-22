@@ -71,13 +71,12 @@ namespace SmartMES_Bluewings
         {
             if (e.RowIndex < 0) return;
 
-            if(e.ColumnIndex == 0)
+            if(e.ColumnIndex == 1)
             {
-                ///////////// Job No 클릭했을 때, Sub창 Job No 라벨에 Job No 가져가기.
-                ///
-                P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
+                P1C01_PROD_ORDER_RORDER sub = new P1C01_PROD_ORDER_RORDER();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-                sub.lblJob.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();     // LotNo
+                sub.Size = new Size(420, 698);
+                sub.tbJobNo.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();     // LotNo
                 sub.parentWin = this;
                 sub.ShowDialog();
             }
@@ -93,7 +92,12 @@ namespace SmartMES_Bluewings
         {
             lblMsg.Text = "";
 
-            P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
+            //P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2();
+            //sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
+            //sub.parentWin = this;
+            //sub.ShowDialog();
+
+            P1C01_PROD_ORDER_RORDER sub = new P1C01_PROD_ORDER_RORDER();
             sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
             sub.parentWin = this;
             sub.ShowDialog();

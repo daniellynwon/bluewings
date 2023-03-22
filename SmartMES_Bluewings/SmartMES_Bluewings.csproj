@@ -68,7 +68,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0D7E2002C39F36CEAE15E2AFE07EA4CE4FFAC2D1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1FEEFCC8DBCDE2C1CDEBDFC5850D91D4CB65BD0B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>
@@ -513,6 +513,12 @@
     </Compile>
     <Compile Include="P1C\P1C01_PROD_ORDER.designer.cs">
       <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_RORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C01_PROD_ORDER_RORDER.designer.cs">
+      <DependentUpon>P1C01_PROD_ORDER_RORDER.cs</DependentUpon>
     </Compile>
     <Compile Include="P1C\P1C01_PROD_ORDER_SUB.cs">
       <SubType>Form</SubType>
@@ -987,6 +993,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER.resx">
       <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_RORDER.resx">
+      <DependentUpon>P1C01_PROD_ORDER_RORDER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_SUB.resx">
       <DependentUpon>P1C01_PROD_ORDER_SUB.cs</DependentUpon>
