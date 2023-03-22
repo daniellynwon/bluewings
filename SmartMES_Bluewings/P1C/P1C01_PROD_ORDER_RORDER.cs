@@ -26,20 +26,20 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
             tbJobNo.Text = getCode();
 
+            string sql = @"SELECT machine_id, machine_name FROM tb_machinecard WHERE model_no = '0003'";
+            MariaCRUD m = new MariaCRUD();
+            string msg = string.Empty;
+            DataTable table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbComb.DataSource = table;
+                cbComb.ValueMember = "machine_id";
+                cbComb.DisplayMember = "machine_name";
+            }
+
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                string sql = @"SELECT machine_id, machine_name FROM tb_machinecard WHERE model_no = '0003'";
-                MariaCRUD m = new MariaCRUD();
-                string msg = string.Empty;
-                DataTable table = m.dbDataTable(sql, ref msg);
-
-                if (msg == "OK")
-                {
-                    cbComb.DataSource = table;
-                    cbComb.ValueMember = "machine_id";
-                    cbComb.DisplayMember = "machine_name";
-                }
-
                 ListSearch();
             }
             else
@@ -51,7 +51,7 @@ namespace SmartMES_Bluewings
                 tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // JobNo
                 tbMachine.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();      // 설비코드
                 tbMachine.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();      // 설비명
-                cbComb.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString(); // 배합기
+                cbComb.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value; // 배합기
                 tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();   // 품목코드
                 tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();   // 품목명
                 tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();      // 지시수량
