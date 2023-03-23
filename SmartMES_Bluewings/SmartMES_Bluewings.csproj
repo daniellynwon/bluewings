@@ -27,13 +27,13 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://upgrade.mes.innobe.co.kr/innobemes/SmartMES_Bluewings/</InstallUrl>
-    <ProductName>은경케미칼 MES</ProductName>
+    <ProductName>푸른나래 MES</ProductName>
     <PublisherName>%28주%29이노비 MES팀</PublisherName>
     <SuiteName>Smart MES</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>52</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -574,6 +574,12 @@
     <Compile Include="P1C\P1C02_PROD_RESULT1.designer.cs">
       <DependentUpon>P1C02_PROD_RESULT1.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_A.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_A.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_A.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT_IDLE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -700,6 +706,12 @@
     </Compile>
     <Compile Include="P1E\P1ED02_QC_LIST.designer.cs">
       <DependentUpon>P1ED02_QC_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1E\P1ED03_DEFECT_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1E\P1ED03_DEFECT_LIST.designer.cs">
+      <DependentUpon>P1ED03_DEFECT_LIST.cs</DependentUpon>
     </Compile>
     <Compile Include="P1E\P1ED03_QC_AS.cs">
       <SubType>Form</SubType>
@@ -1030,6 +1042,9 @@
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT1.resx">
       <DependentUpon>P1C02_PROD_RESULT1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_A.resx">
+      <DependentUpon>P1C02_PROD_RESULT_A.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_IDLE.resx">
       <DependentUpon>P1C02_PROD_RESULT_IDLE.cs</DependentUpon>
     </EmbeddedResource>
@@ -1086,6 +1101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1E\P1ED02_QC_LIST.resx">
       <DependentUpon>P1ED02_QC_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1E\P1ED03_DEFECT_LIST.resx">
+      <DependentUpon>P1ED03_DEFECT_LIST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1E\P1ED03_QC_AS.resx">
       <DependentUpon>P1ED03_QC_AS.cs</DependentUpon>

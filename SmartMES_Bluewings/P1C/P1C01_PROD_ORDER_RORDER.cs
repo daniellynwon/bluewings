@@ -223,7 +223,6 @@ namespace SmartMES_Bluewings
             try
             {
                 //string sSujuNo = dataGridView1.Rows[0].Cells[0].Value.ToString();
-
                 //for (int i = 1; i < dataGridView1.RowCount; i++)
                 //{
                 //    if (sSujuNo == dataGridView1.Rows[i].Cells[0].Value.ToString())

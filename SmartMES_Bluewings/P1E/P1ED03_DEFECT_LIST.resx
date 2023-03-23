@@ -117,37 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="작업시작.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pbSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+        AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
+        AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAeADcDASIAAhEBAxEB/8QA
+        HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+        MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+        V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+        x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+        BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+        YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+        hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+        8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+8nxb4isvCGiSa3daff6ki6joWlQafpYsPt95f+I9d03w7pkE
+        Dapf6Xp0fmalqtosst5qFrDDD5krSfJtbh7f4la9ewNc6f8ABP4n31utxe2vmwap8GowbjT7yewu4gt3
+        8XLZ8xXdtPDuKiN9m+N2jZXbzz44eL0g8BQz+bjy/iB8HpPvcYX4v+BfT5umMgYyTxjNcpo/7R+leA9G
+        bR9W8E+OfEV3Fq/iS/OoeGn8Bvp1xb614j1XWrJYP+Eh8c+HdREttZ6jbWl4txp1ui30Nwtq91aCG7n9
+        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
+</value>
+  </data>
+  <metadata name="sPQcQueryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>612, 17</value>
   </metadata>
-  <metadata name="작업종료.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="소요시간.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="sPProdResultOrderBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>613, 17</value>
-  </metadata>
-  <metadata name="dataSetP1C.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="dataSetP1E.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="sPProdResultQueryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
+  <metadata name="dataSetP1E.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="sP_ProdResult_QueryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>370, 17</value>
-  </metadata>
-  <metadata name="sP_ProdResult_OrderTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>850, 17</value>
-  </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1092, 17</value>
-  </metadata>
-  <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1179, 17</value>
+  <metadata name="sP_Qc_QueryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>806, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>38</value>
+    <value>31</value>
   </metadata>
 </root>
