@@ -97,6 +97,7 @@
             this.작업시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업종료 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.소요시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.배합기 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -558,7 +559,8 @@
             this.배합시간DataGridViewTextBoxColumn,
             this.작업시작,
             this.작업종료,
-            this.소요시간});
+            this.소요시간,
+            this.배합기});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPProdResultOrderBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -750,6 +752,13 @@
             this.소요시간.Name = "소요시간";
             this.소요시간.Visible = false;
             // 
+            // 배합기
+            // 
+            this.배합기.DataPropertyName = "배합기";
+            this.배합기.HeaderText = "배합기";
+            this.배합기.Name = "배합기";
+            this.배합기.Visible = false;
+            // 
             // P1C02_PROD_RESULT1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -886,5 +895,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업시작;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업종료;
         private System.Windows.Forms.DataGridViewTextBoxColumn 소요시간;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 배합기;
     }
 }

@@ -401,7 +401,7 @@ namespace SmartMES_Bluewings
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             string sJobNo = string.Empty;
             string sMachine = string.Empty;
-            string sProd = string.Empty;
+            string sProd = string.Empty; string sComb = string.Empty;
             string sMat1 = string.Empty; string sMat2 = string.Empty; string sMat3 = string.Empty;
             string sQty1 = string.Empty; string sQty2 = string.Empty; string sQty3 = string.Empty;
             string sJobTimeA = "";
@@ -431,13 +431,14 @@ namespace SmartMES_Bluewings
                 sQty1 = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
                 sQty2 = dataGridView1.Rows[i].Cells[11].Value.ToString().Trim();
                 sQty3 = dataGridView1.Rows[i].Cells[14].Value.ToString().Trim();
+                sComb = dataGridView1.Rows[i].Cells[19].Value.ToString().Trim();
 
                 if (string.IsNullOrEmpty(sQty1)) sQty1 = "0";
                 if (string.IsNullOrEmpty(sQty2)) sQty2 = "0";
                 if (string.IsNullOrEmpty(sQty3)) sQty3 = "0";
 
-                sql = "insert into tb_prod_result (job_no, machine_id, prod_date, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, jobtime_start, enter_man) " +
-                    "values ('" + sJobNo + "'," + sMachine + ",'" + sDate + "','" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 + "'," + sQty1 + "," + sQty2 + "," + sQty3 +
+                sql = "insert into tb_prod_result (job_no, machine_id, prod_date, comb_id, prod_id, mat1, mat2, mat3, qty1, qty2, qty3, jobtime_start, enter_man) " +
+                    "values ('" + sJobNo + "'," + sMachine + ",'" + sDate + "'," + sComb + ",'" + sProd + "','" + sMat1 + "','" + sMat2 + "','" + sMat3 + "'," + sQty1 + "," + sQty2 + "," + sQty3 +
                     ", if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),'" + G.UserID + "')" +
                     " on duplicate key update" +
                     " prod_date = '" + sDate + "', qty1 = " + sQty1 + ", qty2 = " + sQty2 + ", qty3 = " + sQty3;
