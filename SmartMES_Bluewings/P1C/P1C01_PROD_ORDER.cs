@@ -27,7 +27,7 @@ namespace SmartMES_Bluewings
                 string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sDate), sSearch);
+                sP_ProdOrder_QueryTableAdapter.Fill(dataSetP1C.SP_ProdOrder_Query, DateTime.Parse(sDate), DateTime.Parse(sDate), sSearch);
                 var data = dataSetP1C.SP_ProdOrder_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 

@@ -514,6 +514,12 @@
     <Compile Include="P1C\P1C01_PROD_ORDER.designer.cs">
       <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_SUB.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_SUB.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C01_PROD_ORDER_RORDER.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1005,6 +1011,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER.resx">
       <DependentUpon>P1C01_PROD_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_SUB.resx">
+      <DependentUpon>P1C02_PROD_RESULT_SUB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_RORDER.resx">
       <DependentUpon>P1C01_PROD_ORDER_RORDER.cs</DependentUpon>
