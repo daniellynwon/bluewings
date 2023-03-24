@@ -6418,6 +6418,8 @@ namespace SmartMES_Bluewings.P1E {
             
             private global::System.Data.DataColumn column입고승인자;
             
+            private global::System.Data.DataColumn column단가;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_DefectProd_ListDataTable() {
@@ -6605,6 +6607,14 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 단가Column {
+                get {
+                    return this.column단가;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6658,7 +6668,8 @@ namespace SmartMES_Bluewings.P1E {
                         string 발주자, 
                         string 승인자, 
                         string 입고자, 
-                        string 입고승인자) {
+                        string 입고승인자, 
+                        long 단가) {
                 SP_DefectProd_ListRow rowSP_DefectProd_ListRow = ((SP_DefectProd_ListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6679,7 +6690,8 @@ namespace SmartMES_Bluewings.P1E {
                         발주자,
                         승인자,
                         입고자,
-                        입고승인자};
+                        입고승인자,
+                        단가};
                 rowSP_DefectProd_ListRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_DefectProd_ListRow);
                 return rowSP_DefectProd_ListRow;
@@ -6721,6 +6733,7 @@ namespace SmartMES_Bluewings.P1E {
                 this.column승인자 = base.Columns["승인자"];
                 this.column입고자 = base.Columns["입고자"];
                 this.column입고승인자 = base.Columns["입고승인자"];
+                this.column단가 = base.Columns["단가"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6764,6 +6777,8 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column입고자);
                 this.column입고승인자 = new global::System.Data.DataColumn("입고승인자", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column입고승인자);
+                this.column단가 = new global::System.Data.DataColumn("단가", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column단가);
                 this.column관리번호.AutoIncrement = true;
                 this.column관리번호.AutoIncrementSeed = -1;
                 this.column관리번호.AutoIncrementStep = -1;
@@ -11617,6 +11632,22 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long 단가 {
+                get {
+                    try {
+                        return ((long)(this[this.tableSP_DefectProd_List.단가Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_DefectProd_List\' 테이블의 \'단가\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_DefectProd_List.단가Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is관리번호Null() {
                 return this.IsNull(this.tableSP_DefectProd_List.관리번호Column);
             }
@@ -11841,6 +11872,18 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set입고승인자Null() {
                 this[this.tableSP_DefectProd_List.입고승인자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is단가Null() {
+                return this.IsNull(this.tableSP_DefectProd_List.단가Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set단가Null() {
+                this[this.tableSP_DefectProd_List.단가Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -15380,6 +15423,7 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("승인자", "승인자");
             tableMapping.ColumnMappings.Add("입고자", "입고자");
             tableMapping.ColumnMappings.Add("입고승인자", "입고승인자");
+            tableMapping.ColumnMappings.Add("단가", "단가");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -172,6 +172,7 @@ namespace SmartMES_Bluewings
             else if (e.ColumnIndex == 13)   // 입고
             {
                 P1B10_PURCHASE_MAT_IN sub = new P1B10_PURCHASE_MAT_IN();
+
                 if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "0")
                     sub.lblTitle.Text = sub.lblTitle.Text + "[추가]";
                 else
