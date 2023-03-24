@@ -58,43 +58,45 @@ namespace SmartMES_Bluewings
             lblMsg.Text = "";
             try
             {
-                //Cursor.Current = Cursors.WaitCursor;
+                Cursor.Current = Cursors.WaitCursor;
 
-                //DateTime checkDate = DateTime.Parse(dataGridViewList[3, rowIndex].Value.ToString());
-                //dtpDate.Value = checkDate;
+                DateTime checkDate = DateTime.Parse(dataGridViewList[1, rowIndex].Value.ToString());        // 생산일자
+                dtpDate.Value = checkDate;
 
-                //tbJobNo.Text = dataGridViewList.Rows[rowIndex].Cells[0].Value.ToString();
-                //tbMachine.Tag = dataGridViewList.Rows[rowIndex].Cells[1].Value.ToString();
-                //tbMachine.Text = dataGridViewList.Rows[rowIndex].Cells[2].Value.ToString();
-                //tbProd.Tag = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();
-                //tbProd.Text = dataGridViewList.Rows[rowIndex].Cells[5].Value.ToString();
+                tbJobNo.Text = dataGridViewList.Rows[rowIndex].Cells[0].Value.ToString();
+                tbMachine.Tag = dataGridViewList.Rows[rowIndex].Cells[2].Value.ToString();      // 설비코드
+                tbMachine.Text = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();     // 설비명
+                tbProd.Tag = dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString();         // 품목코드
+                tbProd.Text = dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString();        // 품목명
 
-                //sP_ProdResult_stdTableAdapter.Fill(dataSetP1C.SP_ProdResult_std, tbProd.Tag.ToString());
-                ////sP_ProdResult_Query1TableAdapter.Fill(dataSetP1C.SP_ProdResult_Query1, tbJobNo.Text, tbMachine.Tag.ToString());
+                DisplayStdData();
 
-                //if (dataGridViewList.Rows[rowIndex].Cells[6].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString()))
-                //    dtpStartTime.Text = string.Empty;
-                //else
-                //    dtpStartTime.Text = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                if (!string.IsNullOrEmpty(tbJobNo.Text))
+                    DisplayProductionMachineData(tbJobNo.Text);
 
-                //if (dataGridViewList.Rows[rowIndex].Cells[7].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString()))
-                //    dtpDoneTime.Text = string.Empty;
-                //else
-                //    dtpDoneTime.Text = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+                if (dataGridViewList.Rows[rowIndex].Cells[15].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[15].Value.ToString()))
+                    dtpStartTime.Text = string.Empty;
+                else
+                    dtpStartTime.Text = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[15].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
 
-                //if (dataGridViewList.Rows[rowIndex].Cells[8].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString()))
-                //    dtpTotalTime.Text = string.Empty;
-                //else
-                //    dtpTotalTime.Text = dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString();
+                if (dataGridViewList.Rows[rowIndex].Cells[16].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString()))
+                    dtpDoneTime.Text = string.Empty;
+                else
+                    dtpDoneTime.Text = DateTime.Parse(dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
 
-                //btnStart.Tag = dataGridViewList.Rows[rowIndex].Cells[6].Value.ToString();       // 작업시작
+                if (dataGridViewList.Rows[rowIndex].Cells[17].Value == null || string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString()))
+                    dtpTotalTime.Text = string.Empty;
+                else
+                    dtpTotalTime.Text = dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString();
 
-                //if (string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString()))
-                //    btnFinish.Tag = null;
-                //else
-                //    btnFinish.Tag = dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString();
+                btnStart.Tag = dataGridViewList.Rows[rowIndex].Cells[15].Value.ToString();       // 작업시작
 
-                //sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, checkDate);
+                if (string.IsNullOrEmpty(dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString()))
+                    btnFinish.Tag = null;
+                else
+                    btnFinish.Tag = dataGridViewList.Rows[rowIndex].Cells[16].Value.ToString();
+
+                sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, checkDate);
 
                 //timer1.Start();
                 //timer2.Start();
@@ -343,13 +345,25 @@ namespace SmartMES_Bluewings
             string spdM1 = tbCurSpeed11.Text.Trim(); string spdM2 = tbCurSpeed12.Text.Trim(); string spd3 = tbCurSpeed13.Text.Trim();     // Main 압출, 모터, 인취속도
             string spdS1 = tbCurSpeed21.Text.Trim(); string spdS2 = tbCurSpeed22.Text.Trim();     // Sub 압출, 모터 속도
 
+            if (string.IsNullOrEmpty(tbGoodQty.Text.Trim()) || string.IsNullOrEmpty(tbNgQty.Text.Trim()))
+            {
+                MessageBox.Show("생산량을 입력하고 저장해 주시기 바랍니다.");
+                return;
+            }
+            {
+                // Result Update
+                sql = "update tb_prod_result set qty = " + tbGoodQty.Text.Trim() + ", ng_qty = " + tbNgQty.Text.Trim() + ", proc_flag = 1" +
+                        " where job_no = '" + sJobNo + "' and machine_id = " + sMachine;
+                m.dbCUD(sql, ref msg);
+            }
             if (isResultSpec(sJobNo, sMachine))
             {
+                // Spec Update
                 sql = "update tb_prod_result_spec " +
                     "set main_mat1 = '" + sMat11 + "', main_mat2 = '" + sMat12 + "', main_mat3 = '" + sMat13 + "', main_mat4 = '" + sMat14 + "', main_mat5 = '" + sMat15 + "', main_mat6 = '" + sMat16 +
                     "', sub_mat1 = '" + sMat21 + "', sub_mat2 = '" + sMat22 + "', sub_mat3 = '" + sMat23 + "', sub_mat4 = '" + sMat24 + "', sub_mat5 = '" + sMat25 + "', sub_mat6 = '" + sMat26 +
                     "', main_speed1 = '" + spdM1 + "', main_speed2 = '" + spdM2 + "', sub_speed1 = '" + spdS1 + "', sub_speed2 = '" + spdS2 + "', coolant = '" + sTemp + "', import_good = '" + spd3 +
-                    " where job_no = '" + sJobNo + "' and machine_ id = " + sMachine;
+                    "' where job_no = '" + sJobNo + "' and machine_id = " + sMachine;
                 m.dbCUD(sql, ref msg);
             }
             else
@@ -373,7 +387,7 @@ namespace SmartMES_Bluewings
             {
                 if (dataGridViewList.Rows[i].Cells[0].Value.ToString() == sJobNo)
                 {
-                    dataGridViewList.CurrentCell = dataGridViewList[0, i];
+                    dataGridViewList.CurrentCell = dataGridViewList[1, i];      // 생산일자
                     dataGridViewList.CurrentCell.Selected = true;
 
                     ListSearch2(i);
@@ -402,7 +416,7 @@ namespace SmartMES_Bluewings
         // tb_prod_result_spec 테이블에 데이터 있는지 없는지 확인
         private bool isResultSpec(string _jobNo, string _machNo)
         {
-            string sql = @"SELECT * FROM tb_prod_result_spec WHERE job_noo = '" + _jobNo + "' and machine_id  = " + _machNo;
+            string sql = @"SELECT * FROM tb_prod_result_spec WHERE job_no = '" + _jobNo + "' and machine_id  = " + _machNo;
 
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
@@ -420,111 +434,90 @@ namespace SmartMES_Bluewings
         {
             lblMsg.Text = "";
 
-            timer1.Start();
-
-            ////if (dtpDate.Enabled)
-            ////{
-            ////    lblMsg.Text = "생산일자를 선택하거나 저장해 주세요.";
-            ////    return;
-            ////}
-            //if (btnStart.Tag != null)
+            //if (dtpDate.Enabled)
             //{
-            //    lblMsg.Text = "이미 작업시작된 생산일자입니다.";
+            //    lblMsg.Text = "생산일자를 선택하거나 저장해 주세요.";
             //    return;
             //}
+            if (btnStart.Tag != null)
+            {
+                lblMsg.Text = "이미 작업시작된 생산일자입니다.";
+                return;
+            }
 
-            //DialogResult dr = MessageBox.Show("생산일자 : " + dtpDate.Value.ToString("yyyy-MM-dd") + "\r\r해당 정보로 작업시작 하시겠습니까?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dr = MessageBox.Show("생산일자 : " + dtpDate.Value.ToString("yyyy-MM-dd") + "\r\r해당 정보로 작업시작 하시겠습니까?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            //if (dr == DialogResult.No) return;
+            if (dr == DialogResult.No) return;
 
-            //string sJobDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            //string sJobTimeA = "";
-            //string sJobTimeB = "";
+            string sJobDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sJobTimeA = "";
+            string sJobTimeB = "";
 
-            //if (dtpStartTime.Text.Length == 19) sJobTimeA = dtpStartTime.Text;
-            //else sJobTimeA = "";
+            if (dtpStartTime.Text.Length == 19) sJobTimeA = dtpStartTime.Text;
+            else sJobTimeA = "";
 
-            //if (dtpDoneTime.Text.Length == 19) sJobTimeB = dtpDoneTime.Text;
-            //else sJobTimeB = "";
-            //string sUserID = G.UserID;
+            if (dtpDoneTime.Text.Length == 19) sJobTimeB = dtpDoneTime.Text;
+            else sJobTimeB = "";
+            string sUserID = G.UserID;
 
-            //string sql = string.Empty;
-            //string msg = string.Empty;
-            //MariaCRUD m = new MariaCRUD();
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
 
-            //string sSeq = string.Empty;
-            //string sSeq1 = string.Empty;
-            //string sProdID = string.Empty;
-            //string sAddSize = string.Empty;
-            //string sGdQty = string.Empty;
-            //string sNgQty = string.Empty;
-            //string sDepot = string.Empty;
-            //string sTime = string.Empty;
+            string sJobNo = tbJobNo.Text.Trim();
+            string sMachineId = tbMachine.Tag.ToString().Trim();
+            string sProdID = string.Empty;
+            string sAddSize = string.Empty;
+            string sGdQty = string.Empty;
+            string sNgQty = string.Empty;
+            string sDepot = string.Empty;
+            string sTime = string.Empty;
 
-            //if (dtpDate.Enabled) //추가 (Enabled가 true)
+            sql = "update tb_prod_result " +
+                "set jobtime_start = if('" + sJobTimeA + "' = '',now(),'" + sJobTimeA + "'), jobtime_finish = if('" + sJobTimeB + "' = '',null,'" + sJobTimeB + "')" +
+                " where job_no = '" + sJobNo + "' and machine_id = " + sMachineId;
+
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                MessageBox.Show(msg);
+                return;
+            }
+            var data = sql;
+            var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
+
+            //for (int i = 0; i < dataGridView1.RowCount; i++)
             //{
-            //    sql = "insert into tb_prod_done_main (job_date, job_part, jobtime_a, jobtime_b, jobman_cnt, jobman_list, energy1_a, energy1_b, ment, enter_man) " +
-            //        "values('" + sJobDate + "', 'A', if('" + sJobTimeA + "' = '',NOW(),'" + sJobTimeA + "'),if('" + sJobTimeB + "' = '',null,'" + sJobTimeB + "'),'" + sUserID + "')";
+            //    if (dataGridView1.Rows[i].Cells[3].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[3].Value.ToString())) continue;        // 품목코드
+
+            //    sProdID = dataGridView1.Rows[i].Cells[3].Value.ToString().Trim();
+            //    sTime = DateTime.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+            //    sAddSize = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
+            //    sGdQty = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
+            //    sNgQty = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
+            //    sDepot = dataGridView1.Rows[i].Cells[12].Value.ToString().Trim();
+
+            //    if (dataGridView1.Rows[i].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString()))
+            //        sSeq1 = getProdDoneSeq(sJobDate);
+            //    else
+            //        sSeq1 = dataGridView1.Rows[i].Cells[15].Value.ToString();
+
+            //    if (dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString()))
+            //        sSeq = getProdNoSeq();
+            //    else
+            //        sSeq = dataGridView1.Rows[i].Cells[2].Value.ToString();
+
+            //    if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0";
+            //    if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
+
+            //    sql = "insert into tb_prod_done_sub (job_date, job_part, job_seq, prod_no, prod_id, add_size, done_qty, ng_qty, depot, enter_dt) " +
+            //         "values('" + sJobDate + "', 'A'," + sSeq1 + ",'" + sSeq + "','" + sProdID + "','" + sAddSize + "'," + sGdQty + "," + sNgQty + ",'" + sDepot + "','" + sTime + "')" +
+            //        " on duplicate key update" +
+            //        " prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', done_qty = " + sGdQty + ", ng_qty = " + sNgQty + ", depot = '" + sDepot + "', enter_dt = '" + sTime + "'";
 
             //    m.dbCUD(sql, ref msg);
-
-            //    if (msg != "OK")
-            //    {
-            //        MessageBox.Show(msg);
-            //        return;
-            //    }
-            //    var data = sql;
-            //    var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);//등록로그추가
-
-                
             //}
-            //else //수정
-            //{
-            //    sql = "update tb_prod_done_main " +
-            //        "set jobtime_a = if('" + sJobTimeA + "' = '',now(),'" + sJobTimeA + "'), jobtime_b = if('" + sJobTimeB + "' = '',null,'" + sJobTimeB + "')" +
-            //        " where job_date = '" + sJobDate + "'";
-
-            //    m.dbCUD(sql, ref msg);
-
-            //    if (msg != "OK")
-            //    {
-            //        MessageBox.Show(msg);
-            //        return;
-            //    }
-            //    var data = sql;
-            //    var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
-
-            //    //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //    //{
-            //    //    if (dataGridView1.Rows[i].Cells[3].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[3].Value.ToString())) continue;        // 품목코드
-
-            //    //    sProdID = dataGridView1.Rows[i].Cells[3].Value.ToString().Trim();
-            //    //    sTime = DateTime.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            //    //    sAddSize = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
-            //    //    sGdQty = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
-            //    //    sNgQty = dataGridView1.Rows[i].Cells[10].Value.ToString().Trim();
-            //    //    sDepot = dataGridView1.Rows[i].Cells[12].Value.ToString().Trim();
-
-            //    //    if (dataGridView1.Rows[i].Cells[1].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[1].Value.ToString()))
-            //    //        sSeq1 = getProdDoneSeq(sJobDate);
-            //    //    else
-            //    //        sSeq1 = dataGridView1.Rows[i].Cells[15].Value.ToString();
-
-            //    //    if (dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString()))
-            //    //        sSeq = getProdNoSeq();
-            //    //    else
-            //    //        sSeq = dataGridView1.Rows[i].Cells[2].Value.ToString();
-
-            //    //    if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0";
-            //    //    if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
-
-            //    //    sql = "insert into tb_prod_done_sub (job_date, job_part, job_seq, prod_no, prod_id, add_size, done_qty, ng_qty, depot, enter_dt) " +
-            //    //         "values('" + sJobDate + "', 'A'," + sSeq1 + ",'" + sSeq + "','" + sProdID + "','" + sAddSize + "'," + sGdQty + "," + sNgQty + ",'" + sDepot + "','" + sTime + "')" +
-            //    //        " on duplicate key update" +
-            //    //        " prod_id = '" + sProdID + "', add_size = '" + sAddSize + "', done_qty = " + sGdQty + ", ng_qty = " + sNgQty + ", depot = '" + sDepot + "', enter_dt = '" + sTime + "'";
-
-            //    //    m.dbCUD(sql, ref msg);
-            //    //}
             //}
 
             //if (msg != "OK")
@@ -541,6 +534,8 @@ namespace SmartMES_Bluewings
             //ListSearch2(rowIndex);
 
             lblMsg.Text = "작업시작되었습니다.";
+            btnStart.Tag = DateTime.Now.ToString();
+            timer1.Start();
         }
         private void btnFinish_Click(object sender, EventArgs e)
         {            
@@ -566,12 +561,15 @@ namespace SmartMES_Bluewings
 
             if (dr == DialogResult.No) return;
 
+            timer1.Stop();
             string sJobDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sJobNo = tbJobNo.Text.Trim();
+            string sMachineId = tbMachine.Tag.ToString().Trim();
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
 
-            string sql = @"update tb_prod_done_main set jobtime_b = now() where job_date = '" + sJobDate + "'";
+            string sql = @"update tb_prod_result set jobtime_finish = now() where job_no = '" + sJobNo + "', machine_id = " + sMachineId;
 
             m.dbCUD(sql, ref msg);
 
@@ -582,7 +580,7 @@ namespace SmartMES_Bluewings
             }
             int rowIndex = dataGridViewList.CurrentRow.Index;
             ListSearch1();
-            dataGridViewList.CurrentCell = dataGridViewList[0, rowIndex];
+            dataGridViewList.CurrentCell = dataGridViewList[1, rowIndex];
             dataGridViewList.CurrentCell.Selected = true;
 
             ListSearch2(rowIndex);
@@ -623,7 +621,7 @@ namespace SmartMES_Bluewings
             dataGridView.ClearSelection();
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -652,12 +650,29 @@ namespace SmartMES_Bluewings
                 return;
             }
 
-            await DisplayMachineStatus(tbMachine.Tag.ToString());
+            DisplayMachineStatus(tbMachine.Tag.ToString());
         }
 
-        private Task DisplayMachineStatus(string v)
+        private void DisplayMachineStatus(string v)
         {
-            throw new NotImplementedException();
+            tbCurMat11.Text = tbMat11.Text;
+            tbCurMat12.Text = tbMat12.Text;
+            tbCurMat13.Text = tbMat13.Text;
+            tbCurMat14.Text = tbMat14.Text;
+            tbCurMat15.Text = tbMat15.Text;
+            tbCurMat16.Text = tbMat16.Text;
+            tbCurMat22.Text = tbMat22.Text;
+            tbCurMat23.Text = tbMat23.Text;
+            tbCurMat24.Text = tbMat24.Text;
+            tbCurMat25.Text = tbMat25.Text;
+            tbCurMat26.Text = tbMat26.Text;
+            tbCurSpeed11.Text = tbSpeed11.Text;
+            tbCurSpeed12.Text = tbSpeed12.Text;
+            tbCurSpeed13.Text = tbSpeed13.Text;
+            tbCurSpeed21.Text = tbSpeed21.Text;
+            tbCurSpeed22.Text = tbSpeed22.Text;
+            tbCurTemp.Text = tbTemp.Text;
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -711,7 +726,11 @@ namespace SmartMES_Bluewings
 
         private void tbProd_TextChanged(object sender, EventArgs e)
         {
+            DisplayStdData();
+        }
 
+        private void DisplayStdData()
+        {
             string msg = string.Empty;
             string sql = string.Empty;
             string sProd_id = tbProd.Tag.ToString();
@@ -741,6 +760,47 @@ namespace SmartMES_Bluewings
                 tbSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
                 tbSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
                 tbTemp.Text = table.Rows[0]["coolant"].ToString();
+            }
+        }
+
+        private void DisplayProductionMachineData(string JobNo)
+        {
+            string msg = string.Empty;
+            string sql = string.Empty;
+
+            MariaCRUD m = new MariaCRUD();
+            sql = "SELECT qty, ng_qty FROM tb_prod_result WHERE job_no = '" + JobNo + "'";
+            DataTable table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                tbGoodQty.Text = table.Rows[0]["qty"].ToString();
+                tbNgQty.Text = table.Rows[0]["ng_qty"].ToString();
+            }
+
+            sql = "SELECT * FROM tb_prod_result_spec WHERE job_no = '" + JobNo + "'";
+
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                tbCurMat11.Text = table.Rows[0]["main_mat1"].ToString();
+                tbCurMat12.Text = table.Rows[0]["main_mat2"].ToString();
+                tbCurMat13.Text = table.Rows[0]["main_mat3"].ToString();
+                tbCurMat14.Text = table.Rows[0]["main_mat4"].ToString();
+                tbCurMat15.Text = table.Rows[0]["main_mat5"].ToString();
+                tbCurMat16.Text = table.Rows[0]["main_mat6"].ToString();
+                tbCurSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
+                tbCurSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
+                tbCurSpeed13.Text = table.Rows[0]["import_good"].ToString();
+                tbCurMat22.Text = table.Rows[0]["sub_mat2"].ToString();
+                tbCurMat23.Text = table.Rows[0]["sub_mat3"].ToString();
+                tbCurMat24.Text = table.Rows[0]["sub_mat4"].ToString();
+                tbCurMat25.Text = table.Rows[0]["sub_mat5"].ToString();
+                tbCurMat26.Text = table.Rows[0]["sub_mat6"].ToString();
+                tbCurSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
+                tbCurSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
+                tbCurTemp.Text = table.Rows[0]["coolant"].ToString();
             }
         }
     }
