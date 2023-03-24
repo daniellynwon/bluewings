@@ -6398,6 +6398,8 @@ namespace SmartMES_Bluewings.P1E {
             
             private global::System.Data.DataColumn column금액;
             
+            private global::System.Data.DataColumn column입고여부;
+            
             private global::System.Data.DataColumn column입고자재;
             
             private global::System.Data.DataColumn column자재명;
@@ -6523,6 +6525,14 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고여부Column {
+                get {
+                    return this.column입고여부;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn 입고자재Column {
                 get {
                     return this.column입고자재;
@@ -6639,6 +6649,7 @@ namespace SmartMES_Bluewings.P1E {
                         System.DateTime 입고요청일, 
                         int 반출양, 
                         int 금액, 
+                        sbyte 입고여부, 
                         string 입고자재, 
                         string 자재명, 
                         int 입고양, 
@@ -6659,6 +6670,7 @@ namespace SmartMES_Bluewings.P1E {
                         입고요청일,
                         반출양,
                         금액,
+                        입고여부,
                         입고자재,
                         자재명,
                         입고양,
@@ -6699,6 +6711,7 @@ namespace SmartMES_Bluewings.P1E {
                 this.column입고요청일 = base.Columns["입고요청일"];
                 this.column반출양 = base.Columns["반출양"];
                 this.column금액 = base.Columns["금액"];
+                this.column입고여부 = base.Columns["입고여부"];
                 this.column입고자재 = base.Columns["입고자재"];
                 this.column자재명 = base.Columns["자재명"];
                 this.column입고양 = base.Columns["입고양"];
@@ -6731,6 +6744,8 @@ namespace SmartMES_Bluewings.P1E {
                 base.Columns.Add(this.column반출양);
                 this.column금액 = new global::System.Data.DataColumn("금액", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column금액);
+                this.column입고여부 = new global::System.Data.DataColumn("입고여부", typeof(sbyte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고여부);
                 this.column입고자재 = new global::System.Data.DataColumn("입고자재", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column입고자재);
                 this.column자재명 = new global::System.Data.DataColumn("자재명", typeof(string), null, global::System.Data.MappingType.Element);
@@ -11442,6 +11457,22 @@ namespace SmartMES_Bluewings.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sbyte 입고여부 {
+                get {
+                    try {
+                        return ((sbyte)(this[this.tableSP_DefectProd_List.입고여부Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_DefectProd_List\' 테이블의 \'입고여부\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_DefectProd_List.입고여부Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 입고자재 {
                 get {
                     try {
@@ -11690,6 +11721,18 @@ namespace SmartMES_Bluewings.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set금액Null() {
                 this[this.tableSP_DefectProd_List.금액Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고여부Null() {
+                return this.IsNull(this.tableSP_DefectProd_List.입고여부Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고여부Null() {
+                this[this.tableSP_DefectProd_List.입고여부Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15327,6 +15370,7 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("입고요청일", "입고요청일");
             tableMapping.ColumnMappings.Add("반출양", "반출양");
             tableMapping.ColumnMappings.Add("금액", "금액");
+            tableMapping.ColumnMappings.Add("입고여부", "입고여부");
             tableMapping.ColumnMappings.Add("입고자재", "입고자재");
             tableMapping.ColumnMappings.Add("자재명", "자재명");
             tableMapping.ColumnMappings.Add("입고양", "입고양");
@@ -15370,13 +15414,20 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             param.IsNullable = true;
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_search";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1E.SP_DefectProd_ListDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate) {
+        public virtual int Fill(DataSetP1E.SP_DefectProd_ListDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((_fromDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
@@ -15389,6 +15440,12 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((_search == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -15401,7 +15458,7 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1E.SP_DefectProd_ListDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate) {
+        public virtual DataSetP1E.SP_DefectProd_ListDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((_fromDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
@@ -15414,6 +15471,12 @@ namespace SmartMES_Bluewings.P1E.DataSetP1ETableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((_search == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
             }
             DataSetP1E.SP_DefectProd_ListDataTable dataTable = new DataSetP1E.SP_DefectProd_ListDataTable();
             this.Adapter.Fill(dataTable);

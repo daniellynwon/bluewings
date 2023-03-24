@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1ED03_DEFECT_LIST));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,29 +41,30 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jobNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.설비코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.검사일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.외관DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.관벽두께1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.관벽두께2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.관벽두께3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.최소내벽1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.최소내벽2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.최소내벽3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.안지름1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.안지름2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.안지름3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.길이1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.길이2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.길이3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.판정DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPQcQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPDefectProdListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
-            this.sP_Qc_QueryTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_Qc_QueryTableAdapter();
+            this.sP_DefectProd_ListTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_DefectProd_ListTableAdapter();
+            this.관리번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.반출품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.반출발주일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고요청일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.반출양DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.입고여부 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고자재DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.자재명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고양DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수율DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.발주자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.승인자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.입고승인자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -75,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQcQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDefectProdListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1E)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,60 +207,61 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView1.ColumnHeadersHeight = 60;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jobNoDataGridViewTextBoxColumn,
-            this.설비코드DataGridViewTextBoxColumn,
-            this.설비명DataGridViewTextBoxColumn,
-            this.검사일자DataGridViewTextBoxColumn,
-            this.품목코드DataGridViewTextBoxColumn,
+            this.관리번호DataGridViewTextBoxColumn,
+            this.거래처코드DataGridViewTextBoxColumn,
+            this.거래처명DataGridViewTextBoxColumn,
+            this.반출품목코드DataGridViewTextBoxColumn,
             this.품목명DataGridViewTextBoxColumn,
-            this.외관DataGridViewTextBoxColumn,
-            this.관벽두께1DataGridViewTextBoxColumn,
-            this.관벽두께2DataGridViewTextBoxColumn,
-            this.관벽두께3DataGridViewTextBoxColumn,
-            this.최소내벽1DataGridViewTextBoxColumn,
-            this.최소내벽2DataGridViewTextBoxColumn,
-            this.최소내벽3DataGridViewTextBoxColumn,
-            this.안지름1DataGridViewTextBoxColumn,
-            this.안지름2DataGridViewTextBoxColumn,
-            this.안지름3DataGridViewTextBoxColumn,
-            this.길이1DataGridViewTextBoxColumn,
-            this.길이2DataGridViewTextBoxColumn,
-            this.길이3DataGridViewTextBoxColumn,
-            this.판정DataGridViewTextBoxColumn});
+            this.반출발주일DataGridViewTextBoxColumn,
+            this.입고요청일DataGridViewTextBoxColumn,
+            this.반출양DataGridViewTextBoxColumn,
+            this.금액DataGridViewTextBoxColumn,
+            this.Column1,
+            this.Column2,
+            this.입고여부,
+            this.입고자재DataGridViewTextBoxColumn,
+            this.자재명DataGridViewTextBoxColumn,
+            this.입고양DataGridViewTextBoxColumn,
+            this.수율DataGridViewTextBoxColumn,
+            this.입고일DataGridViewTextBoxColumn,
+            this.발주자DataGridViewTextBoxColumn,
+            this.승인자DataGridViewTextBoxColumn,
+            this.입고자DataGridViewTextBoxColumn,
+            this.입고승인자DataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView1.DataSource = this.sPQcQueryBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView1.DataSource = this.sPDefectProdListBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 132);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 132);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
@@ -271,187 +270,176 @@
             this.dataGridView1.Size = new System.Drawing.Size(1319, 851);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
-            this.dataGridView1.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView1_Paint);
             // 
-            // jobNoDataGridViewTextBoxColumn
+            // sPDefectProdListBindingSource
             // 
-            this.jobNoDataGridViewTextBoxColumn.DataPropertyName = "jobNo";
-            this.jobNoDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.jobNoDataGridViewTextBoxColumn.HeaderText = "jobNo";
-            this.jobNoDataGridViewTextBoxColumn.Name = "jobNoDataGridViewTextBoxColumn";
-            this.jobNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 설비코드DataGridViewTextBoxColumn
-            // 
-            this.설비코드DataGridViewTextBoxColumn.DataPropertyName = "설비코드";
-            this.설비코드DataGridViewTextBoxColumn.HeaderText = "설비코드";
-            this.설비코드DataGridViewTextBoxColumn.Name = "설비코드DataGridViewTextBoxColumn";
-            this.설비코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.설비코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 설비명DataGridViewTextBoxColumn
-            // 
-            this.설비명DataGridViewTextBoxColumn.DataPropertyName = "설비명";
-            this.설비명DataGridViewTextBoxColumn.FillWeight = 80F;
-            this.설비명DataGridViewTextBoxColumn.HeaderText = "설비명";
-            this.설비명DataGridViewTextBoxColumn.Name = "설비명DataGridViewTextBoxColumn";
-            this.설비명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 검사일자DataGridViewTextBoxColumn
-            // 
-            this.검사일자DataGridViewTextBoxColumn.DataPropertyName = "검사일자";
-            this.검사일자DataGridViewTextBoxColumn.HeaderText = "검사일자";
-            this.검사일자DataGridViewTextBoxColumn.Name = "검사일자DataGridViewTextBoxColumn";
-            this.검사일자DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 품목코드DataGridViewTextBoxColumn
-            // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 품목명DataGridViewTextBoxColumn
-            // 
-            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.FillWeight = 80F;
-            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
-            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 외관DataGridViewTextBoxColumn
-            // 
-            this.외관DataGridViewTextBoxColumn.DataPropertyName = "외관";
-            this.외관DataGridViewTextBoxColumn.FillWeight = 30F;
-            this.외관DataGridViewTextBoxColumn.HeaderText = "외관";
-            this.외관DataGridViewTextBoxColumn.Name = "외관DataGridViewTextBoxColumn";
-            this.외관DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 관벽두께1DataGridViewTextBoxColumn
-            // 
-            this.관벽두께1DataGridViewTextBoxColumn.DataPropertyName = "관벽두께1";
-            this.관벽두께1DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.관벽두께1DataGridViewTextBoxColumn.HeaderText = "n1";
-            this.관벽두께1DataGridViewTextBoxColumn.Name = "관벽두께1DataGridViewTextBoxColumn";
-            this.관벽두께1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 관벽두께2DataGridViewTextBoxColumn
-            // 
-            this.관벽두께2DataGridViewTextBoxColumn.DataPropertyName = "관벽두께2";
-            this.관벽두께2DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.관벽두께2DataGridViewTextBoxColumn.HeaderText = "n2";
-            this.관벽두께2DataGridViewTextBoxColumn.Name = "관벽두께2DataGridViewTextBoxColumn";
-            this.관벽두께2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 관벽두께3DataGridViewTextBoxColumn
-            // 
-            this.관벽두께3DataGridViewTextBoxColumn.DataPropertyName = "관벽두께3";
-            this.관벽두께3DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.관벽두께3DataGridViewTextBoxColumn.HeaderText = "n3";
-            this.관벽두께3DataGridViewTextBoxColumn.Name = "관벽두께3DataGridViewTextBoxColumn";
-            this.관벽두께3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 최소내벽1DataGridViewTextBoxColumn
-            // 
-            this.최소내벽1DataGridViewTextBoxColumn.DataPropertyName = "최소내벽1";
-            this.최소내벽1DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.최소내벽1DataGridViewTextBoxColumn.HeaderText = "n1";
-            this.최소내벽1DataGridViewTextBoxColumn.Name = "최소내벽1DataGridViewTextBoxColumn";
-            this.최소내벽1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 최소내벽2DataGridViewTextBoxColumn
-            // 
-            this.최소내벽2DataGridViewTextBoxColumn.DataPropertyName = "최소내벽2";
-            this.최소내벽2DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.최소내벽2DataGridViewTextBoxColumn.HeaderText = "n2";
-            this.최소내벽2DataGridViewTextBoxColumn.Name = "최소내벽2DataGridViewTextBoxColumn";
-            this.최소내벽2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 최소내벽3DataGridViewTextBoxColumn
-            // 
-            this.최소내벽3DataGridViewTextBoxColumn.DataPropertyName = "최소내벽3";
-            this.최소내벽3DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.최소내벽3DataGridViewTextBoxColumn.HeaderText = "n3";
-            this.최소내벽3DataGridViewTextBoxColumn.Name = "최소내벽3DataGridViewTextBoxColumn";
-            this.최소내벽3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 안지름1DataGridViewTextBoxColumn
-            // 
-            this.안지름1DataGridViewTextBoxColumn.DataPropertyName = "안지름1";
-            this.안지름1DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.안지름1DataGridViewTextBoxColumn.HeaderText = "n1";
-            this.안지름1DataGridViewTextBoxColumn.Name = "안지름1DataGridViewTextBoxColumn";
-            this.안지름1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 안지름2DataGridViewTextBoxColumn
-            // 
-            this.안지름2DataGridViewTextBoxColumn.DataPropertyName = "안지름2";
-            this.안지름2DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.안지름2DataGridViewTextBoxColumn.HeaderText = "n2";
-            this.안지름2DataGridViewTextBoxColumn.Name = "안지름2DataGridViewTextBoxColumn";
-            this.안지름2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 안지름3DataGridViewTextBoxColumn
-            // 
-            this.안지름3DataGridViewTextBoxColumn.DataPropertyName = "안지름3";
-            this.안지름3DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.안지름3DataGridViewTextBoxColumn.HeaderText = "n3";
-            this.안지름3DataGridViewTextBoxColumn.Name = "안지름3DataGridViewTextBoxColumn";
-            this.안지름3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 길이1DataGridViewTextBoxColumn
-            // 
-            this.길이1DataGridViewTextBoxColumn.DataPropertyName = "길이1";
-            dataGridViewCellStyle8.Format = "#,##0";
-            this.길이1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.길이1DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.길이1DataGridViewTextBoxColumn.HeaderText = "n1";
-            this.길이1DataGridViewTextBoxColumn.Name = "길이1DataGridViewTextBoxColumn";
-            this.길이1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 길이2DataGridViewTextBoxColumn
-            // 
-            this.길이2DataGridViewTextBoxColumn.DataPropertyName = "길이2";
-            dataGridViewCellStyle9.Format = "#,##0";
-            this.길이2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.길이2DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.길이2DataGridViewTextBoxColumn.HeaderText = "n2";
-            this.길이2DataGridViewTextBoxColumn.Name = "길이2DataGridViewTextBoxColumn";
-            this.길이2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 길이3DataGridViewTextBoxColumn
-            // 
-            this.길이3DataGridViewTextBoxColumn.DataPropertyName = "길이3";
-            dataGridViewCellStyle10.Format = "#,##0";
-            this.길이3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.길이3DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.길이3DataGridViewTextBoxColumn.HeaderText = "n3";
-            this.길이3DataGridViewTextBoxColumn.Name = "길이3DataGridViewTextBoxColumn";
-            this.길이3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 판정DataGridViewTextBoxColumn
-            // 
-            this.판정DataGridViewTextBoxColumn.DataPropertyName = "판정";
-            this.판정DataGridViewTextBoxColumn.FillWeight = 30F;
-            this.판정DataGridViewTextBoxColumn.HeaderText = "판정";
-            this.판정DataGridViewTextBoxColumn.Name = "판정DataGridViewTextBoxColumn";
-            this.판정DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sPQcQueryBindingSource
-            // 
-            this.sPQcQueryBindingSource.DataMember = "SP_Qc_Query";
-            this.sPQcQueryBindingSource.DataSource = this.dataSetP1E;
+            this.sPDefectProdListBindingSource.DataMember = "SP_DefectProd_List";
+            this.sPDefectProdListBindingSource.DataSource = this.dataSetP1E;
             // 
             // dataSetP1E
             // 
             this.dataSetP1E.DataSetName = "DataSetP1E";
             this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sP_Qc_QueryTableAdapter
+            // sP_DefectProd_ListTableAdapter
             // 
-            this.sP_Qc_QueryTableAdapter.ClearBeforeFill = true;
+            this.sP_DefectProd_ListTableAdapter.ClearBeforeFill = true;
+            // 
+            // 관리번호DataGridViewTextBoxColumn
+            // 
+            this.관리번호DataGridViewTextBoxColumn.DataPropertyName = "관리번호";
+            this.관리번호DataGridViewTextBoxColumn.HeaderText = "번호";
+            this.관리번호DataGridViewTextBoxColumn.Name = "관리번호DataGridViewTextBoxColumn";
+            this.관리번호DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 거래처코드DataGridViewTextBoxColumn
+            // 
+            this.거래처코드DataGridViewTextBoxColumn.DataPropertyName = "거래처코드";
+            this.거래처코드DataGridViewTextBoxColumn.HeaderText = "거래처코드";
+            this.거래처코드DataGridViewTextBoxColumn.Name = "거래처코드DataGridViewTextBoxColumn";
+            this.거래처코드DataGridViewTextBoxColumn.ReadOnly = true;
+            this.거래처코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 거래처명DataGridViewTextBoxColumn
+            // 
+            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
+            this.거래처명DataGridViewTextBoxColumn.HeaderText = "업체명";
+            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
+            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 반출품목코드DataGridViewTextBoxColumn
+            // 
+            this.반출품목코드DataGridViewTextBoxColumn.DataPropertyName = "반출품목코드";
+            this.반출품목코드DataGridViewTextBoxColumn.HeaderText = "반출품목코드";
+            this.반출품목코드DataGridViewTextBoxColumn.Name = "반출품목코드DataGridViewTextBoxColumn";
+            this.반출품목코드DataGridViewTextBoxColumn.ReadOnly = true;
+            this.반출품목코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목명DataGridViewTextBoxColumn
+            // 
+            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 반출발주일DataGridViewTextBoxColumn
+            // 
+            this.반출발주일DataGridViewTextBoxColumn.DataPropertyName = "반출발주일";
+            this.반출발주일DataGridViewTextBoxColumn.HeaderText = "반출발주일";
+            this.반출발주일DataGridViewTextBoxColumn.Name = "반출발주일DataGridViewTextBoxColumn";
+            this.반출발주일DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 입고요청일DataGridViewTextBoxColumn
+            // 
+            this.입고요청일DataGridViewTextBoxColumn.DataPropertyName = "입고요청일";
+            this.입고요청일DataGridViewTextBoxColumn.HeaderText = "입고요청일";
+            this.입고요청일DataGridViewTextBoxColumn.Name = "입고요청일DataGridViewTextBoxColumn";
+            this.입고요청일DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 반출양DataGridViewTextBoxColumn
+            // 
+            this.반출양DataGridViewTextBoxColumn.DataPropertyName = "반출양";
+            this.반출양DataGridViewTextBoxColumn.HeaderText = "반출양";
+            this.반출양DataGridViewTextBoxColumn.Name = "반출양DataGridViewTextBoxColumn";
+            this.반출양DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 금액DataGridViewTextBoxColumn
+            // 
+            this.금액DataGridViewTextBoxColumn.DataPropertyName = "금액";
+            this.금액DataGridViewTextBoxColumn.HeaderText = "금액";
+            this.금액DataGridViewTextBoxColumn.Name = "금액DataGridViewTextBoxColumn";
+            this.금액DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 40F;
+            this.Column1.HeaderText = "발주";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 40F;
+            this.Column2.HeaderText = "입고";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // 입고여부
+            // 
+            this.입고여부.DataPropertyName = "입고여부";
+            this.입고여부.HeaderText = "입고여부";
+            this.입고여부.Name = "입고여부";
+            this.입고여부.ReadOnly = true;
+            this.입고여부.Visible = false;
+            // 
+            // 입고자재DataGridViewTextBoxColumn
+            // 
+            this.입고자재DataGridViewTextBoxColumn.DataPropertyName = "입고자재";
+            this.입고자재DataGridViewTextBoxColumn.HeaderText = "입고자재";
+            this.입고자재DataGridViewTextBoxColumn.Name = "입고자재DataGridViewTextBoxColumn";
+            this.입고자재DataGridViewTextBoxColumn.ReadOnly = true;
+            this.입고자재DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 자재명DataGridViewTextBoxColumn
+            // 
+            this.자재명DataGridViewTextBoxColumn.DataPropertyName = "자재명";
+            this.자재명DataGridViewTextBoxColumn.HeaderText = "자재명";
+            this.자재명DataGridViewTextBoxColumn.Name = "자재명DataGridViewTextBoxColumn";
+            this.자재명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.자재명DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 입고양DataGridViewTextBoxColumn
+            // 
+            this.입고양DataGridViewTextBoxColumn.DataPropertyName = "입고양";
+            this.입고양DataGridViewTextBoxColumn.HeaderText = "입고양";
+            this.입고양DataGridViewTextBoxColumn.Name = "입고양DataGridViewTextBoxColumn";
+            this.입고양DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 수율DataGridViewTextBoxColumn
+            // 
+            this.수율DataGridViewTextBoxColumn.DataPropertyName = "수율";
+            this.수율DataGridViewTextBoxColumn.HeaderText = "수율";
+            this.수율DataGridViewTextBoxColumn.Name = "수율DataGridViewTextBoxColumn";
+            this.수율DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 입고일DataGridViewTextBoxColumn
+            // 
+            this.입고일DataGridViewTextBoxColumn.DataPropertyName = "입고일";
+            this.입고일DataGridViewTextBoxColumn.HeaderText = "입고일";
+            this.입고일DataGridViewTextBoxColumn.Name = "입고일DataGridViewTextBoxColumn";
+            this.입고일DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 발주자DataGridViewTextBoxColumn
+            // 
+            this.발주자DataGridViewTextBoxColumn.DataPropertyName = "발주자";
+            this.발주자DataGridViewTextBoxColumn.HeaderText = "발주자";
+            this.발주자DataGridViewTextBoxColumn.Name = "발주자DataGridViewTextBoxColumn";
+            this.발주자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.발주자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 승인자DataGridViewTextBoxColumn
+            // 
+            this.승인자DataGridViewTextBoxColumn.DataPropertyName = "승인자";
+            this.승인자DataGridViewTextBoxColumn.HeaderText = "승인자";
+            this.승인자DataGridViewTextBoxColumn.Name = "승인자DataGridViewTextBoxColumn";
+            this.승인자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.승인자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 입고자DataGridViewTextBoxColumn
+            // 
+            this.입고자DataGridViewTextBoxColumn.DataPropertyName = "입고자";
+            this.입고자DataGridViewTextBoxColumn.HeaderText = "입고자";
+            this.입고자DataGridViewTextBoxColumn.Name = "입고자DataGridViewTextBoxColumn";
+            this.입고자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.입고자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 입고승인자DataGridViewTextBoxColumn
+            // 
+            this.입고승인자DataGridViewTextBoxColumn.DataPropertyName = "입고승인자";
+            this.입고승인자DataGridViewTextBoxColumn.HeaderText = "입고승인자";
+            this.입고승인자DataGridViewTextBoxColumn.Name = "입고승인자DataGridViewTextBoxColumn";
+            this.입고승인자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.입고승인자DataGridViewTextBoxColumn.Visible = false;
             // 
             // P1ED03_DEFECT_LIST
             // 
@@ -473,7 +461,7 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPQcQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPDefectProdListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1E)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -488,30 +476,31 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DateTimePicker dtpToDate;
         public System.Windows.Forms.DateTimePicker dtpFromDate;
-        private P1E.DataSetP1E dataSetP1E;
-        private System.Windows.Forms.BindingSource sPQcQueryBindingSource;
-        private P1E.DataSetP1ETableAdapters.SP_Qc_QueryTableAdapter sP_Qc_QueryTableAdapter;
         public System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 설비코드DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 설비명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 검사일자DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sPDefectProdListBindingSource;
+        private P1E.DataSetP1E dataSetP1E;
+        private P1E.DataSetP1ETableAdapters.SP_DefectProd_ListTableAdapter sP_DefectProd_ListTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 관리번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처코드DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 반출품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 외관DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 관벽두께1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 관벽두께2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 관벽두께3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 최소내벽1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 최소내벽2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 최소내벽3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 안지름1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 안지름2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 안지름3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 길이1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 길이2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 길이3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 판정DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 반출발주일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고요청일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 반출양DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 금액DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고여부;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고자재DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고양DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수율DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고일DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 발주자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 승인자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 입고승인자DataGridViewTextBoxColumn;
     }
 }
