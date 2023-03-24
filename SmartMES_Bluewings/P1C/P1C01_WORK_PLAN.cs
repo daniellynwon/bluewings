@@ -30,10 +30,11 @@ namespace SmartMES_Bluewings
             dtpFromDate.Value = Convert.ToDateTime(mondayDate);
             dtpToDate.Value = Convert.ToDateTime(TodaySunday);
 
-            ListSearch(mondayDate);
+            ListSearch();
         }
 
-        public void ListSearch(DateTime _day)
+        // public void ListSearch(DateTime _day)
+        public void ListSearch()
         {
             lblMsg.Text = "";
             try
@@ -124,7 +125,7 @@ namespace SmartMES_Bluewings
         {
             DateTime nowDt = dtpFromDate.Value;
             dtpToDate.Value = nowDt.AddDays(6);
-            ListSearch(nowDt);
+            ListSearch();
         }
         #endregion
 
@@ -163,8 +164,8 @@ namespace SmartMES_Bluewings
         #region Button Events
         private void pbSearch_Click(object sender, EventArgs e)
         {
-            DateTime dtFromDate = DateTime.Parse(dtpFromDate.Value.ToString("yyyy-MM-dd"));
-            ListSearch(dtFromDate);
+            //DateTime dtFromDate = DateTime.Parse(dtpFromDate.Value.ToString("yyyy-MM-dd"));
+            ListSearch();
         }
         private void pbAdd_Click(object sender, EventArgs e)
         {
@@ -230,6 +231,7 @@ namespace SmartMES_Bluewings
                     m.dbCUD(sql, ref msg);
                 }
             }
+            ListSearch();
 
             lblMsg.Text = "저장되었습니다.";
         }
