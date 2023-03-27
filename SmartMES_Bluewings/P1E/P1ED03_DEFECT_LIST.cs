@@ -78,10 +78,10 @@ namespace SmartMES_Bluewings
             }
             else if (e.ColumnIndex == 9)    // 입고
             {
-                //if (dataGridView1.Rows[e.RowIndex].Cells[12].Value == null)
-                //    dataGridView1.Rows[e.RowIndex].Cells[12].Value = 1;
-                //else
-                //    dataGridView1.Rows[e.RowIndex].Cells[12].Value = 0;
+                P1ED03_DEFECT_IN sub = new P1ED03_DEFECT_IN();
+                //sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                sub.parentWin = this;
+                sub.ShowDialog();
             }
         }
         #endregion
