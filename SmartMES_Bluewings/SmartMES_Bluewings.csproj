@@ -1421,7 +1421,7 @@
     <None Include="Resources\clipA.jpg" />
     <None Include="Resources\clipB.jpg" />
     <Content Include="Resources\close.jpg" />
-    <Content Include="Resources\ComLogo.png" />
+    <None Include="Resources\ComLogo.PNG" />
     <Content Include="Resources\del_A.jpg" />
     <Content Include="Resources\del_B.jpg" />
     <None Include="Resources\eraser.bmp" />
