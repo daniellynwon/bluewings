@@ -38,10 +38,10 @@ namespace SmartMES_Bluewings
                 tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
                 tbRate.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();
                 dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString());
-            }
 
-            tbInQty.Focus();
-            this.ActiveControl = btnSave;
+                this.ActiveControl = btnSave;
+            }
+            else  this.ActiveControl = tbInQty;
         }
 
         #region 엔터키로 포커스 이동
