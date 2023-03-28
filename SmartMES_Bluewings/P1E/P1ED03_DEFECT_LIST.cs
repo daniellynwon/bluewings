@@ -110,30 +110,30 @@ namespace SmartMES_Bluewings
         {
             if (dataGridView1.RowCount <= 0) return;
 
-            //string reportFileName = "SmartMES_Bluewings.Reports.P1ED03_DEFECT_LIST.rdlc";
+            string reportFileName = "SmartMES_Bluewings.Reports.P1ED03_DEFECT_LIST.rdlc";
 
-            //string reportParm1 = "검사기간 : ";
-            //string reportParm2 = "거래처명/현장정보 : ";
-            //string reportParm3 = "";
+            string reportParm1 = "기 간 : ";
+            string reportParm2 = "업체명/품목명 : ";
+            string reportParm3 = "";
 
-            //reportParm1 = reportParm1 + dtpFromDate.Value.ToString("yyyy-MM-dd") + " ~ " + dtpToDate.Value.ToString("yyyy-MM-dd");
-            //if (string.IsNullOrEmpty(tbSearch.Text.Trim())) reportParm2 = reportParm2 + "전체";
-            //else reportParm2 = reportParm2 + tbSearch.Text.Trim();
+            reportParm1 = reportParm1 + dtpFromDate.Value.ToString("yyyy-MM-dd") + " ~ " + dtpToDate.Value.ToString("yyyy-MM-dd");
+            if (string.IsNullOrEmpty(tbSearch.Text.Trim())) reportParm2 = reportParm2 + "전체";
+            else reportParm2 = reportParm2 + tbSearch.Text.Trim();
 
-            //ViewReport_H viewReport = new ViewReport_H();
-            //viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
-            //viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+            ViewReport_H viewReport = new ViewReport_H();
+            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
 
-            //ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
-            //ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
-            //ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
-            //viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3 });
+            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
+            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
+            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
+            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3 });
 
-            //ReportDataSource rds = new ReportDataSource("DataSet1", sPQcQueryBindingSource);
-            //viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
-            //viewReport.reportViewer1.LocalReport.Refresh();
+            ReportDataSource rds = new ReportDataSource("DataSet1", sPDefectProdListBindingSource);
+            viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+            viewReport.reportViewer1.LocalReport.Refresh();
 
-            //viewReport.ShowDialog();
+            viewReport.ShowDialog();
         }
         #endregion
     }
