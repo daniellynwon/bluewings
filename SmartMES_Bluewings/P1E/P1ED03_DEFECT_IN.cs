@@ -70,6 +70,10 @@ namespace SmartMES_Bluewings
 
                 tbInQty.SelectionStart = tbInQty.TextLength; //** 캐럿을 맨 뒤로 보낸다...
                 tbInQty.SelectionLength = 0;
+
+                float fQty = tbQty.Text.Replace(",", "").Trim() == "" ? 0 : float.Parse(tbQty.Text.Replace(",", "").Trim());
+                float fInQty = tbInQty.Text.Replace(",", "").Trim() == "" ? 0 : float.Parse(tbInQty.Text.Replace(",", "").Trim());
+                tbRate.Text = ((fInQty / fQty) * 100).ToString("#,##0.##");
             }
             catch (FormatException)
             {
@@ -128,13 +132,6 @@ namespace SmartMES_Bluewings
                 tbInQty.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(sRate))
-            {
-                lblMsg.Text = "수율을 입력해 주세요.";
-                tbRate.Focus();
-                return;
-            }
-
             string sNo = tbNo.Text;
             string sInDate = dtpInDate.Value.ToString("yyyy-MM-dd");
 
@@ -224,7 +221,7 @@ namespace SmartMES_Bluewings
 
                 MariaCRUD m = new MariaCRUD();
 
-                string sql = "delete from tb_purchase_mat_sub where purch_id = '" + sNo + "' and purch_seq = " + sSeq;
+                string sql = "delete from tb_defect_product where purch_id = '" + sNo + "' and purch_seq = " + sSeq;
 
                 string msg = string.Empty;
                 m.dbCUD(sql, ref msg);

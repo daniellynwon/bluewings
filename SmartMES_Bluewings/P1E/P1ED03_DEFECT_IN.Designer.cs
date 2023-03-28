@@ -379,6 +379,7 @@
             this.lblDel.Size = new System.Drawing.Size(106, 21);
             this.lblDel.TabIndex = 32;
             this.lblDel.Text = "매입정보삭제";
+            this.lblDel.Visible = false;
             this.lblDel.Click += new System.EventHandler(this.lblDel_Click);
             // 
             // label5
@@ -396,6 +397,7 @@
             // 
             this.tbRate.Location = new System.Drawing.Point(485, 391);
             this.tbRate.Name = "tbRate";
+            this.tbRate.ReadOnly = true;
             this.tbRate.Size = new System.Drawing.Size(211, 29);
             this.tbRate.TabIndex = 3;
             this.tbRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRate_KeyPress);

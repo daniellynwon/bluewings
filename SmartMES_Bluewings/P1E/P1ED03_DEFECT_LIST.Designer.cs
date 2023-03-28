@@ -406,7 +406,7 @@
             // 수율DataGridViewTextBoxColumn
             // 
             this.수율DataGridViewTextBoxColumn.DataPropertyName = "수율";
-            this.수율DataGridViewTextBoxColumn.HeaderText = "수율";
+            this.수율DataGridViewTextBoxColumn.HeaderText = "수율(%)";
             this.수율DataGridViewTextBoxColumn.Name = "수율DataGridViewTextBoxColumn";
             this.수율DataGridViewTextBoxColumn.ReadOnly = true;
             // 
