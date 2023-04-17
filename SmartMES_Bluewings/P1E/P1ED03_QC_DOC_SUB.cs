@@ -113,7 +113,7 @@ namespace SmartMES_Bluewings
 
                 for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
                 {
-                    if (parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString() == custCode)
+                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sNo)
                     {
                         parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
                         parentWin.dataGridView1.CurrentCell.Selected = true;

@@ -47,9 +47,6 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPMachineRepairQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1D = new SmartMES_Bluewings.P1D.DataSetP1D();
-            this.sP_MachineRepair_QueryTableAdapter = new SmartMES_Bluewings.P1D.DataSetP1DTableAdapters.SP_MachineRepair_QueryTableAdapter();
             this.설비IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.호기DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -69,6 +66,9 @@
             this.파일이름1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.파일이름2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.파일이름3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPMachineRepairQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1D = new SmartMES_Bluewings.P1D.DataSetP1D();
+            this.sP_MachineRepair_QueryTableAdapter = new SmartMES_Bluewings.P1D.DataSetP1DTableAdapters.SP_MachineRepair_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -103,7 +103,7 @@
             // 
             // pbAdd
             // 
-            this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
+            this.pbAdd.Image = global::SmartMES_Bluewings.Properties.Resources.add_A;
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -275,20 +275,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // sPMachineRepairQueryBindingSource
-            // 
-            this.sPMachineRepairQueryBindingSource.DataMember = "SP_MachineRepair_Query";
-            this.sPMachineRepairQueryBindingSource.DataSource = this.dataSetP1D;
-            // 
-            // dataSetP1D
-            // 
-            this.dataSetP1D.DataSetName = "DataSetP1D";
-            this.dataSetP1D.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_MachineRepair_QueryTableAdapter
-            // 
-            this.sP_MachineRepair_QueryTableAdapter.ClearBeforeFill = true;
-            // 
             // 설비IDDataGridViewTextBoxColumn
             // 
             this.설비IDDataGridViewTextBoxColumn.DataPropertyName = "설비ID";
@@ -451,6 +437,20 @@
             this.파일이름3.Name = "파일이름3";
             this.파일이름3.ReadOnly = true;
             this.파일이름3.Visible = false;
+            // 
+            // sPMachineRepairQueryBindingSource
+            // 
+            this.sPMachineRepairQueryBindingSource.DataMember = "SP_MachineRepair_Query";
+            this.sPMachineRepairQueryBindingSource.DataSource = this.dataSetP1D;
+            // 
+            // dataSetP1D
+            // 
+            this.dataSetP1D.DataSetName = "DataSetP1D";
+            this.dataSetP1D.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_MachineRepair_QueryTableAdapter
+            // 
+            this.sP_MachineRepair_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1D03_MAINTENANCE
             // 

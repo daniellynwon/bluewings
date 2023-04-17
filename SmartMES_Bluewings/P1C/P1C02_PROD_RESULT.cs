@@ -768,39 +768,46 @@ namespace SmartMES_Bluewings
             string msg = string.Empty;
             string sql = string.Empty;
 
-            MariaCRUD m = new MariaCRUD();
-            sql = "SELECT qty, ng_qty FROM tb_prod_result WHERE job_no = '" + JobNo + "'";
-            DataTable table = m.dbDataTable(sql, ref msg);
-
-            if (msg == "OK")
+            try
             {
-                tbGoodQty.Text = table.Rows[0]["qty"].ToString();
-                tbNgQty.Text = table.Rows[0]["ng_qty"].ToString();
+                MariaCRUD m = new MariaCRUD();
+                sql = "SELECT qty, ng_qty FROM tb_prod_result WHERE job_no = '" + JobNo + "'";
+                DataTable table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    tbGoodQty.Text = table.Rows[0]["qty"].ToString();
+                    tbNgQty.Text = table.Rows[0]["ng_qty"].ToString();
+                }
+
+                sql = "SELECT * FROM tb_prod_result_spec WHERE job_no = '" + JobNo + "'";
+
+                table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    tbCurMat11.Text = table.Rows[0]["main_mat1"].ToString();
+                    tbCurMat12.Text = table.Rows[0]["main_mat2"].ToString();
+                    tbCurMat13.Text = table.Rows[0]["main_mat3"].ToString();
+                    tbCurMat14.Text = table.Rows[0]["main_mat4"].ToString();
+                    tbCurMat15.Text = table.Rows[0]["main_mat5"].ToString();
+                    tbCurMat16.Text = table.Rows[0]["main_mat6"].ToString();
+                    tbCurSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
+                    tbCurSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
+                    tbCurSpeed13.Text = table.Rows[0]["import_good"].ToString();
+                    tbCurMat22.Text = table.Rows[0]["sub_mat2"].ToString();
+                    tbCurMat23.Text = table.Rows[0]["sub_mat3"].ToString();
+                    tbCurMat24.Text = table.Rows[0]["sub_mat4"].ToString();
+                    tbCurMat25.Text = table.Rows[0]["sub_mat5"].ToString();
+                    tbCurMat26.Text = table.Rows[0]["sub_mat6"].ToString();
+                    tbCurSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
+                    tbCurSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
+                    tbCurTemp.Text = table.Rows[0]["coolant"].ToString();
+                }
             }
-
-            sql = "SELECT * FROM tb_prod_result_spec WHERE job_no = '" + JobNo + "'";
-
-            table = m.dbDataTable(sql, ref msg);
-
-            if (msg == "OK")
+            catch(Exception ex)
             {
-                tbCurMat11.Text = table.Rows[0]["main_mat1"].ToString();
-                tbCurMat12.Text = table.Rows[0]["main_mat2"].ToString();
-                tbCurMat13.Text = table.Rows[0]["main_mat3"].ToString();
-                tbCurMat14.Text = table.Rows[0]["main_mat4"].ToString();
-                tbCurMat15.Text = table.Rows[0]["main_mat5"].ToString();
-                tbCurMat16.Text = table.Rows[0]["main_mat6"].ToString();
-                tbCurSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
-                tbCurSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
-                tbCurSpeed13.Text = table.Rows[0]["import_good"].ToString();
-                tbCurMat22.Text = table.Rows[0]["sub_mat2"].ToString();
-                tbCurMat23.Text = table.Rows[0]["sub_mat3"].ToString();
-                tbCurMat24.Text = table.Rows[0]["sub_mat4"].ToString();
-                tbCurMat25.Text = table.Rows[0]["sub_mat5"].ToString();
-                tbCurMat26.Text = table.Rows[0]["sub_mat6"].ToString();
-                tbCurSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
-                tbCurSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
-                tbCurTemp.Text = table.Rows[0]["coolant"].ToString();
+                MessageBox.Show("입력된 데이터가 없습니다", "확인");
             }
         }
     }

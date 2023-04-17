@@ -236,7 +236,7 @@ namespace SmartMES_Bluewings
 
                 e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r4);
                 e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r4);
-                e.Graphics.DrawString(strHeaders[2], gv.ColumnHeadersDefaultCellStyle.Font,
+                e.Graphics.DrawString(strHeaders[3], gv.ColumnHeadersDefaultCellStyle.Font,
                     new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r4, format);
             }
         }

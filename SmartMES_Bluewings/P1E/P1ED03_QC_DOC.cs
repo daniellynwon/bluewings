@@ -142,7 +142,7 @@ namespace SmartMES_Bluewings
 
             string reportFileName = "SmartMES_Bluewings.Reports.P1ED03_QC_DOC.rdlc";
 
-            string reportParm1 = "검사기간 : ";
+            string reportParm1 = "기간 : ";
             string reportParm2 = " ";
             string reportParm3 = " ";
 

@@ -95,7 +95,10 @@ namespace SmartMES_Bluewings
                 tbVal12.Text = dataGridViewList[19, idx].Value.ToString();
                 if (dataGridViewList[20, idx].Value.ToString() == "F") lblResult.Text = "불합";
                 else lblResult.Text = "합격";
-                dtpDate.Value = DateTime.Parse(dataGridViewList[21, idx].Value.ToString());
+                if (dataGridViewList[21, idx].Value.ToString() == "")
+                    dtpDate.Value = DateTime.Today;
+                else
+                    dtpDate.Value = DateTime.Parse(dataGridViewList[21, idx].Value.ToString());
             }
             catch (NullReferenceException)
             {

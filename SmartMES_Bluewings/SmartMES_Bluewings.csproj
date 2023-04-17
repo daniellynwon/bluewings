@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>54</ApplicationRevision>
+    <ApplicationRevision>55</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1218,6 +1218,7 @@
     <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST.rdlc" />
     <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST1.rdlc" />
     <EmbeddedResource Include="Reports\P1ED03_DEFECT_LIST.rdlc" />
+    <EmbeddedResource Include="Reports\P1ED03_QC_DOC.rdlc" />
     <EmbeddedResource Include="Reports\P1ED04_MOLD.rdlc" />
     <EmbeddedResource Include="Reports\P1FD01_KPI.rdlc" />
     <EmbeddedResource Include="UserControls\UserButtonA.resx">
