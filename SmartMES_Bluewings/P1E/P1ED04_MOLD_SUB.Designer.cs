@@ -323,7 +323,7 @@
             this.tbMoneyB.Size = new System.Drawing.Size(211, 29);
             this.tbMoneyB.TabIndex = 8;
             this.tbMoneyB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.tbMoneyB.TextChanged += new System.EventHandler(this.tbMoney_TextChanged);
+            this.tbMoneyB.TextChanged += new System.EventHandler(this.tb_TextChanged);
             this.tbMoneyB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
             this.tbMoneyB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMoney_KeyPress);
             // 

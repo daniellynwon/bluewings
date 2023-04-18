@@ -106,6 +106,7 @@ namespace SmartMES_Bluewings
             string sStat = cbStatus.Text.Substring(0, 1);
             string sMoneyA = tbMoneyA.Text.Replace(",", "").Trim();
             string sLap = tbLap.Text;
+            if (string.IsNullOrEmpty(sLap)) sLap = "0";
             if (string.IsNullOrEmpty(sMoneyA)) sMoneyA = "NULL";
             string sMoneyB = tbMoneyB.Text.Replace(",", "").Trim();
             if (string.IsNullOrEmpty(sMoneyB)) sMoneyB = "NULL";
@@ -156,9 +157,9 @@ namespace SmartMES_Bluewings
             else // 수정 및 update
             {
                 sql = "update tb_mold_info " +
-                    "set mold_name = '" + sName + "', cust_id = '" + sCust + "',mold_date = '" + sDate + "', mold_amount = " + sMoneyA + "', location = '" + sPlace + "', mold_status = '" + sStat +
+                    "set mold_name = '" + sName + "', cust_id = '" + sCust + "',mold_date = '" + sDate + "', mold_amount = " + sMoneyA + ", location = '" + sPlace + "', mold_status = '" + sStat +
                     "', time_move = '" + sDate1 + "', time_h = " + sLap + ", use_amount = " + sMoneyB +
-                    " where machine_id = '" + moldID + "'";
+                    " where mold_id = '" + moldID + "'";
 
                 m.dbCUD(sql, ref msg);
 
@@ -187,13 +188,27 @@ namespace SmartMES_Bluewings
                 string lgsText, lgsText1;
 
                 lgsText = tbMoneyA.Text.Replace(",", ""); //** 숫자변환시 콤마로 발생하는 에러방지...
-                lgsText1 = tbLap.Text.Replace(",", "");
                 tbMoneyA.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText));
-                tbLap.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText1));
 
                 tbMoneyA.SelectionStart = tbMoneyA.TextLength; //** 캐럿을 맨 뒤로 보낸다...
                 tbMoneyA.SelectionLength = 0;
-                tbLap.SelectionStart = tbLap.TextLength; tbLap.SelectionLength = 0;
+            }
+            catch (FormatException)
+            {
+                return;
+            }
+        }
+        private void tb_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string lgsText, lgsText1;
+
+                lgsText = tbMoneyB.Text.Replace(",", "");
+                tbMoneyB.Text = String.Format("{0:#,##0}", Convert.ToDouble(lgsText));
+
+                tbMoneyB.SelectionStart = tbMoneyB.TextLength; //** 캐럿을 맨 뒤로 보낸다...
+                tbMoneyB.SelectionLength = 0;
             }
             catch (FormatException)
             {
