@@ -47,6 +47,9 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPProductQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1A = new SmartMES_Bluewings.P1A.DataSetP1A();
+            this.sP_Product_QueryTableAdapter = new SmartMES_Bluewings.P1A.DataSetP1ATableAdapters.SP_Product_QueryTableAdapter();
             this.번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.분류코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,9 +88,6 @@
             this.최소내벽두께 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.평균안지름 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.제품길이 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProductQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1A = new SmartMES_Bluewings.P1A.DataSetP1A();
-            this.sP_Product_QueryTableAdapter = new SmartMES_Bluewings.P1A.DataSetP1ATableAdapters.SP_Product_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -336,6 +336,20 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
+            // sPProductQueryBindingSource
+            // 
+            this.sPProductQueryBindingSource.DataMember = "SP_Product_Query";
+            this.sPProductQueryBindingSource.DataSource = this.dataSetP1A;
+            // 
+            // dataSetP1A
+            // 
+            this.dataSetP1A.DataSetName = "DataSetP1A";
+            this.dataSetP1A.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Product_QueryTableAdapter
+            // 
+            this.sP_Product_QueryTableAdapter.ClearBeforeFill = true;
+            // 
             // 번호
             // 
             this.번호.DataPropertyName = "번호";
@@ -386,16 +400,16 @@
             this.모델명.HeaderText = "모델명";
             this.모델명.Name = "모델명";
             this.모델명.ReadOnly = true;
+            this.모델명.Visible = false;
             // 
             // 규격DataGridViewTextBoxColumn
             // 
             this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.규격DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
             this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
             this.규격DataGridViewTextBoxColumn.ReadOnly = true;
-            this.규격DataGridViewTextBoxColumn.Visible = false;
             // 
             // 단위DataGridViewTextBoxColumn
             // 
@@ -649,20 +663,6 @@
             this.제품길이.Name = "제품길이";
             this.제품길이.ReadOnly = true;
             this.제품길이.Visible = false;
-            // 
-            // sPProductQueryBindingSource
-            // 
-            this.sPProductQueryBindingSource.DataMember = "SP_Product_Query";
-            this.sPProductQueryBindingSource.DataSource = this.dataSetP1A;
-            // 
-            // dataSetP1A
-            // 
-            this.dataSetP1A.DataSetName = "DataSetP1A";
-            this.dataSetP1A.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Product_QueryTableAdapter
-            // 
-            this.sP_Product_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1A02_PRODUCT
             // 

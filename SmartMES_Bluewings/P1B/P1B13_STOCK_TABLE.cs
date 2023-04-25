@@ -17,31 +17,33 @@ namespace SmartMES_Bluewings
         {
             dtpFromDate.Value = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-01"));
 
+            //string sql = @"select t.co_code, t.co_item
+            //                from(
+            //                select '%' as co_code, '<전체>' as co_item
+            //                union 
+            //                select co_code, co_item from tb_gi_common where co_kind = 'C') as t
+            //                order by t.co_code";
+
+            //MariaCRUD m = new MariaCRUD();
+            //string msg = string.Empty;
+            //DataTable table = m.dbDataTable(sql, ref msg);
+
+            //if (msg == "OK")
+            //{
+            //    cbKind.DataSource = table;
+            //    cbKind.ValueMember = "co_code";
+            //    cbKind.DisplayMember = "co_item";
+            //}
+
             string sql = @"select t.co_code, t.co_item
-                            from(
-                            select '%' as co_code, '<전체>' as co_item
-                            union 
-                            select co_code, co_item from tb_gi_common where co_kind = 'C') as t
-                            order by t.co_code";
-
-            MariaCRUD m = new MariaCRUD();
-            string msg = string.Empty;
-            DataTable table = m.dbDataTable(sql, ref msg);
-
-            if (msg == "OK")
-            {
-                cbKind.DataSource = table;
-                cbKind.ValueMember = "co_code";
-                cbKind.DisplayMember = "co_item";
-            }
-
-            sql = @"select t.co_code, t.co_item
                             from(
                             select '%' as co_code, '<전체>' as co_item
                             union 
                             select co_code, co_item from tb_gi_common where co_kind = 'B') as t
                             order by t.co_code";
-            table = m.dbDataTable(sql, ref msg);
+            MariaCRUD m = new MariaCRUD();
+            string msg = string.Empty;
+            DataTable table = m.dbDataTable(sql, ref msg);
 
             if (msg == "OK")
             {
@@ -63,10 +65,9 @@ namespace SmartMES_Bluewings
                 if (dtFromDate > dtToDate)
                     MessageBox.Show("기간 설정이 정확하지 않습니다.\r\r다시 확인해 주세요.");
 
-                string sKind = cbKind.SelectedValue.ToString();
                 string sDepot = cbDepot.SelectedValue.ToString();
 
-                sP_StockTable_QueryTableAdapter.Fill(dataSetP1B.SP_StockTable_Query, dtFromDate, dtToDate, sKind, sDepot, sSearch);
+                sP_StockTable_QueryTableAdapter.Fill(dataSetP1B.SP_StockTable_Query, dtFromDate, dtToDate, "%", sDepot, sSearch);
                 var data = dataSetP1B.SP_StockTable_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data); //조회로그추가
 

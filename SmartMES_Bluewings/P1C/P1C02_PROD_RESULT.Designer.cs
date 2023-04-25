@@ -157,25 +157,25 @@ namespace SmartMES_Bluewings
             this.label6 = new System.Windows.Forms.Label();
             this.sP_ProdResult_IdleTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdResult_IdleTableAdapter();
             this.sP_ProdResult_ListTableAdapter = new SmartMES_Bluewings.P1C.DataSetP1CTableAdapters.SP_ProdResult_ListTableAdapter();
-            this.jobNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.생산일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.설비코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.생산지시일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.설비명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.배합기DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.배합기명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.생산량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.불량량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.중량ADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.중량BDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.중량MBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.배합시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업시작시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업종료시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업소요시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.생산여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -248,25 +248,25 @@ namespace SmartMES_Bluewings
             this.dataGridViewList.ColumnHeadersHeight = 35;
             this.dataGridViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jobNoDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
             this.생산일자DataGridViewTextBoxColumn,
-            this.설비코드DataGridViewTextBoxColumn,
-            this.생산지시일DataGridViewTextBoxColumn,
-            this.설비명DataGridViewTextBoxColumn,
-            this.배합기DataGridViewTextBoxColumn,
-            this.배합기명DataGridViewTextBoxColumn,
-            this.품목코드DataGridViewTextBoxColumn,
-            this.품목명DataGridViewTextBoxColumn,
-            this.생산량DataGridViewTextBoxColumn,
-            this.불량량DataGridViewTextBoxColumn,
-            this.중량ADataGridViewTextBoxColumn,
-            this.중량BDataGridViewTextBoxColumn,
-            this.중량MBDataGridViewTextBoxColumn,
-            this.배합시간DataGridViewTextBoxColumn,
-            this.작업시작시간DataGridViewTextBoxColumn,
-            this.작업종료시간DataGridViewTextBoxColumn,
-            this.작업소요시간DataGridViewTextBoxColumn,
-            this.생산여부DataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
             this.dataGridViewList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridViewList.DataSource = this.sPProdResultListBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1638,13 +1638,36 @@ namespace SmartMES_Bluewings
             // 
             this.sP_ProdResult_ListTableAdapter.ClearBeforeFill = true;
             // 
-            // jobNoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.jobNoDataGridViewTextBoxColumn.DataPropertyName = "JobNo";
-            this.jobNoDataGridViewTextBoxColumn.HeaderText = "JobNo";
-            this.jobNoDataGridViewTextBoxColumn.Name = "jobNoDataGridViewTextBoxColumn";
-            this.jobNoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.jobNoDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "JobNo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "JobNo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "설비코드";
+            this.dataGridViewTextBoxColumn2.HeaderText = "설비코드";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "생산지시일";
+            this.dataGridViewTextBoxColumn3.HeaderText = "생산지시일";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "설비명";
+            this.dataGridViewTextBoxColumn4.HeaderText = "설비명";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // 생산일자DataGridViewTextBoxColumn
             // 
@@ -1653,139 +1676,116 @@ namespace SmartMES_Bluewings
             this.생산일자DataGridViewTextBoxColumn.Name = "생산일자DataGridViewTextBoxColumn";
             this.생산일자DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 설비코드DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.설비코드DataGridViewTextBoxColumn.DataPropertyName = "설비코드";
-            this.설비코드DataGridViewTextBoxColumn.HeaderText = "설비코드";
-            this.설비코드DataGridViewTextBoxColumn.Name = "설비코드DataGridViewTextBoxColumn";
-            this.설비코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.설비코드DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "배합기";
+            this.dataGridViewTextBoxColumn5.HeaderText = "배합기";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
-            // 생산지시일DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.생산지시일DataGridViewTextBoxColumn.DataPropertyName = "생산지시일";
-            this.생산지시일DataGridViewTextBoxColumn.HeaderText = "생산지시일";
-            this.생산지시일DataGridViewTextBoxColumn.Name = "생산지시일DataGridViewTextBoxColumn";
-            this.생산지시일DataGridViewTextBoxColumn.ReadOnly = true;
-            this.생산지시일DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "배합기명";
+            this.dataGridViewTextBoxColumn6.HeaderText = "배합기명";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
-            // 설비명DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.설비명DataGridViewTextBoxColumn.DataPropertyName = "설비명";
-            this.설비명DataGridViewTextBoxColumn.HeaderText = "설비명";
-            this.설비명DataGridViewTextBoxColumn.Name = "설비명DataGridViewTextBoxColumn";
-            this.설비명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "품목코드";
+            this.dataGridViewTextBoxColumn7.HeaderText = "품목코드";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
-            // 배합기DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn8
             // 
-            this.배합기DataGridViewTextBoxColumn.DataPropertyName = "배합기";
-            this.배합기DataGridViewTextBoxColumn.HeaderText = "배합기";
-            this.배합기DataGridViewTextBoxColumn.Name = "배합기DataGridViewTextBoxColumn";
-            this.배합기DataGridViewTextBoxColumn.ReadOnly = true;
-            this.배합기DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "품목명";
+            this.dataGridViewTextBoxColumn8.HeaderText = "품목명";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // 배합기명DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.배합기명DataGridViewTextBoxColumn.DataPropertyName = "배합기명";
-            this.배합기명DataGridViewTextBoxColumn.HeaderText = "배합기명";
-            this.배합기명DataGridViewTextBoxColumn.Name = "배합기명DataGridViewTextBoxColumn";
-            this.배합기명DataGridViewTextBoxColumn.ReadOnly = true;
-            this.배합기명DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "생산량";
+            this.dataGridViewTextBoxColumn9.HeaderText = "생산량";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
             // 
-            // 품목코드DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn10
             // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "불량량";
+            this.dataGridViewTextBoxColumn10.HeaderText = "불량량";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
-            // 품목명DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
-            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "중량A";
+            this.dataGridViewTextBoxColumn11.HeaderText = "중량A";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
-            // 생산량DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn12
             // 
-            this.생산량DataGridViewTextBoxColumn.DataPropertyName = "생산량";
-            this.생산량DataGridViewTextBoxColumn.HeaderText = "생산량";
-            this.생산량DataGridViewTextBoxColumn.Name = "생산량DataGridViewTextBoxColumn";
-            this.생산량DataGridViewTextBoxColumn.ReadOnly = true;
-            this.생산량DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "중량B";
+            this.dataGridViewTextBoxColumn12.HeaderText = "중량B";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Visible = false;
             // 
-            // 불량량DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn13
             // 
-            this.불량량DataGridViewTextBoxColumn.DataPropertyName = "불량량";
-            this.불량량DataGridViewTextBoxColumn.HeaderText = "불량량";
-            this.불량량DataGridViewTextBoxColumn.Name = "불량량DataGridViewTextBoxColumn";
-            this.불량량DataGridViewTextBoxColumn.ReadOnly = true;
-            this.불량량DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "중량MB";
+            this.dataGridViewTextBoxColumn13.HeaderText = "중량MB";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
             // 
-            // 중량ADataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn14
             // 
-            this.중량ADataGridViewTextBoxColumn.DataPropertyName = "중량A";
-            this.중량ADataGridViewTextBoxColumn.HeaderText = "중량A";
-            this.중량ADataGridViewTextBoxColumn.Name = "중량ADataGridViewTextBoxColumn";
-            this.중량ADataGridViewTextBoxColumn.ReadOnly = true;
-            this.중량ADataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "배합시간";
+            this.dataGridViewTextBoxColumn14.HeaderText = "배합시간";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
             // 
-            // 중량BDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn15
             // 
-            this.중량BDataGridViewTextBoxColumn.DataPropertyName = "중량B";
-            this.중량BDataGridViewTextBoxColumn.HeaderText = "중량B";
-            this.중량BDataGridViewTextBoxColumn.Name = "중량BDataGridViewTextBoxColumn";
-            this.중량BDataGridViewTextBoxColumn.ReadOnly = true;
-            this.중량BDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "작업시작시간";
+            this.dataGridViewTextBoxColumn15.HeaderText = "작업시작시간";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
             // 
-            // 중량MBDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn16
             // 
-            this.중량MBDataGridViewTextBoxColumn.DataPropertyName = "중량MB";
-            this.중량MBDataGridViewTextBoxColumn.HeaderText = "중량MB";
-            this.중량MBDataGridViewTextBoxColumn.Name = "중량MBDataGridViewTextBoxColumn";
-            this.중량MBDataGridViewTextBoxColumn.ReadOnly = true;
-            this.중량MBDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "작업종료시간";
+            this.dataGridViewTextBoxColumn16.HeaderText = "작업종료시간";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
             // 
-            // 배합시간DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn17
             // 
-            this.배합시간DataGridViewTextBoxColumn.DataPropertyName = "배합시간";
-            this.배합시간DataGridViewTextBoxColumn.HeaderText = "배합시간";
-            this.배합시간DataGridViewTextBoxColumn.Name = "배합시간DataGridViewTextBoxColumn";
-            this.배합시간DataGridViewTextBoxColumn.ReadOnly = true;
-            this.배합시간DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "작업소요시간";
+            this.dataGridViewTextBoxColumn17.HeaderText = "작업소요시간";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Visible = false;
             // 
-            // 작업시작시간DataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn18
             // 
-            this.작업시작시간DataGridViewTextBoxColumn.DataPropertyName = "작업시작시간";
-            this.작업시작시간DataGridViewTextBoxColumn.HeaderText = "작업시작시간";
-            this.작업시작시간DataGridViewTextBoxColumn.Name = "작업시작시간DataGridViewTextBoxColumn";
-            this.작업시작시간DataGridViewTextBoxColumn.ReadOnly = true;
-            this.작업시작시간DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 작업종료시간DataGridViewTextBoxColumn
-            // 
-            this.작업종료시간DataGridViewTextBoxColumn.DataPropertyName = "작업종료시간";
-            this.작업종료시간DataGridViewTextBoxColumn.HeaderText = "작업종료시간";
-            this.작업종료시간DataGridViewTextBoxColumn.Name = "작업종료시간DataGridViewTextBoxColumn";
-            this.작업종료시간DataGridViewTextBoxColumn.ReadOnly = true;
-            this.작업종료시간DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 작업소요시간DataGridViewTextBoxColumn
-            // 
-            this.작업소요시간DataGridViewTextBoxColumn.DataPropertyName = "작업소요시간";
-            this.작업소요시간DataGridViewTextBoxColumn.HeaderText = "작업소요시간";
-            this.작업소요시간DataGridViewTextBoxColumn.Name = "작업소요시간DataGridViewTextBoxColumn";
-            this.작업소요시간DataGridViewTextBoxColumn.ReadOnly = true;
-            this.작업소요시간DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 생산여부DataGridViewTextBoxColumn
-            // 
-            this.생산여부DataGridViewTextBoxColumn.DataPropertyName = "생산여부";
-            this.생산여부DataGridViewTextBoxColumn.HeaderText = "생산여부";
-            this.생산여부DataGridViewTextBoxColumn.Name = "생산여부DataGridViewTextBoxColumn";
-            this.생산여부DataGridViewTextBoxColumn.ReadOnly = true;
-            this.생산여부DataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "생산여부";
+            this.dataGridViewTextBoxColumn18.HeaderText = "생산여부";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Visible = false;
             // 
             // P1C02_PROD_RESULT
             // 
@@ -1962,7 +1962,6 @@ namespace SmartMES_Bluewings
         private System.Windows.Forms.BindingSource sPProdResultListBindingSource;
         private P1C.DataSetP1CTableAdapters.SP_ProdResult_ListTableAdapter sP_ProdResult_ListTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 생산일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 생산지시일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설비명DataGridViewTextBoxColumn;
@@ -1980,5 +1979,34 @@ namespace SmartMES_Bluewings
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업종료시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업소요시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 생산여부DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업조DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업시작DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업종료DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 인원수DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업자명단DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 에너지사용량전DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 에너지사용량후DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작업지도DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 작성자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 상태DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 생산일자DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
     }
 }

@@ -46,7 +46,7 @@
             this.ckbStockFlag = new System.Windows.Forms.CheckBox();
             this.cbKind = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbModel = new System.Windows.Forms.TextBox();
+            this.tbSize = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbPrice1 = new System.Windows.Forms.TextBox();
             this.tbIDNo = new System.Windows.Forms.TextBox();
@@ -308,18 +308,18 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(28, 254);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 21);
+            this.label6.Size = new System.Drawing.Size(42, 21);
             this.label6.TabIndex = 0;
-            this.label6.Text = "모델명";
+            this.label6.Text = "규격";
             // 
-            // tbModel
+            // tbSize
             // 
-            this.tbModel.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbModel.Location = new System.Drawing.Point(100, 250);
-            this.tbModel.Name = "tbModel";
-            this.tbModel.Size = new System.Drawing.Size(170, 29);
-            this.tbModel.TabIndex = 4;
-            this.tbModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSize.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSize.Location = new System.Drawing.Point(100, 250);
+            this.tbSize.Name = "tbSize";
+            this.tbSize.Size = new System.Drawing.Size(170, 29);
+            this.tbSize.TabIndex = 4;
+            this.tbSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -925,7 +925,7 @@
             this.Controls.Add(this.tbPrice1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.tbModel);
+            this.Controls.Add(this.tbSize);
             this.Controls.Add(this.cbKind);
             this.Controls.Add(this.ckbStockFlag);
             this.Controls.Add(this.label2);
@@ -981,7 +981,7 @@
         private System.Windows.Forms.CheckBox ckbStockFlag;
         private System.Windows.Forms.ComboBox cbKind;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbModel;
+        private System.Windows.Forms.TextBox tbSize;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbPrice1;
         private System.Windows.Forms.TextBox tbIDNo;

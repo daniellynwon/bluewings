@@ -36,14 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbGubun = new System.Windows.Forms.ComboBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sPProductCommonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetCOMMON = new SmartMES_Bluewings.COMMON.DataSetCOMMON();
-            this.sP_Product_CommonTableAdapter = new SmartMES_Bluewings.COMMON.DataSetCOMMONTableAdapters.SP_Product_CommonTableAdapter();
             this.구분DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.분류DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
@@ -52,11 +44,19 @@
             this.단위DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.재고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.단가 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPProductCommonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetCOMMON = new SmartMES_Bluewings.COMMON.DataSetCOMMON();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbGubun = new System.Windows.Forms.ComboBox();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sP_Product_CommonTableAdapter = new SmartMES_Bluewings.COMMON.DataSetCOMMONTableAdapters.SP_Product_CommonTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProductCommonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetCOMMON)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -122,89 +122,6 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cbGubun);
-            this.panel1.Controls.Add(this.pbSearch);
-            this.panel1.Controls.Add(this.tbSearch);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 90);
-            this.panel1.TabIndex = 0;
-            // 
-            // cbGubun
-            // 
-            this.cbGubun.BackColor = System.Drawing.SystemColors.Window;
-            this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGubun.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.cbGubun.FormattingEnabled = true;
-            this.cbGubun.Items.AddRange(new object[] {
-            "<전체>",
-            "A.제품",
-            "B.원/부자재",
-            "C.반제품",
-            "D.세트",
-            "Z.기타"});
-            this.cbGubun.Location = new System.Drawing.Point(500, 29);
-            this.cbGubun.Name = "cbGubun";
-            this.cbGubun.Size = new System.Drawing.Size(131, 29);
-            this.cbGubun.TabIndex = 2;
-            this.cbGubun.SelectedIndexChanged += new System.EventHandler(this.cbGubun_SelectedIndexChanged);
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pbSearch.Image = global::SmartMES_Bluewings.Properties.Resources.search;
-            this.pbSearch.Location = new System.Drawing.Point(401, 30);
-            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(32, 26);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSearch.TabIndex = 4;
-            this.pbSearch.TabStop = false;
-            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
-            this.pbSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbSearch_MouseDown);
-            this.pbSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbSearch_MouseUp);
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbSearch.Location = new System.Drawing.Point(120, 29);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(319, 29);
-            this.tbSearch.TabIndex = 1;
-            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(45, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "품 목 명";
-            // 
-            // sPProductCommonBindingSource
-            // 
-            this.sPProductCommonBindingSource.DataMember = "SP_Product_Common";
-            this.sPProductCommonBindingSource.DataSource = this.dataSetCOMMON;
-            // 
-            // dataSetCOMMON
-            // 
-            this.dataSetCOMMON.DataSetName = "DataSetCOMMON";
-            this.dataSetCOMMON.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Product_CommonTableAdapter
-            // 
-            this.sP_Product_CommonTableAdapter.ClearBeforeFill = true;
             // 
             // 구분DataGridViewTextBoxColumn
             // 
@@ -277,6 +194,87 @@
             this.단가.ReadOnly = true;
             this.단가.Visible = false;
             // 
+            // sPProductCommonBindingSource
+            // 
+            this.sPProductCommonBindingSource.DataMember = "SP_Product_Common";
+            this.sPProductCommonBindingSource.DataSource = this.dataSetCOMMON;
+            // 
+            // dataSetCOMMON
+            // 
+            this.dataSetCOMMON.DataSetName = "DataSetCOMMON";
+            this.dataSetCOMMON.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbGubun);
+            this.panel1.Controls.Add(this.pbSearch);
+            this.panel1.Controls.Add(this.tbSearch);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(687, 90);
+            this.panel1.TabIndex = 0;
+            // 
+            // cbGubun
+            // 
+            this.cbGubun.BackColor = System.Drawing.SystemColors.Window;
+            this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGubun.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.cbGubun.FormattingEnabled = true;
+            this.cbGubun.Items.AddRange(new object[] {
+            "<전체>",
+            "A.제품",
+            "B.원/부자재",
+            "Z.기타"});
+            this.cbGubun.Location = new System.Drawing.Point(500, 29);
+            this.cbGubun.Name = "cbGubun";
+            this.cbGubun.Size = new System.Drawing.Size(131, 29);
+            this.cbGubun.TabIndex = 2;
+            this.cbGubun.SelectedIndexChanged += new System.EventHandler(this.cbGubun_SelectedIndexChanged);
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.pbSearch.Image = global::SmartMES_Bluewings.Properties.Resources.search;
+            this.pbSearch.Location = new System.Drawing.Point(401, 30);
+            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(32, 26);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSearch.TabIndex = 4;
+            this.pbSearch.TabStop = false;
+            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
+            this.pbSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbSearch_MouseDown);
+            this.pbSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbSearch_MouseUp);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSearch.Location = new System.Drawing.Point(120, 29);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(319, 29);
+            this.tbSearch.TabIndex = 1;
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(45, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "품 목 명";
+            // 
+            // sP_Product_CommonTableAdapter
+            // 
+            this.sP_Product_CommonTableAdapter.ClearBeforeFill = true;
+            // 
             // ProdFinder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -295,11 +293,11 @@
             this.Text = "품목 검색기";
             this.Load += new System.EventHandler(this.ProdFinder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProductCommonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCOMMON)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProductCommonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCOMMON)).EndInit();
             this.ResumeLayout(false);
 
         }

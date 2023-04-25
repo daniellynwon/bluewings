@@ -52,7 +52,7 @@ namespace SmartMES_Bluewings
                 prodCode = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
                 cbKind.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value;
                 tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                tbModel.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                tbSize.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
                 tbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
                 tbUnitSub.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                 tbPrice1.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
@@ -126,7 +126,7 @@ namespace SmartMES_Bluewings
             string sKind = cbKind.SelectedValue.ToString();
             string sPrice1 = tbPrice1.Text.Replace(",", "").Trim(); string sPrice2 = tbPrice2.Text.Replace(",", "").Trim();
             string sUnit = tbUnit.Text.Trim(); string sUnitSub = tbUnitSub.Text.Trim();
-            string sID = tbIDNo.Text.Trim(); string sModel = tbModel.Text.Trim();
+            string sID = tbIDNo.Text.Trim(); string sSize = tbSize.Text.Trim();
 
             string sStockFlag = "1";
             if (ckbStockFlag.Checked) sStockFlag = "0";
@@ -148,18 +148,10 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
-                //입력한 품목명이 중복인지 확인..
-                if (isProdName(sGubun, sProdName))
-                {
-                    lblMsg.Text = "이미 존재하는 품목명입니다.";
-                    tbProdName.Focus();
-                    return;
-                }
-
                 prodCode = getProdCode(sGubun);
 
-                sql = "insert into tb_gi_product (gubun, prod_id, prod_kind, prod_name, model_name, unit, unit_sub, procure_price, regular_price, stock_flag, identify_no, use_flag, enter_man) " +
-                    "values('" + sGubun + "','" + prodCode + "','" + sKind + "','" + sProdName + "','" + sModel + "','" + sUnit + "','" + sUnitSub + "','" + sPrice1 + "','" + sPrice2 + "'," + sStockFlag + ",'" + sID + "','" + sUseFlag + "','" + G.UserID + "')";
+                sql = "insert into tb_gi_product (gubun, prod_id, prod_kind, prod_name, prod_size, unit, unit_sub, procure_price, regular_price, stock_flag, identify_no, use_flag, enter_man) " +
+                    "values('" + sGubun + "','" + prodCode + "','" + sKind + "','" + sProdName + "','" + sSize + "','" + sUnit + "','" + sUnitSub + "','" + sPrice1 + "','" + sPrice2 + "'," + sStockFlag + ",'" + sID + "','" + sUseFlag + "','" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -212,11 +204,10 @@ namespace SmartMES_Bluewings
             else
             {
                 sql = "update tb_gi_product " +
-                    "set prod_kind = '" + sKind + "', prod_name = '" + sProdName + "', model_name ='" + sModel + "', unit = '" + sUnit + "', unit_sub = '" + sUnitSub + "', procure_price = " + sPrice1 + ", regular_price = " + sPrice2 + ", stock_flag = " + sStockFlag + ", identify_no = '" + sID + "', use_flag = '" + sUseFlag + "'" +
+                    "set prod_kind = '" + sKind + "', prod_name = '" + sProdName + "', prod_size ='" + sSize + "', unit = '" + sUnit + "', unit_sub = '" + sUnitSub + "', procure_price = " + sPrice1 + ", regular_price = " + sPrice2 + ", stock_flag = " + sStockFlag + ", identify_no = '" + sID + "', use_flag = '" + sUseFlag + "'" +
                     " where prod_id = '" + prodCode + "'";
 
                 m.dbCUD(sql, ref msg);
-
 
                 if (msg != "OK")
                 {
@@ -230,6 +221,14 @@ namespace SmartMES_Bluewings
                     "', main_speed1 = '" + sMrpm1 + "', main_speed2 = '" + sMrpm2 + "', sub_speed1 = '" + sSrpm1 + "', sub_speed2 = '" + sSrpm2 + "', coolant = '" + sTemp + "', import_good = '" + sSpeed + 
                     "', weight = '" + sKg + "', tube_skin_thickness = '" + sThick1 + "', min_in_thickness = '" + sThick2 + "', avg_inner_diameter = '" + sDiam + "', product_length = '" + sLength + "'" +
                     " where prod_id = '" + prodCode + "'";
+
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
 
                 var data = sql;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);//수정로그추가
@@ -252,19 +251,6 @@ namespace SmartMES_Bluewings
 
             string msg = string.Empty;
             return m.dbRonlyOne(sql, ref msg).ToString();
-        }
-        private bool isProdName(string _gubun, string _prodName)
-        {
-            string sql = @"select prod_id from tb_gi_product where gubun = '" + _gubun + "' and prod_name = '" + _prodName + "'";
-
-            MariaCRUD m = new MariaCRUD();
-            string msg = string.Empty;
-            object id = m.dbRonlyOne(sql, ref msg);
-
-            if (msg == "OK" && id != null)
-                return true;
-            else
-                return false;
         }
         #endregion
 

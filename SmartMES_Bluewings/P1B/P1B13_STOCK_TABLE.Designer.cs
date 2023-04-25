@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1B13_STOCK_TABLE));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -94,6 +95,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
             this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pbDel
@@ -131,7 +133,7 @@
             this.panSearch.Controls.Add(this.label1);
             this.panSearch.Location = new System.Drawing.Point(2, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1319, 71);
+            this.panSearch.Size = new System.Drawing.Size(1319, 78);
             this.panSearch.TabIndex = 0;
             // 
             // tbSearch
@@ -163,7 +165,7 @@
             this.cbDepot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDepot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepot.FormattingEnabled = true;
-            this.cbDepot.Location = new System.Drawing.Point(1066, 20);
+            this.cbDepot.Location = new System.Drawing.Point(1061, 24);
             this.cbDepot.Name = "cbDepot";
             this.cbDepot.Size = new System.Drawing.Size(166, 29);
             this.cbDepot.TabIndex = 4;
@@ -175,7 +177,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(1015, -4);
+            this.label4.Location = new System.Drawing.Point(1010, -1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 0;
@@ -187,7 +189,7 @@
             this.cbKind.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKind.FormattingEnabled = true;
-            this.cbKind.Location = new System.Drawing.Point(1066, -8);
+            this.cbKind.Location = new System.Drawing.Point(1061, -5);
             this.cbKind.Name = "cbKind";
             this.cbKind.Size = new System.Drawing.Size(166, 29);
             this.cbKind.TabIndex = 3;
@@ -248,7 +250,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(989, 24);
+            this.label1.Location = new System.Drawing.Point(984, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;

@@ -608,40 +608,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdResult_ListTableAdapter" GeneratorDataComponentClassName="SP_ProdResult_ListTableAdapter" Name="SP_ProdResult_List" UserDataComponentName="SP_ProdResult_ListTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdResult_List`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>`bluewings_mes`.`SP_ProdResult_List`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="JobNo" DataSetColumn="JobNo" />
-              <Mapping SourceColumn="설비코드" DataSetColumn="설비코드" />
-              <Mapping SourceColumn="생산지시일" DataSetColumn="생산지시일" />
-              <Mapping SourceColumn="설비명" DataSetColumn="설비명" />
-              <Mapping SourceColumn="생산일자" DataSetColumn="생산일자" />
-              <Mapping SourceColumn="배합기" DataSetColumn="배합기" />
-              <Mapping SourceColumn="배합기명" DataSetColumn="배합기명" />
-              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
-              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
-              <Mapping SourceColumn="생산량" DataSetColumn="생산량" />
-              <Mapping SourceColumn="불량량" DataSetColumn="불량량" />
-              <Mapping SourceColumn="중량A" DataSetColumn="중량A" />
-              <Mapping SourceColumn="중량B" DataSetColumn="중량B" />
-              <Mapping SourceColumn="중량MB" DataSetColumn="중량MB" />
-              <Mapping SourceColumn="배합시간" DataSetColumn="배합시간" />
-              <Mapping SourceColumn="작업시작시간" DataSetColumn="작업시작시간" />
-              <Mapping SourceColumn="작업종료시간" DataSetColumn="작업종료시간" />
-              <Mapping SourceColumn="작업소요시간" DataSetColumn="작업소요시간" />
-              <Mapping SourceColumn="생산여부" DataSetColumn="생산여부" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdResult_OrderTableAdapter" GeneratorDataComponentClassName="SP_ProdResult_OrderTableAdapter" Name="SP_ProdResult_Order" UserDataComponentName="SP_ProdResult_OrderTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdResult_Order`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -680,6 +646,40 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ProdResult_ListTableAdapter" GeneratorDataComponentClassName="SP_ProdResult_ListTableAdapter" Name="SP_ProdResult_List" UserDataComponentName="SP_ProdResult_ListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Bluewings_mesConnectionString (Settings)" DbObjectName="`bluewings_mes`.`SP_ProdResult_List`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`bluewings_mes`.`SP_ProdResult_List`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="JobNo" DataSetColumn="JobNo" />
+              <Mapping SourceColumn="설비코드" DataSetColumn="설비코드" />
+              <Mapping SourceColumn="생산지시일" DataSetColumn="생산지시일" />
+              <Mapping SourceColumn="설비명" DataSetColumn="설비명" />
+              <Mapping SourceColumn="생산일자" DataSetColumn="생산일자" />
+              <Mapping SourceColumn="배합기" DataSetColumn="배합기" />
+              <Mapping SourceColumn="배합기명" DataSetColumn="배합기명" />
+              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
+              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
+              <Mapping SourceColumn="생산량" DataSetColumn="생산량" />
+              <Mapping SourceColumn="불량량" DataSetColumn="불량량" />
+              <Mapping SourceColumn="중량A" DataSetColumn="중량A" />
+              <Mapping SourceColumn="중량B" DataSetColumn="중량B" />
+              <Mapping SourceColumn="중량MB" DataSetColumn="중량MB" />
+              <Mapping SourceColumn="배합시간" DataSetColumn="배합시간" />
+              <Mapping SourceColumn="작업시작시간" DataSetColumn="작업시작시간" />
+              <Mapping SourceColumn="작업종료시간" DataSetColumn="작업종료시간" />
+              <Mapping SourceColumn="작업소요시간" DataSetColumn="작업소요시간" />
+              <Mapping SourceColumn="생산여부" DataSetColumn="생산여부" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -688,7 +688,7 @@
   <xs:element name="DataSetP1C" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetP1C" msprop:Generator_UserDSName="DataSetP1C">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_Z_Common_ID" msprop:Generator_TableClassName="SP_Z_Common_IDDataTable" msprop:Generator_TableVarName="tableSP_Z_Common_ID" msprop:Generator_TablePropName="SP_Z_Common_ID" msprop:Generator_RowDeletingName="SP_Z_Common_IDRowDeleting" msprop:Generator_RowChangingName="SP_Z_Common_IDRowChanging" msprop:Generator_RowEvHandlerName="SP_Z_Common_IDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Z_Common_IDRowDeleted" msprop:Generator_UserTableName="SP_Z_Common_ID" msprop:Generator_RowChangedName="SP_Z_Common_IDRowChanged" msprop:Generator_RowEvArgName="SP_Z_Common_IDRowChangeEvent" msprop:Generator_RowClassName="SP_Z_Common_IDRow">
+        <xs:element name="SP_Z_Common_ID" msprop:Generator_TableClassName="SP_Z_Common_IDDataTable" msprop:Generator_TableVarName="tableSP_Z_Common_ID" msprop:Generator_RowChangedName="SP_Z_Common_IDRowChanged" msprop:Generator_TablePropName="SP_Z_Common_ID" msprop:Generator_RowDeletingName="SP_Z_Common_IDRowDeleting" msprop:Generator_RowChangingName="SP_Z_Common_IDRowChanging" msprop:Generator_RowEvHandlerName="SP_Z_Common_IDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Z_Common_IDRowDeleted" msprop:Generator_RowClassName="SP_Z_Common_IDRow" msprop:Generator_UserTableName="SP_Z_Common_ID" msprop:Generator_RowEvArgName="SP_Z_Common_IDRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="co_code" msprop:Generator_ColumnVarNameInTable="columnco_code" msprop:Generator_ColumnPropNameInRow="co_code" msprop:Generator_ColumnPropNameInTable="co_codeColumn" msprop:Generator_UserColumnName="co_code">
@@ -708,7 +708,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_MaterialUse_Query" msprop:Generator_TableClassName="SP_MaterialUse_QueryDataTable" msprop:Generator_TableVarName="tableSP_MaterialUse_Query" msprop:Generator_RowChangedName="SP_MaterialUse_QueryRowChanged" msprop:Generator_TablePropName="SP_MaterialUse_Query" msprop:Generator_RowDeletingName="SP_MaterialUse_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MaterialUse_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MaterialUse_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MaterialUse_QueryRowDeleted" msprop:Generator_RowClassName="SP_MaterialUse_QueryRow" msprop:Generator_UserTableName="SP_MaterialUse_Query" msprop:Generator_RowEvArgName="SP_MaterialUse_QueryRowChangeEvent">
+        <xs:element name="SP_MaterialUse_Query" msprop:Generator_TableClassName="SP_MaterialUse_QueryDataTable" msprop:Generator_TableVarName="tableSP_MaterialUse_Query" msprop:Generator_TablePropName="SP_MaterialUse_Query" msprop:Generator_RowDeletingName="SP_MaterialUse_QueryRowDeleting" msprop:Generator_RowChangingName="SP_MaterialUse_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_MaterialUse_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_MaterialUse_QueryRowDeleted" msprop:Generator_UserTableName="SP_MaterialUse_Query" msprop:Generator_RowChangedName="SP_MaterialUse_QueryRowChanged" msprop:Generator_RowEvArgName="SP_MaterialUse_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_MaterialUse_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="등록ID" msprop:Generator_ColumnVarNameInTable="column등록ID" msprop:Generator_ColumnPropNameInRow="등록ID" msprop:Generator_ColumnPropNameInTable="등록IDColumn" msprop:Generator_UserColumnName="등록ID" type="xs:unsignedInt" />
@@ -766,7 +766,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_Idle" msprop:Generator_TableClassName="SP_ProdResult_IdleDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Idle" msprop:Generator_TablePropName="SP_ProdResult_Idle" msprop:Generator_RowDeletingName="SP_ProdResult_IdleRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_IdleRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_IdleRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_IdleRowDeleted" msprop:Generator_UserTableName="SP_ProdResult_Idle" msprop:Generator_RowChangedName="SP_ProdResult_IdleRowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_IdleRowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_IdleRow">
+        <xs:element name="SP_ProdResult_Idle" msprop:Generator_TableClassName="SP_ProdResult_IdleDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Idle" msprop:Generator_RowChangedName="SP_ProdResult_IdleRowChanged" msprop:Generator_TablePropName="SP_ProdResult_Idle" msprop:Generator_RowDeletingName="SP_ProdResult_IdleRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_IdleRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_IdleRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_IdleRowDeleted" msprop:Generator_RowClassName="SP_ProdResult_IdleRow" msprop:Generator_UserTableName="SP_ProdResult_Idle" msprop:Generator_RowEvArgName="SP_ProdResult_IdleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="생산일자" msprop:Generator_ColumnVarNameInTable="column생산일자" msprop:Generator_ColumnPropNameInRow="생산일자" msprop:Generator_ColumnPropNameInTable="생산일자Column" msprop:Generator_UserColumnName="생산일자" type="xs:dateTime" />
@@ -797,7 +797,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdTerm_Material" msprop:Generator_TableClassName="SP_ProdTerm_MaterialDataTable" msprop:Generator_TableVarName="tableSP_ProdTerm_Material" msprop:Generator_RowChangedName="SP_ProdTerm_MaterialRowChanged" msprop:Generator_TablePropName="SP_ProdTerm_Material" msprop:Generator_RowDeletingName="SP_ProdTerm_MaterialRowDeleting" msprop:Generator_RowChangingName="SP_ProdTerm_MaterialRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdTerm_MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdTerm_MaterialRowDeleted" msprop:Generator_RowClassName="SP_ProdTerm_MaterialRow" msprop:Generator_UserTableName="SP_ProdTerm_Material" msprop:Generator_RowEvArgName="SP_ProdTerm_MaterialRowChangeEvent">
+        <xs:element name="SP_ProdTerm_Material" msprop:Generator_TableClassName="SP_ProdTerm_MaterialDataTable" msprop:Generator_TableVarName="tableSP_ProdTerm_Material" msprop:Generator_TablePropName="SP_ProdTerm_Material" msprop:Generator_RowDeletingName="SP_ProdTerm_MaterialRowDeleting" msprop:Generator_RowChangingName="SP_ProdTerm_MaterialRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdTerm_MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdTerm_MaterialRowDeleted" msprop:Generator_UserTableName="SP_ProdTerm_Material" msprop:Generator_RowChangedName="SP_ProdTerm_MaterialRowChanged" msprop:Generator_RowEvArgName="SP_ProdTerm_MaterialRowChangeEvent" msprop:Generator_RowClassName="SP_ProdTerm_MaterialRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="자재코드" msprop:Generator_ColumnVarNameInTable="column자재코드" msprop:Generator_ColumnPropNameInRow="자재코드" msprop:Generator_ColumnPropNameInTable="자재코드Column" msprop:Generator_UserColumnName="자재코드">
@@ -825,7 +825,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_RecipeDetail_Query" msprop:Generator_TableClassName="SP_RecipeDetail_QueryDataTable" msprop:Generator_TableVarName="tableSP_RecipeDetail_Query" msprop:Generator_RowChangedName="SP_RecipeDetail_QueryRowChanged" msprop:Generator_TablePropName="SP_RecipeDetail_Query" msprop:Generator_RowDeletingName="SP_RecipeDetail_QueryRowDeleting" msprop:Generator_RowChangingName="SP_RecipeDetail_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_RecipeDetail_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RecipeDetail_QueryRowDeleted" msprop:Generator_RowClassName="SP_RecipeDetail_QueryRow" msprop:Generator_UserTableName="SP_RecipeDetail_Query" msprop:Generator_RowEvArgName="SP_RecipeDetail_QueryRowChangeEvent">
+        <xs:element name="SP_RecipeDetail_Query" msprop:Generator_TableClassName="SP_RecipeDetail_QueryDataTable" msprop:Generator_TableVarName="tableSP_RecipeDetail_Query" msprop:Generator_TablePropName="SP_RecipeDetail_Query" msprop:Generator_RowDeletingName="SP_RecipeDetail_QueryRowDeleting" msprop:Generator_RowChangingName="SP_RecipeDetail_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_RecipeDetail_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_RecipeDetail_QueryRowDeleted" msprop:Generator_UserTableName="SP_RecipeDetail_Query" msprop:Generator_RowChangedName="SP_RecipeDetail_QueryRowChanged" msprop:Generator_RowEvArgName="SP_RecipeDetail_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_RecipeDetail_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="레시피번호" msprop:Generator_ColumnVarNameInTable="column레시피번호" msprop:Generator_ColumnPropNameInRow="레시피번호" msprop:Generator_ColumnPropNameInTable="레시피번호Column" msprop:Generator_UserColumnName="레시피번호">
@@ -854,7 +854,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProductionResult_Query" msprop:Generator_TableClassName="SP_ProductionResult_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProductionResult_Query" msprop:Generator_RowChangedName="SP_ProductionResult_QueryRowChanged" msprop:Generator_TablePropName="SP_ProductionResult_Query" msprop:Generator_RowDeletingName="SP_ProductionResult_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProductionResult_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProductionResult_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProductionResult_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProductionResult_QueryRow" msprop:Generator_UserTableName="SP_ProductionResult_Query" msprop:Generator_RowEvArgName="SP_ProductionResult_QueryRowChangeEvent">
+        <xs:element name="SP_ProductionResult_Query" msprop:Generator_TableClassName="SP_ProductionResult_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProductionResult_Query" msprop:Generator_TablePropName="SP_ProductionResult_Query" msprop:Generator_RowDeletingName="SP_ProductionResult_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProductionResult_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProductionResult_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProductionResult_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProductionResult_Query" msprop:Generator_RowChangedName="SP_ProductionResult_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProductionResult_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProductionResult_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="구분" msprop:Generator_ColumnVarNameInTable="column구분" msprop:Generator_ColumnPropNameInRow="구분" msprop:Generator_ColumnPropNameInTable="구분Column" msprop:Generator_UserColumnName="구분">
@@ -872,7 +872,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdDone_Query" msprop:Generator_TableClassName="SP_ProdDone_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdDone_Query" msprop:Generator_TablePropName="SP_ProdDone_Query" msprop:Generator_RowDeletingName="SP_ProdDone_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdDone_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdDone_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdDone_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProdDone_Query" msprop:Generator_RowChangedName="SP_ProdDone_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProdDone_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProdDone_QueryRow">
+        <xs:element name="SP_ProdDone_Query" msprop:Generator_TableClassName="SP_ProdDone_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdDone_Query" msprop:Generator_RowChangedName="SP_ProdDone_QueryRowChanged" msprop:Generator_TablePropName="SP_ProdDone_Query" msprop:Generator_RowDeletingName="SP_ProdDone_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdDone_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdDone_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdDone_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProdDone_QueryRow" msprop:Generator_UserTableName="SP_ProdDone_Query" msprop:Generator_RowEvArgName="SP_ProdDone_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="생산일자" msprop:Generator_ColumnVarNameInTable="column생산일자" msprop:Generator_ColumnPropNameInRow="생산일자" msprop:Generator_ColumnPropNameInTable="생산일자Column" msprop:Generator_UserColumnName="생산일자" type="xs:dateTime" minOccurs="0" />
@@ -883,7 +883,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdPlan_Query" msprop:Generator_TableClassName="SP_ProdPlan_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdPlan_Query" msprop:Generator_RowChangedName="SP_ProdPlan_QueryRowChanged" msprop:Generator_TablePropName="SP_ProdPlan_Query" msprop:Generator_RowDeletingName="SP_ProdPlan_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdPlan_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdPlan_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdPlan_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProdPlan_QueryRow" msprop:Generator_UserTableName="SP_ProdPlan_Query" msprop:Generator_RowEvArgName="SP_ProdPlan_QueryRowChangeEvent">
+        <xs:element name="SP_ProdPlan_Query" msprop:Generator_TableClassName="SP_ProdPlan_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdPlan_Query" msprop:Generator_TablePropName="SP_ProdPlan_Query" msprop:Generator_RowDeletingName="SP_ProdPlan_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdPlan_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdPlan_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdPlan_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProdPlan_Query" msprop:Generator_RowChangedName="SP_ProdPlan_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProdPlan_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProdPlan_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LL" msprop:Generator_ColumnVarNameInTable="columnLL" msprop:Generator_ColumnPropNameInRow="LL" msprop:Generator_ColumnPropNameInTable="LLColumn" msprop:Generator_UserColumnName="LL">
@@ -925,7 +925,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdOrder_ROrder" msprop:Generator_TableClassName="SP_ProdOrder_ROrderDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder" msprop:Generator_RowChangedName="SP_ProdOrder_ROrderRowChanged" msprop:Generator_TablePropName="SP_ProdOrder_ROrder" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrderRowDeleted" msprop:Generator_RowClassName="SP_ProdOrder_ROrderRow" msprop:Generator_UserTableName="SP_ProdOrder_ROrder" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrderRowChangeEvent">
+        <xs:element name="SP_ProdOrder_ROrder" msprop:Generator_TableClassName="SP_ProdOrder_ROrderDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder" msprop:Generator_TablePropName="SP_ProdOrder_ROrder" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrderRowDeleted" msprop:Generator_UserTableName="SP_ProdOrder_ROrder" msprop:Generator_RowChangedName="SP_ProdOrder_ROrderRowChanged" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrderRowChangeEvent" msprop:Generator_RowClassName="SP_ProdOrder_ROrderRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="계획일자" msprop:Generator_ColumnVarNameInTable="column계획일자" msprop:Generator_ColumnPropNameInRow="계획일자" msprop:Generator_ColumnPropNameInTable="계획일자Column" msprop:Generator_UserColumnName="계획일자" type="xs:dateTime" minOccurs="0" />
@@ -962,7 +962,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_Query" msprop:Generator_TableClassName="SP_ProdResult_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Query" msprop:Generator_RowChangedName="SP_ProdResult_QueryRowChanged" msprop:Generator_TablePropName="SP_ProdResult_Query" msprop:Generator_RowDeletingName="SP_ProdResult_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProdResult_QueryRow" msprop:Generator_UserTableName="SP_ProdResult_Query" msprop:Generator_RowEvArgName="SP_ProdResult_QueryRowChangeEvent">
+        <xs:element name="SP_ProdResult_Query" msprop:Generator_TableClassName="SP_ProdResult_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Query" msprop:Generator_TablePropName="SP_ProdResult_Query" msprop:Generator_RowDeletingName="SP_ProdResult_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProdResult_Query" msprop:Generator_RowChangedName="SP_ProdResult_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo">
@@ -1051,7 +1051,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_std" msprop:Generator_TableClassName="SP_ProdResult_stdDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_std" msprop:Generator_RowChangedName="SP_ProdResult_stdRowChanged" msprop:Generator_TablePropName="SP_ProdResult_std" msprop:Generator_RowDeletingName="SP_ProdResult_stdRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_stdRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_stdRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_stdRowDeleted" msprop:Generator_RowClassName="SP_ProdResult_stdRow" msprop:Generator_UserTableName="SP_ProdResult_std" msprop:Generator_RowEvArgName="SP_ProdResult_stdRowChangeEvent">
+        <xs:element name="SP_ProdResult_std" msprop:Generator_TableClassName="SP_ProdResult_stdDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_std" msprop:Generator_TablePropName="SP_ProdResult_std" msprop:Generator_RowDeletingName="SP_ProdResult_stdRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_stdRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_stdRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_stdRowDeleted" msprop:Generator_UserTableName="SP_ProdResult_std" msprop:Generator_RowChangedName="SP_ProdResult_stdRowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_stdRowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_stdRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드" minOccurs="0">
@@ -1197,7 +1197,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdTerm_Query" msprop:Generator_TableClassName="SP_ProdTerm_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdTerm_Query" msprop:Generator_TablePropName="SP_ProdTerm_Query" msprop:Generator_RowDeletingName="SP_ProdTerm_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdTerm_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdTerm_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdTerm_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProdTerm_Query" msprop:Generator_RowChangedName="SP_ProdTerm_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProdTerm_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProdTerm_QueryRow">
+        <xs:element name="SP_ProdTerm_Query" msprop:Generator_TableClassName="SP_ProdTerm_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdTerm_Query" msprop:Generator_RowChangedName="SP_ProdTerm_QueryRowChanged" msprop:Generator_TablePropName="SP_ProdTerm_Query" msprop:Generator_RowDeletingName="SP_ProdTerm_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdTerm_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdTerm_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdTerm_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProdTerm_QueryRow" msprop:Generator_UserTableName="SP_ProdTerm_Query" msprop:Generator_RowEvArgName="SP_ProdTerm_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo" minOccurs="0">
@@ -1278,7 +1278,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdPlan_Query2" msprop:Generator_TableClassName="SP_ProdPlan_Query2DataTable" msprop:Generator_TableVarName="tableSP_ProdPlan_Query2" msprop:Generator_RowChangedName="SP_ProdPlan_Query2RowChanged" msprop:Generator_TablePropName="SP_ProdPlan_Query2" msprop:Generator_RowDeletingName="SP_ProdPlan_Query2RowDeleting" msprop:Generator_RowChangingName="SP_ProdPlan_Query2RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdPlan_Query2RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdPlan_Query2RowDeleted" msprop:Generator_RowClassName="SP_ProdPlan_Query2Row" msprop:Generator_UserTableName="SP_ProdPlan_Query2" msprop:Generator_RowEvArgName="SP_ProdPlan_Query2RowChangeEvent">
+        <xs:element name="SP_ProdPlan_Query2" msprop:Generator_TableClassName="SP_ProdPlan_Query2DataTable" msprop:Generator_TableVarName="tableSP_ProdPlan_Query2" msprop:Generator_TablePropName="SP_ProdPlan_Query2" msprop:Generator_RowDeletingName="SP_ProdPlan_Query2RowDeleting" msprop:Generator_RowChangingName="SP_ProdPlan_Query2RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdPlan_Query2RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdPlan_Query2RowDeleted" msprop:Generator_UserTableName="SP_ProdPlan_Query2" msprop:Generator_RowChangedName="SP_ProdPlan_Query2RowChanged" msprop:Generator_RowEvArgName="SP_ProdPlan_Query2RowChangeEvent" msprop:Generator_RowClassName="SP_ProdPlan_Query2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="설비" msprop:Generator_ColumnVarNameInTable="column설비" msprop:Generator_ColumnPropNameInRow="설비" msprop:Generator_ColumnPropNameInTable="설비Column" msprop:Generator_UserColumnName="설비">
@@ -1348,7 +1348,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Product_List" msprop:Generator_TableClassName="SP_Product_ListDataTable" msprop:Generator_TableVarName="tableSP_Product_List" msprop:Generator_RowChangedName="SP_Product_ListRowChanged" msprop:Generator_TablePropName="SP_Product_List" msprop:Generator_RowDeletingName="SP_Product_ListRowDeleting" msprop:Generator_RowChangingName="SP_Product_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Product_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_ListRowDeleted" msprop:Generator_RowClassName="SP_Product_ListRow" msprop:Generator_UserTableName="SP_Product_List" msprop:Generator_RowEvArgName="SP_Product_ListRowChangeEvent">
+        <xs:element name="SP_Product_List" msprop:Generator_TableClassName="SP_Product_ListDataTable" msprop:Generator_TableVarName="tableSP_Product_List" msprop:Generator_TablePropName="SP_Product_List" msprop:Generator_RowDeletingName="SP_Product_ListRowDeleting" msprop:Generator_RowChangingName="SP_Product_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Product_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_ListRowDeleted" msprop:Generator_UserTableName="SP_Product_List" msprop:Generator_RowChangedName="SP_Product_ListRowChanged" msprop:Generator_RowEvArgName="SP_Product_ListRowChangeEvent" msprop:Generator_RowClassName="SP_Product_ListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id">
@@ -1368,7 +1368,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Machinecard_List" msprop:Generator_TableClassName="SP_Machinecard_ListDataTable" msprop:Generator_TableVarName="tableSP_Machinecard_List" msprop:Generator_RowChangedName="SP_Machinecard_ListRowChanged" msprop:Generator_TablePropName="SP_Machinecard_List" msprop:Generator_RowDeletingName="SP_Machinecard_ListRowDeleting" msprop:Generator_RowChangingName="SP_Machinecard_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Machinecard_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Machinecard_ListRowDeleted" msprop:Generator_RowClassName="SP_Machinecard_ListRow" msprop:Generator_UserTableName="SP_Machinecard_List" msprop:Generator_RowEvArgName="SP_Machinecard_ListRowChangeEvent">
+        <xs:element name="SP_Machinecard_List" msprop:Generator_TableClassName="SP_Machinecard_ListDataTable" msprop:Generator_TableVarName="tableSP_Machinecard_List" msprop:Generator_TablePropName="SP_Machinecard_List" msprop:Generator_RowDeletingName="SP_Machinecard_ListRowDeleting" msprop:Generator_RowChangingName="SP_Machinecard_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Machinecard_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Machinecard_ListRowDeleted" msprop:Generator_UserTableName="SP_Machinecard_List" msprop:Generator_RowChangedName="SP_Machinecard_ListRowChanged" msprop:Generator_RowEvArgName="SP_Machinecard_ListRowChangeEvent" msprop:Generator_RowClassName="SP_Machinecard_ListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:unsignedInt" />
@@ -1382,7 +1382,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_DeliveryPlan_Query" msprop:Generator_TableClassName="SP_DeliveryPlan_QueryDataTable" msprop:Generator_TableVarName="tableSP_DeliveryPlan_Query" msprop:Generator_RowChangedName="SP_DeliveryPlan_QueryRowChanged" msprop:Generator_TablePropName="SP_DeliveryPlan_Query" msprop:Generator_RowDeletingName="SP_DeliveryPlan_QueryRowDeleting" msprop:Generator_RowChangingName="SP_DeliveryPlan_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_DeliveryPlan_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DeliveryPlan_QueryRowDeleted" msprop:Generator_RowClassName="SP_DeliveryPlan_QueryRow" msprop:Generator_UserTableName="SP_DeliveryPlan_Query" msprop:Generator_RowEvArgName="SP_DeliveryPlan_QueryRowChangeEvent">
+        <xs:element name="SP_DeliveryPlan_Query" msprop:Generator_TableClassName="SP_DeliveryPlan_QueryDataTable" msprop:Generator_TableVarName="tableSP_DeliveryPlan_Query" msprop:Generator_TablePropName="SP_DeliveryPlan_Query" msprop:Generator_RowDeletingName="SP_DeliveryPlan_QueryRowDeleting" msprop:Generator_RowChangingName="SP_DeliveryPlan_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_DeliveryPlan_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DeliveryPlan_QueryRowDeleted" msprop:Generator_UserTableName="SP_DeliveryPlan_Query" msprop:Generator_RowChangedName="SP_DeliveryPlan_QueryRowChanged" msprop:Generator_RowEvArgName="SP_DeliveryPlan_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_DeliveryPlan_QueryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="품목" msprop:Generator_ColumnVarNameInTable="column품목" msprop:Generator_ColumnPropNameInRow="품목" msprop:Generator_ColumnPropNameInTable="품목Column" msprop:Generator_UserColumnName="품목">
@@ -1466,7 +1466,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Customer_List" msprop:Generator_TableClassName="SP_Customer_ListDataTable" msprop:Generator_TableVarName="tableSP_Customer_List" msprop:Generator_TablePropName="SP_Customer_List" msprop:Generator_RowDeletingName="SP_Customer_ListRowDeleting" msprop:Generator_RowChangingName="SP_Customer_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Customer_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Customer_ListRowDeleted" msprop:Generator_UserTableName="SP_Customer_List" msprop:Generator_RowChangedName="SP_Customer_ListRowChanged" msprop:Generator_RowEvArgName="SP_Customer_ListRowChangeEvent" msprop:Generator_RowClassName="SP_Customer_ListRow">
+        <xs:element name="SP_Customer_List" msprop:Generator_TableClassName="SP_Customer_ListDataTable" msprop:Generator_TableVarName="tableSP_Customer_List" msprop:Generator_RowChangedName="SP_Customer_ListRowChanged" msprop:Generator_TablePropName="SP_Customer_List" msprop:Generator_RowDeletingName="SP_Customer_ListRowDeleting" msprop:Generator_RowChangingName="SP_Customer_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_Customer_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Customer_ListRowDeleted" msprop:Generator_RowClassName="SP_Customer_ListRow" msprop:Generator_UserTableName="SP_Customer_List" msprop:Generator_RowEvArgName="SP_Customer_ListRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id">
@@ -1486,7 +1486,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_List1" msprop:Generator_TableClassName="SP_ProdResult_List1DataTable" msprop:Generator_TableVarName="tableSP_ProdResult_List1" msprop:Generator_RowChangedName="SP_ProdResult_List1RowChanged" msprop:Generator_TablePropName="SP_ProdResult_List1" msprop:Generator_RowDeletingName="SP_ProdResult_List1RowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_List1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_List1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_List1RowDeleted" msprop:Generator_RowClassName="SP_ProdResult_List1Row" msprop:Generator_UserTableName="SP_ProdResult_List1" msprop:Generator_RowEvArgName="SP_ProdResult_List1RowChangeEvent">
+        <xs:element name="SP_ProdResult_List1" msprop:Generator_TableClassName="SP_ProdResult_List1DataTable" msprop:Generator_TableVarName="tableSP_ProdResult_List1" msprop:Generator_TablePropName="SP_ProdResult_List1" msprop:Generator_RowDeletingName="SP_ProdResult_List1RowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_List1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_List1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_List1RowDeleted" msprop:Generator_UserTableName="SP_ProdResult_List1" msprop:Generator_RowChangedName="SP_ProdResult_List1RowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_List1RowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_List1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo" minOccurs="0">
@@ -1651,7 +1651,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_Query1" msprop:Generator_TableClassName="SP_ProdResult_Query1DataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Query1" msprop:Generator_RowChangedName="SP_ProdResult_Query1RowChanged" msprop:Generator_TablePropName="SP_ProdResult_Query1" msprop:Generator_RowDeletingName="SP_ProdResult_Query1RowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_Query1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_Query1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_Query1RowDeleted" msprop:Generator_RowClassName="SP_ProdResult_Query1Row" msprop:Generator_UserTableName="SP_ProdResult_Query1" msprop:Generator_RowEvArgName="SP_ProdResult_Query1RowChangeEvent">
+        <xs:element name="SP_ProdResult_Query1" msprop:Generator_TableClassName="SP_ProdResult_Query1DataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Query1" msprop:Generator_TablePropName="SP_ProdResult_Query1" msprop:Generator_RowDeletingName="SP_ProdResult_Query1RowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_Query1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_Query1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_Query1RowDeleted" msprop:Generator_UserTableName="SP_ProdResult_Query1" msprop:Generator_RowChangedName="SP_ProdResult_Query1RowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_Query1RowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_Query1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo" minOccurs="0">
@@ -1798,7 +1798,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdOrder_Query" msprop:Generator_TableClassName="SP_ProdOrder_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_Query" msprop:Generator_TablePropName="SP_ProdOrder_Query" msprop:Generator_RowDeletingName="SP_ProdOrder_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_QueryRowDeleted" msprop:Generator_UserTableName="SP_ProdOrder_Query" msprop:Generator_RowChangedName="SP_ProdOrder_QueryRowChanged" msprop:Generator_RowEvArgName="SP_ProdOrder_QueryRowChangeEvent" msprop:Generator_RowClassName="SP_ProdOrder_QueryRow">
+        <xs:element name="SP_ProdOrder_Query" msprop:Generator_TableClassName="SP_ProdOrder_QueryDataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_Query" msprop:Generator_RowChangedName="SP_ProdOrder_QueryRowChanged" msprop:Generator_TablePropName="SP_ProdOrder_Query" msprop:Generator_RowDeletingName="SP_ProdOrder_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_QueryRowDeleted" msprop:Generator_RowClassName="SP_ProdOrder_QueryRow" msprop:Generator_UserTableName="SP_ProdOrder_Query" msprop:Generator_RowEvArgName="SP_ProdOrder_QueryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="일자" msprop:Generator_ColumnVarNameInTable="column일자" msprop:Generator_ColumnPropNameInRow="일자" msprop:Generator_ColumnPropNameInTable="일자Column" msprop:Generator_UserColumnName="일자" type="xs:dateTime" minOccurs="0" />
@@ -1867,7 +1867,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdOrder_ROrder1" msprop:Generator_TableClassName="SP_ProdOrder_ROrder1DataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder1" msprop:Generator_RowChangedName="SP_ProdOrder_ROrder1RowChanged" msprop:Generator_TablePropName="SP_ProdOrder_ROrder1" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrder1RowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrder1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrder1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrder1RowDeleted" msprop:Generator_RowClassName="SP_ProdOrder_ROrder1Row" msprop:Generator_UserTableName="SP_ProdOrder_ROrder1" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrder1RowChangeEvent">
+        <xs:element name="SP_ProdOrder_ROrder1" msprop:Generator_TableClassName="SP_ProdOrder_ROrder1DataTable" msprop:Generator_TableVarName="tableSP_ProdOrder_ROrder1" msprop:Generator_TablePropName="SP_ProdOrder_ROrder1" msprop:Generator_RowDeletingName="SP_ProdOrder_ROrder1RowDeleting" msprop:Generator_RowChangingName="SP_ProdOrder_ROrder1RowChanging" msprop:Generator_RowEvHandlerName="SP_ProdOrder_ROrder1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdOrder_ROrder1RowDeleted" msprop:Generator_UserTableName="SP_ProdOrder_ROrder1" msprop:Generator_RowChangedName="SP_ProdOrder_ROrder1RowChanged" msprop:Generator_RowEvArgName="SP_ProdOrder_ROrder1RowChangeEvent" msprop:Generator_RowClassName="SP_ProdOrder_ROrder1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="jobno" msprop:Generator_ColumnVarNameInTable="columnjobno" msprop:Generator_ColumnPropNameInRow="jobno" msprop:Generator_ColumnPropNameInTable="jobnoColumn" msprop:Generator_UserColumnName="jobno" minOccurs="0">
@@ -1922,54 +1922,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ProdResult_List" msprop:Generator_TableClassName="SP_ProdResult_ListDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_List" msprop:Generator_RowChangedName="SP_ProdResult_ListRowChanged" msprop:Generator_TablePropName="SP_ProdResult_List" msprop:Generator_RowDeletingName="SP_ProdResult_ListRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_ListRowDeleted" msprop:Generator_RowClassName="SP_ProdResult_ListRow" msprop:Generator_UserTableName="SP_ProdResult_List" msprop:Generator_RowEvArgName="SP_ProdResult_ListRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="생산일자" msprop:Generator_ColumnVarNameInTable="column생산일자" msprop:Generator_ColumnPropNameInRow="생산일자" msprop:Generator_ColumnPropNameInTable="생산일자Column" msprop:Generator_UserColumnName="생산일자" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="작업조" msprop:Generator_ColumnVarNameInTable="column작업조" msprop:Generator_ColumnPropNameInRow="작업조" msprop:Generator_ColumnPropNameInTable="작업조Column" msprop:Generator_UserColumnName="작업조" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="작업시작" msprop:Generator_ColumnVarNameInTable="column작업시작" msprop:Generator_ColumnPropNameInRow="작업시작" msprop:Generator_ColumnPropNameInTable="작업시작Column" msprop:Generator_UserColumnName="작업시작" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="작업종료" msprop:Generator_ColumnVarNameInTable="column작업종료" msprop:Generator_ColumnPropNameInRow="작업종료" msprop:Generator_ColumnPropNameInTable="작업종료Column" msprop:Generator_UserColumnName="작업종료" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="인원수" msprop:Generator_ColumnVarNameInTable="column인원수" msprop:Generator_ColumnPropNameInRow="인원수" msprop:Generator_ColumnPropNameInTable="인원수Column" msprop:Generator_UserColumnName="인원수" type="xs:float" minOccurs="0" />
-              <xs:element name="작업자명단" msprop:Generator_ColumnVarNameInTable="column작업자명단" msprop:Generator_ColumnPropNameInRow="작업자명단" msprop:Generator_ColumnPropNameInTable="작업자명단Column" msprop:Generator_UserColumnName="작업자명단" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="에너지사용량전" msprop:Generator_ColumnVarNameInTable="column에너지사용량전" msprop:Generator_ColumnPropNameInRow="에너지사용량전" msprop:Generator_ColumnPropNameInTable="에너지사용량전Column" msprop:Generator_UserColumnName="에너지사용량전" type="xs:float" minOccurs="0" />
-              <xs:element name="에너지사용량후" msprop:Generator_ColumnVarNameInTable="column에너지사용량후" msprop:Generator_ColumnPropNameInRow="에너지사용량후" msprop:Generator_ColumnPropNameInTable="에너지사용량후Column" msprop:Generator_UserColumnName="에너지사용량후" type="xs:float" minOccurs="0" />
-              <xs:element name="작업지도" msprop:Generator_ColumnVarNameInTable="column작업지도" msprop:Generator_ColumnPropNameInRow="작업지도" msprop:Generator_ColumnPropNameInTable="작업지도Column" msprop:Generator_UserColumnName="작업지도" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="1000" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="작성자" msprop:Generator_ColumnVarNameInTable="column작성자" msprop:Generator_ColumnPropNameInRow="작성자" msprop:Generator_ColumnPropNameInTable="작성자Column" msprop:Generator_UserColumnName="작성자" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="상태" msprop:Generator_ColumnVarNameInTable="column상태" msprop:Generator_ColumnPropNameInRow="상태" msprop:Generator_ColumnPropNameInTable="상태Column" msprop:Generator_UserColumnName="상태" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="SP_ProdResult_Order" msprop:Generator_TableClassName="SP_ProdResult_OrderDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Order" msprop:Generator_TablePropName="SP_ProdResult_Order" msprop:Generator_RowDeletingName="SP_ProdResult_OrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_OrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_OrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_OrderRowDeleted" msprop:Generator_UserTableName="SP_ProdResult_Order" msprop:Generator_RowChangedName="SP_ProdResult_OrderRowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_OrderRowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_OrderRow">
+        <xs:element name="SP_ProdResult_Order" msprop:Generator_TableClassName="SP_ProdResult_OrderDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_Order" msprop:Generator_RowChangedName="SP_ProdResult_OrderRowChanged" msprop:Generator_TablePropName="SP_ProdResult_Order" msprop:Generator_RowDeletingName="SP_ProdResult_OrderRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_OrderRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_OrderRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_OrderRowDeleted" msprop:Generator_RowClassName="SP_ProdResult_OrderRow" msprop:Generator_UserTableName="SP_ProdResult_Order" msprop:Generator_RowEvArgName="SP_ProdResult_OrderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LotNo" msprop:Generator_ColumnVarNameInTable="columnLotNo" msprop:Generator_ColumnPropNameInRow="LotNo" msprop:Generator_ColumnPropNameInTable="LotNoColumn" msprop:Generator_UserColumnName="LotNo">
@@ -2068,6 +2021,67 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="SP_ProdResult_List" msprop:Generator_TableClassName="SP_ProdResult_ListDataTable" msprop:Generator_TableVarName="tableSP_ProdResult_List" msprop:Generator_TablePropName="SP_ProdResult_List" msprop:Generator_RowDeletingName="SP_ProdResult_ListRowDeleting" msprop:Generator_RowChangingName="SP_ProdResult_ListRowChanging" msprop:Generator_RowEvHandlerName="SP_ProdResult_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ProdResult_ListRowDeleted" msprop:Generator_UserTableName="SP_ProdResult_List" msprop:Generator_RowChangedName="SP_ProdResult_ListRowChanged" msprop:Generator_RowEvArgName="SP_ProdResult_ListRowChangeEvent" msprop:Generator_RowClassName="SP_ProdResult_ListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JobNo" msprop:Generator_ColumnVarNameInTable="columnJobNo" msprop:Generator_ColumnPropNameInRow="JobNo" msprop:Generator_ColumnPropNameInTable="JobNoColumn" msprop:Generator_UserColumnName="JobNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="설비코드" msprop:Generator_ColumnVarNameInTable="column설비코드" msprop:Generator_ColumnPropNameInRow="설비코드" msprop:Generator_ColumnPropNameInTable="설비코드Column" msprop:Generator_UserColumnName="설비코드" type="xs:unsignedInt" />
+              <xs:element name="생산지시일" msprop:Generator_ColumnVarNameInTable="column생산지시일" msprop:Generator_ColumnPropNameInRow="생산지시일" msprop:Generator_ColumnPropNameInTable="생산지시일Column" msprop:Generator_UserColumnName="생산지시일" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="설비명" msprop:Generator_ColumnVarNameInTable="column설비명" msprop:Generator_ColumnPropNameInRow="설비명" msprop:Generator_ColumnPropNameInTable="설비명Column" msprop:Generator_UserColumnName="설비명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="생산일자" msprop:Generator_ColumnVarNameInTable="column생산일자" msprop:Generator_ColumnPropNameInRow="생산일자" msprop:Generator_ColumnPropNameInTable="생산일자Column" msprop:Generator_UserColumnName="생산일자" type="xs:dateTime" />
+              <xs:element name="배합기" msprop:Generator_ColumnVarNameInTable="column배합기" msprop:Generator_ColumnPropNameInRow="배합기" msprop:Generator_ColumnPropNameInTable="배합기Column" msprop:Generator_UserColumnName="배합기" type="xs:unsignedInt" />
+              <xs:element name="배합기명" msprop:Generator_ColumnVarNameInTable="column배합기명" msprop:Generator_ColumnPropNameInRow="배합기명" msprop:Generator_ColumnPropNameInTable="배합기명Column" msprop:Generator_UserColumnName="배합기명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="생산량" msprop:Generator_ColumnVarNameInTable="column생산량" msprop:Generator_ColumnPropNameInRow="생산량" msprop:Generator_ColumnPropNameInTable="생산량Column" msprop:Generator_UserColumnName="생산량" type="xs:float" minOccurs="0" />
+              <xs:element name="불량량" msprop:Generator_ColumnVarNameInTable="column불량량" msprop:Generator_ColumnPropNameInRow="불량량" msprop:Generator_ColumnPropNameInTable="불량량Column" msprop:Generator_UserColumnName="불량량" type="xs:int" />
+              <xs:element name="중량A" msprop:Generator_ColumnVarNameInTable="column중량A" msprop:Generator_ColumnPropNameInRow="중량A" msprop:Generator_ColumnPropNameInTable="중량AColumn" msprop:Generator_UserColumnName="중량A" type="xs:float" minOccurs="0" />
+              <xs:element name="중량B" msprop:Generator_ColumnVarNameInTable="column중량B" msprop:Generator_ColumnPropNameInRow="중량B" msprop:Generator_ColumnPropNameInTable="중량BColumn" msprop:Generator_UserColumnName="중량B" type="xs:float" minOccurs="0" />
+              <xs:element name="중량MB" msprop:Generator_ColumnVarNameInTable="column중량MB" msprop:Generator_ColumnPropNameInRow="중량MB" msprop:Generator_ColumnPropNameInTable="중량MBColumn" msprop:Generator_UserColumnName="중량MB" type="xs:float" minOccurs="0" />
+              <xs:element name="배합시간" msprop:Generator_ColumnVarNameInTable="column배합시간" msprop:Generator_ColumnPropNameInRow="배합시간" msprop:Generator_ColumnPropNameInTable="배합시간Column" msprop:Generator_UserColumnName="배합시간" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="작업시작시간" msprop:Generator_ColumnVarNameInTable="column작업시작시간" msprop:Generator_ColumnPropNameInRow="작업시작시간" msprop:Generator_ColumnPropNameInTable="작업시작시간Column" msprop:Generator_UserColumnName="작업시작시간" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="작업종료시간" msprop:Generator_ColumnVarNameInTable="column작업종료시간" msprop:Generator_ColumnPropNameInRow="작업종료시간" msprop:Generator_ColumnPropNameInTable="작업종료시간Column" msprop:Generator_UserColumnName="작업종료시간" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="작업소요시간" msprop:Generator_ColumnVarNameInTable="column작업소요시간" msprop:Generator_ColumnPropNameInRow="작업소요시간" msprop:Generator_ColumnPropNameInTable="작업소요시간Column" msprop:Generator_UserColumnName="작업소요시간" type="xs:float" minOccurs="0" />
+              <xs:element name="생산여부" msprop:Generator_ColumnVarNameInTable="column생산여부" msprop:Generator_ColumnPropNameInRow="생산여부" msprop:Generator_ColumnPropNameInTable="생산여부Column" msprop:Generator_UserColumnName="생산여부" type="xs:byte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2094,6 +2108,11 @@
     <xs:unique name="SP_Customer_List_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_Customer_List" />
       <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="SP_ProdResult_List_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SP_ProdResult_List" />
+      <xs:field xpath="mstns:JobNo" />
+      <xs:field xpath="mstns:설비코드" />
     </xs:unique>
   </xs:element>
 </xs:schema>
