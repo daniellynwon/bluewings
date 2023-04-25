@@ -243,7 +243,7 @@
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(74, 21);
             this.lblQty.TabIndex = 0;
-            this.lblQty.Text = "발주중량";
+            this.lblQty.Text = "반출중량";
             // 
             // label5
             // 

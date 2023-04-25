@@ -404,9 +404,14 @@ namespace SmartMES_Bluewings
                 lblMsg.Text = "저장할 검사건이 선택되지 않았습니다.";
                 return;
             }
+            if(cbQcMan.SelectedValue.ToString() == "-")
+            {
+                lblMsg.Text = "검사원을 선택하세요";
+                return;
+            }
             getResult();
 
-            string sNo= dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString(); // JobNo
+            string sNo = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[0].Value.ToString(); // JobNo
             string sMach = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[2].Value.ToString(); // 설비코드
             string sProd = dataGridViewList.Rows[dataGridViewList.CurrentRow.Index].Cells[5].Value.ToString(); // 설비코드
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
@@ -414,6 +419,7 @@ namespace SmartMES_Bluewings
             string sVal5 = tbVal5.Text; string sVal6 = tbVal6.Text; string sVal7 = tbVal7.Text; string sVal8 = tbVal8.Text;
             string sVal9 = tbVal9.Text; string sVal10 = tbVal10.Text; string sVal11 = tbVal11.Text; string sVal12 = tbVal12.Text;
             string sResult1 = "F"; string sResult2 = "P";
+            string sMan = cbQcMan.SelectedValue.ToString();
 
             if (cbResult.Checked) sResult1 = "P";
             if (lblResult.Text == "불합") sResult2 = "F";
@@ -427,7 +433,7 @@ namespace SmartMES_Bluewings
                     sVal7 + "','" + sVal8 + "','" + sVal9 + "','" + sVal10 + "','" + sVal11 + "','" + sVal12 + "','" + sResult2 + "','" + G.UserID + "') " +
                     "ON DUPLICATE KEY UPDATE qc_date = '" + sDate + "', result1 = '" + sResult1 + "', tube1 = '" + sVal1 + "', tube2 = '" + sVal2 + "', tube3 = '" + sVal3 + 
                     "', in1 = '" + sVal4 + "', in2 = '" + sVal5 + "', in3 = '" + sVal6 + "', diameter1 = '" + sVal7 + "', diameter2 = '" + sVal8 + "', diameter3 = '" + sVal9 + 
-                    "', length1 = '" + sVal10 + "', length2 = '" + sVal11 + "', length3 = '" + sVal12 + "', result2 = '" + sResult2 + "', enter_man = '" + G.UserID + "'";
+                    "', length1 = '" + sVal10 + "', length2 = '" + sVal11 + "', length3 = '" + sVal12 + "', result2 = '" + sResult2 + "', enter_man = '" + sMan + "'";
 
             m.dbCUD(sql, ref msg);
 
@@ -488,95 +494,6 @@ namespace SmartMES_Bluewings
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                e.Handled = true;
-            }
-        }
-        #endregion
-
-        #region Cell Paint
-        private void dataGridView1_Paint(object sender, PaintEventArgs e)
-        {
-            DataGridView gv = (DataGridView)sender;
-            string[] strHeaders = { "관벽두께(mm)", "최소내벽두께(mm)", "평균안지름(mm)", "제품길이(mm)" };
-            StringFormat format = new StringFormat();
-            format.Alignment = StringAlignment.Center;
-            format.LineAlignment = StringAlignment.Center;
-
-            // Category Painting 헤더 그리는 부분
-            {
-                //--------------------------------- 범위 지정
-                Rectangle r1 = gv.GetCellDisplayRectangle(6, -1, false);  //범위 시작
-                int width1 = gv.GetCellDisplayRectangle(7, -1, false).Width;
-                int width2 = gv.GetCellDisplayRectangle(8, -1, false).Width;
-
-                r1.X += 1;
-                r1.Y += 1;
-                r1.Width = r1.Width + width1 + width2 - 2; // + width1 + width2 + width3 + width4 + width5 + width6
-                r1.Height = (r1.Height / 2) - 2;
-
-                //--------------------------------- 범위 지정 END
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r1);
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r1);   // 셀 병합
-
-                e.Graphics.DrawString(strHeaders[0],
-                    gv.ColumnHeadersDefaultCellStyle.Font,
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor),
-                    r1,
-                    format);
-            }
-            {
-                Rectangle r2 = gv.GetCellDisplayRectangle(9, -1, false);
-                int width1 = gv.GetCellDisplayRectangle(10, -1, false).Width;
-                int width2 = gv.GetCellDisplayRectangle(11, -1, false).Width;
-
-                r2.X += 1; r2.Y += 1;
-                r2.Width = r2.Width + width1 + width2 - 2;
-                r2.Height = (r2.Height / 2) - 2;
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r2);
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r2);
-                e.Graphics.DrawString(strHeaders[1], gv.ColumnHeadersDefaultCellStyle.Font,
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r2, format);
-            }
-            {
-                Rectangle r3 = gv.GetCellDisplayRectangle(12, -1, false);
-                int width1 = gv.GetCellDisplayRectangle(13, -1, false).Width;
-                int width2 = gv.GetCellDisplayRectangle(14, -1, false).Width;
-
-                r3.X += 1; r3.Y += 1;
-                r3.Width = r3.Width + width1 + width2 - 2;
-                r3.Height = (r3.Height / 2) - 2;
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r3);
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r3);
-                e.Graphics.DrawString(strHeaders[2], gv.ColumnHeadersDefaultCellStyle.Font,
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r3, format);
-            }
-            {
-                Rectangle r4 = gv.GetCellDisplayRectangle(15, -1, false);
-                int width2 = gv.GetCellDisplayRectangle(16, -1, false).Width;
-                int width1 = gv.GetCellDisplayRectangle(17, -1, false).Width;
-
-                r4.X += 1; r4.Y += 1;
-                r4.Width = r4.Width + width1+ width2 - 2;
-                r4.Height = (r4.Height / 2) - 2;
-
-                e.Graphics.DrawRectangle(new Pen(gv.BackgroundColor), r4);
-                e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r4);
-                e.Graphics.DrawString(strHeaders[2], gv.ColumnHeadersDefaultCellStyle.Font,
-                    new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r4, format);
-            }
-        }
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex == -1 && e.ColumnIndex > -1)
-            {
-                Rectangle r = e.CellBounds;
-                r.Y += e.CellBounds.Height / 2;
-                r.Height = e.CellBounds.Height / 2;
-                e.PaintBackground(r, true);
-                e.PaintContent(r);
                 e.Handled = true;
             }
         }
