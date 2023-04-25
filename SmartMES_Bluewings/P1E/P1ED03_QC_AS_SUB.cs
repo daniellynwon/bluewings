@@ -33,6 +33,7 @@ namespace SmartMES_Bluewings
 
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
+                tbNo.Text = getCode();
                 cbState.SelectedIndex = 1; //처리중
                 cbCharge.SelectedValue = G.UserID;
                 this.ActiveControl = lblDeliID;
@@ -94,6 +95,7 @@ namespace SmartMES_Bluewings
             if (string.IsNullOrEmpty(sMoney)) sMoney = "0";
             string sCharge = cbCharge.SelectedValue.ToString();
             string sState = cbState.Text.Substring(0, 1);
+            string sContents1 = tbCause.Text.Trim(); string sContents2 = tbClaim.Text.Trim(); string sContents3 = tbDeal.Text.Trim(); string sContents4 = tbInform.Text.Trim();
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -103,8 +105,9 @@ namespace SmartMES_Bluewings
             {
                 sCode = getCode();
 
-                sql = "insert into tb_qc_claim (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
-                    "values('" + sCode + "','" + sDeliID + "'," + sQty + ",'" + sClaimDate + "','" + sClaimContents + "', IF('" + sActionContents + "' = '',null,'" + sActionDate + "'),'" + sActionContents + "'," + sMoney + ",'" + sCharge + "'," + sState + ",'" + G.UserID + "')";
+                sql = "insert into tb_qc_claim (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, cause, claim, deal, inform, state_flag, enter_man) " +
+                    "values('" + sCode + "','" + sDeliID + "'," + sQty + ",'" + sClaimDate + "','" + sClaimContents + "', IF('" + sActionContents + "' = '',null,'" + sActionDate + "'),'" + sActionContents + "'," + sMoney + ",'" + sCharge + ",'" + sContents1
+                     + ",'" + sContents2 + ",'" + sContents3 + ",'" + sContents4 + "'," + sState + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
 
@@ -138,7 +141,8 @@ namespace SmartMES_Bluewings
             else
             {
                 sql = "update tb_qc_claim " +
-                    "set deli_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge + "', state_flag = " + sState +
+                    "set deli_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge 
+                    + "', cause = '" + sContents1 +"', claim = '" + sContents2 + "', deal = '" + sContents3 + "', inform = '" + sContents4 + "', state_flag = " + sState +
                     " where claim_id = '" + sCode + "'";
 
                 m.dbCUD(sql, ref msg);
