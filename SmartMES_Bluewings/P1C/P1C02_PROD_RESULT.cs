@@ -27,10 +27,6 @@ namespace SmartMES_Bluewings
         {
             // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_List' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
             this.sP_ProdResult_ListTableAdapter.Fill(this.dataSetP1C.SP_ProdResult_List);
-            // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_List' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
-            //this.sP_ProdResult_ListTableAdapter.Fill(this.dataSetP1C.SP_ProdResult_List);
-            // TODO: 이 코드는 데이터를 'dataSetP1C.SP_ProdResult_List1' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
-            //this.sP_ProdResult_List1TableAdapter.Fill(this.dataSetP1C.SP_ProdResult_List1);
             //this.sP_Z_Common_IDTableAdapter.Fill(this.dataSetP1C.SP_Z_Common_ID, "B");
             ListSearch1();
         }
@@ -60,11 +56,11 @@ namespace SmartMES_Bluewings
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                DateTime checkDate = DateTime.Parse(dataGridViewList[1, rowIndex].Value.ToString());        // 생산일자
+                DateTime checkDate = DateTime.Parse(dataGridViewList[3, rowIndex].Value.ToString());        // 생산일자
                 dtpDate.Value = checkDate;
 
                 tbJobNo.Text = dataGridViewList.Rows[rowIndex].Cells[0].Value.ToString();
-                tbMachine.Tag = dataGridViewList.Rows[rowIndex].Cells[2].Value.ToString();      // 설비코드
+                tbMachine.Tag = dataGridViewList.Rows[rowIndex].Cells[1].Value.ToString();      // 설비코드
                 tbMachine.Text = dataGridViewList.Rows[rowIndex].Cells[4].Value.ToString();     // 설비명
                 tbProd.Tag = dataGridViewList.Rows[rowIndex].Cells[7].Value.ToString();         // 품목코드
                 tbProd.Text = dataGridViewList.Rows[rowIndex].Cells[8].Value.ToString();        // 품목명
@@ -699,31 +695,6 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbProd_TextChanged(object sender, EventArgs e)
         {
             DisplayStdData();
@@ -807,7 +778,7 @@ namespace SmartMES_Bluewings
             }
             catch(Exception ex)
             {
-                MessageBox.Show("입력된 데이터가 없습니다", "확인");
+                //MessageBox.Show("입력된 데이터가 없습니다", "확인");
             }
         }
     }
