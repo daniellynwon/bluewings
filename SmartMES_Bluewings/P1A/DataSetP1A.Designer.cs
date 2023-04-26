@@ -2663,6 +2663,8 @@ namespace SmartMES_Bluewings.P1A {
             
             private global::System.Data.DataColumn column중량MB;
             
+            private global::System.Data.DataColumn column식별번호;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Recipe_QueryDataTable() {
@@ -2754,6 +2756,14 @@ namespace SmartMES_Bluewings.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 식별번호Column {
+                get {
+                    return this.column식별번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2789,7 +2799,7 @@ namespace SmartMES_Bluewings.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Recipe_QueryRow AddSP_Recipe_QueryRow(System.DateTime 일자, string 레시피, string 품목코드, string 품목명, float 중량A, float 중량B, float 중량MB) {
+            public SP_Recipe_QueryRow AddSP_Recipe_QueryRow(System.DateTime 일자, string 레시피, string 품목코드, string 품목명, float 중량A, float 중량B, float 중량MB, string 식별번호) {
                 SP_Recipe_QueryRow rowSP_Recipe_QueryRow = ((SP_Recipe_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         일자,
@@ -2798,7 +2808,8 @@ namespace SmartMES_Bluewings.P1A {
                         품목명,
                         중량A,
                         중량B,
-                        중량MB};
+                        중량MB,
+                        식별번호};
                 rowSP_Recipe_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Recipe_QueryRow);
                 return rowSP_Recipe_QueryRow;
@@ -2828,6 +2839,7 @@ namespace SmartMES_Bluewings.P1A {
                 this.column중량A = base.Columns["중량A"];
                 this.column중량B = base.Columns["중량B"];
                 this.column중량MB = base.Columns["중량MB"];
+                this.column식별번호 = base.Columns["식별번호"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2847,9 +2859,15 @@ namespace SmartMES_Bluewings.P1A {
                 base.Columns.Add(this.column중량B);
                 this.column중량MB = new global::System.Data.DataColumn("중량MB", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column중량MB);
+                this.column식별번호 = new global::System.Data.DataColumn("식별번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column식별번호);
+                this.column일자.AllowDBNull = false;
                 this.column레시피.MaxLength = 4;
+                this.column품목코드.AllowDBNull = false;
                 this.column품목코드.MaxLength = 8;
+                this.column품목명.AllowDBNull = false;
                 this.column품목명.MaxLength = 50;
+                this.column식별번호.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4892,12 +4910,7 @@ namespace SmartMES_Bluewings.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime 일자 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_Recipe_Query.일자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Recipe_Query\' 테이블의 \'일자\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableSP_Recipe_Query.일자Column]));
                 }
                 set {
                     this[this.tableSP_Recipe_Query.일자Column] = value;
@@ -4924,12 +4937,7 @@ namespace SmartMES_Bluewings.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 품목코드 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Recipe_Query.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Recipe_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Recipe_Query.품목코드Column]));
                 }
                 set {
                     this[this.tableSP_Recipe_Query.품목코드Column] = value;
@@ -4940,12 +4948,7 @@ namespace SmartMES_Bluewings.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 품목명 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Recipe_Query.품목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Recipe_Query\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Recipe_Query.품목명Column]));
                 }
                 set {
                     this[this.tableSP_Recipe_Query.품목명Column] = value;
@@ -5002,14 +5005,18 @@ namespace SmartMES_Bluewings.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is일자Null() {
-                return this.IsNull(this.tableSP_Recipe_Query.일자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set일자Null() {
-                this[this.tableSP_Recipe_Query.일자Column] = global::System.Convert.DBNull;
+            public string 식별번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Recipe_Query.식별번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Recipe_Query\' 테이블의 \'식별번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Recipe_Query.식별번호Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5022,30 +5029,6 @@ namespace SmartMES_Bluewings.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set레시피Null() {
                 this[this.tableSP_Recipe_Query.레시피Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_Recipe_Query.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_Recipe_Query.품목코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목명Null() {
-                return this.IsNull(this.tableSP_Recipe_Query.품목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목명Null() {
-                this[this.tableSP_Recipe_Query.품목명Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5082,6 +5065,18 @@ namespace SmartMES_Bluewings.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set중량MBNull() {
                 this[this.tableSP_Recipe_Query.중량MBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is식별번호Null() {
+                return this.IsNull(this.tableSP_Recipe_Query.식별번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set식별번호Null() {
+                this[this.tableSP_Recipe_Query.식별번호Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -6322,6 +6317,7 @@ namespace SmartMES_Bluewings.P1A.DataSetP1ATableAdapters {
             tableMapping.ColumnMappings.Add("중량A", "중량A");
             tableMapping.ColumnMappings.Add("중량B", "중량B");
             tableMapping.ColumnMappings.Add("중량MB", "중량MB");
+            tableMapping.ColumnMappings.Add("식별번호", "식별번호");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

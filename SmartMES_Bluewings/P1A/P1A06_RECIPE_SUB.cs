@@ -25,9 +25,10 @@ namespace SmartMES_Bluewings
                 tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
                 tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
                 tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
-                tbKg1.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                tbKg2.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-                tbKg3.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+                tbIDNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                tbKg1.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                tbKg2.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
+                tbKg3.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
             }
             else
             {

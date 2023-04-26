@@ -52,6 +52,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPQcASQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
+            this.sP_QcAS_QueryTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_QcAS_QueryTableAdapter();
             this.접수번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.거래처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +69,10 @@
             this.책임자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.진행DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.전표번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPQcASQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1E = new SmartMES_Bluewings.P1E.DataSetP1E();
-            this.sP_QcAS_QueryTableAdapter = new SmartMES_Bluewings.P1E.DataSetP1ETableAdapters.SP_QcAS_QueryTableAdapter();
+            this.원인분석 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.고객요구 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.처리방법 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.통지내용 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -267,7 +271,11 @@
             this.책임자IDDataGridViewTextBoxColumn,
             this.책임자DataGridViewTextBoxColumn,
             this.진행DataGridViewTextBoxColumn,
-            this.전표번호});
+            this.전표번호,
+            this.원인분석,
+            this.고객요구,
+            this.처리방법,
+            this.통지내용});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPQcASQueryBindingSource;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -300,6 +308,20 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // sPQcASQueryBindingSource
+            // 
+            this.sPQcASQueryBindingSource.DataMember = "SP_QcAS_Query";
+            this.sPQcASQueryBindingSource.DataSource = this.dataSetP1E;
+            // 
+            // dataSetP1E
+            // 
+            this.dataSetP1E.DataSetName = "DataSetP1E";
+            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_QcAS_QueryTableAdapter
+            // 
+            this.sP_QcAS_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // 접수번호DataGridViewTextBoxColumn
             // 
@@ -432,19 +454,37 @@
             this.전표번호.ReadOnly = true;
             this.전표번호.Visible = false;
             // 
-            // sPQcASQueryBindingSource
+            // 원인분석
             // 
-            this.sPQcASQueryBindingSource.DataMember = "SP_QcAS_Query";
-            this.sPQcASQueryBindingSource.DataSource = this.dataSetP1E;
+            this.원인분석.DataPropertyName = "원인분석";
+            this.원인분석.HeaderText = "원인분석";
+            this.원인분석.Name = "원인분석";
+            this.원인분석.ReadOnly = true;
+            this.원인분석.Visible = false;
             // 
-            // dataSetP1E
+            // 고객요구
             // 
-            this.dataSetP1E.DataSetName = "DataSetP1E";
-            this.dataSetP1E.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.고객요구.DataPropertyName = "고객요구";
+            this.고객요구.HeaderText = "고객요구";
+            this.고객요구.Name = "고객요구";
+            this.고객요구.ReadOnly = true;
+            this.고객요구.Visible = false;
             // 
-            // sP_QcAS_QueryTableAdapter
+            // 처리방법
             // 
-            this.sP_QcAS_QueryTableAdapter.ClearBeforeFill = true;
+            this.처리방법.DataPropertyName = "처리방법";
+            this.처리방법.HeaderText = "처리방법";
+            this.처리방법.Name = "처리방법";
+            this.처리방법.ReadOnly = true;
+            this.처리방법.Visible = false;
+            // 
+            // 통지내용
+            // 
+            this.통지내용.DataPropertyName = "통지내용";
+            this.통지내용.HeaderText = "통지내용";
+            this.통지내용.Name = "통지내용";
+            this.통지내용.ReadOnly = true;
+            this.통지내용.Visible = false;
             // 
             // P1ED03_QC_AS
             // 
@@ -502,5 +542,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 책임자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 진행DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 전표번호;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 원인분석;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 고객요구;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 처리방법;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 통지내용;
     }
 }

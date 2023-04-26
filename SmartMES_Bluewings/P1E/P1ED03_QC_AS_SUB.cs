@@ -30,7 +30,6 @@ namespace SmartMES_Bluewings
                 cbCharge.DisplayMember = "user_name";
             }
 
-
             if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
             {
                 tbNo.Text = getCode();
@@ -54,7 +53,10 @@ namespace SmartMES_Bluewings
                     tbActionContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                     tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
                     cbCharge.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
-
+                    tbCause.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();
+                    tbClaim.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString();
+                    tbDeal.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();
+                    tbInform.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString();
                     this.ActiveControl = btnSave;
                 }
                 catch (FormatException)

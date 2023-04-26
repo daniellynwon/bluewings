@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:SP_Common_Query" ZOrder="5" X="299" Y="17" Height="191" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:SP_StockMove_Query" ZOrder="4" X="567" Y="28" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:SP_Product_Query" ZOrder="2" X="15" Y="345" Height="305" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:SP_Recipe_Query" ZOrder="1" X="288" Y="349" Height="210" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:SP_Recipe_Query" ZOrder="1" X="288" Y="349" Height="229" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

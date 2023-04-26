@@ -34,6 +34,9 @@
             this.btnClose = new SmartMES_Bluewings.UserButtonA();
             this.btnSave = new SmartMES_Bluewings.UserButtonA();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbMat3 = new System.Windows.Forms.TextBox();
+            this.tbMat2 = new System.Windows.Forms.TextBox();
+            this.tbMat1 = new System.Windows.Forms.TextBox();
             this.tbKg3 = new System.Windows.Forms.TextBox();
             this.tbKg2 = new System.Windows.Forms.TextBox();
             this.tbKg1 = new System.Windows.Forms.TextBox();
@@ -47,9 +50,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblProd = new System.Windows.Forms.Label();
             this.tbProd = new System.Windows.Forms.TextBox();
-            this.tbMat3 = new System.Windows.Forms.TextBox();
-            this.tbMat2 = new System.Windows.Forms.TextBox();
-            this.tbMat1 = new System.Windows.Forms.TextBox();
+            this.tbIDNo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +142,36 @@
             this.groupBox1.Size = new System.Drawing.Size(645, 254);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // tbMat3
+            // 
+            this.tbMat3.Enabled = false;
+            this.tbMat3.Location = new System.Drawing.Point(72, 176);
+            this.tbMat3.Name = "tbMat3";
+            this.tbMat3.Size = new System.Drawing.Size(199, 29);
+            this.tbMat3.TabIndex = 10;
+            this.tbMat3.Text = "폴리에틸렌수지(M/B)";
+            this.tbMat3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbMat2
+            // 
+            this.tbMat2.Enabled = false;
+            this.tbMat2.Location = new System.Drawing.Point(72, 120);
+            this.tbMat2.Name = "tbMat2";
+            this.tbMat2.Size = new System.Drawing.Size(199, 29);
+            this.tbMat2.TabIndex = 9;
+            this.tbMat2.Text = "폴리에틸렌수지(B)";
+            this.tbMat2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbMat1
+            // 
+            this.tbMat1.Enabled = false;
+            this.tbMat1.Location = new System.Drawing.Point(72, 65);
+            this.tbMat1.Name = "tbMat1";
+            this.tbMat1.Size = new System.Drawing.Size(199, 29);
+            this.tbMat1.TabIndex = 8;
+            this.tbMat1.Text = "폴리에틸렌수지(A)";
+            this.tbMat1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbKg3
             // 
@@ -279,35 +311,26 @@
             this.tbProd.TabIndex = 39;
             this.tbProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbMat3
+            // tbIDNo
             // 
-            this.tbMat3.Enabled = false;
-            this.tbMat3.Location = new System.Drawing.Point(72, 176);
-            this.tbMat3.Name = "tbMat3";
-            this.tbMat3.Size = new System.Drawing.Size(199, 29);
-            this.tbMat3.TabIndex = 10;
-            this.tbMat3.Text = "폴리에틸렌수지(M/B)";
-            this.tbMat3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIDNo.Enabled = false;
+            this.tbIDNo.Location = new System.Drawing.Point(450, 73);
+            this.tbIDNo.Name = "tbIDNo";
+            this.tbIDNo.ReadOnly = true;
+            this.tbIDNo.Size = new System.Drawing.Size(199, 29);
+            this.tbIDNo.TabIndex = 41;
             // 
-            // tbMat2
+            // label1
             // 
-            this.tbMat2.Enabled = false;
-            this.tbMat2.Location = new System.Drawing.Point(72, 120);
-            this.tbMat2.Name = "tbMat2";
-            this.tbMat2.Size = new System.Drawing.Size(199, 29);
-            this.tbMat2.TabIndex = 9;
-            this.tbMat2.Text = "폴리에틸렌수지(B)";
-            this.tbMat2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbMat1
-            // 
-            this.tbMat1.Enabled = false;
-            this.tbMat1.Location = new System.Drawing.Point(72, 65);
-            this.tbMat1.Name = "tbMat1";
-            this.tbMat1.Size = new System.Drawing.Size(199, 29);
-            this.tbMat1.TabIndex = 8;
-            this.tbMat1.Text = "폴리에틸렌수지(A)";
-            this.tbMat1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(340, 77);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 21);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "식별번호";
             // 
             // P1A06_RECIPE_SUB
             // 
@@ -315,6 +338,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(738, 588);
+            this.Controls.Add(this.tbIDNo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbProd);
             this.Controls.Add(this.lblProd);
             this.Controls.Add(this.tbNo);
@@ -366,5 +391,7 @@
         private System.Windows.Forms.TextBox tbMat3;
         private System.Windows.Forms.TextBox tbMat2;
         private System.Windows.Forms.TextBox tbMat1;
+        private System.Windows.Forms.TextBox tbIDNo;
+        private System.Windows.Forms.Label label1;
     }
 }

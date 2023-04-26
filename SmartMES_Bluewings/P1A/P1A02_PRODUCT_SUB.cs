@@ -57,6 +57,7 @@ namespace SmartMES_Bluewings
                 tbUnitSub.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
                 tbPrice1.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
                 tbPrice2.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
+                tbIDNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();
 
                 if (parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString() == "0")
                     ckbStockFlag.Checked = true;
