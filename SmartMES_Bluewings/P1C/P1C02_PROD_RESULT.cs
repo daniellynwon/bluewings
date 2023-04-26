@@ -177,6 +177,7 @@ namespace SmartMES_Bluewings
                 tbJobTime.Text = "00 : 00 : 00";
                 tbIdleTime.Text = "00 : 00 : 00";
                 tbRealDriveTime.Text = "00 : 00 : 00";
+                tbMachine.Text = ""; tbMachine.Tag = null;
                 btnStart.Tag = null;
                 btnFinish.Tag = null;
                 sP_ProdResult_IdleTableAdapter.Fill(dataSetP1C.SP_ProdResult_Idle, DateTime.Parse("1900-01-01"));
@@ -268,6 +269,7 @@ namespace SmartMES_Bluewings
             if (G.Authority == "D") return;     // 09/07 수정
 
             tbProd.Text = "";
+            ListInit();
 
             P1C02_PROD_RESULT_SUB sub = new P1C02_PROD_RESULT_SUB();
             sub.parentWin = this;
@@ -326,6 +328,12 @@ namespace SmartMES_Bluewings
             string sJobNo = tbJobNo.Text;
             string sMachine = tbMachine.Tag.ToString();
             string sJobTimeA = ""; string sJobTimeB = "";
+
+            if(dtpStartTime.Text == "")
+            {
+                lblMsg.Text = "작업시작 후에 저장하세요.";
+                return;
+            }
 
             if (dtpStartTime.Text.Length == 19) sJobTimeA = dtpStartTime.Text;
             else sJobTimeA = "";
@@ -422,6 +430,92 @@ namespace SmartMES_Bluewings
                 return true;
             else
                 return false;
+        }
+        private void tbProd_TextChanged(object sender, EventArgs e)
+        {
+            DisplayStdData();
+        }
+
+        private void DisplayStdData()
+        {
+            string msg = string.Empty;
+            string sql = string.Empty;
+            string sProd_id = tbProd.Tag.ToString();
+            if (string.IsNullOrEmpty(sProd_id)) return;
+
+            MariaCRUD m = new MariaCRUD();
+            sql = "SELECT * FROM tb_gi_product_spec WHERE prod_id = '" + sProd_id + "'";
+
+            DataTable table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                tbMat11.Text = table.Rows[0]["main_mat1"].ToString();
+                tbMat12.Text = table.Rows[0]["main_mat2"].ToString();
+                tbMat13.Text = table.Rows[0]["main_mat3"].ToString();
+                tbMat14.Text = table.Rows[0]["main_mat4"].ToString();
+                tbMat15.Text = table.Rows[0]["main_mat5"].ToString();
+                tbMat16.Text = table.Rows[0]["main_mat6"].ToString();
+                tbSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
+                tbSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
+                tbSpeed13.Text = table.Rows[0]["import_good"].ToString();
+                tbMat22.Text = table.Rows[0]["sub_mat2"].ToString();
+                tbMat23.Text = table.Rows[0]["sub_mat3"].ToString();
+                tbMat24.Text = table.Rows[0]["sub_mat4"].ToString();
+                tbMat25.Text = table.Rows[0]["sub_mat5"].ToString();
+                tbMat26.Text = table.Rows[0]["sub_mat6"].ToString();
+                tbSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
+                tbSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
+                tbTemp.Text = table.Rows[0]["coolant"].ToString();
+            }
+        }
+
+        private void DisplayProductionMachineData(string JobNo)
+        {
+            string msg = string.Empty;
+            string sql = string.Empty;
+
+            try
+            {
+                MariaCRUD m = new MariaCRUD();
+                sql = "SELECT qty, ng_qty FROM tb_prod_result WHERE job_no = '" + JobNo + "'";
+                DataTable table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    tbGoodQty.Text = table.Rows[0]["qty"].ToString();
+                    tbNgQty.Text = table.Rows[0]["ng_qty"].ToString();
+                }
+
+                sql = "SELECT * FROM tb_prod_result_spec WHERE job_no = '" + JobNo + "'";
+
+                table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    tbCurMat11.Text = table.Rows[0]["main_mat1"].ToString();
+                    tbCurMat12.Text = table.Rows[0]["main_mat2"].ToString();
+                    tbCurMat13.Text = table.Rows[0]["main_mat3"].ToString();
+                    tbCurMat14.Text = table.Rows[0]["main_mat4"].ToString();
+                    tbCurMat15.Text = table.Rows[0]["main_mat5"].ToString();
+                    tbCurMat16.Text = table.Rows[0]["main_mat6"].ToString();
+                    tbCurSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
+                    tbCurSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
+                    tbCurSpeed13.Text = table.Rows[0]["import_good"].ToString();
+                    tbCurMat22.Text = table.Rows[0]["sub_mat2"].ToString();
+                    tbCurMat23.Text = table.Rows[0]["sub_mat3"].ToString();
+                    tbCurMat24.Text = table.Rows[0]["sub_mat4"].ToString();
+                    tbCurMat25.Text = table.Rows[0]["sub_mat5"].ToString();
+                    tbCurMat26.Text = table.Rows[0]["sub_mat6"].ToString();
+                    tbCurSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
+                    tbCurSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
+                    tbCurTemp.Text = table.Rows[0]["coolant"].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                //MessageBox.Show("입력된 데이터가 없습니다", "확인");
+            }
         }
         #endregion
 
@@ -695,91 +789,5 @@ namespace SmartMES_Bluewings
         }
         #endregion
 
-        private void tbProd_TextChanged(object sender, EventArgs e)
-        {
-            DisplayStdData();
-        }
-
-        private void DisplayStdData()
-        {
-            string msg = string.Empty;
-            string sql = string.Empty;
-            string sProd_id = tbProd.Tag.ToString();
-            if (string.IsNullOrEmpty(sProd_id)) return;
-
-            MariaCRUD m = new MariaCRUD();
-            sql = "SELECT * FROM tb_gi_product_spec WHERE prod_id = '" + sProd_id + "'";
-
-            DataTable table = m.dbDataTable(sql, ref msg);
-
-            if (msg == "OK")
-            {
-                tbMat11.Text = table.Rows[0]["main_mat1"].ToString();
-                tbMat12.Text = table.Rows[0]["main_mat2"].ToString();
-                tbMat13.Text = table.Rows[0]["main_mat3"].ToString();
-                tbMat14.Text = table.Rows[0]["main_mat4"].ToString();
-                tbMat15.Text = table.Rows[0]["main_mat5"].ToString();
-                tbMat16.Text = table.Rows[0]["main_mat6"].ToString();
-                tbSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
-                tbSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
-                tbSpeed13.Text = table.Rows[0]["import_good"].ToString();
-                tbMat22.Text = table.Rows[0]["sub_mat2"].ToString();
-                tbMat23.Text = table.Rows[0]["sub_mat3"].ToString();
-                tbMat24.Text = table.Rows[0]["sub_mat4"].ToString();
-                tbMat25.Text = table.Rows[0]["sub_mat5"].ToString();
-                tbMat26.Text = table.Rows[0]["sub_mat6"].ToString();
-                tbSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
-                tbSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
-                tbTemp.Text = table.Rows[0]["coolant"].ToString();
-            }
-        }
-
-        private void DisplayProductionMachineData(string JobNo)
-        {
-            string msg = string.Empty;
-            string sql = string.Empty;
-
-            try
-            {
-                MariaCRUD m = new MariaCRUD();
-                sql = "SELECT qty, ng_qty FROM tb_prod_result WHERE job_no = '" + JobNo + "'";
-                DataTable table = m.dbDataTable(sql, ref msg);
-
-                if (msg == "OK")
-                {
-                    tbGoodQty.Text = table.Rows[0]["qty"].ToString();
-                    tbNgQty.Text = table.Rows[0]["ng_qty"].ToString();
-                }
-
-                sql = "SELECT * FROM tb_prod_result_spec WHERE job_no = '" + JobNo + "'";
-
-                table = m.dbDataTable(sql, ref msg);
-
-                if (msg == "OK")
-                {
-                    tbCurMat11.Text = table.Rows[0]["main_mat1"].ToString();
-                    tbCurMat12.Text = table.Rows[0]["main_mat2"].ToString();
-                    tbCurMat13.Text = table.Rows[0]["main_mat3"].ToString();
-                    tbCurMat14.Text = table.Rows[0]["main_mat4"].ToString();
-                    tbCurMat15.Text = table.Rows[0]["main_mat5"].ToString();
-                    tbCurMat16.Text = table.Rows[0]["main_mat6"].ToString();
-                    tbCurSpeed11.Text = table.Rows[0]["main_speed1"].ToString();
-                    tbCurSpeed12.Text = table.Rows[0]["main_speed2"].ToString();
-                    tbCurSpeed13.Text = table.Rows[0]["import_good"].ToString();
-                    tbCurMat22.Text = table.Rows[0]["sub_mat2"].ToString();
-                    tbCurMat23.Text = table.Rows[0]["sub_mat3"].ToString();
-                    tbCurMat24.Text = table.Rows[0]["sub_mat4"].ToString();
-                    tbCurMat25.Text = table.Rows[0]["sub_mat5"].ToString();
-                    tbCurMat26.Text = table.Rows[0]["sub_mat6"].ToString();
-                    tbCurSpeed21.Text = table.Rows[0]["sub_speed1"].ToString();
-                    tbCurSpeed22.Text = table.Rows[0]["sub_speed2"].ToString();
-                    tbCurTemp.Text = table.Rows[0]["coolant"].ToString();
-                }
-            }
-            catch(Exception ex)
-            {
-                //MessageBox.Show("입력된 데이터가 없습니다", "확인");
-            }
-        }
     }
 }
